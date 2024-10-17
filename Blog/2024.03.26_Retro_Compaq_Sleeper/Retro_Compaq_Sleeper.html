@@ -69,6 +69,47 @@
       <li>GPU voltage offset (mV): -200</li>
       <li>And a very aggressive fan curve. Quiet at normal temperatures, but as soon as a heavy load comes in and heats things up (around 75°C) the fan goes into 100% mode. My reference card would never go 100% on its own, so I forced it.</li>
     </ul>
+    <p><u><b>UPDATE - 2024.10.17</b></u>: Two days ago MSI released a new BIOS update. It fixed a lot of things. But... it also reset my NVRAM flash. Which means: I had to reinstall GRUB. Not difficult, just annoying. I did not have had 10 years of Linux experience, this would be a nightmare. But this has motivated me to document how I fixed the entries, and to publish my final fan curves so I don't lose them by accident. They are dialled in perfectly now.</p>
+    <p>The Fan-Curves:</p>
+    <ul>
+      <h3><u>>>> CoolerControl</u>:</h3>
+
+      <h3><i>FUNCTION</i>:</h3>
+      <li>Min. Duty Change: 2%</li>
+      <li>Max. Duty Change: 100%</li>
+      <li>Threshold: 7ºC</li>
+      <li>Response Time: 20sec</li>
+      <li>Only On Way Down: Disabled</li>
+
+      <h3><i>FAN's</i>:</h3>
+      <li>0ºC = 40%</li>
+      <li>25ºC = 40%</li>
+      <li>65ºC = 50%</li>
+      <li>80ºC = 80%</li>
+      <li>86.6ºC = 100%</li>
+
+      <h3><i>PUMP</i>:</h3>
+      <li>0ºC = 75%</li>
+      <li>60ºC = 80%</li>
+      <li>75ºC = 100%</li>
+      <li>80ºC = 100%</li>
+      <li>100ºC = 100%</li>
+
+      <!--NEXT:-->
+
+      <h3><u>>>> LACT</u>:</h3>
+
+      <h3><i>FAN's</i>:</h3>
+      <li>40ºC = 30%</li>
+      <li>50ºC = 40%</li>
+      <li>60ºC = 50%</li>
+      <li>70ºC = 65%</li>
+      <li>83ºC = 100%</li>
+    </ul>
+    <p>And here is the Boot-Fix:</p>
+    <p>It uses "TommyTran732 - Tommy"'s BRILLIANT Arch install script as a base. I just changed the script to fit my needs and installed with it. What is to be expected when working with such an install is in the README of my fork. I will only add my way of how I fixed my boot after an BIOS update.</p>
+    <a href="https://github.com/CatWithCode/Arch-Linux_BootFix">https://github.com/CatWithCode/Arch-Linux_BootFix</a>
+    <br>
     <p>That was about it. The computer works well, is a bit louder than other cases but not too bad. Lets see how long it works like soooo many other sleeper builds out there.</p>
     <br>
     <hr>
@@ -104,7 +145,14 @@
       <li><a href="https://github.com/Fred78290/nct6687d/issues/94">https://github.com/Fred78290/nct6687d/issues/94</a></li>
       <li><a href="https://www.reddit.com/r/Amd/comments/zzzhnh/a_short_report_and_guide_on_7900xtx_ocuv/">https://www.reddit.com/r/Amd/comments/zzzhnh/a_short_report_and_guide_on_7900xtx_ocuv/</a></li>
       <li><a href="https://youtu.be/pZThC3ZHwuE">https://youtu.be/pZThC3ZHwuE</a></li>
+      <li><a href="https://github.com/TommyTran732">https://github.com/TommyTran732</a></li>
+      <li><a href="https://github.com/TommyTran732/Arch-Setup-Script">https://github.com/TommyTran732/Arch-Setup-Script</a></li>
+      <li><a href="https://community.frame.work/t/responded-arch-bios-update-guide/13551">https://community.frame.work/t/responded-arch-bios-update-guide/13551</a></li>
+      <li><a href="https://bbs.archlinux.org/viewtopic.php?id=289437">https://bbs.archlinux.org/viewtopic.php?id=289437</a></li>
+      <li><a href="https://github.com/CatWithCode/Arch-Linux_BootFix">https://github.com/CatWithCode/Arch-Linux_BootFix</a></li>
+      <li><a href="https://github.com/patarapolw/arch-btrfs">https://github.com/patarapolw/arch-btrfs</a></li>
+      <li><a href="https://github.com/patarapolw">https://github.com/patarapolw</a></li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.06.06 - 22:20', "ALL RIGHTS RESERVED, INCLUDING IMAGES!");</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.10.17 - 20:20', "ALL RIGHTS RESERVED, INCLUDING IMAGES!");</script></div>
   </body>
 </html>
