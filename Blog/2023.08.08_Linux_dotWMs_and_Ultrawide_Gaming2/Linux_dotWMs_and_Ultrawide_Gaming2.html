@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - My experience with tiling window managers / dot-WM's and part2 of the Ultrawide gaming on Linux entry</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <h1>My experience with tiling window managers / dot-WM's and part2 of the Ultrawide gaming on Linux entry</h1>
+    <br>
+    <p>Here is the first entry with KDE and ultrawide gaming:</p>
+    <a href="/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html">/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html</a>
+    <br>
+    <br>
+    <p>I tried a few new desktops on Linux and found two in particular that I love.</p>
+    <p>The first one is Wayfire. It is crazy how fast and beautiful this WM is, and as usual with WM's with dotfiles as they are now known, it is customizable into oblivion. It is a floating WM and that is rare with such dotfile WM's. It works great for everything except one thing. Multi-monitor gaming is not possible on this WM. The windows wrap around a triangle by design, which means that multi-screen gaming or very large windows are not possible.</p>
+    <p>I tried a couple of tiling window managers, but most were just too stiff for me. Then I tried Hyprland. It is exactly what I wanted and how I use my PC most of the time. Window tile dynamically, logical and easy. The best part is that you can use window rules, key binds and gamescope to play on multiple monitors. It makes gaming in general very convenient because you can just SHIFT+TAB and move the window around and do whatever you want with the SteamOverlay on the screen. It is literally the best WM I have ever used in terms of how everything works and how to use it.</p>
+    <p>Here is everything I needed to add to my hypr.conf to make ultra-wide gaming work perfectly. You need gamescope to force games to do what you want!:</p>
+    <br>
+    <p>
+      <u>> Making Wine/Proton/Gamescope Windows floating</u>:
+<xmp># Linux:
+windowrule = float, wine
+windowrule = float, class:^(wine)$,class:^(.*)$
+windowrule = float, proton
+windowrule = float, wineserver
+windowrule = float, winecfg
+windowrule = float, class:^(proton)$
+windowrule = float, class:^(wine)$
+windowrule = float, gamescope
+# EXE:
+windowrule = move 0 0, title:^(\*.exe)(.*)$
+windowrule = float, wine.exe
+windowrule = float, proton.exe
+windowrule = float, wineserver.exe
+windowrule = float, winecfg.exe
+windowrulev2 = float, title:^(\*.exe), class:^(wineserver)$
+</xmp>
+    <br>
+    <u>> Forcing a window into the game area (in this case 2k vertical and 2k horizontal times 3 and moving the window to the right position)</u>:
+<xmp>bind = SUPER, G, resizeactive, exact 7680 1440
+bind = SUPER, G, moveactive, exact 0 260
+</xmp>
+    <br>
+    <u>It only works with floating windows, and if the rules do not work with a window, you can force it to float:</u>
+<xmp>bind = SUPER, V, togglefloating</xmp>
+    <br>
+    <u>The Steam Game-StartUp-Options</u>:
+    <br>
+    <br>
+    2K Ultrawide:
+<xmp>gamescope -h 1440 -w 7680 -b %command%</xmp>
+    2K Normal:
+<xmp>gamescope -h 1440 -w 2560 -b %command%</xmp>
+    </p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://wayfire.org/">https://wayfire.org/</a></li>
+      <li><a href="https://github.com/WayfireWM/wayfire/wiki/Configuration">https://github.com/WayfireWM/wayfire/wiki/Configuration</a></li>
+      <li><a href="https://hyprland.org/">https://hyprland.org/</a></li>
+      <li><a href="https://wiki.hyprland.org/">https://wiki.hyprland.org/</a></li>
+      <li><a href="/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html">/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.08.07 - 22:30');</script></div>
+  </body>
+</html>

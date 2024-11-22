@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Everything about UbuntuTouch on the Fairphone 5</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    
+    <h1>Everything about Ubuntu Touch on the Fairphone 5</h1>
+    <p>In this entry I will document everything about using Ubuntu Touch on the Fairphone 5. I independently volunteer as a beta tester.</p>
+    <h2>Many parts can be done on any Ubuntu Touch device!</h2>
+    <p>This entry uses the "Everything about Fairphone 5 Modding" entry as a base and is written in the same structure:</p>
+    <p><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></p>
+    <p>After almost 10 years, it is nice to see the beautiful UI again. After backing up as much as possible with "Neo Backup" (TWRP still does not allow DATA backups), downloading all the packages (LinageOS, FairphoneOS 13&14 and the UT installer) and making sure the phone was fully charged, I started.</p>
+    <p>I also have opened a topic on the UBports forum with the help of "Keneda". It's a bit chaotic because I have to merge some wrongly split topics thx to me LOL. I will clone my report over there for the convenience of the devs (But my main place for ALL information will remain here :D).</p>
+    <p>I linked ALL sources, used guides and manuals and fixes from users (with names).</p>
+    <p><a href="https://forums.ubports.com/topic/10472/beta-bug-reports-catwithcode">https://forums.ubports.com/topic/10472/beta-bug-reports-catwithcode</a></p>
+    <p><a href="https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues">https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues</a></p>
+    <p>Note: I currently try to fully daily drive the Fairphone 5 with UbuntuTouch. Don't worry I have a second, fully configured phone on hand just in case (And a Android Phone ready to swap in) ;). I rely on some Android apps to work but the main once are covered more or less, but especially the Signal installation explained below can be skipped as soon as waydroid works.</p>
+    <hr>
+    <h2><u>What works, what dose not</u>:</h2>
+    <p>A list of stuff I tested with last tested Status and the Tickets if any:</p>
+    <h2>UPDATED: 2024.11.08</h2>
+    <h2>SOFTWARE: r78 - 20241026-23779</h2>
+    <p>✅ WORKS | 📈 WORKS, BUT STILL TESTING | ➖ NOT TESTED YET | ⭕ ISSUES | ❌ NOT WORKING</p>
+    <ul>
+      <li>✅ Install</li>
+      <li>✅ Setup</li>
+      <li>✅ Working with German SIM-CARD</li>
+      <li>✅ WiFi (With Network enforced Pi-Hole)</li>
+      <li>✅ Camera (Photo, Video, with and without Flash, Switching between cameras)</li>
+      <li>✅ LTE</li>
+      <li>✅ Alarm and Timer</li>
+      <li>✅ Stability</li>
+      <li>➖ 5G</li>
+      <li>➖ VoLTE</li>
+      <li>➖ GPS</li>
+      <li>✅ Battery Life - Really good! X11 App's running can consume a good bit more.</li>
+      <li>✅ Heat</li>
+      <li>✅ Snap's (Using Snapz0r - Many Apps run! BUT onscreen keyboard dose not work in general for snap on UbuntuTouch! Normal USB-Keyboards do!)</li>
+      <li>✅ Tap to wake</li>
+      <li>📈 Performance (Can be a little laggy sometimes. Display seems to run at 60hz (not the possible 90hz), but performance-intensive stuff like streaming 1080p@60fps is working great.)</li>
+      <li>✅ SMS</li>
+      <li>✅ CALL (2G? 3G?)</li>
+      <li>✅ FLASH</li>
+      <li>✅ Vibration</li>
+      <li>✅ Screen Brightness (With and without Auto)</li>
+      <li>✅ Proximity</li>
+      <li>✅ Rotation</li>
+      <li>❌ Fingerprint reader (The OS knows it dose not work)</li>
+      <li>⭕ USB-OTG <u>[BUG: USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
+      <li>⭕ Keyboard <u>[BUG: IT WORKS THE FIRST TIME. AFTER RECONECTING A MOUSE THE COURSER IS NO LONGER USABLE. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
+      <li>⭕ Mouse <u>[BUG: IT WORKS THE FIRST TIME. AFTER RECONECTING A MOUSE THE COURSER IS NO LONGER USABLE. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
+      <li>⭕ USB-HUB (3.0 and lower) [Keyboard, Mouse and USB-Drive work]</li>
+      <li>✅ USB-AUDIO - Works perfectly... surprisingly.</li>
+      <li>⭕ USB-VIDEO <u>[BUG: Black Screen, Then Soft-Reboot and a broken Dekstop is half visible on a 1080p display. Tested with a SteamDeck Dock. Other Docks don't work. Eventually hard crash. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
+      <li>❌ Waydroid - <u>[BUG: ERROR: Binder node "binder" for waydroid not found]</u></li>
+      <li>✅ NFC</li>
+      <li>📈 Bluetooth [Works better now BUT still see's a lot of "unkown devices". Can connect with BT-Audio to some devices.]</u></li>
+      <li>✅ Libertine (Tested with Firefox [AUDIO/MIC WORKS IF YOU INSTALL "<i>pavucontrol</i>".])</li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Lessens when working with Ubuntu Touch</u>:</h2>
+    <ul>
+      <li>"Libertine" and "Libertine Tweak Tool" are your way around missing apps.</li>
+      <li>Installing with Libertine must stay in the foreground. Set your screen to never turn off and never leave the screen until its done. Libertine can be sensitive to being closed / backgrounded.</li>
+      <li>If you rotate your phones X11 will not allow you to touch outside the original Startup Resolution. You must restart Firefox in the orientation you need for the full season. Annoying but not to bad.</li>
+      <li>Libertine dose not run in the Background! Meaning you must keep open the Task-Tap. Also meaning: You should create a Libertine-Container for your Main App's and one for your background App's. For example Jellyfin, SuperSonic and Firefox in the MainContainer, E-Mail-Client or IRC e.g. in your Background container. Keep the windows in the Task-overview for your Background-apps always open..</li>
+      <li>When deleting Libertine-Container files in home like configs stay behind and will not be deleted. Meaning if you broke something inside of the Apps you should delete the files inside the container and not the Container itself.</li>
+      <li>Container take up a lot of space (each around one Linux install). Meaning you should not have more then 3. Main, Background and testing (Testing is to check if the App works. That way you don't bloat or break your main container).</li>
+      <li>For a very limited number of apps you can use Snap. But from my testing most Programs just don't work (Firefox e.g.). Snap can not use ANY hardware (Touch, one-screen keyboard, microphone, …) which makes it very useless.</li>
+      <li>When modding SSH is useful because keyboard. But SSH did not work out of the box. I followed the manual from UBports and it refused connections. Fix was to execute <i>sudo /etc/init.d/ssh start</i>. Found by "delight_aug"</li>
+      <li>adb shell works perfectly and should be used instead of SSH.</li>
+      <li>Special keys (like Backspace) have issues with some Terminals when using SSH or adb shell. Works when executing <i>export TERM=vt100</i> inside the shell after connecting (Found by paul). Adding it to the end of the .bashrc file and exit and reconnect fixes it permanently (Still has some minor issues).</li>
+      <li>It is possible to install .deb in Libertine-Container with the commands over at the UBports wiki. It is important to not escalate root by accidentally to the real os.</li>
+      <li>To get root in Libertine you can follow the official way if it works for you or you execute "<i>sudo -E bash</i>" and then <i>lish CONTAINER_ID</i> into it. BE VERY CAREFUL! Found by nom.</li>
+      <p>"Pulsar33" has summarized a lot of useful information for debugging and tweaking over at the UBports forum: <a href="https://forums.ubports.com/topic/6912">https://forums.ubports.com/topic/6912</a></p>
+      <li>If you have done anything inside a Libertine-Container with root, you can only delete it if you change to root in the terminal and "<i><u>chmod -R 777 .cache/libertine-container/focal-2/</u></i> your container. After that the Settings UI can delete it just fine.</li>
+      <br>
+      <li><b><u>MORE COMING SOON! WAYDROID LESSENS I LEARNED, COME AS SOON AS WAYDROID WORKS ON THE FAIRPHONE 5! HAVE ALREADY A FEW, BUT CAN NOT TEST THEM ON THE FAIRPHONE 5!</u></b></li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Snap's</u>:</h2>
+    <p>Snaps do work on the Fairphone 5. Compatibility is hit or miss.</p>
+    <p>Snaps can be enabled with the app "Snapz0r". The only issue I have is that it lets you uninstall things in ways where you don't know what is being done. It is great for installing snap and seeing whats on the phone but I installed and managed snap's with the terminal.</p>
+    <p>Snap also dose not allow hardware access which makes most apps useless.</p>
+    <p>Here are the apps I tested:</p>
+    <ul>
+      <li>❌ Firefox - Did not work</li>
+      <li>⭕ Signal-Desktop - Did start but menu's crash the app immediately. You can connect and use Signal but Text and interactions with Calls are not possible.</li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Installing Signal (Desktop)</u>:</h2>
+    <p>This was a lot of work. And believe me when I say: be prepared for a lot of jank.</p>
+    <p>I got Signal Desktop fully working. Yes its a bit janky to use, but keyboard, UI, Calls, Microphone, Popup-notifications (EVEN WHEN THE SCREEN IS OF FOR A LONG TIME!) (Not notifications in the Ubuntu Touch notifications center) and File Browser work. Video call dose work but dose not get any feed (Probably a Libertine limitation): <a href="https://forums.ubports.com/topic/10431/">https://forums.ubports.com/topic/10431/</a></p>
+    <p><b><u>History on how I got there</u></b>:</p>
+    <p>I tried to use it natively (did not work), Snap (unusable and non of the needed hardware features were accessible), and the with Libertine and Flatpak (dependencies-Hell). The last thing I wanted to try was Libertine native. Signal-Desktop is a self packaged Electron app. Meaning it has (nearly) everything it needs build in. And that guess was right! BUT to get it to work there were two issue. glibc is exactly 0.01v too old... yes that little. The second issue was to get Signal-Desktop for arm64. There is currently no official versions BUT I found a git repository that has the current version forked. They use the latest source and build it with custom build-scripts in the GitHub build pipeline. This as save as its gonna get with this amount of jank.</p>
+    <p><i>Signal uses more battery then it should. It uses a little less if you close it and reopen it and don't open any chats.</i></p>
+    <h3><u><b>WARNING:</b> THIS USES UNOFFICIAL SIGNAL FORK! It builds with the Source and just different build setups but still be careful! ALSO: YOU ARE ON YOUR OWN!</u></h3>
+    <p><b><i>The best is to have two terminals open on your PC to be able to push and work inside the container at once.</i></b></p>
+    <p><b><i>Replace "focal-2" if your container ID is different.</i></b></p>
+    <p><b><i>THIS WILL BREAK AT SOME POINT! DEBUG CAN BE DONE WITH ENTERING THE CONTAINER AND CHECKING LOG WITH: "nano nano /home/phablet/.local/share/libertine-container/user-data/focal-2/.config/Signal/logs/main.log"</i></b></p>
+    <ul>
+      <li>Create a new Libertine container for signal-desktop and never install anything else inside it!</li>
+      <li><b><u>UPDATE 2024.11.11</u>: This setting changes the output at full system level and not only the container. Mayber just turn down the volume of the Main Speaker? :S
+        <br>
+        <br>
+        Install pavucontrol in the container and set the Output-Speaker to earpiece (This can/will reset on reboot. Needs to be set every reboot!).
+        <br>
+        <br>
+      </li>
+      <li>Get yourself a ARM64/AARCH64 build of Signal-Desktop: <a href="https://github.com/signalflatpak/signal">https://github.com/signalflatpak/signal</a></li>
+      <li>Push it into the Libertine-Container: "<u><i>adb push Downloads/signal-desktop_arm64.deb /home/phablet/.cache/libertine-container/focal-2/rootfs/</i></u>". </li>
+      <li>Access the Container as root: "<u><i>sudo -E bash</i></u>" then "<u><i>lish focal-2</i></u>"</li>
+      <li>Install Signal-Desktop: "<i><u>apt install /signal-desktop_arm64.deb</u></i>"</li>
+      <li><b><u>Here it gets hard to know whats better. There are two options that need to be done <i>inside</i> the container</u>:</b>
+        <ul>
+          <br>
+          <li><b><u>Breaking all dependecies</u>:</b>
+          <ul>
+            <li>Now comes the extremely janky breaking part. Get yourself the two libc library's Signal-Desktop's SQL implementation needs. These are the ONLY two version that worked without breaking everything. I got them from Debian:
+              <ul>
+                <li>libc6_2.36-9+deb12u8_arm64.deb: <a href="https://packages.debian.org/bookworm/arm64/libc6/download">https://packages.debian.org/bookworm/arm64/libc6/download</a></li>
+                <li>libstdc++6_12.2.0-14_arm64.deb: <a href="https://packages.debian.org/bookworm/arm64/libstdc++6/download">https://packages.debian.org/bookworm/arm64/libstdc++6/download</a></li>
+              </ul>
+            </li>
+            <li>Now Push them both into the container:
+              <ul>
+                <li><u><i>adb push libstdc++6_12.2.0-14_arm64.deb /home/phablet/.cache/libertine-container/focal-2/rootfs/</i></u></li>
+                <li><u><i>adb push libc6_2.40-3_arm64.deb /home/phablet/.cache/libertine-container/focal-2/rootfs/</i></u></li>
+              </ul>
+            </li>
+            <li>The big issue now is that apt "respects" dependencies. To "get around that" we force it with dpkg:
+              <ul>
+                <li><u><i>dpkg --force-all -i /libc6_2.40-3_arm64.deb</i></u></li>
+                <li><u><i>dpkg --force-all -i /libstdc++6_12.2.0-14_arm64.deb</i></u></li>
+              </ul>
+            </li>
+          </ul>
+          </li>
+          <br>
+          <li><b><u>Forcing the container to switch over to Debian (I tried "bookworm")</u>:</b>
+            <ul>
+              <li>Now comes the extremely janky "better?" part. You need to turn the Ubuntu Container into a Debian Container.</li>
+              <li>Change the Repository to Debian (I used the first one I saw on the page. Don't copy paste. DO IT YOURSELF TO MAKE SURE ITS UP-TO-DATE). Replace the URL and the current Version: <u><i>nano /etc/apt/sources.list</i></u>
+                <ul>
+                  <li>
+<xmp>#deb http://ports.ubuntu.com/ubuntu-ports focal main
+#deb http://ports.ubuntu.com/ubuntu-ports focal-updates main
+#deb http://ports.ubuntu.com/ubuntu-ports focal universe
+#deb http://ports.ubuntu.com/ubuntu-ports focal-updates universe
+#deb http://ports.ubuntu.com/ubuntu-ports focal multiverse
+#deb http://ports.ubuntu.com/ubuntu-ports focal-updates multiverse
+
+deb http://   .org/debian bookworm main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm main non-free-firmware
+
+deb http://security.debian.org/debian-security bookworm-security main non-free-firmware
+deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware
+
+deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
+</xmp>
+                  </li>
+                </ul>
+              </li>
+              <li>Now try to update: <i><u>apt update</u></i></li>
+              <li>You will get an error. You need the Debian Keys. Copy all keys missing and add them to the command (Replace all keys from me. They are probably are old and invalid):
+                <ul>
+                  <li><i><u>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 54404762BBB6E853 BDE6D2B9216EC7A8 0E98404D386FA1D9 6ED0E7B82643E131 F8D2585B8783D481 0E98404D386FA1D9 6ED0E7B82643E131</u></i></li>
+                </ul>
+              </li>
+              <li><u><i>apt update</i></u> and <u><i>apt full-upgrade</i></u></li>
+              <li>The only issue I faced was libc-bin. I could not install. I could for it to with the following:
+                <ul>
+                  <li>Downloading the current build (libc-bin_2.36-9+deb12u9_arm64): <a href="https://packages.debian.org/bookworm/arm64/libc-bin/download">https://packages.debian.org/bookworm/arm64/libc-bin/download</a></li>
+                  <li>Extracting the Data Folder inside and pushing them into the Container:
+                    <ul>
+                      <li><i><u>adb push etc/ /home/phablet/.cache/libertine-container/focal-2/rootfs/</u></i></li>
+                      <li><i><u>adb push sbin/ /home/phablet/.cache/libertine-container/focal-2/rootfs/</u></i></li>
+                      <li><i><u>adb push usr/ /home/phablet/.cache/libertine-container/focal-2/rootfs/</u></i></li>
+                      <li><i><u>adb push var/ /home/phablet/.cache/libertine-container/focal-2/rootfs/</u></i></li>
+                    </ul>
+                  </li>
+                  <li>Then I pushed the current build to the container and installed it normally with apt. This time it worked.
+                    <ul>
+                      <li><i><u>adb push libc-bin_2.36-9+deb12u9_arm64.deb /home/phablet/.cache/libertine-container/focal-2/rootfs/</u></i></li>
+                      <li><i><u>apt install /libc-bin_2.36-9+deb12u9_arm64.deb</u></i></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><u><i>apt update</i></u>, <u><i>apt upgrade</i></u> and <u><i>apt full-upgrade</i></u></li>
+              <li>Do it in this order. It can also happen that you need to install a package manualy. And then it could happen that you need to use "apt --fix-broken install" (read!, then execute). Just get it to a point where it says 0 updates available.</li>
+              <li>I said yes to every overwrite and then exited and reentered the container.</li>
+              <li>If you forgot to change the output to earpiece, you can use pavucontrol from a other Container (They change the full system output) or you can fix it with these commands (pavucontrol must be installed in evey Container that should output audio, but in this container the UI for settings changes crashes after the "Debian swap"):
+                <ul>
+                  <li><i><u>apt install pulseaudio-utils</u></i></li>
+                  <li>Exit out of the container and root and then reenter the container.</li>
+                  <li><i><u>pactl list sinks</u></i></li>
+                  <li>You should find "Sink #1" with it's output "output-earpeace". Use it.</li>
+                  <li><i><u>pactl set-sink-port 1 output-earpiece</u></i></li>
+                </ul>
+              </li>
+            </ul>
+            </li>
+        </ul>
+      </li>
+      <li>Now everything needed to be installed should be done.</li>
+      <li>Open "libertine-tweak-tool" and select your container and set DPI to 149</li>
+      <li>Now you can use a different phone (IPhone, Android or an Android-VM with a WebCam) to connect your account.</li>
+      <li>Wait for two minutes for syncing and the force close Signal and reopen it.</li>
+      <li>Now you open the Settings at the bottom left and the change the scaling to 150%. Dropdown menus are broken and to be able to set them connect a keyboard and open the menu with a mouse or touch and then use Tap to navigate to the menu points and use the arrow keys to change your selection.</li>
+      <li>Go into the Settings and in the permissions-area in general set "Allow access to microphone". Same for camera.</li>
+      <li>It can be handy to use a mouse and make the chat-bar so small it becomes an icon-bar. Press right and left mouse button at the same time and pull it fast to the left multiple times.</li>
+      <li>DONE!</li>
+    </ul>
+    <br>
+    <p><b><u>Current known Issues</u>:</b></p>
+    <ul>
+      <li><b><u>UPDATE 2024.11.10</u></b>: You can get "somewhat" around the sending issue. Type enough so the "Expand Text Box Arrow" is usable (or move you finger around the text box a little (up works very often), for some reason the arrow shows up then too), press it and now you can press the blue send button to the right. It is far FAR from working / good but it works for now. That also allows selecting and then "overwriting" the current text. That can be considered as a "backspace" workaround.
+        <br>
+        ---
+        <br>
+        Sending Text without a external Keyboard is broken because Enter and backspace dose not get processed by Signal-Desktop. As far as I can tell that could be fixed with a custom layout that has CTRL and the other modifiers. I'm currently looking into the Keyboard's source code. I do not know yet if creating such a layout is possible (maybe based on the emoji keyboard?): :
+        <ul>
+          <li><a href="https://forums.ubports.com/topic/10579/">https://forums.ubports.com/topic/10579/</a></li>
+          <li><a href="https://forums.ubports.com/topic/6688/">https://forums.ubports.com/topic/6688/</a></li>
+          <li><a href="https://gitlab.com/ubports/development/core/lomiri-keyboard">https://gitlab.com/ubports/development/core/lomiri-keyboard</a></li>
+        </ul>
+      </li>
+      <br>
+      <li>Loading Images is currently broken. It has to do with the "fs-extra" library Signal-Dekstop uses that falsely thinks it could not create a file. This is fixed in a full fork of Signal-Dekstop but this fork is far behind main and uses it's own forked source code. Integration of the patch should be easy but I don't have much experience with GitHub's workflow pipeline yet:
+        <ul>
+          <li><a href="https://forums.ubports.com/topic/10579/">https://forums.ubports.com/topic/10579/</a></li>
+          <li><a href="https://github.com/signalflatpak/signal/issues/25">https://github.com/signalflatpak/signal/issues/25</a></li>
+          <li><a href="https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786">https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786</a></li>
+          <li><a href="https://github.com/dennisameling/signal-desktop-automation">https://github.com/dennisameling/signal-desktop-automation</a></li>
+          <li><a href="https://github.com/dennisameling/Signal-Desktop">https://github.com/dennisameling/Signal-Desktop</a></li>
+        </ul>
+      </li>
+    </ul>
+    <p><i>THIS IMAGE IS EDITED! EVERYTHING WAS WORKING NORMALLY! JUST REMOVED INFORMATION!</i></p>
+    <a href="DATA/Signal.jpg"><img src="DATA/Signal.jpg" alt="ScreenShot of working Signal-Desktop" style="width:50%;";></a>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Installing a usable Browser (FULL FIREFOX)</u>:</h2>
+    <p>Installing as usable browser is possible with Libertine.</p>
+    <p>Open Libertine and create a new Container, open view and show log. Then wait until nothing happens anymore for 2 minutes. Then install the package "Firefox". Make sure to open the container and show the shell log while it is doing its thing. After it is done and Firefox (and VIM...) is in your Homemenu you can install a other app called "pavucontrol". Open it once. After that you can start Firefox. It will be way to small and unusable. You need to do a few modifications to fix that. We will fix the scaling, the UI and a few other things.</p>
+    <p>When changing the UI connect a mouse to right click or make precise inputs can be helpful. You must configure the UI now because later Firefox will crash when moving UI elements. Make everything as large as possible (density) and remove all elements you don't need. Add resize to the bookmarkbar and set it to always be visible. The enable TitelBar to make the Titelbar go away (LOL). If you need a reference, an image is at the end of this section.</p>
+
+    <p><b><u>Fixes</u>:</b></p>
+    <ul>
+      <li>Use the Terminal and nano into the file "<i>/home/phablet/.cache/libertine-container/focal/rootfs/usr/share/applications/firefox.desktop</i>" and add <i>env MOZ_USE_XINPUT2=1</i> in every exec command inside the Desktop file. That enables full touchscreen support. Found by moodroid.</li>
+      <li><u>UI and Scaling</u>: Using "Libertine Tweak Tool" setting DPI to 149. Then in Firefox open “<i>about:config</i>” and set perpx to 1.4. This works really well together with the "MOZ_USE_XINPUT2" touch fix. This makes the UI very usable but breaks a some Website Sizes. This can be mitigated by adding the size widgets to the bookmarkbar. Then you can just resize the page.</li>
+      <li><u>Performance</u>: Easy. Install uBlock Origin and leave it at the default Settings. More aggressive is better but cost to much battery on a phone. Stuff like Firefox-Strict-Mode also helps.</li>
+      <li>Disable Keyboard auto-features. Meaning: Spell checking, Auto correction, Word suggestions, Auto capitalization and Auto punctuation. It breaks inside Libertine-Containers. I know that these are nice features but as long as waydroid is not working you will have to relay more on Libertine for some apps and that means setting everything up to work with at as well as possible.</li>
+      <li>Thats it! Now firefox works great.</li>
+    </ul>
+    <p><i>This is how Firefox looks when everything was done right:</i></p>
+    <a href="DATA/Firefox.jpg"><img src="DATA/Firefox.jpg" alt="ScreenShot of working Firefox" style="width:50%;";></a>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Installation</u>:</h2>
+    <p>I had LinageOS installed, so I flashed the Stock Android 13 Rom (Android 14 was already out but the installer wants Android 13. It is very important to use the right Android Version).</p>
+    <p>I use Arch (BTW.) and used the official UBports Installer. It did all the udev stuff for me and flashed the phone without any issues.</p>
+    <p>I use a very good USB 3.2 cable that came with a SanDisk SSD (I think something like "SanDisk Extreme Portable" or along those lines.). It's short, it's annoying, but it's the only USB-C cable I trust with stuff like this. I hate the inconsistency with USB-C cables.</p>
+    <p>I had so many issues in the past with OEM cables or even good ones that were out of spec. If you ever have problems with low level flashing, it could be the cable. Try different ones until you find a reliable one.</p>
+    <a href="https://devices.ubuntu-touch.io/installer/">https://devices.ubuntu-touch.io/installer/</a>
+    <hr>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://devices.ubuntu-touch.io/installer/">https://devices.ubuntu-touch.io/installer/</a></li>
+      <li><a href="https://support.fairphone.com/hc/en-us/articles/18896094650513-Install-Fairphone-OS-manually">https://support.fairphone.com/hc/en-us/articles/18896094650513-Install-Fairphone-OS-manually</a></li>
+      <li><a href="https://github.com/NeoApplications/Neo-Backup">https://github.com/NeoApplications/Neo-Backup</a></li>
+      <li><a href="https://ubports.com/en/blog">https://ubports.com/en/blog</a></li>
+      <li><a href="https://forums.ubports.com/topic/9576/best-way-to-support-porting-checking-status-for-the-fairphone-5/56">https://forums.ubports.com/topic/9576/best-way-to-support-porting-checking-status-for-the-fairphone-5/56</a></li>
+      <li><a href="https://forums.ubports.com/category/126/fairphone-5">https://forums.ubports.com/category/126/fairphone-5</a></li>
+      <li><a href="https://devices.ubuntu-touch.io/device/fp5">https://devices.ubuntu-touch.io/device/fp5</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Fairphone_5_(fairphone-fp5)">https://wiki.postmarketos.org/wiki/Fairphone_5_(fairphone-fp5)</a></li>
+      <li><a href="https://shop.sandisk.com/products/ssd/portable-ssd/portable-ssd-sandisk-extreme-pro-usb-3-2">https://shop.sandisk.com/products/ssd/portable-ssd/portable-ssd-sandisk-extreme-pro-usb-3-2</a></li>
+      <li><a href="https://forums.ubports.com/topic/10468/bug-waydroid-not-working">https://forums.ubports.com/topic/10468/bug-waydroid-not-working</a></li>
+      <li><a href="https://forums.ubports.com/topic/10469/bug-usb-otg-hard-crashes-phone?_=1728320676279">https://forums.ubports.com/topic/10469/bug-usb-otg-hard-crashes-phone?_=1728320676279</a></li>
+      <li><a href="https://forums.ubports.com/topic/10471/bug-nfc-works-but-no-app-setting-i-found-can-read-anything">https://forums.ubports.com/topic/10471/bug-nfc-works-but-no-app-setting-i-found-can-read-anything</a></li>
+      <li><a href="https://forums.ubports.com/topic/10470/bug-bluetooth-is-working-but-cannot-reliably-connect-to-or-read-nearby-devices">https://forums.ubports.com/topic/10470/bug-bluetooth-is-working-but-cannot-reliably-connect-to-or-read-nearby-devices</a></li>
+      <li><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></li>
+      <li><a href="https://forums.ubports.com/user/keneda">https://forums.ubports.com/user/keneda</a></li>
+      <li><a href="https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues">https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues</a></li>
+      <li><a href="https://www.reddit.com/r/firefox/comments/7wnf7y/">https://www.reddit.com/r/firefox/comments/7wnf7y/</a></li>
+      <li><a href="https://www.reddit.com/r/firefox/comments/7wnf7y/comment/du1q888/">https://www.reddit.com/r/firefox/comments/7wnf7y/comment/du1q888/</a></li>
+      <li><a href="https://forums.ubports.com/topic/10107/browser-limits-phone-usability/">https://forums.ubports.com/topic/10107/browser-limits-phone-usability/</a></li>
+      <li><a href="https://forums.ubports.com/topic/10107/browser-limits-phone-usability/23">https://forums.ubports.com/topic/10107/browser-limits-phone-usability/23</a></li>
+      <li><a href="https://open-store.io/app/libertine-tweak-tool.doniks">https://open-store.io/app/libertine-tweak-tool.doniks</a></li>
+      <li><a href="https://open-store.io/app/snapz0r.fredldotme">https://open-store.io/app/snapz0r.fredldotme</a></li>
+      <li><a href="https://forums.ubports.com/topic/7448/trouble-connecting-with-ssh/">https://forums.ubports.com/topic/7448/trouble-connecting-with-ssh/</a></li>
+      <li><a href="https://forums.ubports.com/topic/7448/trouble-connecting-with-ssh/5">https://forums.ubports.com/topic/7448/trouble-connecting-with-ssh/5</a></li>
+      <li><a href="https://forums.ubports.com/user/delight_aug">https://forums.ubports.com/user/delight_aug</a></li>
+      <li><a href="https://forums.ubports.com/user/moodroid">https://forums.ubports.com/user/moodroid</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/43103/">https://unix.stackexchange.com/questions/43103/</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/43103/45473#45473">https://unix.stackexchange.com/questions/43103/45473#45473</a></li>
+      <li><a href="https://unix.stackexchange.com/users/18963/paul">https://unix.stackexchange.com/users/18963/paul</a></li>
+      <li><a href="https://docs.ubports.com/en/latest/userguide/dailyuse/libertine.html">https://docs.ubports.com/en/latest/userguide/dailyuse/libertine.html</a></li>
+      <li><a href="https://forums.ubports.com/topic/6912">https://forums.ubports.com/topic/6912</a></li>
+      <li><a href="https://forums.ubports.com/topic/10336/">https://forums.ubports.com/topic/10336/</a></li>
+      <li><a href="https://forums.ubports.com/post/77726">https://forums.ubports.com/post/77726</a></li>
+      <li><a href="https://forums.ubports.com/topic/9698/">https://forums.ubports.com/topic/9698/</a></li>
+      <li><a href="https://forums.ubports.com/user/nom">https://forums.ubports.com/user/nom</a></li>
+      <li><a href="https://github.com/Ylianst/MeshCentral/issues/1857">https://github.com/Ylianst/MeshCentral/issues/1857</a></li>
+      <li><a href="http://ftp.us.debian.org/debian/pool/main/g/gcc-12/libstdc++6_12.2.0-14_arm64.deb">http://ftp.us.debian.org/debian/pool/main/g/gcc-12/libstdc++6_12.2.0-14_arm64.deb</a></li>
+      <li><a href="http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.36-9+deb12u8_arm64.deb">http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.36-9+deb12u8_arm64.deb</a></li>
+      <li><a href="https://packages.debian.org/bookworm/arm64/libstdc++6/download">https://packages.debian.org/bookworm/arm64/libstdc++6/download</a></li>
+      <li><a href="https://packages.debian.org/bookworm/arm64/libc6/download">https://packages.debian.org/bookworm/arm64/libc6/download</a></li>
+      <li><a href="https://github.com/signalflatpak/signal?tab=readme-ov-file#can-these-builds-be-trusted">https://github.com/signalflatpak/signal?tab=readme-ov-file#can-these-builds-be-trusted</a></li>
+      <li><a href="https://signalflatpak.github.io/signal/">https://signalflatpak.github.io/signal/</a></li>
+      <li><a href="https://github.com/signalflatpak/signal">https://github.com/signalflatpak/signal</a></li>
+      <li><a href="https://www.debian.org/distrib/packages">https://www.debian.org/distrib/packages</a></li>
+      <li><a href="https://forums.ubports.com/topic/10431/">https://forums.ubports.com/topic/10431/</a></li>
+      <li><a href="https://forums.ubports.com/topic/10579/">https://forums.ubports.com/topic/10579/</a></li>
+      <li><a href="https://forums.ubports.com/topic/10578/">https://forums.ubports.com/topic/10578/</a></li>
+      <li><a href="https://gitlab.com/ubports/development/core/lomiri-keyboard">https://gitlab.com/ubports/development/core/lomiri-keyboard</a></li>
+      <li><a href="https://github.com/signalflatpak/signal/issues/25">https://github.com/signalflatpak/signal/issues/25</a></li>
+      <li><a href="https://forums.ubports.com/topic/10579/">https://forums.ubports.com/topic/10579/</a></li>
+      <li><a href="https://forums.ubports.com/topic/10578/">https://forums.ubports.com/topic/10578/</a></li>
+      <li><a href="https://forums.ubports.com/topic/6688/">https://forums.ubports.com/topic/6688/</a></li>
+      <li><a href="https://github.com/dennisameling/signal-desktop-automation">https://github.com/dennisameling/signal-desktop-automation</a></li>
+      <li><a href="https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786">https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786</a></li>
+      <li><a href="https://github.com/dennisameling/Signal-Desktop">https://github.com/dennisameling/Signal-Desktop</a></li>
+      <!-- <li><a href="FFF">FFF</a></li> -->
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.11.11 - 19:15');</script></div>
+  </body>
+</html>
