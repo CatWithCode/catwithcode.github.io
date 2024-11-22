@@ -20,35 +20,35 @@
     <p>I linked ALL sources, used guides and manuals and fixes from users (with names).</p>
     <p><a href="https://forums.ubports.com/topic/10472/beta-bug-reports-catwithcode">https://forums.ubports.com/topic/10472/beta-bug-reports-catwithcode</a></p>
     <p><a href="https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues">https://gitlab.com/ubports/porting/community-ports/android11/fairphone-5/fairphone-fp5/-/issues</a></p>
-    <p>Note: I currently try to fully daily drive the Fairphone 5 with UbuntuTouch. Don't worry I have a second, fully configured phone on hand just in case (And a Android Phone ready to swap in) ;). I rely on some Android apps to work but the main once are covered more or less, but especially the Signal installation explained below can be skipped as soon as waydroid works.</p>
+    <p>Note: I test drove the Fairphone 5 with UbuntuTouch for around 17 days. Don't worry I hand a second, fully configured phone on hand just in case (And a Android Phone was ready to swap in) ;). I relyed on some Android apps to work but the main once are covered more or less, but especially the Signal installation explained below can be skipped as soon as waydroid works.</p>
     <hr>
     <h2><u>What works, what dose not</u>:</h2>
     <p>A list of stuff I tested with last tested Status and the Tickets if any:</p>
-    <h2>UPDATED: 2024.11.08</h2>
-    <h2>SOFTWARE: r78 - 20241026-23779</h2>
+    <h2>UPDATED: 2024.11.20</h2>
+    <h2>SOFTWARE: r91 - 20241109-2283</h2>
     <p>✅ WORKS | 📈 WORKS, BUT STILL TESTING | ➖ NOT TESTED YET | ⭕ ISSUES | ❌ NOT WORKING</p>
     <ul>
       <li>✅ Install</li>
       <li>✅ Setup</li>
       <li>✅ Working with German SIM-CARD</li>
       <li>✅ WiFi (With Network enforced Pi-Hole)</li>
-      <li>✅ Camera (Photo, Video, with and without Flash, Switching between cameras)</li>
-      <li>✅ LTE</li>
+      <li>📈 Camera (Photo, Video, with and without Flash, Switching between cameras. Sometimes I need to reboot for it to work.)</li>
+      <li>📈 LTE [Works but sometimes I need to reboot for it to work]</li>
       <li>✅ Alarm and Timer</li>
       <li>✅ Stability</li>
       <li>➖ 5G</li>
       <li>➖ VoLTE</li>
-      <li>➖ GPS</li>
+      <li>❌ GPS [Never got it to work]</li>
       <li>✅ Battery Life - Really good! X11 App's running can consume a good bit more.</li>
       <li>✅ Heat</li>
       <li>✅ Snap's (Using Snapz0r - Many Apps run! BUT onscreen keyboard dose not work in general for snap on UbuntuTouch! Normal USB-Keyboards do!)</li>
       <li>✅ Tap to wake</li>
-      <li>📈 Performance (Can be a little laggy sometimes. Display seems to run at 60hz (not the possible 90hz), but performance-intensive stuff like streaming 1080p@60fps is working great.)</li>
+      <li>✅ Performance (Can be a little laggy sometimes (X11 especially). Display seems to run at 60hz (not the possible 90hz), but performance-intensive stuff like streaming 1080p@60fps is working great.)</li>
       <li>✅ SMS</li>
       <li>✅ CALL (2G? 3G?)</li>
       <li>✅ FLASH</li>
       <li>✅ Vibration</li>
-      <li>✅ Screen Brightness (With and without Auto)</li>
+      <li>📈 Screen Brightness (Auto often dose not work)</li>
       <li>✅ Proximity</li>
       <li>✅ Rotation</li>
       <li>❌ Fingerprint reader (The OS knows it dose not work)</li>
@@ -59,9 +59,9 @@
       <li>✅ USB-AUDIO - Works perfectly... surprisingly.</li>
       <li>⭕ USB-VIDEO <u>[BUG: Black Screen, Then Soft-Reboot and a broken Dekstop is half visible on a 1080p display. Tested with a SteamDeck Dock. Other Docks don't work. Eventually hard crash. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
       <li>❌ Waydroid - <u>[BUG: ERROR: Binder node "binder" for waydroid not found]</u></li>
-      <li>✅ NFC</li>
+      <li>❌ NFC [Never really worked]</li>
       <li>📈 Bluetooth [Works better now BUT still see's a lot of "unkown devices". Can connect with BT-Audio to some devices.]</u></li>
-      <li>✅ Libertine (Tested with Firefox [AUDIO/MIC WORKS IF YOU INSTALL "<i>pavucontrol</i>".])</li>
+      <li>✅ Libertine (Tested with Firefox and Signal-Desktop [AUDIO/MIC WORKS IF YOU INSTALL "<i>pavucontrol</i>".])</li>
     </ul>
     <br>
     <hr>
@@ -84,6 +84,7 @@
       <li>To get root in Libertine you can follow the official way if it works for you or you execute "<i>sudo -E bash</i>" and then <i>lish CONTAINER_ID</i> into it. BE VERY CAREFUL! Found by nom.</li>
       <p>"Pulsar33" has summarized a lot of useful information for debugging and tweaking over at the UBports forum: <a href="https://forums.ubports.com/topic/6912">https://forums.ubports.com/topic/6912</a></p>
       <li>If you have done anything inside a Libertine-Container with root, you can only delete it if you change to root in the terminal and "<i><u>chmod -R 777 .cache/libertine-container/focal-2/</u></i> your container. After that the Settings UI can delete it just fine.</li>
+      <li>Libertine-Container (especially broken once, like Signal) can actually cause boot to take longer (several black screens before the password screen appears).</li>
       <br>
       <li><b><u>MORE COMING SOON! WAYDROID LESSENS I LEARNED, COME AS SOON AS WAYDROID WORKS ON THE FAIRPHONE 5! HAVE ALREADY A FEW, BUT CAN NOT TEST THEM ON THE FAIRPHONE 5!</u></b></li>
     </ul>
@@ -108,7 +109,7 @@
     <hr>
     <h2><u>Installing Signal (Desktop)</u>:</h2>
     <p>This was a lot of work. And believe me when I say: be prepared for a lot of jank.</p>
-    <p>I got Signal Desktop fully working. Yes its a bit janky to use, but keyboard, UI, Calls, Microphone, Popup-notifications (EVEN WHEN THE SCREEN IS OF FOR A LONG TIME!) (Not notifications in the Ubuntu Touch notifications center) and File Browser work. Video call dose work but dose not get any feed (Probably a Libertine limitation): <a href="https://forums.ubports.com/topic/10431/">https://forums.ubports.com/topic/10431/</a></p>
+    <p>I got Signal Desktop fully working. Yes its a bit janky to use, but keyboard, UI, Calls, Microphone, Popup-notifications (EVEN WHEN THE SCREEN IS OF FOR A LONG TIME! !BUT! only if you leave Signal, meaning: Open Signal without opening a chat (too safe battery) and then swith to a other App or simmular. Off screen detection in X11 is a little inconsistent) (Not notifications in the Ubuntu Touch notifications center) and File Browser work. Video call dose work but dose not get any feed (Probably a Libertine limitation): <a href="https://forums.ubports.com/topic/10431/">https://forums.ubports.com/topic/10431/</a></p>
     <p><b><u>History on how I got there</u></b>:</p>
     <p>I tried to use it natively (did not work), Snap (unusable and non of the needed hardware features were accessible), and the with Libertine and Flatpak (dependencies-Hell). The last thing I wanted to try was Libertine native. Signal-Desktop is a self packaged Electron app. Meaning it has (nearly) everything it needs build in. And that guess was right! BUT to get it to work there were two issue. glibc is exactly 0.01v too old... yes that little. The second issue was to get Signal-Desktop for arm64. There is currently no official versions BUT I found a git repository that has the current version forked. They use the latest source and build it with custom build-scripts in the GitHub build pipeline. This as save as its gonna get with this amount of jank.</p>
     <p><i>Signal uses more battery then it should. It uses a little less if you close it and reopen it and don't open any chats.</i></p>
@@ -134,7 +135,7 @@
           <br>
           <li><b><u>Breaking all dependecies</u>:</b>
           <ul>
-            <li>Now comes the extremely janky breaking part. Get yourself the two libc library's Signal-Desktop's SQL implementation needs. These are the ONLY two version that worked without breaking everything. I got them from Debian:
+            <li>Now comes the extremely janky breaking part. Get yourself the two libc library's Signal-Desktop's SQL implementation needs. These are the ONLY two version that worked without breaking everything. I got them from Debian. This also makes you unable to install/update/upgrade with apt. It breaks this part of the container:
               <ul>
                 <li>libc6_2.36-9+deb12u8_arm64.deb: <a href="https://packages.debian.org/bookworm/arm64/libc6/download">https://packages.debian.org/bookworm/arm64/libc6/download</a></li>
                 <li>libstdc++6_12.2.0-14_arm64.deb: <a href="https://packages.debian.org/bookworm/arm64/libstdc++6/download">https://packages.debian.org/bookworm/arm64/libstdc++6/download</a></li>
@@ -157,7 +158,7 @@
           <br>
           <li><b><u>Forcing the container to switch over to Debian (I tried "bookworm")</u>:</b>
             <ul>
-              <li>Now comes the extremely janky "better?" part. You need to turn the Ubuntu Container into a Debian Container.</li>
+              <li>Now comes the extremely janky "better?" part. You need to turn the Ubuntu Container into a Debian Container. Debian has not all packages libertine-container need. Meaning it will ask you to use autoremove (DON'T! IT WILL BREAK <u><b>ALL</b></u> LIBERTINE-CONTAINERS AND YOU NEED TO REMOVE AND REINSTALL THEM ALL!):</li>
               <li>Change the Repository to Debian (I used the first one I saw on the page. Don't copy paste. DO IT YOURSELF TO MAKE SURE ITS UP-TO-DATE). Replace the URL and the current Version: <u><i>nano /etc/apt/sources.list</i></u>
                 <ul>
                   <li>
