@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>ProjectCWC - Development Log</title>
+        <link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+        <description>Development Log for there upcoming Immersiv Sim ProjectCWC.</description>
+		<item>
+			<title>2024.12.12 - ProjectCWC is now officially revealed!</title>
+			<link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>I will from now on updated this log about everything involving the game, to some extend do some promotion and keep building the Levels and extend the story and world building. How frequent I will update this log or the promotional pages and account's depends on the current workload and time I have. I will continue working as much if not even more on the game as the last year and a half. And now the important part: Head over to the main page and have a look at the gameplay trailer.</description>
+		</item>
+		<item>
+			<title>2024.11.11 - Preparing to publicly announce ProjectCWC</title>
+			<link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>All the development until now were mostly private. Sometime I did mentioned in posts what is happening in the background on my blog. I also released a few teaser images in my media library. Now the game has everything what is needed to actually play the game. The last two or so months and most of the development from now on is nearly fully consumed by level design, NPC creation, world building, music creation, bug fixing and fleshing out the story.</description>
+		</item>
+		<item>
+			<title>2024.08.13 - Framework complete</title>
+			<link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>Around that time I was done with the framework of the game. Many library's, systems and interactions needed to build the modules for the game are feature complete. Most of the modules usually needed for in-game interactions and gameplayevents were also nearly done. The custom Dialog system, custom audio system, and custom inventory system is finished and mainly needs the Assets now. Much of the current development time (the last (and next) 2 or 3 weeks) were focused on the audio Assets (meaning SFX, Music and ambiance. Thanks to a good friend for helping me getting all the sounds and ambiance track's) and world building / NPC' and there needs. Items and custom scripts that slot into the framework are build on the way. The framework should allows for fast development on that front thanks to all the exposed API's in the interaction's framework</description>
+		</item>
+		<item>
+			<title>2024.01.10 - Full commitment</title>
+			<link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>At this point I already hat a very very basic play environment with many mechanics implemented. Thankfully my husband convinced me, while we were on a date, to commit fully to the the development of dream game project from now on. I tried myself on different versions of the game in the past already but stooped development after a few days at the most. The idea of ProjectCWC was existing for a long time already an vent through many different types of games, from with a 2D platformer, going to a 3D 'jump and run', “text adventure” inside a IDE, and so many more. My love for Immersive sim grew a lot over the years and then one and one came to getter and now we have ProjectCWC.</description>
+		</item>
+		<item>
+			<title>2023.10.07 - Started Model and Framework building</title>
+			<link>https://projectcwc.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>The game devolvement did not start at this point yet. I just toyed around with Godot and tried my hand on 3D model creation, music creation and texturing. Here a few models I was building to get familiar with the tools. Non of these models are in the game. I will not put the music from back then here. It did just not sound good. I also tested multiple joint types for arms, legs and body movement. The pre-final joint design can be seen in the last image. The final type I use is far simpler and works better.</description>
+		</item>
+    </channel>
+</rss>
