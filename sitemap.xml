@@ -3,11 +3,11 @@
 </urlset>
   <url>
     <loc>https://catwithcode.moe/projects.html</loc>
-    <lastmod>2024-11-01</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/blog.html</loc>
-    <lastmod>2024-12-25</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.10.07-01_Rework_Website/Rework_Website.html</loc>
@@ -82,12 +82,16 @@
     <lastmod>2024-10-02</lastmod>
   </url>
   <url>
+    <loc>https://catwithcode.moe/Blog/2024.12.25_REPOSSESSED_Public/REPOSSESSED_Public.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
     <loc>https://catwithcode.moe/Blog/2023.02.16_Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html</loc>
     <lastmod>2024-10-02</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/Blog/2024.09.28_Project_CWC_Progress_and_Page/Project_CWC_Progress_and_Page.html</loc>
-    <lastmod>2024-10-02</lastmod>
+    <loc>https://catwithcode.moe/Blog/2024.09.28_REPOSSESSED_Progress_and_Page/REPOSSESSED_Progress_and_Page.html</loc>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2022.07.05_OpenSuse-Linux_Very_Long_Shoutdown_Time/OpenSuse-Linux_Very_Long_Shoutdown_Time.html</loc>
@@ -263,11 +267,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2024.06.22_ImageLibrary_and_Teaser/ImageLibrary_and_Teaser.html</loc>
-    <lastmod>2024-10-02</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/Blog/2024.12.25_ProjectCWC_Public/ProjectCWC_Public.html</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.10.07-02_New_Website_Location/New_Website_Location.html</loc>
@@ -279,7 +279,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2024.09.25_Simplification_Of_Website_Pipline/Simplification_Of_Website_Pipline.html</loc>
-    <lastmod>2024-10-02</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2022.05.03-03_Nokia_Force_Update/Nokia_Force_Update.html</loc>
@@ -446,28 +446,28 @@
     <lastmod>2024-10-02</lastmod>
   </url>
   <url>
+    <loc>https://catwithcode.moe/MediaLibraries/REPOSSESSED/DATA/01.jpg</loc>
+    <lastmod>2024-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/MediaLibraries/REPOSSESSED/DATA/03.jpg</loc>
+    <lastmod>2024-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/MediaLibraries/REPOSSESSED/DATA/02.jpg</loc>
+    <lastmod>2024-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/MediaLibraries/REPOSSESSED/REPOSSESSED_Library.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/MediaLibraries/REPOSSESSED/Preview.jpg</loc>
+    <lastmod>2024-09-28</lastmod>
+  </url>
+  <url>
     <loc>https://catwithcode.moe/MediaLibraries/MediaLibraries.html</loc>
-    <lastmod>2024-10-02</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/MediaLibraries/Project_CWC/DATA/01.jpg</loc>
-    <lastmod>2024-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/MediaLibraries/Project_CWC/DATA/03.jpg</loc>
-    <lastmod>2024-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/MediaLibraries/Project_CWC/DATA/02.jpg</loc>
-    <lastmod>2024-09-28</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/MediaLibraries/Project_CWC/Project_CWC_Library.html</loc>
-    <lastmod>2024-10-02</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/MediaLibraries/Project_CWC/Preview.jpg</loc>
-    <lastmod>2024-09-28</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/MediaLibraries/Coffee/DATA/07.jpg</loc>
@@ -523,134 +523,142 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/contact.html</loc>
-    <lastmod>2024-12-07</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/archive.html</loc>
-    <lastmod>2024-12-25</lastmod>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/privacy.html</loc>
     <lastmod>2024-10-02</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Dev_Log/DATA/2023_10_07/03.gif</loc>
-    <lastmod>2024-12-24</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Dev_Log/DATA/2023_10_07/02.gif</loc>
-    <lastmod>2024-12-24</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Dev_Log/DATA/2023_10_07/00.gif</loc>
-    <lastmod>2024-12-24</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Dev_Log/DATA/2023_10_07/01.gif</loc>
-    <lastmod>2024-12-24</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Dev_Log/Dev_Log.html</loc>
-    <lastmod>2024-12-24</lastmod>
+    <loc>index.html</loc>
+    <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/index.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2023_10_07/03.gif</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/License_and_Privacy.html</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2023_10_07/02.gif</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/favicon.gif</loc>
-    <lastmod>2024-12-23</lastmod>
-  </url>
-  <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Videos/GamePlayTeaser1/GamePlayTeaser1.mp4</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2023_10_07/00.gif</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Background/Warehouse.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2023_10_07/01.gif</loc>
+    <lastmod>2024-12-24</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/Dev_Log.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/index.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/License_and_Privacy.html</loc>
+    <lastmod>2024-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/favicon.gif</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Background/City.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Videos/GamePlayTeaser1/GamePlayTeaser1.mp4</loc>
+    <lastmod>2024-12-24</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Background/Warehouse.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/01/04.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Background/City.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/01/01.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/01/04.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/01/03.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/01/01.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/01/02.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/01/03.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/02/04.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/01/02.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/02/01.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/02/04.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/02/03.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/02/01.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/02/02.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/02/03.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/00/00.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/02/02.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/03/04.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/00/00.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/03/01.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/03/04.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/03/03.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/03/01.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/ScreenShots/03/02.jpg</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/03/03.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Transparent/CrossAir.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/ScreenShots/03/02.jpg</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Transparent/C.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/CrossAir.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Transparent/C_Holding.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/C.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Transparent/J0715.png</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/C_Holding.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/Images/Icons/CwC/cwc.gif</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/J0715.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://catwithcode.moe/SUB_DOMAINS/ProjectCWC/Assets/BaseFiles/BASE_Log_Entry.html</loc>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Icons/CwC/cwc.gif</loc>
+    <lastmod>2024-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/BaseFiles/BASE_Log_Entry.html</loc>
     <lastmod>2024-12-09</lastmod>
   </url>
   <url>

@@ -19,8 +19,8 @@ WEBSITE_NAME="CatWithCode"
 
 # SubDomains (Must be adressed over Webhoster):
 declare -A prefixes
-	prefixes["ProjectCWC"]="https://projectcwc.catwithcode.moe/"
-	#prefixes["ProjectCWC2"]="https://projectcwc2.catwithcode.moe/"
+	prefixes["REPOSSESSED"]="https://repossessed.catwithcode.moe/"
+	#prefixes["repossessed2"]="https://repossessed2.catwithcode.moe/"
 	#...
 
 # Where the SubDomains are saved:
