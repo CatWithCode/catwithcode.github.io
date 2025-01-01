@@ -474,7 +474,7 @@ EXAMPLE:
 /* Video-Player itself: */
 .video-container video {
     /* height: 40%; */
-    width: 50vw;
+    width: 70vw;
 
     /* Border: */
     border: var(--borderSize) solid var(--foreground);
