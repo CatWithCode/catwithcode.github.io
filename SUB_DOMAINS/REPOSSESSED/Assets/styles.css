@@ -392,6 +392,21 @@ EXAMPLE:
     background: black;
 }
 
+/* Links to other things in the Footer: */
+.footer-Links {
+    /* Positioning: */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* The Links to other things in the Footer themself: */
+.footer-Links * {
+    /* Clean Distances: */
+    padding: 2%;
+}
+
 /* Text inside the actual Footer: */
 .footer-Text * {
     /* Positioning: */
