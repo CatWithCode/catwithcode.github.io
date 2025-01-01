@@ -238,7 +238,7 @@ body, html {
     transform: skew(45deg);
     
     /* Font: */
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: var(--foreground2);
 }
 
