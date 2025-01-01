@@ -218,20 +218,28 @@ body, html {
     position: fixed; /* Fix the text in the top left corner. */
     z-index: 3; /* Ensure it is above the everthing. */
 
-    /* Font: */
-    font-size: 200%;
-
     /* Styling: */
     background-color: black;
-    color: var(--foreground2);
-    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    /* clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); */
+    transform: skew(-45deg);
 
     /* Padding: */
-    top: 20px;
-    left: 20px;
+    top: 1vh;
+    left: 5vh;
 
-    padding-left: 9%;
-    padding-right: 9%;
+    /* Safe Space: */
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Text in header: */
+.header-area p {
+    /* Reverse Transform: */
+    transform: skew(45deg);
+    
+    /* Font: */
+    font-size: 4vh;
+    color: var(--foreground2);
 }
 
 

@@ -5,7 +5,12 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
-			<title>2024.12.12 - REPOSSESSED is now officially revealed!</title>
+			<title>2024.12.31 - Rename from ProjectCWC to RE//POSSESSED</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>After some feedback from the lovely developers of Peripeteia, I decided to change the name and settled on one of my favorite from the possible candidates: RE//POSSESSED or REPOSSESSED. It fits with the theme and lore of the game world and has no direct connection to anything.</description>
+		</item>
+		<item>
+			<title>2024.12.24 - REPOSSESSED is now officially revealed!</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
 			<description>I will from now on updated this log about everything involving the game, to some extend do some promotion and keep building the Levels and extend the story and world building. How frequent I will update this log or the promotional pages and account's depends on the current workload and time I have. I will continue working as much if not even more on the game as the last year and a half. And now the important part: Head over to the main page and have a look at the gameplay trailer.</description>
 		</item>
@@ -22,7 +27,7 @@
 		<item>
 			<title>2024.01.10 - Full commitment</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
-			<description>At this point I already hat a very very basic play environment with many mechanics implemented. Thankfully my husband convinced me, while we were on a date, to commit fully to the the development of dream game RE//POSSESSED from now on. I tried myself on different versions of the game in the past already but stooped development after a few days at the most. The idea of RE//POSSESSED was existing for a long time already an vent through many different types of games, from with a 2D platformer, going to a 3D 'jump and run', “text adventure” inside a IDE, and so many more. My love for Immersive sim grew a lot over the years and then one and one came to getter and now we have RE//POSSESSED.</description>
+			<description>At this point I already hat a very very basic play environment with many mechanics implemented. Thankfully my husband convinced me, while we were on a date, to commit fully to the the development of dream game project from now on. I tried myself on different versions of the game in the past already but stooped development after a few days at the most. The idea of REPOSSESSED was existing for a long time already an vent through many different types of games, from with a 2D platformer, going to a 3D 'jump and run', “text adventure” inside a IDE, and so many more. My love for Immersive sim grew a lot over the years and then one and one came to getter and now we have REPOSSESSED.</description>
 		</item>
 		<item>
 			<title>2023.10.07 - Started Model and Framework building</title>
