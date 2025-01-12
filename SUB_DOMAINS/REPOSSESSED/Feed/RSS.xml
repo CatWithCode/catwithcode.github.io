@@ -5,7 +5,12 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
-			<title>2024.01.08 - Fixing Bugs and cleaning up</title>
+			<title>2025.01.12 - More cleanups and Level structure</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>Fixing a few Bugs in the back log and added last Level details, the last few enemy's got placed, moved or equipped and the last few structure's in the ending area of the first level got placed. Now I have one fully finished and implemented/build level from beginning to end. Next are a few bugs with player node to fix and then the save/load system debugging/implementing/fixing can benign. After that, level 2 is on the list to be completed, tested and cleaned up.</description>
+		</item>
+		<item>
+			<title>2025.01.08 - Fixing Bugs and cleaning up</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
 			<description>After my well deserved two weeks of Christmas vacation it's time to get back to gamedev. As expected, the game-testing and gameplay testing rounds showed a few bugs until right before release (and even after when just playing). That was what has been mostly been fixed today. I added more Crossair features and cleanups, tightened up the level design here and there and fixed the last few bugs on the list from the trailer production.</description>
 		</item>
