@@ -5,9 +5,9 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
-			<title>2025.01.12 - More cleanups and Level structure</title>
+			<title>2025.01.12 - More cleanup and finishing Level structure</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
-			<description>Fixing a few Bugs in the back log and added last Level details, the last few enemy's got placed, moved or equipped and the last few structure's in the ending area of the first level got placed. Now I have one fully finished and implemented/build level from beginning to end. Next are a few bugs with player node to fix and then the save/load system debugging/implementing/fixing can benign. After that, level 2 is on the list to be completed, tested and cleaned up.</description>
+			<description>Fixing a few Bugs in the back log and added last Level details, the last few enemy's got placed, moved or equipped and the last few structure's in the ending area of the first level got placed. Now I have one fully finished and implemented/build level from beginning to end. Next are a few bugs with player node to fix and then the save/load system debugging/implementing/fixing can begin. After that, level 2 is on the list to be completed, tested and cleaned up.</description>
 		</item>
 		<item>
 			<title>2025.01.08 - Fixing Bugs and cleaning up</title>
