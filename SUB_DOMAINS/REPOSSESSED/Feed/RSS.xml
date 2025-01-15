@@ -5,6 +5,11 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
+			<title>2025.01.15 - Performance BOOST and fixes</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>As planed I started fixing bugs, got a few out of the way and then found a bit of a performance issue with the size of a few levels and the amount of enemy's. They decide many things on the fly and that takes a good amount of performance, especially when the player or items are involved. The build-in culling and LOD systems of Godot were not enough. I also use many (often dynamic) light source that also needs a good amount of performance. I plan to offer a pre-backed lights option at some point that will help weaker hardware. Godot makes it hard to get Level Nodes without iterating into other scenes by accident. This made it a little bit of a bigger task to figure out a way to get around that and disable nodes dynamically. I build a system that can disable nodes or parts of them I deem performance intensive and enable them if the player comes into the area. It is fully dynamic, not trigger or area bound but player bound and should work great with the large levels. Below is an example with the setting turned up to max to make it better visible.</description>
+		</item>
+		<item>
 			<title>2025.01.12 - More cleanup and finishing Level structure</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
 			<description>Fixing a few Bugs in the back log and added last Level details, the last few enemy's got placed, moved or equipped and the last few structure's in the ending area of the first level got placed. Now I have one fully finished and implemented/build level from beginning to end. Next are a few bugs with player node to fix and then the save/load system debugging/implementing/fixing can begin. After that, level 2 is on the list to be completed, tested and cleaned up.</description>
