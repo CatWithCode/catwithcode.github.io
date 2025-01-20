@@ -228,6 +228,11 @@ a {
     max-width: 100%; /* Full page. */
 }
 
+/* Making Links in better Visible: */
+a {
+    color: var(--foreground2);
+}
+
 /* Header: */
 .header-area {
     /* Position: */
@@ -250,12 +255,15 @@ a {
 
 /* Text in header: */
 .header-area p {
+    /* For all Text in Header: */
     /* Reverse Transform: */
     transform: skew(45deg);
     
     /* Font: */
     font-size: 3.5vw;
-    color: var(--foreground2);
+    
+    /* Only for Text: */
+    color: var(--foreground);
 }
 
 /* Background Image - Makes the Wallpaper fixed, full and relativ: 
