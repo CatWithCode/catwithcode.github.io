@@ -210,6 +210,16 @@ https://en.wikipedia.org/wiki/SIL_Open_Font_License
 /* Body: */
 body, html {
     height: 100%;
+    cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
+}
+
+/* Custom - Cursor: */
+body {
+    cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
+}
+
+a {
+    cursor: url('Images/CustomCursor/custom-link-cursor.png') 16 32, pointer;
 }
 
 /* Header: */
@@ -241,7 +251,6 @@ body, html {
     font-size: 3.5vw;
     color: var(--foreground2);
 }
-
 
 /* Background Image - Makes the Wallpaper fixed, full and relativ: 
 SET IN DIV ITSELF!
