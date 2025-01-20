@@ -27,6 +27,32 @@
         <div>
             <hr>
             <br>&nbsp;
+            <h2><u>2025.01.20</u> - Fixed all backlog bugs and added needed features</h2>
+            <br>&nbsp;
+            <h3>Fixed all bugs in the backlog that were still in the way of testing/implementing Save/Load. Added one gameplay-feature from the backlog. Now only one other feature needs to be completed to be able to test/implement Save/Load fully into the framework. With Save/Load also comes the Level-Switch and Data-Transfer code. Meaning the full Save/Load  implementation will probably take up some time (or maybe the concept implementation works from the start and it is easier then expected... probably not XD). Culling system works perfect so far from testing. Also did some balancing fixes with the enemy's and NPC's in the finished level.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
             <h2><u>2025.01.18</u> - Extended culling system, added Multithreading and fixed bugs</h2>
             <br>&nbsp;
             <h3>The culling system from the last update had some issues. If you move an Area3D in Godot the Area3D Triggers “body_exited” and “body_entered” A LOT. It is either by design because areas are designed to be moved continuously like this or it is probably just a bug. The fix was to make a custom old detection and new detection method and compare. I also added a separate layer for better performance when detecting and added multithreading for good measure. The performance improvements are now more then I expected. Multithreading makes games run better on low end modern hardware but makes it harder for older low end hardware because of the increased CPU architectural needs. But to simulate may things at the same time and put culling on the top of that, there is now way around it. After that I fixed the last bugs in the current backlog. Only one feature and 3 Bugs are now missing to start testing the Save/Load system.</h3>
