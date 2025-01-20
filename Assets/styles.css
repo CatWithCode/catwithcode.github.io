@@ -66,6 +66,7 @@ https://github.com/antijingoist/opendyslexic
     --background: #18171a;
     --alt_background: #1e1c21;
     --foreground: #81deff;
+    --foreground2: #5c63b8;
     --alt_foreground: #e46c6c;
 
     /* # - - Images: */
@@ -112,6 +113,9 @@ a {
     overflow-wrap: break-word; /* For modern browsers. */
     white-space: normal; /* Allow wrapping. */
     max-width: 100%; /* Full page. */
+
+    /* Making Links in better Visible: */
+    color: var(--foreground2);
 }
 
 /* # - Header: */
