@@ -213,13 +213,20 @@ body, html {
     cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
 }
 
-/* Custom - Cursor: */
+/* Custom - Cursor & Fixing long Links: */
 body {
     cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
 }
 
 a {
     cursor: url('Images/CustomCursor/custom-link-cursor.png') 16 32, pointer;
+
+    /* Long Links: */
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+    display: inline-block; /* Ensure behavior. */
 }
 
 /* Header: */

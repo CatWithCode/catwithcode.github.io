@@ -106,6 +106,15 @@ body {
     flex-direction: column;
 }
 
+/* Fixing Long Links: */
+a {
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+    display: inline-block; /* Ensure behavior. */
+}
+
 /* # - Header: */
 #Header {
     /* # - - Styling: */
