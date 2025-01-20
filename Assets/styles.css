@@ -112,7 +112,6 @@ a {
     overflow-wrap: break-word; /* For modern browsers. */
     white-space: normal; /* Allow wrapping. */
     max-width: 100%; /* Full page. */
-    display: inline-block; /* Ensure behavior. */
 }
 
 /* # - Header: */
