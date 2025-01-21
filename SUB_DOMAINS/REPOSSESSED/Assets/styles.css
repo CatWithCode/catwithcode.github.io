@@ -163,6 +163,10 @@ https://en.wikipedia.org/wiki/SIL_Open_Font_License
     --foreground: #ffffff;
     --foreground2: #82deff;
 
+    /* Cursor: */
+    --cursorDefault: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
+    --cursorPointer: url('Images/CustomCursor/custom-link-cursor.png') 16 32, pointer;
+
     /* Padding: */
     --left-padder: 2%;
     --top-padder: 2%;
@@ -210,16 +214,15 @@ https://en.wikipedia.org/wiki/SIL_Open_Font_License
 /* Body: */
 body, html {
     height: 100%;
-    cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
 }
 
 /* Custom - Cursor & Fixing long Links: */
 body {
-    cursor: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
+    cursor: var(--cursorDefault);
 }
 
 a {
-    cursor: url('Images/CustomCursor/custom-link-cursor.png') 16 32, pointer;
+    cursor: var(--cursorPointer);
 
     /* Long Links: */
     word-wrap: break-word; /* For older browsers. */
@@ -504,6 +507,9 @@ EXAMPLE:
     /* Grow Animation: */
     overflow: hidden;
     transition: transform 0.3s ease;
+
+    /* Better visibility to be clickable: */
+    cursor: var(--cursorPointer);
 }
 
 /* Just for centering Text alone: */
