@@ -5,6 +5,11 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
+			<title>2025.01.24 - It's Save/Load and Level transition time</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>I have finally fixed and/or finished all systems and Backlog things in the way to be able to start testing/implementing the Save/Load system's. I'm really hoping this is gone be not to annoying or I'm in for a ride… . We will see. As soon as I have it working I will definitely post about it. This is not gonna be a easy checkpoint system as many games have. This will fully save the state of a level like in other immersive sim games like Deus Ex, Peripeteia, Prey (2017), also sometimes referred to as “Typhon”, and so on. I really love these save system that let the player do what ever they want and try It as often as they want without wasting time, meaning very quick load times are important. I will try to keep file size, load and save times as low as possible and also, if possible, will also incorporate multithreading to keep the process from hanging.</description>
+		</item>
+		<item>
 			<title>2025.01.20 - Fixed all backlog bugs and added needed features</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
 			<description>Fixed all bugs in the backlog that were still in the way of testing/implementing Save/Load. Added one gameplay-feature from the backlog. Now only one other feature needs to be completed to be able to test/implement Save/Load fully into the framework. With Save/Load also comes the Level-Switch and Data-Transfer code. Meaning the full Save/Load  implementation will probably take up some time (or maybe the concept implementation works from the start and it is easier then expected... probably not XD). Culling system works perfect so far from testing. Also did some balancing fixes with the enemy's and NPC's in the finished level.</description>
