@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-</urlset>
   <url>
     <loc>https://catwithcode.moe/projects.html</loc>
     <lastmod>2024-12-31</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/blog.html</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-01-24</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2025.01.02_Looking_back/Looking_Back.html</loc>
@@ -563,7 +562,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/archive.html</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2025-01-24</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/privacy.html</loc>

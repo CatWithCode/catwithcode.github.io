@@ -107,8 +107,6 @@ write_SiteMapStart() {
 	> "$1"
 	echo '<?xml version="1.0" encoding="UTF-8"?>' >> "$1"
 	echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "$1"
-
-	echo '</urlset>' >> "$1"
 }
 
 # Writes a new Entry into the current SiteMap::
