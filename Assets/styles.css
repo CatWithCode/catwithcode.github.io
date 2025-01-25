@@ -63,11 +63,12 @@ https://github.com/antijingoist/opendyslexic
 # - Variables: */
 :root {
     /* # - - General-Colors: */
-    --background: #18171a;
-    --alt_background: #1e1c21;
-    --foreground: #81deff;
-    --foreground2: #5c63b8;
-    --alt_foreground: #e46c6c;
+    --background: #1b2825;
+    --alt_background: #b89be2;
+    --textColor: #fffff4;
+    --headline_color: #b2c084;
+    --link_Color: #5e1da8;
+    --border_color: #eb3b35;
 
     /* # - - Images: */
     --image_margin: 1%;
@@ -75,6 +76,16 @@ https://github.com/antijingoist/opendyslexic
     --image_border: 0.2em;
     --image_border_color: #67e57b;
     --image_width: 25em;
+
+    /* Border: */
+
+    /* Border-Radius: */
+    --borderRadius: 2rem;
+    
+    /* Border Path: */    
+    --borderPath: polygon(calc(0% + var(--borderRadius)) 0%, 100% 0, 100% calc(100% - var(--borderRadius)), calc(100% - var(--borderRadius)) 100%, 0 100%, 0% calc(0% + var(--borderRadius)));
+
+    /* polygon(0 0, calc(100% - 2.5rem) 0%, 100% 2.5rem, 100% 100%, 0 100%); */
 }
 
 /* # - Global Font and Color: */
@@ -82,7 +93,7 @@ https://github.com/antijingoist/opendyslexic
     /* # - Font and Text: */
     font-family: 'opendyslexic', 'Courier New', 'monospace';
     background-color: var(--background);
-    color: var(--foreground);
+    color: var(--textColor);
 
     /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
     /*image-rendering: optimizeSpeed;*/
@@ -115,7 +126,7 @@ a {
     max-width: 100%; /* Full page. */
 
     /* Making Links in better Visible: */
-    color: var(--foreground2);
+    color: var(--link_Color);
 }
 
 /* # - Header: */
@@ -151,7 +162,7 @@ a {
     background-color: var(--alt_background);
 
     border-radius: 0px 0px 25px 25px;
-    border-bottom: 1px solid var(--alt_foreground);
+    border-bottom: 1px solid var(--border_color);
 }
 
 /* # - - Header-Content: */
@@ -182,9 +193,9 @@ a {
 
     border-radius: 25px 25px 0px 0px;
 
-    border-top: 1px solid var(--alt_foreground);
-    border-left: 1px solid var(--alt_foreground);
-    border-right: 1px solid var(--alt_foreground);
+    border-top: 1px solid var(--border_color);
+    border-left: 1px solid var(--border_color);
+    border-right: 1px solid var(--border_color);
 }
 
 /* # - - Fooder-Content: */
@@ -239,5 +250,35 @@ a {
     For Items that need to have Decorations like underline removed. */
 .cleanText {
     text-decoration: none;
+}
+
+/* https://youtu.be/Q79XId-gs6c */
+p,
+h1 {
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+
+    background: green;
+    clip-path: var(--borderPath);
+    background-color: var(--border_color);
+    background-size: 100% 100%; /* Cover the entire element */
+    background-repeat: no-repeat; /* Prevent repeating */
+    border-radius: 5px; /* Optional: add rounded corners */
+    isolation: isolate;
+}
+
+p::before,
+h1::before{
+    content: '';
+    background-color: black;
+    inset: 2px;
+    position: absolute;
+    z-index: -1;
+    clip-path: var(--borderPath);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--headline_color) !important;
 }
 /* # # # */
