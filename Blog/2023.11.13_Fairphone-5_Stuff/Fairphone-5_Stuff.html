@@ -13,15 +13,13 @@
     <h1>Everything about Fairphone 5 modding:</h1>
     <p>This time I will do things differently on my blog; I will just document everything useful I find out or do with the Fairphone 5 in one place without a goal in mind, as long as I am using it. Everything from modding to installing UbuntuTouch will be documented here:</p>
     <p>A few important things first:</p>
-    <p>
-      <ul>
-        <li>I use Linux for everything.</li>
-        <li>I don't use MicroG and all my scripts don't install it, and if it's pre-installed I uninstall it with the scripts for better battery life. If you want to keep it you can just comment out all the MicroG lines in the scripts.</li>
-        <li>Any changes that involve root, other OS installations, custom roms or UbuntuTouch require AT LEAST an unlocked bootloader and unlock_critical, and often Magisk installed on the boot.img!</li>
-        <li><h2>Do <b><u>!!!NOT!!!</u></b> relock the bootloader or relock unlock_critical! Not even if you REALLY REALLY R-E-A-L-L-Y need to! <u>This will most likely brick your phone!!!</u> And if you really want to risk a 99.9% chance of bricking your phone, <u>at least</u> flash the stock firmware with the OFFICIAL tool first!</h2></li>
-        <li>If you are rooting your phone, please read the Rooting section carefully to find out how to update your ROM over OTA or in general!</li>
-      </ul>
-    </p>
+    <ul>
+      <li>I use Linux for everything.</li>
+      <li>I don't use MicroG and all my scripts don't install it, and if it's pre-installed I uninstall it with the scripts for better battery life. If you want to keep it you can just comment out all the MicroG lines in the scripts.</li>
+      <li>Any changes that involve root, other OS installations, custom roms or UbuntuTouch require AT LEAST an unlocked bootloader and unlock_critical, and often Magisk installed on the boot.img!</li>
+      <li><h2>Do <b><u>!!!NOT!!!</u></b> relock the bootloader or relock unlock_critical! Not even if you REALLY REALLY R-E-A-L-L-Y need to! <u>This will most likely brick your phone!!!</u> And if you really want to risk a 99.9% chance of bricking your phone, <u>at least</u> flash the stock firmware with the OFFICIAL tool first!</h2></li>
+      <li>If you are rooting your phone, please read the Rooting section carefully to find out how to update your ROM over OTA or in general!</li>
+    </ul>
     <br>
     <!--HERE NEW ENTRY (COPY, PASTE PLACEHOLDER)-->
     <hr>
@@ -87,15 +85,14 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <hr>
     <h2><u>Battery Runtime Scoreboard</u>:</h2>
     <p>All the setups I used ranked on battery runtime (No scientific data, just daily usage, charge limit at 83% for battery health):</p>
-      <ol>
-        <li>/e/OS [Without MicroG and /e/Services) - REALLY GOOD!; 3 days on a charche with light use. About 8 hours with the screen on at normal to low brightness. </li>
-        <li>Fairphone 5 Stock-Rom [deGoogled] - OK; About 1.5 days on a charge, about 5-6 hours of screen time. Mostly due to problems in the OS, caused by parts of the system being disabled and/or uninstalled, causing errors in many places.</li>
-        <li>Fairphone 5 Stock-Rom - Meh; The usual problem with using Google services. About 4-5 hours of screen time and 1 day maximum battery runtime.</li>
-        <!--
-        <li>PLACEHOLDER</li>
-        -->        
-      </ol>
-    </p>
+    <ol>
+      <li>/e/OS (Without MicroG and /e/Services) - REALLY GOOD!; 3 days on a charche with light use. About 8 hours with the screen on at normal to low brightness. </li>
+      <li>Fairphone 5 Stock-Rom [deGoogled] - OK; About 1.5 days on a charge, about 5-6 hours of screen time. Mostly due to problems in the OS, caused by parts of the system being disabled and/or uninstalled, causing errors in many places.</li>
+      <li>Fairphone 5 Stock-Rom - Meh; The usual problem with using Google services. About 4-5 hours of screen time and 1 day maximum battery runtime.</li>
+      <!--
+      <li>PLACEHOLDER</li>
+      -->        
+    </ol>
     <hr>
     <br>
     <br>
@@ -104,18 +101,16 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <p>Not much to it. Just force a high refreshrate (as far as the normal system will allow). This will fix wrong refreshrates on other roms like /e/OS. These ADB commands are also in my scripts. There is a bug in the current /e/OS build that breaks 90hz. After locking and unlocking the phone, the screen feels... weird. No idea why. Currently only 60hz works properly on /e/OS:</p>
     <a href="https://source.android.com/docs/core/graphics/multiple-refresh-rate">https://source.android.com/docs/core/graphics/multiple-refresh-rate</a>
     <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
-    <p>
-    <p>
-      <ul>
-        <p>Stock and other Rom's:</p>
-        <li><u><i>adb shell settings put system min_refresh_rate 90</i></u></li>
-        <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
-        <br>
-        <p>On /e/OS (Bugged at the time of writing. Could already be fixed):</p>
-        <li><u><i>adb shell settings put system min_refresh_rate 60</i></u></li>
-        <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
-      </ul>
-    </p>
+    <p>Stock and other Rom's:</p>
+    <ul>
+      <li><u><i>adb shell settings put system min_refresh_rate 90</i></u></li>
+      <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
+    </ul>
+    <p>On /e/OS (Bugged at the time of writing. Could already be fixed):</p>
+    <ul>
+      <li><u><i>adb shell settings put system min_refresh_rate 60</i></u></li>
+      <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
+    </ul>
     <hr>
     <br>
     <br>
@@ -129,15 +124,13 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <br>
     <a href="https://github.com/CatWithCode/Fairphone5-Tweaks">https://github.com/CatWithCode/Fairphone5-Tweaks</a>
     <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
-    <p>
-      <ol>
-        <li>Downloading the official Install Archive from there Website: <a href="https://doc.e.foundation/devices/FP5/install">https://doc.e.foundation/devices/FP5/install</a></li>
-        <li>Rebooting the phone into the bootloader <u><i>adb reboot bootloader</i></u></li>
-        <li>Extract the archive, open a bash in it, make the installer executable and run it: <u><i>chmod +x flash_FP5_factory.sh && ./flash_FP5_factory.sh
-        </i></u></li>
-        <li>Once everything is done and the phone has booted, you can use my script to clean up the OS to have a clean plate to work from (<u><b>!!!Important!!! Take all possible permissions from BlissLauncher. With permissions, BlissLauncher will crash!</b></u>) and/or root it (do not reuse your old modded boot.img! The /e/OS-Boot.img is different! You need to redo the rooting part to have a usable rooted boot.img to boot from for the full Magisk installation!).</li>
-      </ol>
-    </p>
+    <ol>
+      <li>Downloading the official Install Archive from there Website: <a href="https://doc.e.foundation/devices/FP5/install">https://doc.e.foundation/devices/FP5/install</a></li>
+      <li>Rebooting the phone into the bootloader <u><i>adb reboot bootloader</i></u></li>
+      <li>Extract the archive, open a bash in it, make the installer executable and run it: <u><i>chmod +x flash_FP5_factory.sh && ./flash_FP5_factory.sh
+      </i></u></li>
+      <li>Once everything is done and the phone has booted, you can use my script to clean up the OS to have a clean plate to work from (<u><b>!!!Important!!! Take all possible permissions from BlissLauncher. With permissions, BlissLauncher will crash!</b></u>) and/or root it (do not reuse your old modded boot.img! The /e/OS-Boot.img is different! You need to redo the rooting part to have a usable rooted boot.img to boot from for the full Magisk installation!).</li>
+    </ol>
     <hr>
     <br>
     <br>
@@ -166,25 +159,21 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <p>As far as I have seen it is recommended on modern Android that you only BOOT a modified boot image (NOT FLASH) and then use Magisk in Android to directly root the installed bootloader:</p>
     <a href="https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662">https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662</a>
     <br>
-    <br>
-    <br>
     <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
-    <p>
-      <ol>
-        <li>Getting the offical Firmware: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
-        <li>Extracting the boot.img</li>
-        <li>Installing the Magisk-App on the Phone: <a href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></li>
-        <li>Pathing the boot.img with the Magisk-App</li>
-        <li>Copy modded boot.img to PC</li>
-        <li>adb reboot bootloader</li>
-        <li>fastboot boot modded_boot.img</li>
-        <li>Opening Magisk-App and <u>NOT</u> pressing Yes at the further modifications needed popup</li>
-        <li>Select Install Magisk and choose direct install (For OTA: Open Magisk, Uninstall Root (DON'T REBOOT!), Install OTA-Update WITHOUT REBOOT, Open Magsik and let it Install into the "Inactive Slot", Now reboot! Don't do this if no Computer is nearby to restore your phone. Soft-Bricks are possible with this!): <a href="https://topjohnwu.github.io/Magisk/ota.html">https://topjohnwu.github.io/Magisk/ota.html</a></li>
-        <li>Reboot</li>
-        <li>Opening Magisk-App and pressing Yes at the further modifications needed popup</li>
-        <li>Reboot</li>
-      </ol>
-    </p>
+    <ol>
+      <li>Getting the offical Firmware: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
+      <li>Extracting the boot.img</li>
+      <li>Installing the Magisk-App on the Phone: <a href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></li>
+      <li>Pathing the boot.img with the Magisk-App</li>
+      <li>Copy modded boot.img to PC</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot boot modded_boot.img</li>
+      <li>Opening Magisk-App and <u>NOT</u> pressing Yes at the further modifications needed popup</li>
+      <li>Select Install Magisk and choose direct install (For OTA: Open Magisk, Uninstall Root (DON'T REBOOT!), Install OTA-Update WITHOUT REBOOT, Open Magsik and let it Install into the "Inactive Slot", Now reboot! Don't do this if no Computer is nearby to restore your phone. Soft-Bricks are possible with this!): <a href="https://topjohnwu.github.io/Magisk/ota.html">https://topjohnwu.github.io/Magisk/ota.html</a></li>
+      <li>Reboot</li>
+      <li>Opening Magisk-App and pressing Yes at the further modifications needed popup</li>
+      <li>Reboot</li>
+    </ol>
     <hr>
     <br>
     <br>
@@ -196,37 +185,31 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a>
     <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a>
     <br>
-    <br>
-    <br>
     <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
     <p><u>Unlocking</u>:</p>
-    <p>
-      <ol>
-        <li>Settings → About phone → scroll down to IMEI (SIM slot 1)</li>
-        <li>Settings → About phone → Model & Hardware → Serial number</li>
-        <li>Get your unlock code: <a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a></li>
-        <li>Settings → About phone → 5x Build number</li>
-        <li>Settings → System (→ Advanced) → Developer options</li>
-        <li>OEM unlocking</li>
-        <li>USE THE UNLOCK CODE (Internet connection required)</li>
-        <li>adb reboot bootloader</li>
-        <li>fastboot flashing unlock</li>
-        <li>YES</li>
-        <li>Settings → About phone → 5x Build number</li>
-        <li>adb reboot bootloader</li>
-        <li>fastboot flashing unlock_critical</li>
-        <li>YES</li>        
-      </ol>
-    </p>
+    <ol>
+      <li>Settings → About phone → scroll down to IMEI (SIM slot 1)</li>
+      <li>Settings → About phone → Model & Hardware → Serial number</li>
+      <li>Get your unlock code: <a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a></li>
+      <li>Settings → About phone → 5x Build number</li>
+      <li>Settings → System (→ Advanced) → Developer options</li>
+      <li>OEM unlocking</li>
+      <li>USE THE UNLOCK CODE (Internet connection required)</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot flashing unlock</li>
+      <li>YES</li>
+      <li>Settings → About phone → 5x Build number</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot flashing unlock_critical</li>
+      <li>YES</li>        
+    </ol>
     <p><u>Flashing Stock Firmware</u>:</p>
     <p>It could happen that you only get the following output without any flashing of files: "<u><i>Info: One Fairphone 5 in fastboot mode found (serial number: XXXXXXXX).</i></u>". This means that executables in the subfolders can not run and are missing the flag that allows them to be executed. Run "<b><u><i>chmod +x *.*</i></u></b>" in the main folder and every file that was in the archive should now be executable.</p>
-    <p>
-      <ol>
-        <li>adb reboot bootloader</li>
-        <li>Extracting the latest Firmware Archive: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
-        <li>Opening a Terminal in the folder and executing <u><i>./flash_fp5_factory.sh</i></u> and following the prompts.</li>
-      </ol>
-    </p>
+    <ol>
+      <li>adb reboot bootloader</li>
+      <li>Extracting the latest Firmware Archive: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
+      <li>Opening a Terminal in the folder and executing <u><i>./flash_fp5_factory.sh</i></u> and following the prompts.</li>
+    </ol>
     <hr>
     <!-- PLACEHOLDER -->
     <!--

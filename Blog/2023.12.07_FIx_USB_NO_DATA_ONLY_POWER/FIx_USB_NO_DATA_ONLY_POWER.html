@@ -13,60 +13,58 @@
     <h1>Fix: USB has only Power and No Data on Linux</h1>
     <p>A recent kernel update made my front USB ports and a USB-C to HDMI adapter on my GPU unusable (yes, the AMD RX7900XT/XTX have a USB-C port and yes they are USB-4 port with Displayport AND data for USB for example. Docks actually work on them lol). The problem was that the ports had power BUT no data going through them. Linux did't even saw the ports with <u><i>lsusb</i></u>.</p>
     <p>It turned out to be a strange power management thing in the new kernel with the USB chipset on my motherboard (GIGABYTE X670 GAMING X AX). After some research, I found an post on the Arch wiki by "waste37" that helped me fix it! Here is how I did it.</p>
-    <p>
-      <ol>
-        <li>Use <u><i>ls /sys/bus/usb/devices/</i></u> and note down all shown entrys with the label "usb". For me it was "usb1, usb2, ..., usb11, usb12). There were other things like "5-7:1.0" but we only need the entrys with "usb" in the name.</li>
-        <li>Create a .sh file and make yourself a script that works like this: It changes the control file from "auto" to "on". This will consume more power (on desktops you can ignore this, on laptops or anything with a battery keep it in mind). This is my script for my PC:
-        <br>
-        <br>
-        <br>
-        <hr>
-  <xmp>#!/bin/bash
-  
-  # Force ON Value:
-  echo "Fixing USB port hibernation:"
-  
-  echo on > /sys/bus/usb/devices/usb1/power/control
-  echo on > /sys/bus/usb/devices/usb2/power/control
-  echo on > /sys/bus/usb/devices/usb3/power/control
-  echo on > /sys/bus/usb/devices/usb4/power/control
-  echo on > /sys/bus/usb/devices/usb5/power/control
-  echo on > /sys/bus/usb/devices/usb6/power/control
-  echo on > /sys/bus/usb/devices/usb7/power/control
-  echo on > /sys/bus/usb/devices/usb8/power/control
-  echo on > /sys/bus/usb/devices/usb9/power/control
-  echo on > /sys/bus/usb/devices/usb10/power/control
-  echo on > /sys/bus/usb/devices/usb11/power/control
-  echo on > /sys/bus/usb/devices/usb12/power/control
-  
-  echo "Done! Will now close."
-  exit
-  
-  # Default Values:
-  echo "This will return everything to its default value:"
-  
-  echo auto > /sys/bus/usb/devices/usb1/power/control
-  echo auto > /sys/bus/usb/devices/usb2/power/control
-  echo auto > /sys/bus/usb/devices/usb3/power/control
-  echo auto > /sys/bus/usb/devices/usb4/power/control
-  echo auto > /sys/bus/usb/devices/usb5/power/control
-  echo auto > /sys/bus/usb/devices/usb6/power/control
-  echo auto > /sys/bus/usb/devices/usb7/powerr/control
-  echo auto > /sys/bus/usb/devices/usb8/power/control
-  echo auto > /sys/bus/usb/devices/usb9/power/control
-  echo auto > /sys/bus/usb/devices/usb10/power/control
-  echo auto > /sys/bus/usb/devices/usb11/power/control
-  echo auto > /sys/bus/usb/devices/usb12/power/control
-  
-  echo "Done! Will now close."
-  exit
-  </xmp>
-        <hr>
-        <br>
-        <br>
-        </li>
-      </ol>
-    </p>
+    <ol>
+      <li>Use <u><i>ls /sys/bus/usb/devices/</i></u> and note down all shown entrys with the label "usb". For me it was "usb1, usb2, ..., usb11, usb12). There were other things like "5-7:1.0" but we only need the entrys with "usb" in the name.</li>
+      <li>Create a .sh file and make yourself a script that works like this: It changes the control file from "auto" to "on". This will consume more power (on desktops you can ignore this, on laptops or anything with a battery keep it in mind). This is my script for my PC:
+      <br>
+      <br>
+      <br>
+      <hr>
+<xmp>#!/bin/bash
+
+# Force ON Value:
+echo "Fixing USB port hibernation:"
+
+echo on > /sys/bus/usb/devices/usb1/power/control
+echo on > /sys/bus/usb/devices/usb2/power/control
+echo on > /sys/bus/usb/devices/usb3/power/control
+echo on > /sys/bus/usb/devices/usb4/power/control
+echo on > /sys/bus/usb/devices/usb5/power/control
+echo on > /sys/bus/usb/devices/usb6/power/control
+echo on > /sys/bus/usb/devices/usb7/power/control
+echo on > /sys/bus/usb/devices/usb8/power/control
+echo on > /sys/bus/usb/devices/usb9/power/control
+echo on > /sys/bus/usb/devices/usb10/power/control
+echo on > /sys/bus/usb/devices/usb11/power/control
+echo on > /sys/bus/usb/devices/usb12/power/control
+
+echo "Done! Will now close."
+exit
+
+# Default Values:
+echo "This will return everything to its default value:"
+
+echo auto > /sys/bus/usb/devices/usb1/power/control
+echo auto > /sys/bus/usb/devices/usb2/power/control
+echo auto > /sys/bus/usb/devices/usb3/power/control
+echo auto > /sys/bus/usb/devices/usb4/power/control
+echo auto > /sys/bus/usb/devices/usb5/power/control
+echo auto > /sys/bus/usb/devices/usb6/power/control
+echo auto > /sys/bus/usb/devices/usb7/powerr/control
+echo auto > /sys/bus/usb/devices/usb8/power/control
+echo auto > /sys/bus/usb/devices/usb9/power/control
+echo auto > /sys/bus/usb/devices/usb10/power/control
+echo auto > /sys/bus/usb/devices/usb11/power/control
+echo auto > /sys/bus/usb/devices/usb12/power/control
+
+echo "Done! Will now close."
+exit
+</xmp>
+      <hr>
+      <br>
+      <br>
+      </li>
+    </ol>
     <p>Now everything should work. For some devices, you will need to do this on every reboot, as the devices reset themselves in Linux. To return to the default value, run the lower part with your port configuration. Then everything is back to normal.</p>
     <br>
     <h2>Sources:</h2>

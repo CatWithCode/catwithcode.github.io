@@ -23,98 +23,97 @@
     <p>And on the Internet, as usual: IF YOU TRY ANYTHING WRITTEN ON THIS BLOG YOU ARE DOING IT AT YOUR OWN RISK! IT SHOULD BE OBVIOUS! DON'T COME TO ME CRYING IF SOMETHING WENT WRONG. THAT'S YOUR PROBLEM AND ONLY YOURS! If you do one or a few things wrong or an error happens, you can wipe your your entire storage and even brick your phone (yes, that is actually possible)!</p>
     <p>Update: chroot disables your accessibility apps in the Android-Settings. Why this happens idk. Could be one of the scripts or Android itself panicking.</p>
     <p>How I did it:</p>
-    <p>
-      <ol>
-        <li>
-          <p>Preparing the Phone:</p>
-          <ul>
-            <li>Root your phone</li>
-            <li>Install BusyBox. Either use a Magisk module or install it with the BusyBox app (with the app you will need to modify its install script on Android 12 and newer: <a href="https://github.com/meefik/busybox/issues/93#issue-586634498">https://github.com/meefik/busybox/issues/93#issue-586634498</a>. On GSI-ROMs you need to execute the BusyBox install every reboot.).</li>
-            <li>Install from F-Droid: Termux, Termux-API</li>
-            <li>Install from GitHub: Termux-X11, com.termux.shell_loader</li>
-            <li>Change the battery settings for the apps to unrestricted</li>
-            <li><u><i>adb shell "settings put global settings_enable_monitor_phantom_procs false"</i></u></li>
-            <li><u><i>adb reboot</i></u></li>
-          </ul>
-        </li>
-        <li>
-          <p>Preparing Termux:</p>
-          <ul>
-            <li><u><i>apt update</i></u></li>
-            <li><u><i>apt upgrade</i></u> [Yes to everthing]</li>
-            <li><u><i>pkg install x11-repo</i></u></li>
-            <li><u><i>apt install xwayland xorg-server-xvfb git wget</i></u></li>
-            <li><u><i>termux-setup-storage</i></u></li>
-            <li><u><i>su</i></u> [Allow root access]</li>
-            <li>Push the "termux-x11-nightly-1.02.07-0-all.deb"-File from the com.termux.shell_loader-Archive to your phone and <u><i>cd</i></u> to it.</li>
-            <li><u><i>apt update</i></u></li>
-            <li><u><i>apt upgrade</i></u></li>
-            <li><u><i>nano ~/.termux/termux.properties</i></u> [Remove the "#" before the text "#allow-external-apps=yes"]</li>
-            <li><u><i>exit</i></u></li>
-          </ul>
-        </li>
-        <li>
-          <p>Installing a rootfs:</p>
-          <ul>
-            <li><u><i>git clone https://github.com/Pipetto-crypto/Chroot-Installer.git</i></u></li>
-            <li><u><i>cd Chroot-Installer</i></u></li>
-            <li><u><i>chmod +x setup.sh</i></u></li>
-            <li><u><i>./setup.sh</i></u></li>
-            <li><u><i>bash chroot-installer install Ubuntu ubuntu -b -d</i></u></li>
+    <ol>
+    <li>
+      <p>Preparing the Phone:</p>
+      <ul>
+        <li>Root your phone</li>
+        <li>Install BusyBox. Either use a Magisk module or install it with the BusyBox app (with the app you will need to modify its install script on Android 12 and newer: <a href="https://github.com/meefik/busybox/issues/93#issue-586634498">https://github.com/meefik/busybox/issues/93#issue-586634498</a>. On GSI-ROMs you need to execute the BusyBox install every reboot.).</li>
+        <li>Install from F-Droid: Termux, Termux-API</li>
+        <li>Install from GitHub: Termux-X11, com.termux.shell_loader</li>
+        <li>Change the battery settings for the apps to unrestricted</li>
+        <li><u><i>adb shell "settings put global settings_enable_monitor_phantom_procs false"</i></u></li>
+        <li><u><i>adb reboot</i></u></li>
+      </ul>
+    </li>
+    <li>
+      <p>Preparing Termux:</p>
+      <ul>
+        <li><u><i>apt update</i></u></li>
+        <li><u><i>apt upgrade</i></u> [Yes to everthing]</li>
+        <li><u><i>pkg install x11-repo</i></u></li>
+        <li><u><i>apt install xwayland xorg-server-xvfb git wget</i></u></li>
+        <li><u><i>termux-setup-storage</i></u></li>
+        <li><u><i>su</i></u> [Allow root access]</li>
+        <li>Push the "termux-x11-nightly-1.02.07-0-all.deb"-File from the com.termux.shell_loader-Archive to your phone and <u><i>cd</i></u> to it.</li>
+        <li><u><i>apt update</i></u></li>
+        <li><u><i>apt upgrade</i></u></li>
+        <li><u><i>nano ~/.termux/termux.properties</i></u> [Remove the "#" before the text "#allow-external-apps=yes"]</li>
+        <li><u><i>exit</i></u></li>
+      </ul>
+    </li>
+    <li>
+      <p>Installing a rootfs:</p>
+      <ul>
+        <li><u><i>git clone https://github.com/Pipetto-crypto/Chroot-Installer.git</i></u></li>
+        <li><u><i>cd Chroot-Installer</i></u></li>
+        <li><u><i>chmod +x setup.sh</i></u></li>
+        <li><u><i>./setup.sh</i></u></li>
+        <li><u><i>bash chroot-installer install Ubuntu ubuntu -b -d</i></u></li>
 
-            <p>If something goes wrong in one of the scripts, look at the line in the script and do it yourself:</p>
+        <p>If something goes wrong in one of the scripts, look at the line in the script and do it yourself:</p>
 
-            <li><u><i>folder</i></u></li>
-            <li>Choose a username</li>
-            <li>Choose your-password and the root-password</li>
-            <li><u><i>xfce</i></u></li>
-            <li><u><i>cd</i></u></li>
-            <li><u><i>sudo cp chroot-installer $PATH</i></u></li>
-            <li><u><i>chmod +x $PATH/chroot-installer</i></u></li>
-            <li><u><i>chroot-installer start</i></u></li>
-            
-            <p>Setting up the chroot install:</p>
+        <li><u><i>folder</i></u></li>
+        <li>Choose a username</li>
+        <li>Choose your-password and the root-password</li>
+        <li><u><i>xfce</i></u></li>
+        <li><u><i>cd</i></u></li>
+        <li><u><i>sudo cp chroot-installer $PATH</i></u></li>
+        <li><u><i>chmod +x $PATH/chroot-installer</i></u></li>
+        <li><u><i>chroot-installer start</i></u></li>
+        
+        <p>Setting up the chroot install:</p>
 
-            <li><u><i>cd scripts/</i></u></li>
-            <li><u><i>./install_vnc.sh</i></u></li>
-            <li><u><i>xfce</i></u> [USE XFCE, even if you want a different one or one that is not listed! You can install others later by rerunning this script, or just install them yourself if they are not listed!]</li>
-            <li><u><i>./setup_env.sh</i></u></li>
-            <li><u><i>./install_box.sh</i></u></li>
-            <li><u><i>sudo chmod +x winetricks</i></u></li>
-            <li><u><i>sudo mv winetricks /usr/bin/winetricks</i></u></li>
-            <li><u><i>cd</i></u></li>
-            <li><u><i>apt install nano</i></u></li>
-            <li><u><i>ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime</i></u> [Use your own Area]</li>
-            <li><u><i>apt install locales</i></u></li>
-            <li><u><i>locale-gen de_DE</i></u> [Use your language]</li>
-            <li><u><i>locale-gen de_DE.UTF-8</i></u> [Use your language]</li>
-            <li><u><i>echo "LANG=de_DE" > /etc/locale.conf</i></u></li>
-            <li><u><i>echo "LANG=de_DE-UTF" > /etc/locale.conf</i></u></li>
-            <li><u><i>passwd</i></u></li>
-            <li><u><i>groupadd storage</i></u></li>
-            <li><u><i>groupadd wheel</i></u></li>
-            <li><u><i>groupadd video</i></u></li>
-            <li><u><i>useradd -m -g users -G wheel,audio,video,storage -s /bin/bash YOUR_USERNAME</i></u></li>
-            <li><u><i>visudo</i></u> [Find the "root ALL=(ALL:ALL) ALL"-line, copy it a line below with your username: "YOUR_USERNAME ALL=(ALL:ALL) ALL"]</li>
-            <li><u><i>passwd YOUR_USERNAME</i></u></li>
-            <li><u><i>sudo chown -R YOUR_USERNAME /home/YOUR_USERNAME</i></u></li>
-            <li><u><i>su YOUR_USERNAME</i></u></li>
-            <li><u><i>cd</i></u></li>
-            <li>
-              <p><u><i>nano .profile</i></u></p>
-              <p>Add the following at the end:</p>
-              <p>---</p>
+        <li><u><i>cd scripts/</i></u></li>
+        <li><u><i>./install_vnc.sh</i></u></li>
+        <li><u><i>xfce</i></u> [USE XFCE, even if you want a different one or one that is not listed! You can install others later by rerunning this script, or just install them yourself if they are not listed!]</li>
+        <li><u><i>./setup_env.sh</i></u></li>
+        <li><u><i>./install_box.sh</i></u></li>
+        <li><u><i>sudo chmod +x winetricks</i></u></li>
+        <li><u><i>sudo mv winetricks /usr/bin/winetricks</i></u></li>
+        <li><u><i>cd</i></u></li>
+        <li><u><i>apt install nano</i></u></li>
+        <li><u><i>ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime</i></u> [Use your own Area]</li>
+        <li><u><i>apt install locales</i></u></li>
+        <li><u><i>locale-gen de_DE</i></u> [Use your language]</li>
+        <li><u><i>locale-gen de_DE.UTF-8</i></u> [Use your language]</li>
+        <li><u><i>echo "LANG=de_DE" > /etc/locale.conf</i></u></li>
+        <li><u><i>echo "LANG=de_DE-UTF" > /etc/locale.conf</i></u></li>
+        <li><u><i>passwd</i></u></li>
+        <li><u><i>groupadd storage</i></u></li>
+        <li><u><i>groupadd wheel</i></u></li>
+        <li><u><i>groupadd video</i></u></li>
+        <li><u><i>useradd -m -g users -G wheel,audio,video,storage -s /bin/bash YOUR_USERNAME</i></u></li>
+        <li><u><i>visudo</i></u> [Find the "root ALL=(ALL:ALL) ALL"-line, copy it a line below with your username: "YOUR_USERNAME ALL=(ALL:ALL) ALL"]</li>
+        <li><u><i>passwd YOUR_USERNAME</i></u></li>
+        <li><u><i>sudo chown -R YOUR_USERNAME /home/YOUR_USERNAME</i></u></li>
+        <li><u><i>su YOUR_USERNAME</i></u></li>
+        <li><u><i>cd</i></u></li>
+        <li>
+          <p><u><i>nano .profile</i></u></p>
+          <p>Add the following at the end:</p>
+          <p>---</p>
 <xmp>#Fixing Audio:
 export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
 
 #Starting the Desktop:
 sh $HOME/.startDE.sh
 </xmp>
-              <p>---</p>
-            </li>
-            <li>
-              <p><u><i>nano .startDE.sh</i></u></p>
-              <p>---</p>
+          <p>---</p>
+        </li>
+        <li>
+          <p><u><i>nano .startDE.sh</i></u></p>
+          <p>---</p>
 <xmp>#!/bin/bash
 
 echo "Starting Xwayland and everthing else soon. Press CTRL+C to cancel. 3sec..."
@@ -130,19 +129,19 @@ dbus-launch --exit-with-session startxfce4
 
 echo "Have fun in Xwayland! <3"
 </xmp>
-              <p>---</p>
-            </li>
-            <li><u><i>chmod +x .startDE.sh</i></u></li>
-            <p>CLOSE</p>
-            <li><u><i>chroot-installer stop</i></u></li>
-          </ul>
+          <p>---</p>
         </li>
+        <li><u><i>chmod +x .startDE.sh</i></u></li>
+        <p>CLOSE</p>
+        <li><u><i>chroot-installer stop</i></u></li>
+      </ul>
+    </li>
+    <li>
+      <p>Setting up the rest in Termux:</p>
+      <ul>
         <li>
-          <p>Setting up the rest in Termux:</p>
-          <ul>
-            <li>
-              <p><u><i>nano startUbuntu.sh</i></u></p>
-              <p>---</p>
+          <p><u><i>nano startUbuntu.sh</i></u></p>
+          <p>---</p>
 <xmp>#!/bin/bash
 
 #CleanUp:
@@ -169,24 +168,24 @@ chroot-installer start -w -v
 #chroot-installer start -x -va
 #chroot-installer start -x -v
 </xmp>
-            <p>---</p>
-            </li>
-            <li><u><i>chmod +x startUbuntu.sh</i></u></li>
-            <li><u><i>pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1</i></u></li>
-            <li><u><i>pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1</i></u></li>
-            <li><u><i>exit</i></u></li>
-          </ul>
+        <p>---</p>
         </li>
+        <li><u><i>chmod +x startUbuntu.sh</i></u></li>
+        <li><u><i>pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1</i></u></li>
+        <li><u><i>pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1</i></u></li>
+        <li><u><i>exit</i></u></li>
+      </ul>
+    </li>
+    <li>
+      <p>First startup and last setup steps:</p>
+      <ul>
+        <li><u><i>nano ./.chroot_installer/containers/Ubuntu.conf</i></u> [Change "root" to YOUR_USERNAME]</li>
+        <li><u><i>./startUbuntu.sh</i></u></li>
+        <li><u><i>sudo apt install software-properties-common</i></u></li>
+        <li><u><i>sudo add-apt-repository ppa:mozillateam/ppa</i></u></li>
         <li>
-          <p>First startup and last setup steps:</p>
-          <ul>
-            <li><u><i>nano ./.chroot_installer/containers/Ubuntu.conf</i></u> [Change "root" to YOUR_USERNAME]</li>
-            <li><u><i>./startUbuntu.sh</i></u></li>
-            <li><u><i>sudo apt install software-properties-common</i></u></li>
-            <li><u><i>sudo add-apt-repository ppa:mozillateam/ppa</i></u></li>
-            <li>
-              <p><u><i>sudo nano /etc/apt/preferences.d/99mozillateamppa</i></u></p>
-              <p>---</p>
+          <p><u><i>sudo nano /etc/apt/preferences.d/99mozillateamppa</i></u></p>
+          <p>---</p>
 <xmp>Package: firefox*
 Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 501
@@ -195,38 +194,37 @@ Package: firefox*
 Pin: release o=Ubuntu
 Pin-Priority: -1
 </xmp>
-              <p>---</p>
-            </li>
-            <li><u><i>sudo apt update</i></u></li>
-            <li><u><i>sudo apt install -t 'o=LP-PPA-mozillateam' firefox</i></u></li>
-            <p>CLOSE</p>
-            <li><u><i>cd installed-rootfs</i></u></li>
-            <li><u><i>mkdir a && truncate -s 10G my.img && mkfs.ext4 my.img && mount -oloop my.img a/ && cp -a Ubuntu/. a/. && ls a/ && umount a/ && rmdir a/</i></u> [This long command creates a folder called a, creates a 10GB disk-image file (can be as large as you want/have/need), creates an ext4 filesystem inside of it, mounts the disk-image to the folder a, copies the contents of the Ubuntu installation to it, lists the contents in a/ for you to make sure everything looks like a normal Linux root directory, unmounts the disk-image and removes the a/ folder. Continue if everything was successful.]</li>
-            <li><u><i>rm -r Ubuntu/</i></u></li>
-            <li><u><i>rm -r a/</i></u></li>
-            <li><u><i>mkdir Ubuntu/</i></u></li>
-            <li><u><i>mv my.img /Ubuntu/ubuntu.img</i></u></li>
-            <li><u><i>cd Ubuntu/</i></u></li>
-            <li><u><i>chmod 777 ubuntu.img</i></u></li>
-            <li><u><i>cd</i></u></li>
-            <li>
-              <p><u><i>nano ./.chroot_installer/containers/Ubuntu.conf</i></u></p>
-              <p>---</p>
+          <p>---</p>
+        </li>
+        <li><u><i>sudo apt update</i></u></li>
+        <li><u><i>sudo apt install -t 'o=LP-PPA-mozillateam' firefox</i></u></li>
+        <p>CLOSE</p>
+        <li><u><i>cd installed-rootfs</i></u></li>
+        <li><u><i>mkdir a && truncate -s 10G my.img && mkfs.ext4 my.img && mount -oloop my.img a/ && cp -a Ubuntu/. a/. && ls a/ && umount a/ && rmdir a/</i></u> [This long command creates a folder called a, creates a 10GB disk-image file (can be as large as you want/have/need), creates an ext4 filesystem inside of it, mounts the disk-image to the folder a, copies the contents of the Ubuntu installation to it, lists the contents in a/ for you to make sure everything looks like a normal Linux root directory, unmounts the disk-image and removes the a/ folder. Continue if everything was successful.]</li>
+        <li><u><i>rm -r Ubuntu/</i></u></li>
+        <li><u><i>rm -r a/</i></u></li>
+        <li><u><i>mkdir Ubuntu/</i></u></li>
+        <li><u><i>mv my.img /Ubuntu/ubuntu.img</i></u></li>
+        <li><u><i>cd Ubuntu/</i></u></li>
+        <li><u><i>chmod 777 ubuntu.img</i></u></li>
+        <li><u><i>cd</i></u></li>
+        <li>
+          <p><u><i>nano ./.chroot_installer/containers/Ubuntu.conf</i></u></p>
+          <p>---</p>
 <xmp>INSPATH=/data/data/com.termux/files/home/installed-rootfs/Ubuntu/ubuntu.img
 DISTRO=ubuntu
 USERNAME=YOUR_USERNAME
 default
 </xmp>
-            <p>---</p>
-            </li>            
-          </ul>
-        </li>
-        <li>
-          <p>Installing a Backup-Tool [Read this for more information: <a href="https://github.com/laraib07/TermuxBackupTools">https://github.com/laraib07/TermuxBackupTools</a>]:</p>
-          <p><u><i>wget https://raw.githubusercontent.com/laraib07/TermuxBackupTools/master/rewind && chmod u+x rewind && mv rewind $PREFIX/bin/</i></u></p>
-        </li>
-      </ol>
-    </p>
+        <p>---</p>
+        </li>            
+      </ul>
+    </li>
+    <li>
+      <p>Installing a Backup-Tool [Read this for more information: <a href="https://github.com/laraib07/TermuxBackupTools">https://github.com/laraib07/TermuxBackupTools</a>]:</p>
+      <p><u><i>wget https://raw.githubusercontent.com/laraib07/TermuxBackupTools/master/rewind && chmod u+x rewind && mv rewind $PREFIX/bin/</i></u></p>
+    </li>
+  </ol>
     <br>
     <h2>Sources:</h2>
     <ul>

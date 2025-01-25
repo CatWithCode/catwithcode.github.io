@@ -69,14 +69,16 @@ function WriteImageLibaryHeader(titel_text) {
 }
 
 // - - Creating ImageBody (NOT async because it breaks CSS) [COULD BE MADE FAR BETTER!]:
-function WriteImageBody(img_Source, alt_text, img_disc, uploadDate, newWindow = true, diffrentLink = '', maxWidthOverwrite = false) {
+function WriteImageBody(img_Source, alt_text, img_disc, uploadDate, newWindow = true, diffrentLink = '', maxWidthOverwrite = false, dateNeeded = true) {
     var imageBodyCode = '\
         \
         <div id="ImageBody" ###CCSS### ###LINK_BODY###" style="cursor: pointer;">\
             <img src="###IMG_SRC###" alt="###ALT###">\
-            <p><u>###DISC###</u></p>\
-            <p>###DATE###</p>\
-        </div>'
+            <p><u>###DISC###</u></p>'
+
+    //Date needed?:
+    imageBodyCode += (dateNeeded === true) ? '<p>###DATE###</p>\
+                                            </div>' : '</div>';
 
     // Using the wanted Link:
     var linkTo = (diffrentLink != '') ? diffrentLink : img_Source;

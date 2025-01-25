@@ -19,11 +19,39 @@
     <ol>
       <li><p>Your Android installation will not be removed BUT your userdata will be erased. Your phone needs to be magisk-rooted and vbmeta pached. I did this in an older blog post. (link in sources section)</p></li>
       <li><p>To run it, download the latest artifact for your phone and extract it. Inside is a boot.img and an .xz file. Extract the .xz file and put the .img image it contains into a folder called "userdata".</p>
-        <p>Go inside the folder and execute this: <p><u><i>resize2fs ubuntu.img 10G</i></u></p> [This will resize the Ubuntu-System to 10GB. This is useful if you want to modify the system or use apt.</p>  
-        <p>Now go up one folder and run this: <p><u><i>mke2fs -t ext4 -O ^metadata_csum userdata.img 20240000 -d userdata</i></u></p> [This will create the actual userdata.img with a size of 20GB. You can make all sizes as big as you want AS LONG as it dose not go above the actual size of the userdata-patition of the Titan.]</p></li>
-      <li><p><p><u><i>fastboot flash boot boot.img</i></u></p> and <p><u><i>fastboot flash userdata userdata.img</i></u></p> to install the System.</p></li>
+        <p>
+          Go inside the folder and execute this
+          <br>
+          (This will resize the Ubuntu-System to 10GB. This is useful if you want to modify the system or use apt):
+        </p>
+        <p><u><i>resize2fs ubuntu.img 10G</i></u></p>
+        <p>
+          Now go up one folder and run this:
+          <br>
+          (This will create the actual userdata.img with a size of 20GB. You can make all sizes as big as you want AS LONG as it dose not go above the actual size of the userdata-patition of the Titan.)
+        </p>
+        <p><u><i>mke2fs -t ext4 -O ^metadata_csum userdata.img 20240000 -d userdata</i></u></p>
+      </li>
+      <li>
+        <p>
+          <u><i>fastboot flash boot boot.img</i></u>
+          <br>
+          and
+          <br>
+          <u><i>fastboot flash userdata userdata.img</i></u>
+          <br>
+          to install the System.
+        </p>
+      </li>
       <li><p>To get back to your Android system, just flash your rooted boot.img (magisk) and erase the userdata partition once.</p></li>
-      <li><p>To change the system partition, go into settings, enable developer mode and connect the phone to a pc with a usb and adb shell on it. Now just execute <p><u><i>sudo mount -o remount,rw /</i></u></p> and the system is writable until reboot. If this writes into an overlay in the userdata-patition or directly into the ubuntu.img idk.</p></li>
+      <li>
+        <p>
+          To change the system partition, go into settings, enable developer mode and connect the phone to a pc with a usb and adb shell on it. Now just execute and the system is writable until reboot. If this writes into an overlay in the userdata-patition or directly into the ubuntu.img idk.
+          <br>
+          <br>
+          <u><i>sudo mount -o remount,rw /</i></u>
+        </p>
+      </li>
       <li><p>DKMS actually works as expected</p></li>
       <li><p>Without the right kernel headers you will not be able to compile modules.</p></li>
       <li><p><u>What did not work for me:</u> GPS, Video recording, VoLTE, Speaker Audio, Headphone-Audio and SADLY waydroid (missing binder module)</p></li>

@@ -18,15 +18,38 @@
     <p><a href="https://en.varmilo.com/keyboardproscenium/Driverdownload">https://en.varmilo.com/keyboardproscenium/Driverdownload</a></p>
     <br>
     <p><i>Then I configured hid-apple correctly:</i></p>
-    <p>Creating the config file: <p><u><i>echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf</i></u></p></p>
+    <p>
+      Creating the config file:
+      <br>
+      <u><i>echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf</i></u>
+    </p>
     <br>
-    <p>Checking if the file was created correctly (EXIT! DON'T SAVE!): <p><u><i>sudo nano /etc/modprobe.d/hid_apple.conf</i></u></p></p>
+    <p>
+      Checking if the file was created correctly (EXIT! DON'T SAVE!):
+      <br>
+      <u><i>sudo nano /etc/modprobe.d/hid_apple.conf</i></u>
+    </p>
     <br>
-    <p>Reload the hid-apple-module-config to check if it works: <p><u><i>sudo rmmod hid_apple; sudo modprobe hid_apple</i></u></p></p>
+    <p>
+      Reload the hid-apple-module-config to check if it works:
+      <br>
+      <u><i>sudo rmmod hid_apple; sudo modprobe hid_apple</i></u>
+    </p>
     <br>
-    <p>Makeing it permanent: <p><u><i>sudo mkinitcpio -p linux</i></u></p> or <p><u><i>sudo dracut -v -f</i></u></p></p>
+    <p>
+      Makeing it permanent:
+      <br>
+      <u><i>sudo mkinitcpio -p linux</i></u>
+      <br>
+      or
+      <br>
+      <u><i>sudo dracut -v -f</i></u></p>
     <br>
-    <p>Time to reboot and check again: <p><u><i>sudo reboot</i></u></p></p>
+    <p>
+      Time to reboot and check again:
+      <br>
+      <u><i>sudo reboot</i></u>
+    </p>
     <br>
     <p>Done. :)</p>
     <br>
