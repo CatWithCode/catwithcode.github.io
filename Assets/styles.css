@@ -57,7 +57,7 @@ mixedFonts:
 /* # - - - - Bold: */
 @font-face {
     font-family: mixedFonts;
-    src: url(/Assets/Fonts/Kilby/KILBY-Bold.otf);
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: normal;
     font-weight: bold;
 }
@@ -65,7 +65,7 @@ mixedFonts:
 /* # - - - - Italic: */
 @font-face {
     font-family: mixedFonts;
-    src: url(/Assets/Fonts/Kilby/KILBY.otf);
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: normal;
 }
@@ -73,7 +73,7 @@ mixedFonts:
 /* # - - - - Bold Italic: */
 @font-face {
     font-family: mixedFonts;
-    src: url(/Assets/Fonts/Kilby/KILBY.otf);
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: bold;
 }
