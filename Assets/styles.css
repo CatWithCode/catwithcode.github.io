@@ -48,7 +48,7 @@ https://mattcolewilson.com/resources
 mixedFonts:
 # - - - - Regular: */
 @font-face {
-    font-family: mixedFonts;
+    font-family: Vinston;
     src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: normal;
     font-weight: normal;
@@ -56,7 +56,7 @@ mixedFonts:
 
 /* # - - - - Bold: */
 @font-face {
-    font-family: mixedFonts;
+    font-family: Vinston;
     src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: normal;
     font-weight: bold;
@@ -64,7 +64,7 @@ mixedFonts:
 
 /* # - - - - Italic: */
 @font-face {
-    font-family: mixedFonts;
+    font-family: Vinston;
     src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: normal;
@@ -72,7 +72,7 @@ mixedFonts:
 
 /* # - - - - Bold Italic: */
 @font-face {
-    font-family: mixedFonts;
+    font-family: Vinston;
     src: url(/Assets/Fonts/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: bold;
@@ -112,7 +112,7 @@ mixedFonts:
 /* # - Global Font and Color: */
 * {
     /* # - Font and Text: */
-    font-family: 'mixedFonts', 'Courier New', 'monospace';
+    font-family: 'Vinston', 'Courier New', 'monospace';
     color: var(--textColor);
 
     /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
@@ -123,6 +123,11 @@ mixedFonts:
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
+
+    /* Disable Font Smoothing: */
+    font-smooth: never;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Line: */
