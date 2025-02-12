@@ -5,6 +5,11 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
+			<title>2025.02.12 - Save/Load System completely done and Level transition code also finished implementing</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
+			<description>Finally, FINALLY it is done. Including the UI, integration with the UI and UX, binding's and so on. The level switch code is also done and now only needs the signals connected and testing and maybe a level done screen or something so it is not just press here and next level. The Menu design is not final and only a framework so I can easily improve it with changing numbers later. Now it is Level 2 time and bug fixing for a few thing that came up with testing.</description>
+		</item>
+		<item>
 			<title>2025.02.03 - Save/Load System nearly done</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
 			<description>Nearly everything is working. I got it to behave like I wanted. It literately can be compared to a Save-State in Emulation Software or in Virtual Machines in regard how detailed the amount of information is that gets saved. TL;DR: EVERYTHING. How hard was it? HARD. Like really really HARD. I used the Binary serialization API and the the ResourceSaver and still had to incl. multiple custom ways to save data between running Sessions. Some did Godot just not touch or were reset regardless. Worst were at runtime created Objects and Animation States. Now I only have to fix a few things in the Player and NPC's code that are not set correctly from the start after loading a Save, then the Save/Load Framework is completed. After that the Level-Transition must be tested and integrated into the Save/Load framework too. The code is already done it only must be integrated incl. a Level Exit and Entry Node. That will be very easy. Just must be done cleanly so it must not be touched again. Building the Save-framework was very annoying and harder then it should be in a game engine but it is nearly done and I can hopefully leaf it alone after this. It is very generic and should work with all nodes build in the future and should only need a few flags in the Scene to be working immediately.</description>
