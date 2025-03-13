@@ -3,18 +3,8 @@
     <channel>
         <title>CatWithCode - Home</title>
         <link>https://catwithcode.moe/</link>
+        <atom:link href="https://catwithcode.moe/" rel="self" type="application/rss+xml" />
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
-        <!--
-<item>
-            <title>CatWithCode - TITEL</title>
-            <link>LINK</link>
-            <description>TEXT
-
-            LINK2
-            </description>
-        </item>
-        -->
-        <!-- RSS ENTRYS - START -->
         <item>
 			<title>CatWithCode - New Website Design</title>
 			<link>https://catwithcode.moe/Blog/2025.01.25_New_Design/New_Design.html</link>
@@ -537,7 +527,7 @@
         </item>
         <item>
             <title>CatWithCode - OpenSuse, Nvidia, Proton and 32bit-Games</title>
-            <link>LINK</link>
+            <link>https://catwithcode.moe/Blog/2022.05.21_OpenSuse_Nvidia_Gaming/OpenSuse_Nvidia_Gaming.html</link>
             <description>I needed to reinstall my PC (It was so full of trash it started to get Buggy. 4 Year old Manjaro install that saw 2 GPUs and 3 motherboards) and I thought I could try something different.
             
             https://catwithcode.moe/Blog/2022.05.21_OpenSuse_Nvidia_Gaming/OpenSuse_Nvidia_Gaming.html
