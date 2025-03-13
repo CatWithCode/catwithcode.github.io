@@ -379,7 +379,7 @@ while IFS= read -r html_file_for_RSS; do
 
 		# 8 Clean the target file by removing HTML-Tags:
 		# u:
-		sed -i 's/<u>//g; s/<\/u>//g' "$target_file"
+		sed -i 's/<u>//g; s/<\/u>//g' "$RSS_FEED_FILE"
 
 		# 9: Tell user what has been found and added:
 		echo "Added $html_file_for_RSS to $RSS_FEED_FILE"
