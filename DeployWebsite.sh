@@ -377,7 +377,11 @@ while IFS= read -r html_file_for_RSS; do
 			<pubDate>$current_date</pubDate>\n\
 		</item>" "$RSS_FEED_FILE"
 
-		# 8: Tell user what has been found and added:
+		# 8 Clean the target file by removing HTML-Tags:
+		# u:
+		sed -i 's/<u>//g; s/<\/u>//g' "$target_file"
+
+		# 9: Tell user what has been found and added:
 		echo "Added $html_file_for_RSS to $RSS_FEED_FILE"
 	fi
 done <<< "$html_files_for_RSS"
