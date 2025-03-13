@@ -8,6 +8,9 @@ target_file="Feed/RSS.xml"
 # Description getter Counter:
 line_counter=0
 
+# Initialize the counter value:
+idsToUse=$(grep -o "<h2><u>" "$source_file" | wc -l)
+
 # CleanUP RSS-Feed:
 > "$target_file"
 
@@ -19,8 +22,9 @@ echo "        <title>REPOSSESSED - Development Log</title>" >> "$target_file"
 echo "        <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>" >> "$target_file"
 echo "        <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>" >> "$target_file"
 
-# Initialize the counter value:
-counter=0
+# Initialize the titleDate value and it's formated version:
+datePub=""
+formatted_date=""
 
 # Extract text between <h2> and </h2> and write to target file:
 while IFS= read -r line; do
@@ -35,17 +39,21 @@ while IFS= read -r line; do
         echo "		<item>" >> "$target_file"
         
         # Write actual Text:
-        echo "			<title>$text</title>" >> "$target_file"
+        echo "			<title>RE//POSSESSED - $text</title>" >> "$target_file"
+        
+        # Get PubDate:
+        date_string=${text:3:10}
+        formatted_date=$(date -d "${date_string//./-}" +"%a, %d %b %Y 00:00:00 GMT")
 
         # Count Up:
-        counter=$((counter + 1))
+        idsToUse=$((idsToUse - 1))
 
         # Write to Tags:
-        echo "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${counter}</link>" >> "$target_file"
+        echo "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${idsToUse}</link>" >> "$target_file"
     fi
 
     # If just wrote Titel then:
-    if [[ $(tail -n 1 "$target_file") == "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${counter}</link>" ]]; then
+    if [[ $(tail -n 1 "$target_file") == "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${idsToUse}</link>" ]]; then
 
         # Get actual Text:
         line_counter=$((line_counter + 1))
@@ -58,7 +66,12 @@ while IFS= read -r line; do
             
             # Write Disc. and Tags:
             echo "			<description>$line</description>" >> "$target_file"
+            echo "			<pubDate>$formatted_date</pubDate>" >> "$target_file"
             echo "		</item>" >> "$target_file"
+
+            # Clean Date:
+            datePub=""
+            formatted_date=""
         fi
     fi
 done < "$source_file"
