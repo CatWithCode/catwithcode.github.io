@@ -363,7 +363,7 @@ while IFS= read -r html_file_for_RSS; do
 		cleand_p_text=$(echo "$p_text" | sed 's/<[^>]*>//g')
 
 		# Get the current Date for the PubDate:
-		current_date=$(date -u +"%a, %d %b %Y 00:00:00 GMT")
+		current_date=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
 
 		# 7: Add new RSS-Entry. The double Lines are for indentation and new Line:
 		sed -i "/<!-- RSS ENTRYS - START -->/a \
@@ -373,8 +373,8 @@ while IFS= read -r html_file_for_RSS; do
 			<description>${cleand_p_text}\n\
 			\n\
 			${DEFAULT_URL_PREFIX}${html_file_for_RSS}\n\
-			<pubDate>$current_date</pubDate>\n\
 			</description>\n\
+			<pubDate>$current_date</pubDate>\n\
 		</item>" "$RSS_FEED_FILE"
 
 		# 8: Tell user what has been found and added:
