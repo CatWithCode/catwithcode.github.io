@@ -19,6 +19,9 @@ echo "        <title>REPOSSESSED - Development Log</title>" >> "$target_file"
 echo "        <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>" >> "$target_file"
 echo "        <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>" >> "$target_file"
 
+# Initialize the counter value:
+counter=0
+
 # Extract text between <h2> and </h2> and write to target file:
 while IFS= read -r line; do
 
@@ -34,12 +37,15 @@ while IFS= read -r line; do
         # Write actual Text:
         echo "			<title>$text</title>" >> "$target_file"
 
+        # Count Up:
+        counter=$((counter + 1))
+
         # Write to Tags:
-        echo "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>" >> "$target_file"
+        echo "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${counter}</link>" >> "$target_file"
     fi
 
     # If just wrote Titel then:
-    if [[ $(tail -n 1 "$target_file") == "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>" ]]; then
+    if [[ $(tail -n 1 "$target_file") == "			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=${counter}</link>" ]]; then
 
         # Get actual Text:
         line_counter=$((line_counter + 1))
