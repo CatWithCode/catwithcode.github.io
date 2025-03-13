@@ -3,7 +3,6 @@
     <channel>
         <title>CatWithCode - Home</title>
         <link>https://catwithcode.moe/</link>
-        <atom:link href="https://catwithcode.moe/" rel="self" type="application/rss+xml" />
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <item>
 			<title>CatWithCode - New Website Design</title>
