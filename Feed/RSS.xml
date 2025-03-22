@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Using Sunshine with Hyprland on a Headless Display</title>
+			<link>https://catwithcode.moe/Blog/2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html</link>
+			<description>To get a remote desktop session to work without crapy or crapy proprietary tools you can use Sunshine with moonlight. The only issue would be the mouse could get off screen and the displays still would suck power (and are screen would be free to see for everyone in the room). My setup based on the tutorial by "xTeixeira" uses a script that sets everything up for me. The only issue is you must close all windows before entering or exiting remote but that's it. Oh and the swayidel, lock and waybar processes have issues to work after Sunshine closes. It seems like that Sunshine can not disown the sub-scripts. This needs a hotkey/menu-enty to work around it. But that's really it with issues.
+			
+			https://catwithcode.moe/Blog/2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html
+			</description>
+			<pubDate>Sat, 22 Mar 2025 21:46:48 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - New Website Design</title>
 			<link>https://catwithcode.moe/Blog/2025.01.25_New_Design/New_Design.html</link>
 			<description>Well... we go back in time even more. Borders? YES, Font? PIXELS, Readability? Actually a little better, CSS-Code? More jank. The new design has inspiration from different directions. From Serial Experiments Lain, to my own game to Neon Genesis Evangelion and old Linux Desktops like 4Dwm themes or old OpenBox setups or very old GNOME. I think you get it.
