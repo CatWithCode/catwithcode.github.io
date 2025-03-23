@@ -45,6 +45,7 @@
     <br>
     <p>Make sure to not have any "hyprctl reload" executed while in remote or the displays will turn back on! The command is usually in a reset hotkey or in the "GamingMode" script. I included my adapted version of the "official" Hyprland Gamingmode script that checks if it is safe to execute a reload.</p>
     <p>Waybar can be sensitive to the Display changes sometimes. That's why it is part of the Workaround script.</p>
+    <p>If you start the Remote script but your client can not see you PC then Sunshine did not start. This can happen if after entering the Desktop the Remote-Script was started to early. A way out of this 'Softlock' is just to press you reload Hotkey/Gaming Mode Hotkey. The GamingMode script will execute, because Sunshine is not running and config can be reloaded. This will turn the Displays back on and you can logout, log back in to make sure everything is back to normal, wait a little an THEN execute the Remote-Script.</p>
     <p>You need to add your idle Software to the script to kill it. If the Sunshine PC falls a sleep or locks itself you will not be able to see anything and the connection is lost.</p>
     <p>I also only could get Sunshine to work without issues when install through pacman (Arch Linux). And for some reason only the Flatpak version of Moonlight could work with hardware acceleration on my Thinkpad (Also Arch Linux).</p>
     <p>You should also add some windowrules to make the client better adapt to the usecase. Here a mine:</p>
