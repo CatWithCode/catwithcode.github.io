@@ -5,6 +5,12 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
+			<title>RE//POSSESSED - 2025.03.23 - Level 2 - Integrated all Models into the Level and removed "BlockOut" completely</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=18</link>
+			<description>It was a lot of work but the full environment is done and can now be filled with some interiors, decorations, where needed, and the planed NPC's and there “Missions/Paths/Quests/What ever the name is for how I am doing that stuff” can be integrated. And now the important part. TEASER IMAGES. NOT FINAL AND NOT DONE:</description>
+			<pubDate>Sun, 23 Mar 2025 00:00:00 GMT</pubDate>
+		</item>
+		<item>
 			<title>RE//POSSESSED - 2025.03.13 - Small fix to the RSS-Feed</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=17</link>
 			<description>Just a small fix. The RSS-Feed of the Dev-Logs were not formatted correctly. Now the RSS-Feed should work well again.</description>
