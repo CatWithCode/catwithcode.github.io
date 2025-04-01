@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This Updates the RSS-Feed.
+
+# License:
+# ALL RIGHTS RESERVED
+# This Code is very bad. It should not be used in production.
+
 # Variables:
 # Files:
 source_file="Dev_Log/Dev_Log.html"

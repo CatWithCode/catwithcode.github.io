@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - First of April, I Guess</title>
+			<link>https://catwithcode.moe/Blog/2025.04.01_First_Of_April_I_Guess/First_Of_April_I_Guess.html</link>
+			<description>To be honest IDK. why I did that. A friend challenged me and I thought it would be funny. So... I made my OC a CatGirl... Racon girl? I guess IDK. to be honest xD. This was also a challenge to myself to see how much my ability to create my ideas in 3D models improved and well, I think I am able to do it now for what it is worth. And I like my art style if you can call it that. I can not imagine any images in my head, like at all. That always made it really hard for me to draw or fully imagine if something would look good. At first I did not know what I was doing but now I can use the tools provided to me, and actually create what I want. The latest thing I did yesterday in RE//POSSESSED was to complete one of the BAR areas. And I also wanted to slip a reference to "VA-11 Hall-A" into it. And I think I did what I wanted to do.
+			
+			https://catwithcode.moe/Blog/2025.04.01_First_Of_April_I_Guess/First_Of_April_I_Guess.html
+			</description>
+			<pubDate>Tue, 01 Apr 2025 22:45:17 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Using Sunshine with Hyprland on a Headless Display</title>
 			<link>https://catwithcode.moe/Blog/2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html</link>
 			<description>To get a remote desktop session to work without crapy or crapy proprietary tools you can use Sunshine with moonlight. The only issue would be the mouse could get off screen and the displays still would suck power (and are screen would be free to see for everyone in the room). My setup based on the tutorial by "xTeixeira" uses a script that sets everything up for me. The only issue is you must close all windows before entering or exiting remote but that's it. Oh and the swayidel, lock and waybar processes have issues to work after Sunshine closes. It seems like that Sunshine can not disown the sub-scripts. This needs a hotkey/menu-enty to work around it. But that's really it with issues.

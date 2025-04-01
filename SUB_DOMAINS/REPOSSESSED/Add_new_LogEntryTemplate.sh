@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This adds the next DevLog as a Template.
+
+# License:
+# ALL RIGHTS RESERVED
+# This Code is bad. It should not be used in production.
+
 # Variables:
 SOURCE_FILE="Assets/BaseFiles/BASE_Log_Entry.html"  # Base File.
 TARGET_FILE="Dev_Log/Dev_Log.html"  # Log.

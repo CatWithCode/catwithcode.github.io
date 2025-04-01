@@ -67,11 +67,11 @@ output_file="temp_links.html"
 get_prefix() {
 	local dir_path="$1"
 	
-	# Check if the path contains the subdomains directory and extract the subfolder name
+	# Check if the path contains the subdomains directory and extract the subfolder name:
 	if [[ "$dir_path" == *"/$subdomains_dir/"* ]]; then
-		# Extract the subfolder name
+		# Extract the subfolder name:
 		local subfolder_name=$(echo "$dir_path" | awk -F'/' -v subdir="$subdomains_dir" '{for(i=1;i<=NF;i++) if($i==subdir) print $(i+1)}')
-		echo "${prefixes[$subfolder_name]:-$URL_PREFIX}"  # Use defined prefix or default
+		echo "${prefixes[$subfolder_name]:-$URL_PREFIX}"  # Use defined prefix or default.
 	else
 		echo "$DEFAULT_URL_PREFIX"
 	fi
@@ -82,7 +82,7 @@ get_prefix() {
 check_filetype() {
     local filename="$1"
 
-    # Loop through the array of file types
+    # Loop through the array of file types:
     for ext in "${okFileTypes[@]}"; do
 		# If File ext. is OK:
         if [[ "$filename" == *"$ext" ]]; then
