@@ -11,11 +11,11 @@
     <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
     
     <h1>How to actually get Q-Flash Plus to work</h1>
-    <p>Yes I mean it. Independent BIOS flash is a great idea but as usual the manufactures f*ck it up all the time. Q-Flash Plus on Gigabyte motherboards works. !BUT! it is very VEEERRRYY sensitive to the environment (USB2.0 or USB3.0, FAT or FAT32 and so on). I torture myself to find the right config and found a Reddit Post with one answer that had the solution. Below is how to EXACTLY AND I MEAN E X A C T L Y do it to get it working.</p>
+    <p>Yes I mean it. Independent BIOS flash is a great idea but as usual the manufactures f*ck it up all the time. Q-Flash Plus on Gigabyte motherboards works. !BUT! it is very VEEERRRYY sensitive to the environment (USB2.0 or USB3.0, FAT or FAT32 and so on). I tortured myself to find the right config and found a Reddit Post with one answer that had the solution. Below is how to EXACTLY AND I MEAN E X A C T L Y do it to get it working.</p>
     <p>The solution was originally found by "tencaig" on Reddit: <a href="https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/">https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/</a></p>
     <ol>
       <li>Use a USB 2.0 drive (3.0 can work but is even harder to get working).</li>
-      <li>Format it in Windows to the "FAT (Default)" profile in the format options. THIS IS IMPORTANT! It should be FAT16 at the end. AND NOT FORMATTING IT IN LINUX DID NOT WORK! If I do a byte by byte compare Linux dose something slightly different. The stick must also have a MRB Partition table.</li>
+      <li>Format it in Windows to the "FAT (Default)" profile in the format options. THIS IS IMPORTANT! It should be FAT16 at the end. AND NO, FORMATTING IT IN LINUX DOSE NOT WORK! If I do a byte by byte compare Linux dose something slightly different. The stick must also have a MRB Partition table.</li>
       <li>Download the BIOS update from Gigabyte directly. I did an update from 21 to 33.</li>
       <li>Extracted update file. Its extension is most likely its version. For me it was "X670GAMINGXAX.F33".</li>
       <li>Rename the update file to "GIGABYTE.bin". MAKE SURE TO RENAME ITS EXTENSION! MAKE REALLY SURE IT IS EXACTLY NAMED LIKE THIS INCLUDING THE lower AND UPPER CASE CHARACTERS!</li>
@@ -34,7 +34,7 @@
       <li>Now reconnect the bare minimum (RAM, USB-Mouse, USB-Keyboard, Display) and check the BIOS. If it worked, you are done and can rebuild the PC.</li>
     </ol>
     <p>Version 33 fixed most of my complains about my board (X670 GAMING X AX). BUT if I enable "Low latency mode" now for XMP/EXPO I get REALLY bad CPU-Interrupt timings aka. the mouse and UI lags extremely and GPU frames are often broken. "High bandwidth mode" works thought.</p>
-    <p>What I also found again, is that OpenSuse in the Default installation (WITHOUTH SECURE BOOT) is the ONLY Linux distribution to this day that can even boot if the UEFI is wiped and the NVRAM entry's are gone. I am sure this can be replicated or maybe has a name but I never see Distribution boot after a BIOS reset if they where installed via UEFI method.</p>
+    <p>What I also found again, is that OpenSuse in the Default installation (WITHOUTH SECURE BOOT) is the ONLY Linux distribution I used to this day that can even boot if the UEFI is wiped and the NVRAM entry's are gone. I am sure this can be replicated or maybe has a name but I never see Distribution boot after a BIOS reset if they where installed via UEFI method.</p>
     <br>
     <h2>Sources:</h2>
     <ul>
