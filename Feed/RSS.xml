@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - How to actually get Q-Flash Plus to work</title>
+			<link>https://catwithcode.moe/Blog/2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html</link>
+			<description>Yes I mean it. Independent BIOS flash is a great idea but as usual the manufactures f*ck it up all the time. Q-Flash Plus on Gigabyte motherboards works. !BUT! it is very VEEERRRYY sensitive to the environment (USB2.0 or USB3.0, FAT or FAT32 and so on). I torture myself to find the right config and found a Reddit Post with one answer that had the solution. Below is how to EXACTLY AND I MEAN E X A C T L Y do it to get it working.
+			
+			https://catwithcode.moe/Blog/2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html
+			</description>
+			<pubDate>Mon, 21 Apr 2025 14:36:06 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Linux with HDR, Ultrawide and Sunshine? KDE 6.3!</title>
 			<link>https://catwithcode.moe/Blog/2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html</link>
 			<description>I used Hyprland for a longer time now. I also was using tilling window managers for a few years now. But Hyprland had its issues again (most likly something I setup wrong). I reinstalled and switched to OpenSuse and tried KDE just a little and was blown away how good it now is!
