@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - 3DS no Battery mod (Hardwired)</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    
+    <h1>3DS no Battery mod (Hardwired)</h1>
+    <p>My husband and I needed decorations for our new surround sound setup. We added a shelf to our living room and that now needs decorations and, as young adults nowadays are, we don't own and/or want generic seasonal bulls*it decorations. So we got random gaming crap from our childhood's from the basement and put it in there. While doing this I discovered literally all battery's of any handheld console was bloated.</p>
+    <p>After removing them all I thought to myself, playing Pokémon Soul Silver with the Pokéwalker would be nice again. This is also the ONLY reason for me not to just use my backup and play on anything else.</p>
+    <p>But without a battery this is gonna be not possible. The 3DS <u>CAN</u> run without a battery BUT needs it to power on, then you can just remove it while plugged in. I can see why they block the use without it but at the same time it sucks for preservation or later in the hardware's lifetime... but that was never the goal of the manufacturer (if anything they are the inverse of preservation).</p>
+    <p>After searching a lot I saw no one did a hard power wire mod before. Some adapters for generic battery's exist but not a direct power mod.</p>
+    <h2>Research:</h2>
+    <p>I found one website that said it has the information about the charger but it was locked to admins (WTF). So I removed the cable isolation and found the exposed wire around the red middle wire is negative and the wire inside the red isolation is positive. Measuring the voltage, it outputs 4.63V exactly.</p>
+    <p>And after seeing that good battery's get up to 30 euros per battery with everything incl. and official once are out of the question, because I like to be able to do class action lawsuits and despise forced arbitration I decided to hard-mod the power-cable into the 3DS (Last time I wrote I will enforce my principles no mater what I meant it. Even if that means permanently removing the portability of a device.). I just striped the wires of an official charger, connected a buck converter to it to get from 4.6 to 3.6/7 volts and then soldered the output directly to the 3DS battery contacts. To convince the 3DS that a battery is inserted the middle pin must be bridged to the minus pin. I used a small metal wire for that (I know my soldering is absolutely terrible).</p>
+    <p>For strain relieve I just used wire routing, taped it down and then after making sure the cables don't get pinched by the back-cover pressed it down with the back-cover (I know, this is jank AF).</p>
+    <p>It works great. I obviously configured the buck converter before connecting it to the 3DS. I had 3.64V and the 3DS thinks it is around 75% full. Should you do this? No! This can be a fire hazard, I can never leave the DS alone plugged-in and I always must make sure I unplug it and the try turning it on to discharge the capacitors in the charger. You also must ensure to NEVER and I mean N E V E R connect a charger to any of the two charging ports of the 3DS. This will 100% kill it. I only did this because of the Pokéwalker, the overpriced high quality battery's and official once being out of the question. I will most likely never use the 3DS again after playing Soul Silver.</p>
+    <br>
+    <h2>Here are a few Images and a drawing on how I wired it up:</h2>
+    <br>
+    <p>Connecting to the battery contacts:</p>
+    <a href="DATA/01.jpg"><img src="DATA/01.jpg" alt="Contacts." style="width:70vw;";></a>
+    <p>How it is setup:</p>
+    <a href="DATA/02.jpg"><img src="DATA/02.jpg" alt="Finished cables." style="width:70vw;";></a>
+    <p>Literally carving out the plastic for a cable channel (A removal of the backside of the housing is a must because the 3DS is dense and has a lot of stuff directly under the plastics. Cutting while it is on the 3DS is NOT an option. Be careful with the ribbon connectors on the other side):</p>
+    <a href="DATA/03.jpg"><img src="DATA/03.jpg" alt="Cable path." style="width:70vw;";></a>
+    <p>The finished project. And yes the compositors and the settings wheel box of the buck converter is sticking out. I covered it with tape to make sure to never touch it or accidentally change the voltage (A slight change can be high enough to kill the 3DS):</p>
+    <a href="DATA/04.jpg"><img src="DATA/04.jpg" alt="Closed up." style="width:70vw;";></a>
+    <p>And a drawing of how it works (I know, the nearly 3 years of drawing technical  infrastructure of buildings in school really payed of):</p>
+    <a href="DATA/05.jpg"><img src="DATA/05.jpg" alt="Drawing of how it works." style="width:70vw;";></a>
+    <br>
+    <p>I also saw that a lot in regards to modding has changed. You can even play in widescreen (Looks like ass) or use Hardware filters (TWPatch with Linear1 looks great).</p>
+    <a href="DATA/06.jpg"><img src="DATA/06.jpg" alt="3DS working great." style="width:70vw;";></a>
+    <p>From my writing here and in the past, I'm very sure you all can see I don't think highly of the manufacturer. And just to make sure I cover my tracks, because what are rights anyway: <u><b><i>Everything here is my opinion and theoretical and dose not must be true.</i></b></u></p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.pcbway.com/project/shareproject/New_3DS_LipoMod.html">https://www.pcbway.com/project/shareproject/New_3DS_LipoMod.html</a></li>
+      <li><a href="../2025.05.08_Ewaste_Surround/Ewaste_Surround.html">/2025.05.08_Ewaste_Surround/Ewaste_Surround.html</a></li>
+      <li><a href="https://forums.nesdev.org/viewtopic.php?t=18490&start=165">https://forums.nesdev.org/viewtopic.php?t=18490&start=165</a></li>
+      <li><a href="https://www.ifixit.com/Teardown/Nintendo+3DS+Teardown/5029">https://www.ifixit.com/Teardown/Nintendo+3DS+Teardown/5029</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.05.13 - 22:00');</script></div>
+  </body>
+</html>
