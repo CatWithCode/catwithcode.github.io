@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - TUF GAMING B450-PLUS II NVMe BUG</title>
+			<link>https://catwithcode.moe/Blog/2025.05.14_TUF_GAMING_B450-PLUS_II_NVMe_BUG/TUF_GAMING_B450-PLUS_II_NVMe_BUG.html</link>
+			<description>My husband's PC has this board (BIOS: 4631 - 292156861A336E1F25B66934958F9770F263366C09687F03450F12D99943516D - 2025/04/01), and on Linux it causes heavy and I mean HEAVY stutters and freezes. It has something to do with NVMe and power-saving mode. I fixed it with the following grub boot parameters found on the Arch Wiki. If that affects something we did not try or check IDK.:
+			
+			https://catwithcode.moe/Blog/2025.05.14_TUF_GAMING_B450-PLUS_II_NVMe_BUG/TUF_GAMING_B450-PLUS_II_NVMe_BUG.html
+			</description>
+			<pubDate>Wed, 14 May 2025 17:29:21 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - 3DS no Battery mod (Hardwired)</title>
 			<link>https://catwithcode.moe/Blog/2025.05.13_3DS_No_Battery_Mod/3DS_No_Battery_Mod.html</link>
 			<description>My husband and I needed decorations for our new surround sound setup. We added a shelf to our living room and that now needs decorations and, as young adults nowadays are, we don't own and/or want generic seasonal bulls*it decorations. So we got random gaming crap from our childhood's from the basement and put it in there. While doing this I discovered literally all battery's of any Nintendo console was bloated.
