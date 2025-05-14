@@ -16,9 +16,17 @@
     <br>
     <a href="https://wiki.archlinux.org/title/Solid_state_drive/NVMe">https://wiki.archlinux.org/title/Solid_state_drive/NVMe</a>
     <br>
+    <p>One other helpful thing we found was after swapping a broken SSD a few days ago, is that if you use BTRFS you can check and get broken files in a log (dmesg) and fix them/remove them. We copy'ed some files to an ext4 drive and then back to the new drive with BTRFS and it still found them (The first cheeks the filesystem, the second reports back whats happening and the last, after the check is finished, filters dmesg for the errors (But it can be easily also be read in just the dmesg output - Found by "Mark" at superuser.com)):</p>
+    <p><u><i>sudo btrfs scrub start /</i></u></p>
+    <p><u><i>sudo btrfs scrub status /</i></u></p>
+    <p><u><i>dmesg | grep "checksum error at" | tail -4 | cut -d\  -f24- | sed 's/.$//'</i></u></p>
+    <br>
     <h2>Sources:</h2>
     <ul>
       <li><a href="https://wiki.archlinux.org/title/Solid_state_drive/NVMe">https://wiki.archlinux.org/title/Solid_state_drive/NVMe</a></li>
+      <li><a href="https://superuser.com/questions/858237/">https://superuser.com/questions/858237/</a></li>
+      <li><a href="https://superuser.com/a/1000835">https://superuser.com/a/1000835</a></li>
+      <li><a href="https://superuser.com/users/234042/mark">https://superuser.com/users/234042/mark</a></li>
     </ul>
     <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.05.14 - 19:30');</script></div>
   </body>
