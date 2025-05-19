@@ -20,6 +20,7 @@
     <p>sudo btrfs scrub start /</p>
     <p>sudo btrfs scrub status /</p>
     <p>dmesg | grep "checksum error at" | tail -4 | cut -d\  -f24- | sed 's/.$//'</p>
+    <p>dmesg -wH</p>
     <p><u>Update - 2025.05.19</u>: It turns out, besides the broken SDD, his PC also had one bad RAM stick. After swapping/removing the bad RAM module, all issues disappeared EXCEPT for the stuttering. The PC only and I mean ONLY runs fluid on Linux if I add the parameters listed above. Why? I really don't know. We also tried older BIOS versions but nothing changed. 4631 caused some other issues in the Log's while booting, so we tested the BIOS it came with from factory (which was 4401 - 2023/10/23  - 679a99001d98009163387df167269dcc2ac56ded6681421c11f52d25bd498e85). It only was able to be installed when using FlashBack. It worked by rename the File "TB450PS2.CAP" and putting it on my trusted, case-less and kinda damaged FAT16 USB2.0 Stick from the last bios shenanigans I had.</p>
     <br>
     <h2>Sources:</h2>
@@ -30,7 +31,9 @@
       <li><a href="https://superuser.com/users/234042/mark">https://superuser.com/users/234042/mark</a></li>
       <li><a href="https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b450-plus-ii/helpdesk_bios?model2Name=TUF-GAMING-B450-PLUS-II">https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b450-plus-ii/helpdesk_bios?model2Name=TUF-GAMING-B450-PLUS-II</a></li>
       <li><a href="../2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html">/2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html</a></li>
-      m
+      <li><a href="https://unix.stackexchange.com/questions/95842/">https://unix.stackexchange.com/questions/95842/</a></li>
+      <li><a href="https://unix.stackexchange.com/a/95852">https://unix.stackexchange.com/a/95852</a></li>
+      <li><a href="https://unix.stackexchange.com/users/1131/maxschlepzig">https://unix.stackexchange.com/users/1131/maxschlepzig</a></li>
     </ul>
     <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.05.19 - 17:30');</script></div>
   </body>
