@@ -1,0 +1,243 @@
+/* # Preparations:
+# - Licenses:
+
+# - - Colors:
+# - - - Color palette inspired by "ZENITH" from "SweetAvery":
+https://lospec.com/sweet-avery
+https://lospec.com/palette-list/zenith
+
+# - - Fonts:
+# - - - OpenDyslexic:
+CatWithCode.moe uses the "OpenDyslexic"-Font which was created by "Abbie Gonzalez" and licensed under "SIL-OFL":
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/License/OFL-FAQ.txt
+/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/License/ofl-faq10.txt
+/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/License/OFL.txt
+/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/License/OFL10.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+https://opendyslexic.org/
+https://antijingoist.gumroad.com/l/OpenDyslexic
+https://www.patreon.com/opendyslexic
+https://abbiecod.es/
+https://github.com/antijingoist
+https://github.com/antijingoist/opendyslexic
+
+# - - - - Regular: */
+@font-face {
+    font-family: opendyslexic;
+    src: url(/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/OpenDyslexic-Regular.woff2);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: opendyslexic;
+    src: url(/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/OpenDyslexic-Bold.woff2);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: opendyslexic;
+    src: url(/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/OpenDyslexic-Italic.woff2);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: opendyslexic;
+    src: url(/Blog/2023.11.23_New_Design/DATA/STATIC_FONTS/OpenDyslexic/OpenDyslexic-Bold-Italic.woff2);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # General Settings: 
+# - Variables: */
+:root {
+    /* # - - General-Colors: */
+    --background: #18171a;
+    --alt_background: #1e1c21;
+    --foreground: #81deff;
+    --foreground2: #5c63b8;
+    --alt_foreground: #e46c6c;
+
+    /* # - - Images: */
+    --image_margin: 1%;
+    --image_padding: 1%;
+    --image_border: 0.2em;
+    --image_border_color: #67e57b;
+    --image_width: 25em;
+}
+
+/* # - Global Font and Color: */
+* {
+    /* # - Font and Text: */
+    font-family: 'opendyslexic', 'Courier New', 'monospace';
+    background-color: var(--background);
+    color: var(--foreground);
+
+    /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
+    /*image-rendering: optimizeSpeed;*/
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* # - Line (FIX for 1px-Width Issue): */
+hr {
+  width: 100%;
+}
+
+/* # - Body: */
+body {
+    /* # - Footer-Spacing (Fill Space in between): */
+    min-height: 98vh; /* May need to be lowered. Prevents scrolling from filling the space between the footer and body content. */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fixing Long Links: */
+a {
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+
+    /* Making Links in better Visible: */
+    color: var(--foreground2);
+}
+
+/* # - Header: */
+#Header {
+    /* # - - Styling: */
+    width: 100%;
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* # - - Header-Border: */
+#Header_Border {
+    /* # - - - Position: */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 25px; /* Make sure the Header-Text does not overlap the border. */
+
+    /* # - - - Styling: */
+    background-color: var(--alt_background);
+
+    border-radius: 0px 0px 25px 25px;
+    border-bottom: 1px solid var(--alt_foreground);
+}
+
+/* # - - Header-Content: */
+#Header_Border * {
+    /* # - - - Styling: */
+    background-color: var(--alt_background);
+}
+
+/* # - Fooder: */
+#Footer {
+    /* # - - Position: */
+    margin-top: auto;
+}
+
+/* # - - Fooder-Container: */
+#Fooder_Border {
+    /* # - - Position: */
+    margin-top: auto;  
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    padding-bottom: 0px;
+
+    /* # - - Styling: */
+    text-align: center;
+    background-color: var(--alt_background);
+
+    border-radius: 25px 25px 0px 0px;
+
+    border-top: 1px solid var(--alt_foreground);
+    border-left: 1px solid var(--alt_foreground);
+    border-right: 1px solid var(--alt_foreground);
+}
+
+/* # - - Fooder-Content: */
+#Fooder_Border * {
+    /* # - - - Spacing from Border*/
+    margin-left: 25px;
+    margin-right: 25px;
+
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+    /* # - - - Styling: */
+    background-color: var(--alt_background);
+}
+/* # # #
+
+# - - ImageBody-Content: */
+#ImageLibrary {
+    /* Align Images into Rows dynamically: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: var(--image_padding);
+}
+
+#ImageBody {
+    /* Image Body itself: */
+    border-radius: 8px;
+    border: var(--image_border) solid var(--image_border_color);
+    padding: var(--image_padding);
+    margin: var(--image_margin);
+    max-width: var(--image_width);
+    text-align: center;
+    cursor: pointer;
+}
+
+#ImageBody img {
+    /* Image size fix: */
+    border-radius: 8px;
+    max-width: 100%;
+}
+/* # # #
+
+# Classes for custom items:
+# - Centred Items:
+    For Items that need to be Centred (Ideally used with div's). */
+.centredItems {
+    text-align: center;
+}
+
+/* # - Clean Text:
+    For Items that need to have Decorations like underline removed. */
+.cleanText {
+    text-decoration: none;
+}
+/* # # # */

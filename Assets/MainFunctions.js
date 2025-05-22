@@ -47,15 +47,29 @@ function checkViewerType() {
     }
 }
 
-// - - Write HTML-Head (NOT async because of WebCrawler):
-function WriteHead() {
-    document.write('\
-    \
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-        <link rel="stylesheet" href="/Assets/styles.css">\
-        <link rel="icon" type="image/x-icon" href="/Assets/favicon.gif">\
-        <meta name="description" content="Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.">\
-    ');
+// - - Write HTML-Head (NOT async because of WebCrawler. Optonal CSS for "New Design"-Pages.):
+function WriteHead(skipCss = false) {
+    // Beginning:
+    document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+    
+    // CSS-Needed?:
+    if (!skipCss) {
+        document.write('<link rel="stylesheet" href="/Assets/styles.css">');
+    }
+
+    // END:
+    document.write('<link rel="icon" type="image/x-icon" href="/Assets/favicon.gif">\
+        <meta name="description" content="Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.">');
+}
+
+// - - Warning for "New Design"-Pages. Used to indicate the design currently shown may be old.):
+// - - To use just copy/paste: "<script type="text/javascript">WriteDesignPageWarning();</script>"
+function WriteDesignPageWarning() {
+    document.write('<br>\
+        <hr>\
+        <h2>THE DESIGN YOU\'RE SEEING MY BE OUTDATED! DESIGN-ANNOUNCEMENT-PAGE\'S ARE KEPT IN THE ORIGINAL DESIGN SO IT CAN STILL BE VIEWED IN THE FUTURE. GO TO ANY OTHER PAGE OF MY WEBSITE TO SEE THE ACTUAL DESIGN. ANY OTHER ASPECT OF DESIGN-ANNOUNCEMENT-PAGE\'S EXCEPT FOR THE DESIGN ARE NOT KEPT ORIGINAL, MEANING THIS PAGE CAN LOOK BROKEN FROM TIME TO TIME!</h2>\
+        <hr>\
+        <br>');
 }
 
 // - ImageLibary Components 
