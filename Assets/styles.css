@@ -110,6 +110,14 @@ mixedFonts:
 
     /* Background Base-Color: */
     background-color: var(--background);
+    
+    /* Background-Image: */
+    /* background: url(/path/file.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: bottom; */
 }
 
 /* # - Global Font and Color: */
