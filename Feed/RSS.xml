@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Design made worst</title>
+			<link>https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html</link>
+			<description>GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).
+			
+			https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html
+			</description>
+			<pubDate>Thu, 29 May 2025 21:00:01 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - TUF GAMING B450-PLUS II NVMe BUG</title>
 			<link>https://catwithcode.moe/Blog/2025.05.14_TUF_GAMING_B450-PLUS_II_NVMe_BUG/TUF_GAMING_B450-PLUS_II_NVMe_BUG.html</link>
 			<description>My husband's PC has this board (BIOS: 4631 - 292156861A336E1F25B66934958F9770F263366C09687F03450F12D99943516D - 2025/04/01), and on Linux it causes heavy and I mean HEAVY stutters and freezes. It has something to do with NVMe and power-saving mode. I fixed it with the following grub boot parameters found on the Arch Wiki. If that affects something we did not try or check IDK.:

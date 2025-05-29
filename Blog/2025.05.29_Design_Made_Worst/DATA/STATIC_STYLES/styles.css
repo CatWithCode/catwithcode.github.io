@@ -15,41 +15,22 @@ https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
 https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
 https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
 https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
-/Assets/Fonts/License/OFL-FAQ.txt
-/Assets/Fonts/License/ofl-faq10.txt
-/Assets/Fonts/License/OFL.txt
-/Assets/Fonts/License/OFL10.txt
-/Assets/Fonts/Vinston/License/readme.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL-FAQ.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/ofl-faq10.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL10.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/License/readme.txt
 https://en.wikipedia.org/wiki/SIL_Open_Font_License
 https://dribbble.com/damianlesniowski
 https://fontesk.com/vinston-font/
 https://fontesk.com/designer/damian-lesniowski/
 https://www.instagram.com/lesniowski.design/
 
-# - - Fonts:
-# - - - Kilby Font:
-CatWithCode.moe uses the "Kilby"-Font which was created by "Matt Cole Wilson" and licensed under "SIL-OFL":
-https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
-https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
-https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
-https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
-https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
-/Assets/Fonts/License/OFL-FAQ.txt
-/Assets/Fonts/License/ofl-faq10.txt
-/Assets/Fonts/License/OFL.txt
-/Assets/Fonts/License/OFL10.txt
-/Assets/Fonts/KILBY/License/KILBY-readme.txt
-/Assets/Fonts/KILBY/License/Liks_and_Creator.txt
-https://en.wikipedia.org/wiki/SIL_Open_Font_License
-https://fontesk.com/kilby-font/
-https://fontesk.com/designer/matt-cole-wilson/
-https://mattcolewilson.com/resources
-
 mixedFonts:
 # - - - - Regular: */
 @font-face {
     font-family: Vinston;
-    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
     font-style: normal;
     font-weight: normal;
 }
@@ -57,7 +38,7 @@ mixedFonts:
 /* # - - - - Bold: */
 @font-face {
     font-family: Vinston;
-    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
     font-style: normal;
     font-weight: bold;
 }
@@ -65,7 +46,7 @@ mixedFonts:
 /* # - - - - Italic: */
 @font-face {
     font-family: Vinston;
-    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: normal;
 }
@@ -73,7 +54,7 @@ mixedFonts:
 /* # - - - - Bold Italic: */
 @font-face {
     font-family: Vinston;
-    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
     font-style: italic;
     font-weight: bold;
 }
@@ -150,7 +131,7 @@ body {
     flex-direction: column;
 
     /* # - Background-Image: */
-     background-image: url(/Assets/Backgrounds/Layered/Rain.png);
+     background-image: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_STYLES/Backgrounds/Layered/Rain.png);
 
      /* # - - Background-Animations Propertys: */
     background-repeat: repeat;
