@@ -33,6 +33,21 @@
       <li>On the client I tested multiple setups and only the appimage of moonlight would work to make it use HDR. HDR needs to be enabled in the Settings of Moonlight.</li>
       <li>On the OpenSuse Host I needed to add codes (even though I hate the Packman repositories). Else the encoder would not work: <b><u>sudo zypper in opi && opi codecs</u></b>. For HDR your GPU on the HOST (AMD and INTEL ONLY. Nvidia is unable to work with Fake Displays because obviously the needed to break it) MUST support HEVC H265 or AV1 encoding in Hardware. H264 dose not support HDR in sunshine.</li>
       <li>Now with my “RemoteGaming_KDE_HDR.sh” script I can start sunshine on the Host and play remote. And as soon as I exit, it resets the Displays cleanly. You MUST input your exact setup into the script twice! The current values are only for my setup!</li>
+      <li>
+        You need to setup two profiles for HDR and SDR. Both need one of those commands in there Do Commands:
+        <br>
+        <br>
+        >> HDR:
+        <br>
+        kscreen-doctor output.DP-2.hdr.enable && kscreen-doctor output.DP-2.wcg.enable
+        <br>
+        <br>
+        >> SDR:
+        <br>
+        kscreen-doctor output.DP-2.hdr.disable && kscreen-doctor output.DP-2.wcg.disable
+        <br>
+        <br>
+      </li>
       <li>I also needed to set the "Color accuracy" on client AND host to "Prefer efficiency" else it would break the HDR pipeline.</li>
       <li>
         <br>
@@ -49,6 +64,7 @@
         <b><u><i>LD_PRELOAD="" gamescope --hdr-enabled --nested-refresh 165 -b --steam -w 4720 -W 4720 -h 1440 -H 1440 --force-grab-cursor -- %command%</i></u></b>
       </li>
     </ol>
+    <p>From my usage the last few days with an HDR QD-OLED monitor I noticed that you should have a command/Hotkey/Script that enables HDR and WCG if you work or code so the display and your eyes don't get strained unnecessarily. Can be made with an If-Else case in a script that uses the same command used in the HDR profile for Sunshine.</p>
     <p>I tested a little more (I have bought myself a HDR QD-OLED Ultrawide Display) and to get HDR everywhere working I needed many different types of setup's. The setup above sometimes work. But sometimes if I want to play Cyberpunk 2077 for example I need native Proton-HDR (Only some builds have HDR enabled. "proton-cachyos-10.0-20250601-slr-x86_64_v3" works for me). Then the only option is either using Mesa 25.1 and newer and KDE 6.4 or newer. But both is are in Beta. For now I use a trick originally only needed for Nvidia and some AMD setups. It is a library called "vk_layer_hdr". A fork needs to be compiled on the system if not available in the repository with the installed MESA build at compile time. A good demonstration is this video by "LinuxNext" on Youtube: <a href="https://youtu.be/B_87kmAAlRw">https://youtu.be/B_87kmAAlRw</a>. The fork I used (From “Zamundaaa” forked from "Drakulix"): <a href="https://github.com/Zamundaaa/VK_hdr_layer">https://github.com/Zamundaaa/VK_hdr_layer</a>. It works on OpenSuse Slowroll with the following start command (This one is for Cyberpunk 2077): <u>PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 ENABLE_HDR_WSI=1 %command% --launcher-skip -skipStartScreen -modded</u></p>
     <p>The Important part is the "<u>ENABLE_HDR_WSI=1</u>" that many guides are missing. It tells proton and/or Mesa to use the external HDR layer from the library.</p>
     <p>I Heroic Launcher I could not get Control to work with HDR. It has a dose soemthing that causes a Bug in Protons Wayland/HDR part that breaks mouse movment. BUT I got it to work with gamescope with the arguments as followed: <u>-W 5120 -H 1440 -w 5120 -h 1440 -f --hdr-debug-force-support --hdr-enabled --adaptive-sync --immediate-flips</u></p>
@@ -83,7 +99,8 @@
       <li><a href="https://github.com/Zamundaaa/VK_hdr_layer">https://github.com/Zamundaaa/VK_hdr_layer</a></li>
       <li><a href="https://youtu.be/B_87kmAAlRw">https://youtu.be/B_87kmAAlRw</a></li>
       <li><a href="https://youtu.be/wcs7JsMLHFY">https://youtu.be/wcs7JsMLHFY</a></li>
+      <li><a href="https://discuss.kde.org/t/when-enabling-hdr-through-command-with-kscreen-doctor-it-behaves-weirdly/28827">https://discuss.kde.org/t/when-enabling-hdr-through-command-with-kscreen-doctor-it-behaves-weirdly/28827</a></li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.06.04 - 17:20');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.06.05 - 17:00');</script></div>
   </body>
 </html>
