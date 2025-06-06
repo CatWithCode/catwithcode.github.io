@@ -147,8 +147,18 @@ hr {
     width: 100%;
 
     /* Line Color: */
-    color: var(--border_color);
+    color: var(--textColor);
 }
+
+/* 
+body {
+    margin: 0;
+    height: 100vh; 
+    position: relative; 
+    background-color: #f0f0f0;
+} */
+
+/* AAA */
 
 /* # - Body: */
 body {
@@ -164,6 +174,25 @@ body {
     background-repeat: repeat;
     background-size: 20%;
     animation: shiftBackground 500s linear infinite;
+}
+
+/* Center Line: */
+body::before {
+    /* Needed or line is not showing: */
+    content: '';
+    position: fixed; /* Making sure it is full Page height. */
+    
+    /* Position: */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Shifts the Line back to the Center. */
+
+    /* Size: */
+    width: 10%;
+    min-height: 100%;
+
+    /* Color: */
+    background-color: var(--border_color);
 }
 
 /* Animation for the Background-Rain. (vh should fix the Reset isssue) */
@@ -231,7 +260,7 @@ a {
 # - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
 Main Elements: */
 body > *:not(
-        hr)
+    hr)
 {
     position: relative;
     padding: 20px;
@@ -248,8 +277,7 @@ body > *:not(
 /* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
 Main Elements: */
 body > *:not(
-        hr
-        )::before
+    hr)::before
 {
     content: '';
     background-color: var(--alt_background);
@@ -260,6 +288,23 @@ body > *:not(
 }
 /* # # #
 
+# - Site-Swap-CODE: */
+body > *:nth-child(odd):not(
+    hr) 
+{
+    width: 40%; /* Fixes Tex */
+    left: 55%; /* Align to the right side */
+}
+
+/* Align "even" to the left */
+body > *:nth-child(even):not(
+    hr) 
+{
+    width: 40%; /* Fixes Tex */
+    right: 0%/* Align to the right side */
+}
+
+/* # # #
 # - Offset for Lists that would get cutoff because of the way the Borders works: */
 ul,
 ol
@@ -270,35 +315,6 @@ ol
 /* Headline Color: */
 h1, h2, h3, h4, h5, h6 {
     color: var(--headline_color);
-}
-
-/* # # # */
-/* # - Header: */
-#Header {
-    /* # - - Styling: */
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-/* # - - Header-Border: */
-#Header_Border {
-    /* # - - - Position: */
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 25px; /* Make sure the Header-Text does not overlap the border. */
 }
 
 /* # - Fooder: */
