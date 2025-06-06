@@ -147,7 +147,7 @@ hr {
     width: 100%;
 
     /* Line Color: */
-    color: var(--border_color);
+    color: var(--textColor);
 }
 
 /* # - Body: */
@@ -231,7 +231,7 @@ a {
 # - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
 Main Elements: */
 body > *:not(
-        hr)
+    hr)
 {
     position: relative;
     padding: 20px;
@@ -248,8 +248,7 @@ body > *:not(
 /* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
 Main Elements: */
 body > *:not(
-        hr
-        )::before
+    hr)::before
 {
     content: '';
     background-color: var(--alt_background);
