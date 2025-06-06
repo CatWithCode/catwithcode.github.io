@@ -230,36 +230,9 @@ a {
 
 # - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
 Main Elements: */
-p,
-/* Links (with Special Conditions: */
-a:not(
-        p a, /* Links in Text. */
-        li a, /* Links in unordered Lists. */
-        h1 a, /* Links in all types of Headers. */
-        h2 a,
-        h3 a,
-        h4 a,
-        h5 a,
-        h6 a
-    ),
-/* Header and Footer Classes: */
-h1,
-h2,
-h3,
-h4,
-h5:not(
-        #Footer h5 /* Fixes Footer. */
-    ),
-h6,
-/* Header and Footer Classes: */
-#Header,
-#Footer,
-#ImageBody,
-/* List Bodys: */
-ul,
-ol,
-/* Button Controls: */
-button{
+body > *:not(
+        hr)
+{
     position: relative;
     padding: 20px;
     margin: 20px;
@@ -274,36 +247,9 @@ button{
 
 /* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
 Main Elements: */
-p::before,
-/* Links (with Special Conditions: */
-a:not(
-        p a, /* Links in Text. */
-        li a, /* Links in unordered Lists. */
-        h1 a, /* Links in all types of Headers. */
-        h2 a,
-        h3 a,
-        h4 a,
-        h5 a,
-        h6 a
-    )::before,
-/* All types of Headers: */
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5:not(
-        #Footer h5 /* Fixes Footer. */
-    )::before,
-h6::before,
-/* Header and Footer Classes: */
-#Header::before,
-#Footer::before,
-#ImageBody::before,
-/* List Bodys: */
-ul::before,
-ol::before,
-/* Button Controls: */
-button::before
+body > *:not(
+        hr
+        )::before
 {
     content: '';
     background-color: var(--alt_background);
