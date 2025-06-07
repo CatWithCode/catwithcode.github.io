@@ -64,10 +64,13 @@
         <br>
         ###########
         <br>
-<xmp>External Drivers:
-monado : /usr/share/steamvr-monado
-</xmp>
-        ###########
+        <p>
+          External Drivers:
+          <br>
+          monado : /usr/share/steamvr-monado
+          <br>
+        </p>
+        <p>###########</p>
         <br>
         <br>
       </li>
@@ -81,54 +84,98 @@ monado : /usr/share/steamvr-monado
       <li>Create the script below, change "###YOUR_USERNAME###" to your Linux username, make it executable and place it in your home directory:
         <br>
         <br>
-        ###########
+        <p>###########</p>
         <br>
-<xmp>#!/bin/bash
+        <p>
+          #!/bin/bash
+          <br>
 
-# For OpenComposite, sould SteamVR not work:
-#VR_OVERRIDE=/run/host/usr/share/opencomposite XR_RUNTIME_JSON=/run/host/usr/share/openxr/1/openxr_monado.json PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/monado_comp_ipc %command%
+          <br>
+          # For OpenComposite, sould SteamVR not work:
+          <br>
+          #VR_OVERRIDE=/run/host/usr/share/opencomposite XR_RUNTIME_JSON=/run/host/usr/share/openxr/1/openxr_monado.json PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/monado_comp_ipc %command%
+          <br>
 
-# VR-SafeMode-CleanUp (https://linuxhint.com/replace_string_in_file_bash/):
+          <br>
+          # VR-SafeMode-CleanUp (https://linuxhint.com/replace_string_in_file_bash/):
+          <br>
 
-# - Assign the filename
-filename="/home/###YOUR_USERNAME###/.steam/steam/config/steamvr.vrsettings"
+          <br>
+          # - Assign the filename
+          <br>
+          filename="/home/###YOUR_USERNAME###/.steam/steam/config/steamvr.vrsettings"
+          <br>
 
-# - Take the search string
-search="\"blocked_by_safe_mode\" : true"
+          <br>
+          # - Take the search string
+          <br>
+          search="\"blocked_by_safe_mode\" : true"
+          <br>
 
-# - Take the replace string
-replace="\"blocked_by_safe_mode\" : false"
+          <br>
+          # - Take the replace string
+          <br>
+          replace="\"blocked_by_safe_mode\" : false"
+          <br>
 
-# - Replacing String:
-if [[ $search != "" && $replace != "" ]]; then
-  sed -i "s/$search/$replace/" $filename
-fi
+          <br>
+          # - Replacing String:
+          <br>
+          if [[ $search != "" && $replace != "" ]]; then
+          <br>
+            sed -i "s/$search/$replace/" $filename
+          <br>
+          fi
+          <br>
 
-# Start Steam:
+          <br>
+          # Start Steam:
+          <br>
 
-export STEAMVR_PATH="~/.local/share/Steam/steamapps/common/SteamVR"
+          <br>
+          export STEAMVR_PATH="~/.local/share/Steam/steamapps/common/SteamVR"
+          <br>
 
-export STEAM_RUNTIME=~/.steam/root/ubuntu12_64/steam-runtime
+          <br>
+          export STEAM_RUNTIME=~/.steam/root/ubuntu12_64/steam-runtime
+          <br>
 
-export XDG_SESSION_TYPE=x11
-export QT_QPA_PLATFORM=xcb
+          <br>
+          export XDG_SESSION_TYPE=x11
+          <br>
+          export QT_QPA_PLATFORM=xcb
+          <br>
 
-export -n XDG_BACKEND
-export -n ELM_ENGINE
-export -n ELM_DISPLAY
-export -n WINIT_UNIX_BACKEND
-export -n BEMENU_BACKEND
-export -n SDL_VIDEODRIVER
-export -n ECORE_EVAS_ENGINE
-export -n CLUTTER_BACKEND
-export -n QT_WAYLAND_DISABLE_WINDOWDECORATION
-export -n QT_WAYLAND_FORCE_DPI
+          <br>
+          export -n XDG_BACKEND
+          <br>
+          export -n ELM_ENGINE
+          <br>
+          export -n ELM_DISPLAY
+          <br>
+          export -n WINIT_UNIX_BACKEND
+          <br>
+          export -n BEMENU_BACKEND
+          <br>
+          export -n SDL_VIDEODRIVER
+          <br>
+          export -n ECORE_EVAS_ENGINE
+          <br>
+          export -n CLUTTER_BACKEND
+          <br>
+          export -n QT_WAYLAND_DISABLE_WINDOWDECORATION
+          <br>
+          export -n QT_WAYLAND_FORCE_DPI
+          <br>
 
-export STEAMVR_EMULATE_INDEX_CONTROLLER=1 
-STEAMVR_EMULATE_INDEX_CONTROLLER=1
-~/.steam/steam/steamapps/common/SteamVR/bin/vrstartup.sh
-</xmp>
-        ###########
+          <br>
+          export STEAMVR_EMULATE_INDEX_CONTROLLER=1 
+          <br>
+          STEAMVR_EMULATE_INDEX_CONTROLLER=1
+          <br>
+          ~/.steam/steam/steamapps/common/SteamVR/bin/vrstartup.sh
+        </p>
+        <p>###########</p>
         <br>
         <br>
       </li>      
@@ -144,11 +191,15 @@ STEAMVR_EMULATE_INDEX_CONTROLLER=1
         <br>
         ###########
         <br>
-<xmp>External Drivers:
-monado : /usr/share/steamvr-monado
-holographic : /home/###YOUR_USERNAME###/.local/share/Steam/steamapps/common/MixedRealityVRDriver
-</xmp>
-        ###########
+        <p>
+          External Drivers:
+          <br>
+          monado : /usr/share/steamvr-monado
+          <br>
+          holographic : /home/###YOUR_USERNAME###/.local/share/Steam/steamapps/common/MixedRealityVRDriver
+          <br>
+        </p>
+        <p>###########</p>
         <br>
         <br>
       </li>
@@ -159,49 +210,91 @@ holographic : /home/###YOUR_USERNAME###/.local/share/Steam/steamapps/common/Mixe
         <br>
         ###########
         <br>
-<xmp>{"DesktopUI" : {
-     "pairing" : "1960,680,799,599,0",
-     "settings_desktop" : "1960,680,799,599,0"
-  },
-  "GpuSpeed" : {
-     "gpuSpeed0" : 1476,
-     "gpuSpeed1" : 1472,
-     "gpuSpeed2" : 1485,
-     "gpuSpeed3" : 1493,
-     "gpuSpeed4" : 1459,
-     "gpuSpeed5" : 1420,
-     "gpuSpeed6" : 1478,
-     "gpuSpeed7" : 1478,
-     "gpuSpeed8" : 1484,
-     "gpuSpeed9" : 1445,
-     "gpuSpeedCount" : 10,
-     "gpuSpeedDriver" : "96477185",
-     "gpuSpeedHorsepower" : 1474,
-     "gpuSpeedRenderTargetScale" : 1,
-     "gpuSpeedVendor" : "AMD Radeon RX 7900 XT (RADV GFX1100)",
-     "gpuSpeedVersion" : 2
-  },
-  "LastKnown" : {
-     "ActualHMDDriver" : "monado",
-     "HMDModel" : "HP Windows Mixed Reality Headset"
-  },
-  "driver_gamepad" : {
-     "blocked_by_safe_mode" : false
-  },
-  "driver_monado" : {
-     "blocked_by_safe_mode" : false
-  },
-  "steam.app.658920" : {
-     "DominantHand" : 2
-  },
-  "steamvr" : {
-     "installID" : "16430710729258384815",
-     "lastVersionNotice" : "2.1.8",
-     "lastVersionNoticeDate" : "1701302696"
-  }
-}
-</xmp>
-        ###########
+        <p>
+          {"DesktopUI" : {
+          <br>
+              "pairing" : "1960,680,799,599,0",
+          <br>
+              "settings_desktop" : "1960,680,799,599,0"
+          <br>
+            },
+          <br>
+            "GpuSpeed" : {
+          <br>
+              "gpuSpeed0" : 1476,
+          <br>
+              "gpuSpeed1" : 1472,
+          <br>
+              "gpuSpeed2" : 1485,
+          <br>
+              "gpuSpeed3" : 1493,
+          <br>
+              "gpuSpeed4" : 1459,
+          <br>
+              "gpuSpeed5" : 1420,
+          <br>
+              "gpuSpeed6" : 1478,
+          <br>
+              "gpuSpeed7" : 1478,
+          <br>
+              "gpuSpeed8" : 1484,
+          <br>
+              "gpuSpeed9" : 1445,
+          <br>
+              "gpuSpeedCount" : 10,
+          <br>
+              "gpuSpeedDriver" : "96477185",
+          <br>
+              "gpuSpeedHorsepower" : 1474,
+          <br>
+              "gpuSpeedRenderTargetScale" : 1,
+          <br>
+              "gpuSpeedVendor" : "AMD Radeon RX 7900 XT (RADV GFX1100)",
+          <br>
+              "gpuSpeedVersion" : 2
+          <br>
+            },
+          <br>
+            "LastKnown" : {
+          <br>
+              "ActualHMDDriver" : "monado",
+          <br>
+              "HMDModel" : "HP Windows Mixed Reality Headset"
+          <br>
+            },
+          <br>
+            "driver_gamepad" : {
+          <br>
+              "blocked_by_safe_mode" : false
+          <br>
+            },
+          <br>
+            "driver_monado" : {
+          <br>
+              "blocked_by_safe_mode" : false
+          <br>
+            },
+          <br>
+            "steam.app.658920" : {
+          <br>
+              "DominantHand" : 2
+          <br>
+            },
+          <br>
+            "steamvr" : {
+          <br>
+              "installID" : "16430710729258384815",
+          <br>
+              "lastVersionNotice" : "2.1.8",
+          <br>
+              "lastVersionNoticeDate" : "1701302696"
+          <br>
+            }
+          <br>
+          }
+          <br>
+        </p>
+        <p>###########</p>
         <br>
         <br>
       </li>

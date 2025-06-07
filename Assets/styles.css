@@ -261,9 +261,11 @@ body > *:not(
 
 # - Offset for Lists that would get cutoff because of the way the Borders works: */
 ul,
-ol
+ol,
+li
 {
-    padding-left: 3rem;
+    padding-left: 3rem; 
+    list-style-position: inside;
 }
 
 /* Headline Color: */

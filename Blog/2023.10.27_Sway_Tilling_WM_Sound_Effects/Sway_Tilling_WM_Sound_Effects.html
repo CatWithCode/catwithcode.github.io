@@ -15,19 +15,29 @@
     <p><u><i>exec_always sleep 3 && play '/home/XXXX/.config/sway/Files/Audio/SFX/Windows_XP-Startup.wav'</i></u></p>
     <p>Or if you want a notification sound you can add this script to your swaync config. Here you need to run a bash script for the sound, because swaync has some restrictions on what the commands in the config can do:</p>
     <h2><u>swaync-config</u>:</h2>
-<xmp>...
-  "scripts": {
-    "sound-script": {
-      "exec": "bash /home/XXXX/.config/sway/swaync/Sound.sh",
-      "app-name": ".*"
-    }
-  },
-...
-</xmp>
+    <p>
+      ...
+      <br>
+        "scripts": {
+      <br>
+          "sound-script": {
+      <br>
+            "exec": "bash /home/XXXX/.config/sway/swaync/Sound.sh",
+      <br>
+            "app-name": ".*"
+      <br>
+          }
+      <br>
+        },
+      <br>
+      ...
+    </p>
     <h2><u>Sound.sh</u>:</h2>
-<xmp>#!/bin/bash
-play '/home/XXXX/.config/sway/Files/Audio/SFX/Windows_XP-Notify.wav'
-</xmp>
+    <p>
+      #!/bin/bash
+      <br>
+      play '/home/XXXX/.config/sway/Files/Audio/SFX/Windows_XP-Notify.wav'
+    </p>
     <br>
     <p>And the last thing to do is to add sounds to hotkeys or actions in your wm. This is relatively easy; You need to put the play command before or after the original command and either, "&&" to do one thing first and then the other, or a "&" to do both commands at the same time. For example:</p>
     <br>

@@ -15,25 +15,40 @@
     <p>I used a feature of the motherboard for the automatic boot. Almost all mainboards support power on at AC-POWER (If power is lost the PC turn on when it comes back) and RTC-Boot (often in the APM settings), which boots the server at a specific time. How to set this up is different for almost every mainboard. You will have to look it up in your UEFI/BIOS or use the manual. See the source section for how I set it up. There is also a link to my Nexcloud blog entry where I changed the time on a Linux server. This also covers how to change the time on your mainboard. This might help if your BIOS time is always a few hours off after a reboot for some unknown reason. Linux likes to set the time to UTC.</p>
     <p>For the automatic shutdown I used Cron, which executes commands at specific times. The time format can be confusing, but once you understand it, it is really intuitive. Cron cannot execute a lot of things. To get around this, I created a bash file that executes all the necessary stuff for a clean shutdown.</p>
     <p>A example Cron file can look like this. It can be edited by running "<u><i>sudo crontab -e</i></u>" in the terminal. This example Cron file runs a bash file from Monday to Friday at 21:00 and Saturday to Sunday at 23:00:</p>
-<xmp>0 21 * * 1 /bin/sh /home/blogtest/TimeToSleep.sh
-0 21 * * 2 /bin/sh /home/blogtest/TimeToSleep.sh
-0 21 * * 3 /bin/sh /home/blogtest/TimeToSleep.sh
-0 21 * * 4 /bin/sh /home/blogtest/TimeToSleep.sh
-0 21 * * 5 /bin/sh /home/blogtest/TimeToSleep.sh
-0 23 * * 6 /bin/sh /home/blogtest/TimeToSleep.sh
-0 23 * * 0 /bin/sh /home/blogtest/TimeToSleep.sh
-</xmp>
+    <p>
+      0 21 * * 1 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 21 * * 2 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 21 * * 3 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 21 * * 4 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 21 * * 5 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 23 * * 6 /bin/sh /home/blogtest/TimeToSleep.sh
+      <br>
+      0 23 * * 0 /bin/sh /home/blogtest/TimeToSleep.sh
+    </p>
     <p>The code in the bash file is quite simple. It checks if the defined username (in this case "blogtest") is logged in via ssh, if so, it will not shut down the server. this is to prevent the server from shutting down while it is being served by the user. The file is created with sudo to ensure that only the admins can edit it. The echo is there so that if the user "blogtest" is logged in and currently at the terminal, they will notice they blocked a shoutdown. Theoretically you could add more conditions like, only if no one is coping files in nextcloud or if no one is currently logged in into the minecraft-server.</p>
     <p><u><i>sudo nano /home/blogtest/TimeToSleep.sh</i></u></p>
-<xmp>#!/bin/bash
+    <p>
+      #!/bin/bash
+      <br>
 
-#Check ssh for users; blogtest:
-if (who | cut -d' ' -f1 | sort | uniq) | grep -q 'blogtest'; then
-  echo "blogtest is there."
-else
-  shutdown -h now
-fi  
-</xmp>
+      <br>
+      #Check ssh for users; blogtest:
+      <br>
+      if (who | cut -d' ' -f1 | sort | uniq) | grep -q 'blogtest'; then
+      <br>
+        echo "blogtest is there."
+      <br>
+      else
+      <br>
+        shutdown -h now
+      <br>
+      fi
+    </p>
     <p>I hope I could help you with this example setup for an automatic shoudown for a server to save energy / keep software running cleanly.</p>
     <br>
     <h2>Sources:</h2>

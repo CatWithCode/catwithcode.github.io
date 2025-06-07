@@ -28,15 +28,24 @@
       </li>
       <li><p>Setting up a static IP.</p>
         <p><u><i>sudo nano /etc/netplan/00-installer-config.yaml</i></u></p>
-<xmp>network:
-  ethernets:
-    eno1:
-      addresses: [192.168.**.**/24]
-      gateway4: 192.168.**.1
-    enp2s0:
-      addresses: [192.168.**.**/24]
-      gateway4: 192.168.**.1
-</xmp>
+        <p>
+          network:
+          <br>
+            ethernets:
+          <br>
+              eno1:
+          <br>
+                addresses: [192.168.**.**/24]
+          <br>
+                gateway4: 192.168.**.1
+          <br>
+              enp2s0:
+          <br>
+                addresses: [192.168.**.**/24]
+          <br>
+                gateway4: 192.168.**.1
+          <br>
+        </p>
       </li>
       <li><p>Loading the new config</p>
         <p><u><i>sudo netplan apply</i></u></p>
@@ -56,11 +65,15 @@
         <p><u><i>sudo install -m 0755 -d /etc/apt/keyrings</i></u></p>
         <p><u><i>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg</i></u></p>
         <p><u><i>sudo chmod a+r /etc/apt/keyrings/docker.gpg</i></u></p>
-<u><i><xmp>echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-</xmp></i></u>
+        <p>
+          echo \
+          <br>
+          "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+          <br>
+          "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+          <br>
+          sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
+        </p>
         <p><u><i>sudo apt-get update</i></u></p>
         <p><u><i>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin git docker-compose</i></u></p>
         <p><u><i>sudo docker run hello-world</i></u></p>
@@ -104,53 +117,96 @@
       </li>
       <li><p>Creating the compose file.</p>
         <p><u><i>nano /home/*******/nextcloud/docker-compose.yml</i></u></p>
-<xmp>version: '3.7'
-services:
-  mariadb:
-    restart: always
-    container_name: nextcloud-mariadb-server
-    volumes:
-    - '/mnt/md0/nextcloud/db:/var/lib/mysql'
-    environment:
-    - MYSQL_ROOT_PASSWORD=***************
-    - MYSQL_ROOT_HOST=%
-    image: mariadb:latest
-  nextcloud:
-    restart: always
-    volumes:
-    - '/mnt/md0/nextcloud/data:/var/www/html'
-    container_name: nextcloud
-    depends_on:
-    - 'mariadb'
-    ports:
-    - '8080:80'
-    environment:
-    - MYSQL_HOST=mariadb
-    - MYSQL_DATABASE=nextcloud
-    - MYSQL_USER=***************
-    - MYSQL_PASSWORD=***************
-    image: 'nextcloud:26.0.3'
-  cron:
-    image: rcdailey/nextcloud-cronjob
-    restart: always
-    network_mode: none
-    container_name: nextcloud_cron
-    volumes:
-    - '/var/run/docker.sock:/var/run/docker.sock:ro'
-    - '/etc/localtime:/etc/localtime:ro'
-    environment:
-    - NEXTCLOUD_CONTAINER_NAME=nextcloud
-    - NEXTCLOUD_CRON_MINUTE_INTERVAL=5
-</xmp>
+        <p>
+          version: '3.7'
+          <br>
+          services:
+          <br>
+            mariadb:
+          <br>
+              restart: always
+          <br>
+              container_name: nextcloud-mariadb-server
+          <br>
+              volumes:
+          <br>
+              - '/mnt/md0/nextcloud/db:/var/lib/mysql'
+          <br>
+              environment:
+          <br>
+              - MYSQL_ROOT_PASSWORD=***************
+          <br>
+              - MYSQL_ROOT_HOST=%
+          <br>
+              image: mariadb:latest
+          <br>
+            nextcloud:
+          <br>
+              restart: always
+          <br>
+              volumes:
+          <br>
+              - '/mnt/md0/nextcloud/data:/var/www/html'
+          <br>
+              container_name: nextcloud
+          <br>
+              depends_on:
+          <br>
+              - 'mariadb'
+          <br>
+              ports:
+          <br>
+              - '8080:80'
+          <br>
+              environment:
+          <br>
+              - MYSQL_HOST=mariadb
+          <br>
+              - MYSQL_DATABASE=nextcloud
+          <br>
+              - MYSQL_USER=***************
+          <br>
+              - MYSQL_PASSWORD=***************
+          <br>
+              image: 'nextcloud:26.0.3'
+          <br>
+            cron:
+          <br>
+              image: rcdailey/nextcloud-cronjob
+          <br>
+              restart: always
+          <br>
+              network_mode: none
+          <br>
+              container_name: nextcloud_cron
+          <br>
+              volumes:
+          <br>
+              - '/var/run/docker.sock:/var/run/docker.sock:ro'
+          <br>
+              - '/etc/localtime:/etc/localtime:ro'
+          <br>
+              environment:
+          <br>
+              - NEXTCLOUD_CONTAINER_NAME=nextcloud
+          <br>
+              - NEXTCLOUD_CRON_MINUTE_INTERVAL=5
+          <br>
+        </p>
       </li>
       <li><p>Creating the Updater/Restarter.</p>
         <p><u><i>sudo nano /home/********/nextcloud/nextcloud_UPDATER.sh</i></u></p>
-<xmp>#!/bin/bash
+        <p>
+          #!/bin/bash
+          <br>
 
-cd /home/**********/nextcloud
-sudo docker-compose down
-sudo docker-compose up -d
-</xmp>
+          cd /home/**********/nextcloud
+          <br>
+          sudo docker-compose down
+          <br>
+          sudo docker-compose up -d
+          <br>
+        </p>
         <p><u><i>chmod a+x /home/**********/nextcloud/nextcloud_UPDATER.sh</i></u></p>
       </li>
       <li><p>Setting permissions.</p>
@@ -168,7 +224,7 @@ sudo docker-compose up -d
         <p><u><i>exit</i></u></p>     
       </li>
       <li><p>Opening and setting up Nextcloud.</p>
-        <p192.168.**.**:8080</i></u></p> 
+        <p>192.168.**.**:8080</p> 
         <p>http://192.168.**.**:8080"</p>
         <p>root</p>
         <p>root</p>

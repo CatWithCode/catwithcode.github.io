@@ -103,32 +103,52 @@
           <p><u><i>nano .profile</i></u></p>
           <p>Add the following at the end:</p>
           <p>---</p>
-<xmp>#Fixing Audio:
-export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+          <p>
+            #Fixing Audio:
+            <br>
+            export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+            <br>
 
-#Starting the Desktop:
-sh $HOME/.startDE.sh
-</xmp>
+            <br>
+            #Starting the Desktop:
+            <br>
+            sh $HOME/.startDE.sh
+            <br>
+          </p>
           <p>---</p>
         </li>
         <li>
           <p><u><i>nano .startDE.sh</i></u></p>
           <p>---</p>
-<xmp>#!/bin/bash
+          <p>
+            #!/bin/bash
+            <br>
 
-echo "Starting Xwayland and everthing else soon. Press CTRL+C to cancel. 3sec..."
-sleep 3
+            <br>
+            echo "Starting Xwayland and everthing else soon. Press CTRL+C to cancel. 3sec..."
+            <br>
+            sleep 3
+            <br>
 
-#XFCE:
-echo "Starting XFCE"
-dbus-launch --exit-with-session startxfce4
+            <br>
+            #XFCE:
+            <br>
+            echo "Starting XFCE"
+            <br>
+            dbus-launch --exit-with-session startxfce4
+            <br>
 
-#???:
-#echo "Starting ???"
-#dbus-launch --exit-with-session ???
+            <br>
+            #???:
+            <br>
+            #echo "Starting ???"
+            <br>
+            #dbus-launch --exit-with-session ???
+            <br>
 
-echo "Have fun in Xwayland! <3"
-</xmp>
+            <br>
+            echo "Have fun in Xwayland!"
+          </p>
           <p>---</p>
         </li>
         <li><u><i>chmod +x .startDE.sh</i></u></li>
@@ -142,32 +162,58 @@ echo "Have fun in Xwayland! <3"
         <li>
           <p><u><i>nano startUbuntu.sh</i></u></p>
           <p>---</p>
-<xmp>#!/bin/bash
+          <p>
+            #!/bin/bash
+            <br>
 
-#CleanUp:
-pkill Xwayland
-sleep 2
-killall -9 termux-x11 Xwayland pulseaudio virgl_test_server_android termux-wake-lock
-sleep 2
-chroot-installer stop
-sleep 2
+            <br>
+            #CleanUp:
+            <br>
+            pkill Xwayland
+            <br>
+            sleep 2
+            <br>
+            killall -9 termux-x11 Xwayland pulseaudio virgl_test_server_android termux-wake-lock
+            <br>
+            sleep 2
+            <br>
+            chroot-installer stop
+            <br>
+            sleep 2
+            <br>
 
-#Starting Termux-X11, then the Driver:
-am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity
-termux-x11 :0 -ac &
-sleep 2
+            <br>
+            #Starting Termux-X11, then the Driver:
+            <br>
+            am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity
+            <br>
+            termux-x11 :0 -ac &
+            <br>
+            sleep 2
+            <br>
 
-#Then the 3D-Driver:
-virgl_test_server_android &
+            <br>
+            #Then the 3D-Driver:
+            <br>
+            virgl_test_server_android &
+            <br>
 
-#Xwayland:
-chroot-installer start -w -v
-#chroot-installer start -w -va
+            <br>
+            #Xwayland:
+            <br>
+            chroot-installer start -w -v
+            <br>
+            #chroot-installer start -w -va
+            <br>
 
-#XFVB:
-#chroot-installer start -x -va
-#chroot-installer start -x -v
-</xmp>
+            <br>
+            #XFVB:
+            <br>
+            #chroot-installer start -x -va
+            <br>
+            #chroot-installer start -x -v
+            <br>
+          </p>
         <p>---</p>
         </li>
         <li><u><i>chmod +x startUbuntu.sh</i></u></li>
@@ -186,14 +232,21 @@ chroot-installer start -w -v
         <li>
           <p><u><i>sudo nano /etc/apt/preferences.d/99mozillateamppa</i></u></p>
           <p>---</p>
-<xmp>Package: firefox*
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 501
+          <p>
+            Package: firefox*
+            <br>
+            Pin: release o=LP-PPA-mozillateam
+            <br>
+            Pin-Priority: 501
+            <br>
 
-Package: firefox*
-Pin: release o=Ubuntu
-Pin-Priority: -1
-</xmp>
+            Package: firefox*
+            <br>
+            Pin: release o=Ubuntu
+            <br>
+            Pin-Priority: -1
+            <br>
+          </p>
           <p>---</p>
         </li>
         <li><u><i>sudo apt update</i></u></li>
@@ -211,11 +264,15 @@ Pin-Priority: -1
         <li>
           <p><u><i>nano ./.chroot_installer/containers/Ubuntu.conf</i></u></p>
           <p>---</p>
-<xmp>INSPATH=/data/data/com.termux/files/home/installed-rootfs/Ubuntu/ubuntu.img
-DISTRO=ubuntu
-USERNAME=YOUR_USERNAME
-default
-</xmp>
+          <p>
+            INSPATH=/data/data/com.termux/files/home/installed-rootfs/Ubuntu/ubuntu.img
+            <br>
+            DISTRO=ubuntu
+            <br>
+            USERNAME=YOUR_USERNAME
+            <br>
+            default
+          </p>
         <p>---</p>
         </li>            
       </ul>

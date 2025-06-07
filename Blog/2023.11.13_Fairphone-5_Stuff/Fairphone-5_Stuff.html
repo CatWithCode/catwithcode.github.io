@@ -61,23 +61,39 @@
     <p>It is not recommended and (can)/WILL break things. But you can do it;</p>
     <p>Open the "flash_FP5_factory.sh"-file and comment out the following lines with a "#";</p>
     <p>It sould go from this:</p>
-<xmp>...
-flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+    <p>
+      ...
+      <br>
+      flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+      <br>
 
-"$FASTBOOT_BIN" -s "${sn}" erase userdata
-"$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" erase userdata
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
 
-"$FASTBOOT_BIN" -s "${sn}" --set-active=a
-</xmp>...
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" --set-active=a
+    </p>
+    <p>...</p>
     <p>To this:</p>
-<xmp>...
-flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+    <p>
+      ...
+      <br>
+      flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+      <br>
 
-#"$FASTBOOT_BIN" -s "${sn}" erase userdata
-#"$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
+      #"$FASTBOOT_BIN" -s "${sn}" erase userdata
+      <br>
+      #"$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
 
-"$FASTBOOT_BIN" -s "${sn}" --set-active=a
-</xmp>...
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" --set-active=a
+    </p>
+    <p>...</p>
     <p>That's it. Now run the file and you should have the new firmware on your device WITHOUT losing your userdata.</p>
     <hr>
     <br>
@@ -155,7 +171,7 @@ flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
     <br>
     <br>
     <hr>
-    <h2><u>Rooting the phone (Any Stock-Rom/Custom-Rom</u>:</h2>
+    <h2><u>Rooting the phone (Any Stock-Rom/Custom-Rom)</u>:</h2>
     <p>As far as I have seen it is recommended on modern Android that you only BOOT a modified boot image (NOT FLASH) and then use Magisk in Android to directly root the installed bootloader:</p>
     <a href="https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662">https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662</a>
     <br>

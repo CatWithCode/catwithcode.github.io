@@ -15,33 +15,57 @@
     <p>First of all you need a reliable Home-Server that will always run when you want to go onto the Internet. You can shut the Server down automatically if no-one is using the Internet at night. But, as you can probably guess, without an DNS the Internet will more or less not work anymore. Means: Good shutdown and power-up settings including a Ping check to see if someone is still online, are absolutely needed. I made a few posts about my server in the past about that and how to set that up.</p>
     <p>In the router you need to create a default profile for every user were you block most URLs for DNS Services and there IP's. You should also add a block for all DNS-Ports in all directions and with all protocols. This can look like this (This is ONLY and example and will not be enough. You need to add a lot more DNS-Servces (URL and IP). Just check what is usually used in your area and by your devices in your network):</p>
     <p><b><i><u>IP's and URL's</u></i></b>:</p>
-<xmp>1dot1dot1dot1.cloudflare-dns.com
-https://1dot1dot1dot1.cloudflare-dns.com
-1.1.1.1
-https://1.1.1.1
-1.0.0.1
-https://1.0.0.1
-dns.google
-https://dns.google
-dns.google/dns-query
-https://dns.google/dns-query
-dns.google/resolve
-https://dns.google/resolve
-8.8.8.8
-https//8.8.8.8
-8.8.4.4
-https//8.8.4.4  
-</xmp>
+    <p>
+      1dot1dot1dot1.cloudflare-dns.com
+      <br>
+      https://1dot1dot1dot1.cloudflare-dns.com
+      <br>
+      1.1.1.1
+      <br>
+      https://1.1.1.1
+      <br>
+      1.0.0.1
+      <br>
+      https://1.0.0.1
+      <br>
+      dns.google
+      <br>
+      https://dns.google
+      <br>
+      dns.google/dns-query
+      <br>
+      https://dns.google/dns-query
+      <br>
+      dns.google/resolve
+      <br>
+      https://dns.google/resolve
+      <br>
+      8.8.8.8
+      <br>
+      https//8.8.8.8
+      <br>
+      8.8.4.4
+      <br>
+      https//8.8.4.4
+    </p>
     <p><b><i><u>Port's</u></i></b>:</p>
-<xmp>TCP - OUT/IN 53 → ANY
-TCP - OUT/IN 853 → ANY
-TCP - OUT/IN ANY ← 53
-TCP - OUT/IN ANY ← 853
-UDP - OUT/IN 53 → ANY
-UDP - OUT/IN 853 → ANY
-UDP - OUT/IN ANY ← 53
-UDP - OUT/IN ANY ← 853
-</xmp>
+    <p>
+      TCP - OUT/IN 53 → ANY
+      <br>
+      TCP - OUT/IN 853 → ANY
+      <br>
+      TCP - OUT/IN ANY ← 53
+      <br>
+      TCP - OUT/IN ANY ← 853
+      <br>
+      UDP - OUT/IN 53 → ANY
+      <br>
+      UDP - OUT/IN 853 → ANY
+      <br>
+      UDP - OUT/IN ANY ← 53
+      <br>
+      UDP - OUT/IN ANY ← 853
+    </p>
     <p>You must also create a profile were you only add your PI-Hole DNS-Server. That Server needs to be manually added into a Profile were it dose not have those restrictions unlike normal users.</p>
     <p>The default DNS in the Router should be a DNS-Server you like and trust. Thanks to the restrictions, normal users can not reach it and will try finding a local DNS and that's were our Pi-Hole comes in. And the Pi-Hole will use the default DNS as a starting point. You should enable DNS over TLS in the Pi-Hole to be as secure as possible. Also put the same trusted and wanted DNS-Server into it too just to make sure it can reach the Internet.</p>
     <p>On some devices you will need to set the custom DNS manually because they don't do it on there own, but that's more an exception then the rule. And with one restart of everything (Devices, router and Pi-Hole) everything should (TM :D) work.</p>

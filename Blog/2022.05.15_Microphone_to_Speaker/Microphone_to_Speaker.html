@@ -23,20 +23,33 @@
     <p>You will notice that the command dose not wait for your input and the service runs in the background. To stop the passthrough you need to stop the service:</p>
     <p><u><i>pactl unload-module module-loopback</i></u></p>
     <p>To make it easy to use you can create a bash file:</p>
-<xmp>#!/bin/bash
-clear
-echo "Mic2Speaker"
-echo "By CatWithCode"
-echo ""
-read -p "CHECK THE MIC VOLUME!!! THEN PRESS THE ANY-KEY!"
-echo ""
-echo "ID:"
-pactl load-module module-loopback #latency_msec=1
-echo ""
-read -p "Press the Any-Key to Stop & Exit"
-pactl unload-module module-loopback
-exit
-</xmp>
+    <p>
+      #!/bin/bash
+      <br>
+      clear
+      <br>
+      echo "Mic2Speaker"
+      <br>
+      echo "By CatWithCode"
+      <br>
+      echo ""
+      <br>
+      read -p "CHECK THE MIC VOLUME!!! THEN PRESS THE ANY-KEY!"
+      <br>
+      echo ""
+      <br>
+      echo "ID:"
+      <br>
+      pactl load-module module-loopback #latency_msec=1
+      <br>
+      echo ""
+      <br>
+      read -p "Press the Any-Key to Stop & Exit"
+      <br>
+      pactl unload-module module-loopback
+      <br>
+      exit
+    </p>
     <p>"latency_msec=1" can be used if your pass-through does not sound clean for some reason. </p>
     <p>That's it. If you create a menu entry you can start/exit it way more easily. With programs like menulibre (or you do it manually) it's done in seconds. Here is the command I use to start the bash file:</p>
     <p><u><i>gnome-terminal -- /PathToTheBashFile/Mic2Speaker.sh</i></u></p>
