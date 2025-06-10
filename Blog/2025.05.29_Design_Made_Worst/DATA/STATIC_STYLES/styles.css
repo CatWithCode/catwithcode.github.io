@@ -91,6 +91,14 @@ mixedFonts:
 
     /* Background Base-Color: */
     background-color: var(--background);
+    
+    /* Background-Image: */
+    /* background: url(/path/file.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: bottom; */
 }
 
 /* # - Global Font and Color: */
@@ -131,7 +139,7 @@ body {
     flex-direction: column;
 
     /* # - Background-Image: */
-     background-image: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_STYLES/Backgrounds/Layered/Rain.png);
+    background-image: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_STYLES/Backgrounds/Layered/Rain.png);
 
      /* # - - Background-Animations Propertys: */
     background-repeat: repeat;
@@ -234,9 +242,11 @@ body > *:not(
 
 # - Offset for Lists that would get cutoff because of the way the Borders works: */
 ul,
-ol
+ol,
+li
 {
-    padding-left: 3rem;
+    padding-left: 3rem; 
+    list-style-position: inside;
 }
 
 /* Headline Color: */
