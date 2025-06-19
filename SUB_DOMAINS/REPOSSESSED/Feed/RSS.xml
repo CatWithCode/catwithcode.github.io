@@ -5,7 +5,13 @@
         <link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html</link>
         <description>Development Log for there upcoming Immersiv Sim REPOSSESSED.</description>
 		<item>
-			<title>RE//POSSESSED - 2025.06.10 - Warehouse completed</title>
+			<title>RE//POSSESSED - 2025.06.19 - Warehouse dialog's, play-testing and fixes completed and small Updated about the progress</title>
+			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=23</link>
+			<description>There was still a little bit to fix and play-test after completing it. I also fixed many bugs, added 5 new features to the framework, adjust the dialogs and trigger and updateded the lore and story documentation to make writing/the story fleshing out process easier. I still need one song for the warehouse. It must be the stealth and fight theme at the same time there. I will probably do it off and on over time or in one go. I never know with that music stuff, it's hard, still no updates in the maybe/maybe-not searching process for a musician for the OST. The next area to be worked on will be the church. The amount of assets needed there is manageable but gameplay mechanics, an imposing environment and interconnected story strings will be the bread and butter of this area. How far is the development? Hard to say but level 2, I would say, is 40% done. The % and amount of work is not that connected because many assets are for multiple areas. 3 main areas, stuff in between those, 4 smaller areas and a small things here and there are still missing. Is this amount of work for all levels needed? No, the city level is a thing I always wanted in the game and citys are just way to big LOL. But other levels like level 3 and 5 are far more streamlined and easier to implement. Dont get me wrong, the levels will still be big, but need far less then a city that is full with people.</description>
+			<pubDate>Thu, 19 Jun 2025 00:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>RE//POSSESSED - 2025.06.10 - Warehouse Assets, placement and quests completed</title>
 			<link>https://REPOSSESSED.catwithcode.moe/Dev_Log/Dev_Log.html?item=22</link>
 			<description>The warehouse is done. It needs a little play-testing still, one song and I must make sure the triggers work but it is now 100% playable. It is only one part of the big city and marks an other milestone with RE//POSSESSED because so, and I mean it, SO much stuff has been created used and needed all over Level 2. One of my favorites is the walkway and especially the SN433. Like any overpowered Sniper is it a lot of fun getting the enemy's out of the blue.</description>
 			<pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate>
