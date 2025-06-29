@@ -24,21 +24,21 @@
     <hr>
     <h2><u>What works, what dose not</u>:</h2>
     <p>A list of stuff I tested with last tested Status and the Tickets if any:</p>
-    <h2>UPDATED: 2024.11.20</h2>
-    <h2>SOFTWARE: r91 - 20241109-2283</h2>
+    <h2>UPDATED: 2025.06.29</h2>
+    <h2>SOFTWARE: r494 - 20250629-2096</h2>
     <p>✅ WORKS | 📈 WORKS, BUT STILL TESTING | ➖ NOT TESTED YET | ⭕ ISSUES | ❌ NOT WORKING</p>
     <ul>
       <li>✅ Install</li>
       <li>✅ Setup</li>
       <li>✅ Working with German SIM-CARD</li>
       <li>✅ WiFi (With Network enforced Pi-Hole)</li>
-      <li>📈 Camera (Photo, Video, with and without Flash, Switching between cameras. Sometimes I need to reboot for it to work.)</li>
-      <li>📈 LTE [Works but sometimes I need to reboot for it to work]</li>
+      <li>✅ Camera (Photo, Video, with and without Flash, Switching between cameras. Sometimes I need to reboot for it to work.)</li>
+      <li>✅ LTE [Works but sometimes I need to reboot for it to work]</li>
       <li>✅ Alarm and Timer</li>
       <li>✅ Stability</li>
-      <li>➖ 5G</li>
-      <li>➖ VoLTE</li>
-      <li>❌ GPS [Never got it to work]</li>
+      <li>✅ 5G</li>
+      <li>✅ VoLTE</li>
+      <li>➖ GPS [NEEDS TESTING. ALSO WANT TO TEST: <a href="https://github.com/waydroid/waydroid/issues/226#issue-comment-box">https://github.com/waydroid/waydroid/issues/226#issue-comment-box</a>]</li>
       <li>✅ Battery Life - Really good! X11 App's running can consume a good bit more.</li>
       <li>✅ Heat</li>
       <li>✅ Snap's (Using Snapz0r - Many Apps run! BUT onscreen keyboard dose not work in general for snap on UbuntuTouch! Normal USB-Keyboards do!)</li>
@@ -48,19 +48,43 @@
       <li>✅ CALL (2G? 3G?)</li>
       <li>✅ FLASH</li>
       <li>✅ Vibration</li>
-      <li>📈 Screen Brightness (Auto often dose not work)</li>
+      <li>✅ Screen Brightness (Sensitive but works)</li>
       <li>✅ Proximity</li>
       <li>✅ Rotation</li>
-      <li>❌ Fingerprint reader (The OS knows it dose not work)</li>
-      <li>⭕ USB-OTG <u>[BUG: USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
-      <li>⭕ Keyboard <u>[BUG: IT WORKS THE FIRST TIME. AFTER RECONECTING A MOUSE THE COURSER IS NO LONGER USABLE. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
-      <li>⭕ Mouse <u>[BUG: IT WORKS THE FIRST TIME. AFTER RECONECTING A MOUSE THE COURSER IS NO LONGER USABLE. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
-      <li>⭕ USB-HUB (3.0 and lower) [Keyboard, Mouse and USB-Drive work]</li>
-      <li>✅ USB-AUDIO - Works perfectly... surprisingly.</li>
-      <li>⭕ USB-VIDEO <u>[BUG: Black Screen, Then Soft-Reboot and a broken Dekstop is half visible on a 1080p display. Tested with a SteamDeck Dock. Other Docks don't work. Eventually hard crash. Probably related too; USB-OTG Hard Crashes Phone (2.0 WORKS! 3.0+ CABLES CRASH.)]</u></li>
-      <li>❌ Waydroid - <u>[BUG: ERROR: Binder node "binder" for waydroid not found]</u></li>
-      <li>❌ NFC [Never really worked]</li>
-      <li>📈 Bluetooth [Works better now BUT still see's a lot of "unkown devices". Can connect with BT-Audio to some devices.]</u></li>
+      <li>✅ Fingerprint reader (Needs screen to be on. Seems just the way UbuntuTouch works.)</li>
+      <li>✅ USB-OTG (I had many issues with USB3.X and newer. BUT it was with the phone not matter what. So it is a FP5 or PC chip-set issue.)</li>
+      <li>✅ Keyboard</li>
+      <li>✅ Mouse</li>
+      <li>✅ USB-HUB</li>
+      <li>✅ USB-AUDIO (Even USB to AUX Audio. Dose not work for me on Android for some reason)</li>
+      <li>❌ USB-VIDEO <u>[BUG: Black Screen, Soft/Hard-Reboot and a broken Dekstop on Phone. Tested with USB-C to HDMI (Probably 3.0) and a Dock (Mostlikly 3.X).</u></li>
+      <li>
+        ✅ Waydroid
+        <br>
+        <br>
+        <u>How well dose it work:</u>
+        <br>
+        It works. It is a stopgap and nothing more. I recommend to use it as little as possible and make the battery settings for apps as aggressive as you are able too. I also removed literally anything not needed. Even the calculator.
+        <br>
+        <br>
+        Working:
+        <ul>
+          <li>Camera</li>
+          <li>Sound</li>
+          <li>Internet</li>
+          <li>Microphone</li>
+        </ul>
+        <br>
+        NOT Working:
+        <ul>
+          <li>Vibration</li>
+          <li>Notifications inside Ubuntu Touch</li>
+          <li>GPS (COULD BE MADE TO WORK. NEEDS TESTING: <a href="https://github.com/waydroid/waydroid/issues/226#issue-comment-box">https://github.com/waydroid/waydroid/issues/226#issue-comment-box</a>)</li>
+        </ul>
+        <br>
+      </li>
+      <li>✅ NFC (Tested with Flipper Zero)</li>
+      <li>✅ Bluetooth</li>
       <li>✅ Libertine (Tested with Firefox and Signal-Desktop [AUDIO/MIC WORKS IF YOU INSTALL "<i>pavucontrol</i>".])</li>
     </ul>
     <br>
@@ -86,7 +110,7 @@
       <li>If you have done anything inside a Libertine-Container with root, you can only delete it if you change to root in the terminal and "<i><u>chmod -R 777 .cache/libertine-container/focal-2/</u></i> your container. After that the Settings UI can delete it just fine.</li>
       <li>Libertine-Container (especially broken once, like Signal) can actually cause boot to take longer (several black screens before the password screen appears).</li>
       <br>
-      <li><b><u>MORE COMING SOON! WAYDROID LESSENS I LEARNED, COME AS SOON AS WAYDROID WORKS ON THE FAIRPHONE 5! HAVE ALREADY A FEW, BUT CAN NOT TEST THEM ON THE FAIRPHONE 5!</u></b></li>
+      <li>Waydroid works. It dose use a good amount of power, needs workarounds for stuff like GPS and is a little prone to crashing. Notifications are not shown in Ubuntu Touch which is annoying and even vibration dose not work which makes me check Waydroid more often then I want to. Maybe this stuff can still be fixed. It is a stopgap solution but the most powerful, hardware accelerated and useful you can have. It makes it nearly 100% viable to not use Android or IOS these days if you know what your doing. This makes Ubuntu Touch extremely powerful, even more then Android in my opinion. PostmarketOS could even be better but usability as a mobile phone and a “something you sometimes need FAST device” goes down the hole at that point if you ask me. My testing is years back but as soon as there compatibility is fully Green I will 100% test it. On Ubuntu Touch, the only “fully” working Linux on Fairphone right now, if I need to do something in a short amount of time I am sure I can do it if I have it installed even if it is a little buggy on the way.</li>
     </ul>
     <br>
     <hr>
@@ -289,7 +313,7 @@
       <li>Use the Terminal and nano into the file "<i>/home/phablet/.cache/libertine-container/focal/rootfs/usr/share/applications/firefox.desktop</i>" and add <i>env MOZ_USE_XINPUT2=1</i> in every exec command inside the Desktop file. That enables full touchscreen support. Found by moodroid.</li>
       <li><u>UI and Scaling</u>: Using "Libertine Tweak Tool" setting DPI to 149. Then in Firefox open “<i>about:config</i>” and set perpx to 1.4. This works really well together with the "MOZ_USE_XINPUT2" touch fix. This makes the UI very usable but breaks a some Website Sizes. This can be mitigated by adding the size widgets to the bookmarkbar. Then you can just resize the page.</li>
       <li><u>Performance</u>: Easy. Install uBlock Origin and leave it at the default Settings. More aggressive is better but cost to much battery on a phone. Stuff like Firefox-Strict-Mode also helps.</li>
-      <li>Disable Keyboard auto-features. Meaning: Spell checking, Auto correction, Word suggestions, Auto capitalization and Auto punctuation. It breaks inside Libertine-Containers. I know that these are nice features but as long as waydroid is not working you will have to relay more on Libertine for some apps and that means setting everything up to work with at as well as possible.</li>
+      <li>Disable Keyboard auto-features. Meaning: Spell checking, Auto correction, Word suggestions, Auto capitalization and Auto punctuation. It breaks inside Libertine-Containers.</li>
       <li>Thats it! Now firefox works great.</li>
     </ul>
     <p><i>This is how Firefox looks when everything was done right:</i></p>
@@ -301,9 +325,11 @@
     <hr>
     <h2><u>Installation</u>:</h2>
     <p>I had LinageOS installed, so I flashed the Stock Android 13 Rom (Android 14 was already out but the installer wants Android 13. It is very important to use the right Android Version).</p>
+    <p>It is also important to install Android 13 once before switching and then enable Developer mode AND OEM unlock. Then install should work. Else it will not be able to change the slot or flash firmware or format partitions.</p>
     <p>I use Arch (BTW.) and used the official UBports Installer. It did all the udev stuff for me and flashed the phone without any issues.</p>
     <p>I use a very good USB 3.2 cable that came with a SanDisk SSD (I think something like "SanDisk Extreme Portable" or along those lines.). It's short, it's annoying, but it's the only USB-C cable I trust with stuff like this. I hate the inconsistency with USB-C cables.</p>
     <p>I had so many issues in the past with OEM cables or even good ones that were out of spec. If you ever have problems with low level flashing, it could be the cable. Try different ones until you find a reliable one.</p>
+    <p>I want to use this part to make it oven more clear once more: THE USB CABLE CAN F*CK YOU OVER WITH THIS! IF IT JUST REFUSES TO WORK IT COULD JUST BE THE CABLE, OR "C to C" OR "A TO C" OR EVEN 3.0 VS 2.0! WHAT EVER COMBINATION!</p>
     <a href="https://devices.ubuntu-touch.io/installer/">https://devices.ubuntu-touch.io/installer/</a>
     <hr>
     <h2>Sources:</h2>
@@ -363,8 +389,9 @@
       <li><a href="https://github.com/dennisameling/signal-desktop-automation">https://github.com/dennisameling/signal-desktop-automation</a></li>
       <li><a href="https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786">https://github.com/signalapp/Signal-Desktop/issues/6744#issuecomment-2398994786</a></li>
       <li><a href="https://github.com/dennisameling/Signal-Desktop">https://github.com/dennisameling/Signal-Desktop</a></li>
+      <li><a href="https://github.com/waydroid/waydroid/issues/226#issue-comment-box">https://github.com/waydroid/waydroid/issues/226#issue-comment-box</a></li>
       <!-- <li><a href="FFF">FFF</a></li> -->
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.11.11 - 19:15');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.06.29 - 18:13');</script></div>
   </body>
 </html>
