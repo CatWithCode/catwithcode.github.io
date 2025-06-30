@@ -354,10 +354,7 @@ while IFS= read -r html_file_for_RSS; do
 		h1_text=$(grep -oP '(?<=<h1>).*?(?=</h1>)' "$html_file_for_RSS" | head -n 1)
 
 		# 5: Getting the Blog-Entry beginning:
-		# Limit seem not necessary:
-		#temp_p_text=$(grep -oP '(?<=<p>).*?(?=</p>)' "$html_file_for_RSS" | head -n 1)
-		#p_text=${temp_p_text:0:100}
-		p_text=$(grep -oP '(?<=<p>).*?(?=</p>)' "$html_file_for_RSS" | head -n 1)
+		p_text=$(grep -oP '(?<=<p>).*?(?=</p>)' "$html_file_for_RSS" | head -n 2 | tail -n 1)
 
 		# 6: Cleaning Discription from HTML:
 		cleand_p_text=$(echo "$p_text" | sed 's/<[^>]*>//g')

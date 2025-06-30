@@ -6,22 +6,31 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - My experience with Linux on Mobile</title>
+			<link>https://catwithcode.moe/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html</link>
+			<description>I tested Ubuntu Touch again. It works great now. Everything is working but I notices something for myself. FOR ME, it works, but is not viable.
+			
+			https://catwithcode.moe/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html
+			</description>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Philips Evnia 49M2C8900L - Perfect Settings, Bug fixes, Workarounds and little Review</title>
 			<link>https://catwithcode.moe/Blog/2025.06.14_Philips_OLED_49/Philips_OLED_49.html</link>
-			<description>GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).
+			<description>I bought an Ultrawide (And I mean ULTRA) monitor and also used the opportunity to jump on the PC monitor OLED train. In the past I used a janky Gamescope setup and stretch my image over all screen, but now I have a screen that just dose a stupidly ultra wide image from factory.
 			
 			https://catwithcode.moe/Blog/2025.06.14_Philips_OLED_49/Philips_OLED_49.html
 			</description>
-			<pubDate>Sat, 14 Jun 2025 20:41:03 GMT</pubDate>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
 		</item>
         <item>
 			<title>CatWithCode - Design made worst</title>
 			<link>https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html</link>
-			<description>GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).
+			<description>I added more effects to the website. I called this entry “Design made worst” because everyone I asked says it makes the design worst. I will probably fix a few things and will maybe also add a few things. This page will updated for it to keep the “final” new design preserved as all the old ones were too (I linked to them in the Sources).
 			
 			https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html
 			</description>
-			<pubDate>Thu, 29 May 2025 21:00:01 GMT</pubDate>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
 		</item>
         <item>
 			<title>CatWithCode - TUF GAMING B450-PLUS II NVMe BUG</title>
