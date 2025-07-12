@@ -11,6 +11,7 @@
     <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
     
     <h1>Fix: USB has only Power and No Data on Linux</h1>
+    <p><u>UPDATE FROM 2025.07.13:</u> I don't use this gigabyte board anymore. It broke and something was always broken and causing all these issues!</p>
     <p>A recent kernel update made my front USB ports and a USB-C to HDMI adapter on my GPU unusable (yes, the AMD RX7900XT/XTX have a USB-C port and yes they are USB-4 port with Displayport AND data for USB for example. Docks actually work on them lol). The problem was that the ports had power BUT no data going through them. Linux did't even saw the ports with <u><i>lsusb</i></u>.</p>
     <p>It turned out to be a strange power management thing in the new kernel with the USB chipset on my motherboard (GIGABYTE X670 GAMING X AX). After some research, I found an post on the Arch wiki by "waste37" that helped me fix it! Here is how I did it.</p>
     <ol>
