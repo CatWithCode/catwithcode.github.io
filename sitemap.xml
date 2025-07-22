@@ -626,7 +626,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/archive.html</loc>
-    <lastmod>2025-07-17</lastmod>
+    <lastmod>2025-07-21</lastmod>
   </url>
   <url>
     <loc>index.html</loc>
@@ -687,6 +687,14 @@
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2025_03_23/01.jpg</loc>
     <lastmod>2025-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2025_07_22/02.jpg</loc>
+    <lastmod>2025-07-22</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2025_07_22/01.jpg</loc>
+    <lastmod>2025-07-22</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2025_02_12/02.jpg</loc>
@@ -822,7 +830,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/Dev_Log.html</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-22</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Videos/GamePlayTeaser1/GamePlayTeaser1.mp4</loc>
@@ -1210,7 +1218,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/blog.html</loc>
-    <lastmod>2025-07-17</lastmod>
+    <lastmod>2025-07-21</lastmod>
   </url>
 </urlset>
 
