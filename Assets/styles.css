@@ -353,8 +353,8 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     align-items: left;
     width: 90%;
-    height: 20vw;
-    max-height: 25%;
+    height: 25vw;
+    max-height: 33%;
 
     /* Keep in front (Not matter what): */
     z-index: 1000;
