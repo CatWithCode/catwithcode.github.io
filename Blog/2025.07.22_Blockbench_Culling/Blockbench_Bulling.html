@@ -9,6 +9,7 @@
     <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
 
     <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("");</script>
     
     <h1>Blockbench Culling / DoubleSided</h1>
     <p>Blockbench if you export to .gltf inserts <u>"doubleSided":true</u> into the file. This causes in Godot and other Engines that do not suport "import material overwrites" culling to be disabled. This causes textures to be rendered inside the model too. This is a huge performance killer and VRAM eater. By setting this to false the model is one-sided. This needs to be taken into account when creating a model or fixed by comparing the render with Blockbench and then rotating or spliting the meshes that a wrongly displayed. Can be time consuming but worth the performance boost! Overdraw is heavy on the GPU.</p>

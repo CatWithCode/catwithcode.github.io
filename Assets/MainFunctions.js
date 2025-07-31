@@ -90,7 +90,7 @@ function CreateSpeechBubble(speechBubbleTextToInsert = "") {
             <h2>What dose Cat think about this?</h2>\
             <p>###TEXT###</p>\
         </div>\
-    </div>;';
+    </div>';
 
     document.write(speachBubbleCode.replace("###TEXT###", (speechBubbleTextToInsert === "") ? "Nothing. Absolutely nothing." : speechBubbleTextToInsert));
 }
