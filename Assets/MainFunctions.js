@@ -90,7 +90,7 @@ function CreateSpeechBubble(speechBubbleTextToInsert = "") {
     <div class="speechBubble">\
         <img src="/Assets/Image_Repository/PNG/PLACEHOLDERs/empty.png" alt="Empty.">\
         <div class="speechBubbleText">\
-            <h2>What dose Cat think about this?</h2>\
+            <h2>What does Cat think about this?</h2>\
             <p>###TEXT###</p>\
         </div>\
     </div>';
