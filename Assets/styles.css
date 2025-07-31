@@ -111,7 +111,7 @@ mixedFonts:
     --borderPath: polygon(calc(0% + var(--borderRadius)) 0%, 100% 0, 100% calc(100% - var(--borderRadius)), calc(100% - var(--borderRadius)) 100%, 0 100%, 0% calc(0% + var(--borderRadius)));
 
     /* ToolTippBorder: */
-    --toolTipp_Border: 0px 15px 50px 30px;
+    --toolTipp_Border: 15px 0px 50px 30px;
     --toolTipp_Blend: 0.5s;
     /* ###
     Setting Background Base-Color: */
