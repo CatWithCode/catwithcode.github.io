@@ -85,12 +85,14 @@ mixedFonts:
     /* # - - General-Colors: */
     --background: #000000;
     --alt_background: #0f051bb3;
-    --textColor: #cef1ff;
-    --headline_color: #8fd345;
+    --text_Color: #cef1ff;
+    --headline_Color: #8fd345;
     --link_Color: #6565ab;
     --border_color: #1e405bb3;
 
-    --image_border_color: #409f42;
+    --image_border_Color: #409f42;
+
+    --popup_Background_Color: #464599da;
 
     /* # - - Images: */
     --image_margin: 1%;
@@ -108,7 +110,11 @@ mixedFonts:
     /* Border Path: */    
     --borderPath: polygon(calc(0% + var(--borderRadius)) 0%, 100% 0, 100% calc(100% - var(--borderRadius)), calc(100% - var(--borderRadius)) 100%, 0 100%, 0% calc(0% + var(--borderRadius)));
 
-    /* Background Base-Color: */
+    /* ToolTippBorder: */
+    --toolTipp_Border: 0px 15px 50px 30px;
+
+    /* ###
+    Setting Background Base-Color: */
     background-color: var(--background);
     
     /* Background-Image: */
@@ -124,7 +130,7 @@ mixedFonts:
 * {
     /* # - Font and Text: */
     font-family: 'Vinston', 'Courier New', 'monospace';
-    color: var(--textColor);
+    color: var(--text_Color);
 
     /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
     /*image-rendering: optimizeSpeed;*/
@@ -147,7 +153,7 @@ hr {
     width: 100%;
 
     /* Line Color: */
-    color: var(--textColor);
+    color: var(--text_Color);
 }
 
 /* # - Body: */
@@ -158,26 +164,26 @@ body {
     flex-direction: column;
 
     /* # - Background-Image: */
-     background-image: url(/Assets/Backgrounds/Layered/Rain.png);
+    background-image: url(/Assets/Backgrounds/Layered/Rain.png);
 
-     /* # - - Background-Animations Propertys: */
+     /* # - - Background-Animations Propertys (No Background Image Size set because it breaks animation Loop Point): */
     background-repeat: repeat;
-    background-size: 20%;
-    animation: shiftBackground 500s linear infinite;
+    animation: shiftBackground 1.5s linear infinite;
+    animation-fill-mode: both;
 }
 
-/* Animation for the Background-Rain. (vh should fix the Reset isssue) */
+/* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
 @keyframes shiftBackground {
     0% {
-        background-position: 0 -2000vw;
+        background-position: 0 0;
     }
     100% {
-        background-position: 0 2000vw;
+        background-position: 0 126px;
     }
 }
 
-/* Fixing Long Links: */
-a {
+/* Fixing Long Links (And makes sure the SpeechBubble never breaks the site width): */
+a, .speechBubbleText{
     word-wrap: break-word; /* For older browsers. */
     overflow-wrap: break-word; /* For modern browsers. */
     white-space: normal; /* Allow wrapping. */
@@ -231,7 +237,8 @@ a {
 # - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
 Main Elements: */
 body > *:not(
-    hr)
+    hr, 
+    .speechBubble)
 {
     position: relative;
     padding: 20px;
@@ -248,7 +255,8 @@ body > *:not(
 /* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
 Main Elements: */
 body > *:not(
-    hr)::before
+    hr, 
+    .speechBubble)::before
 {
     content: '';
     background-color: var(--alt_background);
@@ -270,11 +278,11 @@ li
 
 /* Headline Color: */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--headline_color);
+    color: var(--headline_Color);
 }
 
-/* # # # */
-/* # - Header: */
+/* # # #
+# - Header: */
 #Header {
     /* # - - Styling: */
     margin-left: 0px;
@@ -302,7 +310,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 25px; /* Make sure the Header-Text does not overlap the border. */
 }
 
-/* # - Fooder: */
+/* # # #
+# - Fooder: */
 #Footer {
     /* # - - Position: */
     margin-top: auto;
@@ -333,5 +342,107 @@ h1, h2, h3, h4, h5, h6 {
 
     /* # - - - Styling: */
     background-color: var(--alt_background);
+}
+
+/* # # #
+# - ToolTipp: */
+
+/* - - ToolTipp Container: */
+.speechBubble {
+    /* Positioning: */
+    position: fixed;
+    align-items: left;
+    width: 90%;
+    height: 12vw;
+    max-height: 25%;
+
+    /* Keep in front (Not matter what): */
+    z-index: 1000;
+    
+    /* Formating: */
+    display: flex;
+    align-items: flex-start;
+
+    /* Styling: */
+    bottom: 3%;
+
+    /* Prevent interaction when invisible (img overwrites this for itself so it can act as a trigger): */
+    pointer-events: none;
+
+     /* Enables Scrolling: */
+    overflow: hidden
+}
+
+/* - - - - This is "Part 2" of the Animation (This makes it so if the Area is visible already and mouse moves from Image to Text the Text stays visible.): */
+.speechBubble:hover .speechBubbleText {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* - - - - This is "Part 2,1" of the Animation (Fixes Spacing): */
+.speechBubble:hover {
+    pointer-events: auto;
+}
+
+/* - - Manage Image inside SpeechBubble Area: */
+.speechBubble img {
+    /* Image set in CSS (Because switching image on Hover): */
+    background-image: url('/Assets/Image_Repository/GIF/T_Pose_Rotating.gif');
+
+    /* Positioning: */
+    padding-left: 2%;
+
+    /* Keep Aspect-Ratio (AND PREVENT CUT OF IMG): */
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Make it possible to trigger the Visibility Event: */
+    pointer-events: auto;
+
+    /* Animates the Mouse Over (Dose not work): */
+    transition: background-image 0.5s ease;
+}
+
+/* - - - Animation Part 0 - Remove OG Image: */
+.speechBubble:hover img {
+   background-image: url('/Assets/Image_Repository/PNG/Thinking.png');
+}
+
+/* - - - Animation in speechBubble to make Text Visible (The + somehow selects the img element. Else it would be the parant): */
+.speechBubble img:hover + .speechBubbleText {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* - - speechBubble Text Area: */
+.speechBubble .speechBubbleText {
+    /* Start invisible: */
+    opacity: 0;
+
+    /* Animation on Visible (This causes a little Bug: If the mouse moves of the Image befor the text is fully "opacity 1" it disappears again. Keep the timer low!):*/
+    transition: opacity 0.3s ease;
+
+    /* Positioning: */
+    width: 100%;
+    margin-left: 2%;
+    height: 100%;
+
+    /* Styling without Padding (To not brick the Animation with padding and margin Stuff): */
+    background-color: var(--popup_Background_Color);
+    border-radius: var(--toolTipp_Border);
+
+    /* Enables Scrolling: */
+    resize: none;
+    overflow: auto;
+}
+
+/* - - - speechBubble Text Area formatting and Styling Stuff (Separated so the Animations and the outer Elements are not bricked by spacing):*/
+.speechBubbleText * {
+    /* Positioning: */
+    padding-left: 3%;
 }
 /* # # # */

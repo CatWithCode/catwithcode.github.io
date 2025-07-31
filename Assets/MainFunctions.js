@@ -6,45 +6,12 @@ var websiteURL = "https://catwithcode.moe";
 // - Main Components:
 // - - Creating Page-Header:
 async function WriteHeader() {
-    document.getElementById("Header").innerHTML = await this.aSyncLoadFile('/Assets/BaseFiles/Page/Header.html');
+    document.getElementById("Header").innerHTML = (await this.aSyncLoadFile('/Assets/BaseFiles/Page/Header.html'));
 }
 
 // - - Creating Page-Footer:
 async function WriteFooter(dateText, usedLicense = "CC BY-NC-ND 4.0") {
     document.getElementById("Footer").innerHTML = (await this.aSyncLoadFile('/Assets/BaseFiles/Page/Footer.html')).replace("###DATE_TEXT###", dateText).replace("###LICENSE###", usedLicense);
-}
-
-// - - User Agent Checker:
-
-// - - Loads ViwerChecker in a way Bots can not load (aSync dose not work. It can not execute JS-Function / Code when loaded):
-async function creatCheckViewer() {
-    document.write('\
-        \
-            <script type="text/javascript">checkViewerType();</script>\
-    ');
-}
-
-// - - Check if on DNS-Host or localy hosted, if not execute Anti-Bot forwarding:
-// Variables only of executed because Performance.
-function checkViewerType() {
-    if (!document.location.origin.includes(websiteURL) &&
-        !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
-        
-        // Variables (toString because else it would work on the internel Refernece):
-        let currentHost = document.location.origin.toString()
-        let currentHostPage = document.location.toString()
-        
-        // Change page to real Host:
-        window.location.replace(currentHostPage.replace(currentHost, websiteURL));
-    } else { //IF NOT ON DNS-FIX OR LOCAL HOSTED:
-        // Ger Reference:
-        var div = document.getElementById("viewerChecker");
-
-        // Remove DIV:
-        if (div) {
-            div.remove();
-        }
-    }
 }
 
 // - - Write HTML-Head (NOT async because of WebCrawler. Optonal CSS for "New Design"-Pages.):
@@ -113,6 +80,21 @@ function WriteImageBody(img_Source, alt_text, img_disc, uploadDate, newWindow = 
     );          
 }
 
+// - - Gets, modifies and returns SpeechBubble-Code with text (Must be static, else class and evet CSS breaks!):
+function CreateSpeechBubble(speechBubbleTextToInsert = "") {
+    var speachBubbleCode = '\
+    \
+    <div class="speechBubble">\
+        <img src="/Assets/Image_Repository/PNG/PLACEHOLDERs/empty.png" alt="Empty.">\
+        <div class="speechBubbleText">\
+            <h2>What dose Cat think about this?</h2>\
+            <p>###TEXT###</p>\
+        </div>\
+    </div>;';
+
+    document.write(speachBubbleCode.replace("###TEXT###", (speechBubbleTextToInsert === "") ? "Nothing. Absolutely nothing." : speechBubbleTextToInsert));
+}
+
 // Internel Functions:
 
 // - Misc:
@@ -121,4 +103,37 @@ async function aSyncLoadFile(filePath) {
     return fetch(filePath)
         .then((response)=>response.text())
         .then((responseText)=>{return responseText});
+}
+
+// - - User Agent Checker (VERY JANKY):
+
+// - - Loads ViwerChecker in a way Bots can not load (aSync dose not work. It can not execute JS-Function / Code when loaded):
+async function creatCheckViewer() {
+    document.write('\
+        \
+            <script type="text/javascript">checkViewerType();</script>\
+    ');
+}
+
+// - - Check if on DNS-Host or localy hosted, if not execute Anti-Bot forwarding:
+// Variables only of executed because Performance.
+function checkViewerType() {
+    if (!document.location.origin.includes(websiteURL) &&
+        !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+        
+        // Variables (toString because else it would work on the internel Refernece):
+        let currentHost = document.location.origin.toString()
+        let currentHostPage = document.location.toString()
+        
+        // Change page to real Host:
+        window.location.replace(currentHostPage.replace(currentHost, websiteURL));
+    } else { //IF NOT ON DNS-FIX OR LOCAL HOSTED:
+        // Ger Reference:
+        var div = document.getElementById("viewerChecker");
+
+        // Remove DIV:
+        if (div) {
+            div.remove();
+        }
+    }
 }
