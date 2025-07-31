@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+Allow: /Assets/
+Allow: /Dev_Log/
+Allow: /Feed/
+Sitemap: https://repossessed.catwithcode.moe/sitemap.xml

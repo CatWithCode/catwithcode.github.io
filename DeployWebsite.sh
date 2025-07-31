@@ -340,7 +340,7 @@ while IFS= read -r html_file; do
 done <<< "$html_files"
 
 # - Update RSS-Feed: ####################################################################################################
-# WARNING: THE FIRST <p> MUST BE <p>ABC</p>! NOTHING FANCY NOT EVEN NEW LINE! ELSE THE REGEX BREAKS!
+# WARNING: THE FIRST <p> MUST BE <p>ABC</p>! NOTHING FANCY NOT EVEN NEW LINE! ELSE THE REGEX BREAKS! This also breaks a little if a Entry has Sub-Pages LOL.
 # 1: Create a list of all HTML files in the Blog directory and its subfolders:
 html_files_for_RSS=$(find "$BLOG_DIR" -type f -name "*.html" | sort)
 
