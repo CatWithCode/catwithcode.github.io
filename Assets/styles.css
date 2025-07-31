@@ -112,7 +112,7 @@ mixedFonts:
 
     /* ToolTippBorder: */
     --toolTipp_Border: 0px 15px 50px 30px;
-
+    --toolTipp_Blend: 0.5s;
     /* ###
     Setting Background Base-Color: */
     background-color: var(--background);
@@ -363,8 +363,9 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: flex-start;
 
-    /* Styling: */
+    /* Styling (Moved to the right else Cat is always in the way): */
     bottom: 3%;
+    right: 1%;
 
     /* Prevent interaction when invisible (img overwrites this for itself so it can act as a trigger): */
     pointer-events: none;
@@ -400,16 +401,21 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-repeat: no-repeat;
 
+    /* Styling: */
+    opacity: 0.7;
+    
     /* Make it possible to trigger the Visibility Event: */
     pointer-events: auto;
 
     /* Animates the Mouse Over (Dose not work): */
-    transition: background-image 0.5s ease;
+    transition: background-image var(--toolTipp_Blend) ease;
+    transition: background-image var(--toolTipp_Blend) ease;
 }
 
 /* - - - Animation Part 0 - Remove OG Image: */
 .speechBubble:hover img {
    background-image: url('/Assets/Image_Repository/PNG/Thinking.png');
+   opacity: 0.9;
 }
 
 /* - - - Animation in speechBubble to make Text Visible (The + somehow selects the img element. Else it would be the parant): */
@@ -444,5 +450,6 @@ h1, h2, h3, h4, h5, h6 {
 .speechBubbleText * {
     /* Positioning: */
     padding-left: 3%;
+    text-align: left;
 }
 /* # # # */
