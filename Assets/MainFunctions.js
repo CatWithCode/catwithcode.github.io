@@ -24,6 +24,9 @@ function WriteHead(skipCss = false) {
         document.write('<link rel="stylesheet" href="/Assets/styles.css">');
     }
 
+    // DarkMode:
+    document.write('<meta name="darkreader-lock">');
+
     // END:
     document.write('<link rel="icon" type="image/x-icon" href="/Assets/favicon.gif">\
         <meta name="description" content="Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.">');
