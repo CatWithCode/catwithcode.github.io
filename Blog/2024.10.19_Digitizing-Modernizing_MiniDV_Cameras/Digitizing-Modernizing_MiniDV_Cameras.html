@@ -9,7 +9,7 @@
     <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
 
     <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
-    <script type="text/javascript">CreateSpeechBubble("Old technology is old. Surprise. Code looks funny btw.");</script>
+    <script type="text/javascript">CreateSpeechBubble("Old technology is old btw.");</script>
     
     <h1>Digitizing / Modernizing MiniDV Cameras is near impossible</h1>
     <p>I was (and still am) sick over the last few days. So... I had time while lying there and just existing to do some more off and on research I onto a topic I was always interested in. Professional SD 3CCD-MiniDV Cameras. I wanted / want one real bad but there is one issue... they kinda suck when it comes to Modernizing. Lets keep it short: It is near impossible except if you carry around a laptop with Thunderbolt.</p>
@@ -19,39 +19,38 @@
       <li>The only way to get a clean digital signal / files from these cameras is FireWire. The only way to get it nowadays is a clusterf*ck of adapters were you connect a FireWire 400 cable to a 400 to 800 FireWire converter. That gets connected to a FireWire 800 to Thunderbolt converter (Witch are no longer produced / were only really well made by Apple).</li>
       <br>
       <li>You could theoretically build a real clusterf*ck of hardware to record on the camera but that would look like this:
-        <ul>
-          <br>
-          <li>Raspberry PI 5 (or Raspberry PI 4 with a USB-Chip PCIe bridge and a cursed USB to PCIe-Adapter)
-            <ul>
-              <li>A PCIe 1x Adapter board
-                <ul>
-                  <li>A PCIe 1x Extension
-                    <ul>
-                      <li>A Raspberry PI / Linux / ARM64-Kernel compatible PCIe to FireWire-Adapter
-                        <ul>
-                          <li>A touchscreen interface / display
-                            <ul>
-                              <li>A Raspberry Pi battery hat
-                                <ul>
-                                  <li>FireWire 400 to 800 FireWire converter
-                                    <ul>
-                                      <li>And finally the Camera.</li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <br>
-        </ul>
+        <br>
+        <br>
+        ---
+        <br>
+        <br>
+        Raspberry PI 5 (or Raspberry PI 4 with a USB-Chip PCIe bridge and a cursed USB to PCIe-Adapter)
+        <br>
+        <br>
+        A PCIe 1x Adapter board
+        <br>
+        <br>
+        A PCIe 1x Extension
+        <br>
+        <br>
+        A Raspberry PI / Linux / ARM64-Kernel compatible PCIe to FireWire-Adapter
+        <br>
+        <br>
+        A touchscreen interface / display
+        <br>
+        <br>
+        A Raspberry Pi battery hat
+        <br>
+        <br>
+        FireWire 400 to 800 FireWire converter
+        <br>
+        <br>
+        And finally the Camera.
+        <br>
+        <br>
+        ---
+        <br>
+        <br>
         Don't forget that you need to compile the Raspberry Linux Kernel with enabled FireWire support. Then you need software to capture the video signal and to round it all up you need to build your own UI to manage it all on the touchscreen. If you want to be able to interact with the controls of the camera over FireWire like a Apple Computer you maybe need to build custom software for that too if non work or exist. The cost and time of this would be at least 3 times if not even far more of what those cameras a worth today.
       </li>
       <br>
