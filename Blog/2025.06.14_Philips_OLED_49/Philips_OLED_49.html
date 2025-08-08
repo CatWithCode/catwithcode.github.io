@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Philips Evnia 49M2C8900L - Perfect Settings, Bug fixes, Workarounds and little Review</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("FINALLY! Cheapskate.");</script>
+    
+    <h1>Philips Evnia 49M2C8900L - Perfect Settings, Bug fixes, Workarounds and little Review</h1>
+    <p>I bought an Ultrawide (And I mean ULTRA) monitor and also used the opportunity to jump on the PC monitor OLED train. In the past I used a janky Gamescope setup and stretch my image over all screen, but now I have a screen that just dose a stupidly ultra wide image from factory.</p>
+    <h2>Opinion:</h2>
+    <p>I got it for under 1000 euro on sale and it is extremely good for the price. OLED is always way to good compared to IPS or VA (Fuck VA) and makes games look like they use RTX without using it. It is this good. The thing people tell other about replaying there favorite games because of the new very good image is true, no joke. The sub-pixel layout causes slight text fringing but over all feels like a higher resolution screen then it is, the IPS 1440p I had before looked low res compared. BUT it is not perfect. It uses the same panel as the G9 from Samsung and has the same issues like Image refreshing, more bad the good settings and a bad firmware upgrade tool. It also had a firmware bug in the past that took to long to be fixed by the manufacture from what I read. AKA. it s important to once boot Windows so you can update the firmware with the tool from the website. I can not check my current firmware because it is only displayed in the developer settings (Don't enter it, it remembers it and the manufacturer will, maybe, who knows, not honer the warranty. Happened in the past with other OLED manufacturer's (allegedly). Same with OLED care settings, keep AT LEAST the defaults on) and in the update software and hell no I will never boot Windows on my PC if it can be avoided. I would highly recommend to not buy the 240hz version. The included display protocol dose not support this high of a resolution and refreshrate and uses DSC (Display stream compression) to force it. It can work but 144hz is native without any compression aka. RAW. I mean if you buy OLED why compromise in anything.</p>
+    <h2>What I did to make it as perfect as possible:</h2>
+    <p>In SDR set it to "Standard" in HDR to "HDR True Black". That's more or less the Reference image without BS applied to the image. "HDR Game" apply s BS that causes film grain like noise in fully black areas same with other"HDR Bla Bla" modes. In True Black mode the image can be way to bright and to dark at the same time, more or less RAW image output without any compromise for "better" gaming use or whatever manufacture's call that screen filter stuff.</p>
+    <p>I use a script to enable and disable HDR with a hotkey. It is a must because else you burn your eyes out while reading and enabling it manually is annoying. It requires to enable the Color space too but that's easy. More about that stuff can be found in my "Linux with HDR" entry, linked in sources section.</p>
+    <p>Ambiglow is a nice addition and looks fine, the Ambilight on my OLED TV is far better but still nice to have. Sadly the implementation on the monitor is bad and HDR causes flicker. It can only be fixed by setting the Screen to "HDR True Black" as I already recommended. On any other HDR setting it flickers like crazy. I also enabled Screensaver slow, Pixel orbiting "Normal" (can be dis-orientating if you intensely reading something) and Auto-Warning. The OSD is set to 60 Seconds so I can read what I am doing. Ambiglow is set to Video and brightest.</p>
+    <p>I set the Settings in KDE to 144hz, 5120x1440 and VRR to Automatic. Color accuracy "Prefer efficiency", Color profile to "Build-In" and Scaling to 100%.</p>
+    <p>For the Colors and HDR settings is use the following:</p>
+    <h3>HDR:</h3>
+    <ul>
+      <li>sRGB Color Intensity: 100%</li>
+      <li>Maximum SDR Brightness: 250</li>
+      <li>Brightness: 80%</li>
+    </ul>
+    <h3>SDR:</h3>
+    <ul>
+      <li>sRGB Color Intensity: 100%</li>
+      <li>Brightness: 60%</li>
+      <li>sRGB range: Automaitc</li>
+    </ul>
+    <p>It is a nice monitor but comes with all OLED downsides including the need to set everything to "Black" in the Linux OS and lowering the brightness outside of gaming. Not displaying something way to long on screen is also bad and you must keep the display plugged in to wall power all the time so it can do it's OLED maintenance. You MUST! Is OLED here to stay, I don't think so, not but it is the best we have and at least the next many few years the best option for a good image without compromises in the picture (except the usability and maintenance LOL).</p>
+    <p><u><b>UPDATE 2025.06.21</b></u>: I just got Mesa 25.1.3 and KDE 6.4 and noticed (besides an issues with the Mouse and flicker) the HDR implementation changed so much that the noise is now in the "True Black HDR"-mode and gone in the "HDR Game"-mode. I know HDR in general on anything is a mess but this is just annoying. I guess find the HDR Profile you prefer and that dose not have noise. Also: The Ambiglow bugs out no matter the mode. "HDR True Black" it only happens less frequent. The colors in "HDR True Black"-mode are wrong now. But in "HDR Game" they are right. I am just confused by now. HDR looks so good when it works and f*ckes literally everything up if it dose not. Even gradients are a HDR issue I saw myself and online... . What I also found out is that the "film grain" that happens in any HDR mode except "HDR True Black" is the display raising the darkest part and using a dithering algorithm to keep details in very dark areas visible. IDK. why but OLED has issues with low light details (says the internet).</p>
+    <br>
+    <br>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li>Flicker and double cursor issues:</li>
+      <li><a href="https://bugs.kde.org/show_bug.cgi?id=505625">https://bugs.kde.org/show_bug.cgi?id=505625</a></li>
+      <li><a href="https://bugs.kde.org/show_bug.cgi?id=505623">https://bugs.kde.org/show_bug.cgi?id=505623</a></li>
+      <br>
+      <li>Monitor:</li>
+      <li><a href="https://youtu.be/WNZDA9fLDS8">https://youtu.be/WNZDA9fLDS8</a></li>
+      <li><a href="https://www.reddit.com/r/OLED/comments/wphpss">https://www.reddit.com/r/OLED/comments/wphpss</a></li>
+      <li><a href="https://www.reddit.com/r/OLED_Gaming/comments/13cyhc8">https://www.reddit.com/r/OLED_Gaming/comments/13cyhc8</a></li>
+      <li><a href="https://www.reddit.com/r/buildapc/comments/18kh76c/">https://www.reddit.com/r/buildapc/comments/18kh76c/</a></li>
+      <li><a href="https://www.reddit.com/r/OLED/comments/1644kgh/comment/jy7bm1k/">https://www.reddit.com/r/OLED/comments/1644kgh/comment/jy7bm1k/</a></li>
+      <li><a href="https://www.reddit.com/r/OLED/comments/1644kgh">https://www.reddit.com/r/OLED/comments/1644kgh</a></li>
+      <li><a href="https://www.reddit.com/r/ultrawidemasterrace/comments/1c5p0rj/">https://www.reddit.com/r/ultrawidemasterrace/comments/1c5p0rj/</a></li>
+      <li><a href="https://www.displayspecifications.com/en/model/86a83b40">https://www.displayspecifications.com/en/model/86a83b40</a></li>
+      <li><a href="https://www.displayspecifications.com/en/comparison/5d202d1ff6">https://www.displayspecifications.com/en/comparison/5d202d1ff6</a></li>
+      <li><a href="https://www.philips.de/c-p/49M2C8900L_00/gaming-monitor-qd-oled-gaming-monitor">https://www.philips.de/c-p/49M2C8900L_00/gaming-monitor-qd-oled-gaming-monitor</a></li>
+      <li><a href="https://www.philips.de/c-p/49M2C8900L_00/gaming-monitor-qd-oled-gaming-monitor/support">https://www.philips.de/c-p/49M2C8900L_00/gaming-monitor-qd-oled-gaming-monitor/support</a></li>
+      <li><a href="https://www.documents.philips.com/assets/20250226/50eb8801dba247bc8eb8b290006a7c77.pdf">https://www.documents.philips.com/assets/20250226/50eb8801dba247bc8eb8b290006a7c77.pdf</a></li>
+      <li><a href="https://www.documents.philips.com/assets/20250203/5b5968d1b2334e3295b5b2790099a2f1.pdf">https://www.documents.philips.com/assets/20250203/5b5968d1b2334e3295b5b2790099a2f1.pdf</a></li>
+      <li><a href="https://www.documents.philips.com/assets/20250226/172248de8b1a4803bb05b290006a812f.pdf">https://www.documents.philips.com/assets/20250226/172248de8b1a4803bb05b290006a812f.pdf</a></li>
+      <li><a href="https://www.documents.philips.com/assets/20250203/5b5968d1b2334e3295b5b2790099a2f1.pdf">https://www.documents.philips.com/assets/20250203/5b5968d1b2334e3295b5b2790099a2f1.pdf</a></li>
+      <li><a href="https://gz-dlsw.tpv-tech.com/MNT/PHILIPS/files/Driver/New_naming/M2/49M2C8900_Drivers_20240106.zip">https://gz-dlsw.tpv-tech.com/MNT/PHILIPS/files/Driver/New_naming/M2/49M2C8900_Drivers_20240106.zip</a></li>
+      <li><a href="https://gz-dlsw.tpv-tech.com/MNT/PHILIPS/files/Software/EvniaPrecisionCenter.zip">https://gz-dlsw.tpv-tech.com/MNT/PHILIPS/files/Software/EvniaPrecisionCenter.zip</a></li>
+      <li><a href="https://www.reddit.com/r/Philips/comments/1bfzl5i">https://www.reddit.com/r/Philips/comments/1bfzl5i</a></li>
+      <li><a href="../2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html">/Linux_HDR_Ultrawide.html</a></li>
+      <li><a href="../2023.08.08_Linux_dotWMs_and_Ultrawide_Gaming2/Linux_dotWMs_and_Ultrawide_Gaming2.html">/Linux_dotWMs_and_Ultrawide_Gaming2.html</a></li>
+      <li><a href="../2023.10.16_No_Desktop_Is_Ready_For_Ultrawide/No_Desktop_Is_Ready_For_Ultrawide.html">/No_Desktop_Is_Ready_For_Ultrawide.html</a></li>
+      <li><a href="https://github.com/CatWithCode/KDETripleScreenGaming">https://github.com/CatWithCode/KDETripleScreenGaming</a></li>
+      <li><a href="https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote">https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote</a></li>
+      <li><a href="https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote/tree/main/KDE">https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote/tree/main/KDE</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.06.14 - 22:40');</script></div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - 7.1 Soround sound from E-Waste</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Nothing better then a ground-loop thanks to a sub-woofer splitter that causes a continues and audible hum if nothing is played.");</script>
+    
+    <h1>7.1 Soround sound from E-Waste</h1>
+    <p>I know I am pumping so many entry's out at the moment that it is not funny anymore. To be honest, most of the last entry's happened over time and the projects just start to close up relatively closely to each other. Today I have followed an advice I read online way to often. Building a "sick" surround sound setup from used parts. Some people call that stuff E-Waste.</p>
+    <p>I found really REALLY R-E-A-L-L-Y cheap offer on a local used goods site. It was for a receiver with subwoofer and a few speakers. As usual for such niche and heavy stuff, it was online for ever and they really wanted to get rid of it but don't want to trash it because it is still very good and not broken. I messaged them and within the same day picked everything up. A few cable's and a splitter for the subwoofer connection later I have my 7.2(6.1, because it is just one subwoofer output split into two and a optical connection limitation) setup.</p>
+    <p>I needed to completely (manually because factory resting did not work for some reason) reset the receiver and opened 2 speakers to remove lose screws that probably fell in from the first owner. I also fixed one lose cable on one of the speaker and fix 3 of the covers because the mounts were broken.</p>
+    <p>One more annoying part was after everything was setup I wanted to orientate one of the speakers better and the mount for the speaker on the stand's broke of. Turns out it was somehow press-fitted and cold welded together. But... there was a hole in the middle PERFECT for a screw, a washer and a nut... 100% the manufacturer cheap'ed out there and just used pressure, cold welds and lacquer top hold the mount... not very nice. After one trip to the hardware store and a permanent quality fix I the setup was complete.</p>
+    <p>I needed to try so many settings on the TV and the receiver and Linux until it worked. The TV needed to be set to multichannel. The receiver needed a reset, one full study of its manual and calibration and the subsequent fixing of wrong values it set. Setting the F-Speakers to small so bass is passed to the subwoofer and setting Linux to 7.1 and it worked. Why 2 subwoofer? Because I can. It actually distributes the bass in the hole room evenly and sounds so clean and nice. JUST PERFECT! It was a little annoying to configure the subwoofers so it sounds evenly.</p>
+    <p>My issues were at first it sounded wrongly distributed but that was one of the stupid "Enhancements" it had enabled. With default it sounds perfect. So yes it is a receiver with 5 speakers for everything and 2 giant ones from my husband that are the font and 2 subs set to be equal between each other. Yes it is jank, looks not consistent at all and is probably not optimal but HELL for under 200 euro for everything, including parts, cables, new cabinet for the speakers it is literally unbeatable.</p>
+    <h2>Moonlight and the 7.1 issues ("Dolby_Digital EX" and PCM):</h2>
+    <p>I only have one issue now. For the hell of it I can not get Moonlight to stream in 7.1, only in 5.1. If I set it to 7.1 every channel is in front. The reason for that is I connected the receiver with optical (The most modern and fastest connection the receiver supports). Optical has a data limit and it uses Dolby Digital for 5.1 and 7.1... well not really 7.1. It is more a fake 6.1 where the 6th channel is insert into the stream. And it is used for the back surround. But it is also some what interpreted by the receiver and it tries to separate it in the back. That is also the reason why the sound in the back sounds so both side... BECAUSE IT IS. This is one of the downsides of old tech. You have limits you can NOT overcome. My husband was like: How can we fix this. I said: We don't. The receiver can be replaced in the future with a eARC true 7.1 and then it should work no problem with uncompressed PCM-Audio. But Moonlight dose NOT support this janky 6.1 stuff and breaks. This janky 6.1 stuff I am writing about it "Dolby Digital EX". Most programs like Jellyfin, MPV, VLC, ... support it and pipwire system dose some stuff too so all games I tested work as well, that's why it just works if I use it locally. You learn new things every day.</p>
+    <p>If I ever find a fix for the Moonlight issue I will update this. I am very sure pipewire or some other program can make a live conversion from PCM to "Dolby Digital EX".</p>
+    <p><b><u>But now, the Hardware I got</u>:</b></p>
+    <ul>
+      <li>5 x Teufel M 90 FCR (SL, SR, BL, BR, C)</li>
+      <li>Pioneer VSX-515 (A newer less common revision or something like that)</li>
+      <li>Fine Teufel subwoofer (SubL) (IDK. what model, the label is missing)</li>
+      <li>Fine Elac subwoofer (SubR) (IDK. what model, the label is here missing too LOL)</li>
+      <li>2 x Teufel UL 20 MK2 (FL, FR)</li>
+    </ul>
+    <p>Think of LTT what you want but this tip with getting used, heavy old (but still digital or good analog) HIFI stuff is great!</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://youtu.be/u4LFDPbbSVk">https://youtu.be/u4LFDPbbSVk</a></li>
+      <li><a href="https://github.com/moonlight-stream/moonlight-android/issues/1295">https://github.com/moonlight-stream/moonlight-android/issues/1295</a></li>
+      <li><a href="https://blogs.gentoo.org/mgorny/2021/07/25/getting-dts-5-1-sound-via-s-pdif-or-hdmi-using-pulseaudio/">https://blogs.gentoo.org/mgorny/2021/07/25/getting-dts-5-1-sound-via-s-pdif-or-hdmi-using-pulseaudio/</a></li>
+      <li><a href="https://www.reddit.com/r/pipewire/comments/ul9mmh/comment/i7ugk73/">https://www.reddit.com/r/pipewire/comments/ul9mmh/comment/i7ugk73/</a></li>
+      <li><a href="https://www.avsforum.com/threads/optical-toslink-cables-do-they-support-7-1-audio.1529551/">https://www.avsforum.com/threads/optical-toslink-cables-do-they-support-7-1-audio.1529551/</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Dolby_Digital">https://en.wikipedia.org/wiki/Dolby_Digital</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.05.10 - 20:00');</script></div>
+  </body>
+</html>

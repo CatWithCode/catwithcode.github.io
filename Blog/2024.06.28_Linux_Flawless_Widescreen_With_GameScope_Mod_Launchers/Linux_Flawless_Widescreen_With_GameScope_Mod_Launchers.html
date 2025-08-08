@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Getting Flawless Widescreen to work on Linux with Mod-Launchers (e.g. HedgeModManager) and GameScope</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Here we go again with convoluted reliable setups just so you don't have to buy a wider screen.");</script>
+    
+    <h1>Getting Flawless Widescreen to work on Linux with Mod-Launchers (e.g. HedgeModManager) and GameScope</h1>
+    <p>There is actually quite a bit to do to get it to work. I will start by explaining how I got mod managers (e.g. HedgeModManager) to work and how to get Flawless Widescreen working on Linux.</p>
+    <p>First you need to install your Mod-Launcher and configure it. Many have Linux support by now, or on the fly incetion with a dinput8.dll and a WINEDLLOVERRIDES.</p>
+    <p>For HedgeModManager (v7.8-1 at the time of writing) I used a very good guide from "smashens" over at Reddit on how to get HedgeModManager to work. I will paraphrase their steps for archival purposes, but will leave out A LOT of usefull information. Look at their guide itself if you want to do it yourself! In the case of HedgeModManager it is not much more then installing the game in the default Steam directory, downloading HedgeModManager and adding it to Steam, cleaning prefixes of the wanted game, changing to Proton 5.10 for the wanted game, installing .net4.0 with Windows XP profile and then .net4.8 with the Windows 7 profile done in one go thx to this protontricks command: <u><i>protontricks --no-background-wineserver GAMEID --force dotnet48</i></u> with the correct ID, then removing the Proton-Compatibility setting for the game and add <u><i>WINEDLLOVERRIDES='dinput8.dll=n,b' %command%</i></u> or <u><i>WINEDLLOVERRIDES='d3d11.dll=n,b' %command%</i></u> for Forces, launching the HedgeModManager, installing the ModLoader, installing the Mod's, save and exit.</p>
+    <a href="https://www.reddit.com/r/SteamDeck/comments/18phld9/hedgemodmanager_steam_deck_installation_guide/">https://www.reddit.com/r/SteamDeck/comments/18phld9/hedgemodmanager_steam_deck_installation_guide/</a>
+    <p>Now the Mod's work but we want Flawless Widescreen and GameScope too. To do that I needed a tool to change the steam game startup. protonPreloader is extremely simple and perfect for doing that. Just get yourself the source, compile it with <u><i>x86_64-w64-mingw32-g++ -mwindows main.cpp --static</i></u> for 64bit and <u><i>i686-w64-mingw32-c++ -mwindows main.cpp --static</i></u> for 32bit. Rename the original game.exe an place the newly compiled one and next to it, get yorseld Flawless Widescreen and place it in the Game Directry too. Now add the .bat file to the game folder too and change it. You need to point it too Flawless Widescreen, and your game (or Mod-Launchers if you can redirect its game.exe path and/or it has no On-the-fly injection with dinput8.dll). For my setup and game (Sonic Lost World) the .bat file looked like this:</p>
+    <br>
+    <br>
+    <p>
+      :: @echo off
+      <br>
+      cd /D "%~dp0"
+      <br>
+      :: -------------------------------------------
+      <br>
+      :: Main script part
+      <br>
+      :: -------------------------------------------
+      <br>
+
+      <br>
+      :: Change next line to call another utility (SETUP BEFOR STARTING GAME! CAN BE DONE IN STANDALONE WINE! KILL DONT FILE EXIT!)
+      <br>
+      start "Utility to start before game" "fw32\FlawlessWidescreen.exe"
+      <br>
+
+      <br>
+      :: TIME FOR SETUP:
+      <br>
+      timeout 30
+      <br>
+      wait 3
+      <br>
+      sleep 3
+      <br>
+
+      <br>
+      :: IN GAME ARGUMENTS (EVERTHING THAT WOULD BE AFTER %COMMAND IN STEAM!):
+      <br>
+      echo "Arguments to be passed to game executable are: %*"
+      <br>
+
+      <br>
+      :: Change next line to change path to game executable
+      <br>
+      start "Main game executable" "slw_OG.exe" %*
+      <br>
+
+      <br>
+      :: FIXING GAMESCOPE:
+      <br>
+      pause
+    </p>
+    <br>
+    <br>
+    <p>Now I start Flawless Widescreen and dwonload the Plugns, open and configure my wanted game in the Plugin's menu, enable "Minimise on startup" in the settings of Flawless Widescreen and the save and close the programm. Don't go to file - exit because that removes your currently open game plugin tap. Just press X or use your close hotkey in your desktop setup.</p>
+    <p>Now I just needed to add gamescope for my setup to the startup command of my game in Steam and I can play my game without any issue: <u><i>WINEDLLOVERRIDES='dinput8.dll=n,b' gamemoderun gamescope -h 1440 -w 4720 -H 1440 -W 4720 -b -r 165 %command%</i></u>.</p>
+    <p>Many steps here are needed for all Mod-Launchers. But some steps here were also only needed for the HedgeModManager. Those setps are need to be changed to whatever your Mod-Launchers needs on Linux. protonPreloader can be also usefull to start any kind of process befor the game starts. It is only important that one Window in the prefix GameScope is bind to stays open or it will crash. Many Mod-Launchers support Linux well now, thx to the Steam Deck and modders loving tinkering with Linux, but some are still annoying to setup or need to be put into the protonPreloader config.bat to work. Until your setup works you will have to tinker but as soon as you get a working pipeline for yourself, make a Backup of all folders and prefixes and Archive them and then enjoy your game.</p>
+    <p>Thx to all the great modders, developers and Tinkerers out there for make the Tools to make such a convoluted nested setup even possible!</p>
+    <p>Also: steamtinkerlaunch could also be used to build the pipeline, espacially if you need to start the Tools and or games in a serten order.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.reddit.com/r/SteamDeck/comments/18phld9/hedgemodmanager_steam_deck_installation_guide/">https://www.reddit.com/r/SteamDeck/comments/18phld9/hedgemodmanager_steam_deck_installation_guide/</a></li>
+      <li><a href="https://flawlesswidescreen.org/">https://flawlesswidescreen.org/</a></li>
+      <li><a href="https://github.com/lazanet/protonPreloader">https://github.com/lazanet/protonPreloader</a></li>
+      <li><a href="https://github.com/n00mkrad/easy-fw-for-deck">https://github.com/n00mkrad/easy-fw-for-deck</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager">https://github.com/thesupersonic16/HedgeModManager</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/issues/886">https://github.com/thesupersonic16/HedgeModManager/issues/886</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/issues/219">https://github.com/thesupersonic16/HedgeModManager/issues/219</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/issues/219#issuecomment-979486855">https://github.com/thesupersonic16/HedgeModManager/issues/219#issuecomment-979486855</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/wiki/Running-on-Linux-(Wine)">https://github.com/thesupersonic16/HedgeModManager/wiki/Running-on-Linux-(Wine)</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/wiki/Running-on-Linux">https://github.com/thesupersonic16/HedgeModManager/wiki/Running-on-Linux</a></li>
+      <li><a href="https://github.com/thesupersonic16/HedgeModManager/blob/rewrite/Linux/HedgeModManager.yml">https://github.com/thesupersonic16/HedgeModManager/blob/rewrite/Linux/HedgeModManager.yml</a></li>
+      <li><a href="https://www.reddit.com/user/smashens/">https://www.reddit.com/user/smashens/</a></li>
+      <li><a href="https://github.com/sonic2kk/steamtinkerlaunch/wiki/FlawlessWidescreen">https://github.com/sonic2kk/steamtinkerlaunch/wiki/FlawlessWidescreen</a></li>
+      <li><a href="https://github.com/sonic2kk/steamtinkerlaunch">https://github.com/sonic2kk/steamtinkerlaunch</a></li>
+      <li><a href="https://www.pcgamingwiki.com/wiki/Sonic_Lost_World">https://www.pcgamingwiki.com/wiki/Sonic_Lost_World</a></li>
+      <li><a href="https://community.pcgamingwiki.com/files/file/1449-sonic-lost-world-aspect-ratio-support/">https://community.pcgamingwiki.com/files/file/1449-sonic-lost-world-aspect-ratio-support/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.06.28 - 17:25');</script></div>
+  </body>
+</html>

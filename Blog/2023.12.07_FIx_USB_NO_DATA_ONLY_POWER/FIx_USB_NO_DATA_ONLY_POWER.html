@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Fix: USB has only Power and No Data on Linux</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("G-I-G-A-B-Y-T-E.");</script>
+    
+    <h1>Fix: USB has only Power and No Data on Linux</h1>
+    <p><u>UPDATE FROM 2025.07.13:</u> I don't use this gigabyte board anymore. It broke and something was always broken and causing all these issues!</p>
+    <p>A recent kernel update made my front USB ports and a USB-C to HDMI adapter on my GPU unusable (yes, the AMD RX7900XT/XTX have a USB-C port and yes they are USB-4 port with Displayport AND data for USB for example. Docks actually work on them lol). The problem was that the ports had power BUT no data going through them. Linux did't even saw the ports with <u><i>lsusb</i></u>.</p>
+    <p>It turned out to be a strange power management thing in the new kernel with the USB chipset on my motherboard (GIGABYTE X670 GAMING X AX). After some research, I found an post on the Arch wiki by "waste37" that helped me fix it! Here is how I did it.</p>
+    <ol>
+      <li>Use <u><i>ls /sys/bus/usb/devices/</i></u> and note down all shown entrys with the label "usb". For me it was "usb1, usb2, ..., usb11, usb12). There were other things like "5-7:1.0" but we only need the entrys with "usb" in the name.</li>
+      <li>Create a .sh file and make yourself a script that works like this: It changes the control file from "auto" to "on". This will consume more power (on desktops you can ignore this, on laptops or anything with a battery keep it in mind). This is my script for my PC:
+      <br>
+      <br>
+      <br>
+      <hr>
+      <p>
+        #!/bin/bash
+        <br>
+
+        <br>
+        # Force ON Value:
+        <br>
+        echo "Fixing USB port hibernation:"
+        <br>
+
+        <br>
+        echo on > /sys/bus/usb/devices/usb1/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb2/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb3/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb4/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb5/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb6/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb7/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb8/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb9/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb10/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb11/power/control
+        <br>
+        echo on > /sys/bus/usb/devices/usb12/power/control
+        <br>
+
+        <br>
+        echo "Done! Will now close."
+        <br>
+        exit
+        <br>
+
+        <br>
+        # Default Values:
+        <br>
+        echo "This will return everything to its default value:"
+        <br>
+
+        <br>
+        echo auto > /sys/bus/usb/devices/usb1/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb2/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb3/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb4/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb5/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb6/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb7/powerr/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb8/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb9/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb10/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb11/power/control
+        <br>
+        echo auto > /sys/bus/usb/devices/usb12/power/control
+        <br>
+
+        <br>
+        echo "Done! Will now close."
+        <br>
+        exit
+      </p>
+      <hr>
+      <br>
+      <br>
+      </li>
+    </ol>
+    <p>Now everything should work. For some devices, you will need to do this on every reboot, as the devices reset themselves in Linux. To return to the default value, run the lower part with your port configuration. Then everything is back to normal.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://bbs.archlinux.org/viewtopic.php?id=290627">https://bbs.archlinux.org/viewtopic.php?id=290627</a></li>
+      <li><a href="https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10">https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.12.07 - 17:00');</script></div>
+  </body>
+</html>

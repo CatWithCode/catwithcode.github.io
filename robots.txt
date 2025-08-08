@@ -1,0 +1,9 @@
+User-agent: *
+Disallow:
+
+Allow: /Assets/
+Allow: /Blog/
+Allow: /Feed/
+Allow: /MediaLibraries/
+Allow: /SUB_DOMAINS/
+Sitemap: https://catwithcode.moe/sitemap.xml

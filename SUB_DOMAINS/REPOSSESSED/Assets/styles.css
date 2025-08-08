@@ -1,0 +1,548 @@
+/* # Preparations:
+# - Licenses:
+
+# - - Colors:
+# - - - Color palette inspired by "ZENITH" from "SweetAvery":
+https://lospec.com/sweet-avery
+https://lospec.com/palette-list/zenith
+
+# - - Fonts:
+REPOSSESSED.CatWithCode.moe uses the following Fonts:
+
+> "Box_v2.0"-Font which was created by "Barry Shawn" at "Besign" and licensed under "SIL-OFL":
+/Assets/Fonts/BOX_v2.0/License/LICENSE
+/Assets/Fonts/BOX_v2.0/License/README-CN.md
+/Assets/Fonts/BOX_v2.0/License/README.md
+https://fontesk.com/box-font/
+https://fontesk.com/designer/barry-shawn/
+https://github.com/BesignLab
+https://barryshawn.com/besign
+https://github.com/BesignLab/BOX
+
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Assets/Fonts/License/SIL-OFL/OFL-FAQ.txt
+/Assets/Fonts/License/SIL-OFL/ofl-faq10.txt
+/Assets/Fonts/License/SIL-OFL/OFL.txt
+/Assets/Fonts/License/SIL-OFL/OFL10.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+
+---
+
+> "Quantum"-Font which was created by "Alexandros Tsitlakidis" and licensed under "SIL-OFL":
+/Assets/Fonts/Quantum/License/license.txt
+/Assets/Fonts/Quantum/License/readme.txt
+https://dribbble.com/tkgreko
+https://fontesk.com/quantum-font/
+https://tkvisual.com/
+https://fontstruct.com/fontstructors/1602079/tk-greko
+
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Assets/Fonts/License/SIL-OFL/OFL-FAQ.txt
+/Assets/Fonts/License/SIL-OFL/ofl-faq10.txt
+/Assets/Fonts/License/SIL-OFL/OFL.txt
+/Assets/Fonts/License/SIL-OFL/OFL10.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+
+---
+
+> "KILBY"-Font which was created by "Matt Cole Wilson" and licensed under "SIL-OFL":
+/Assets/Fonts/Quantum/License/license.txt
+/Assets/Fonts/Quantum/License/readme.txt
+https://fontesk.com/kilby-font/
+https://fontesk.com/designer/matt-cole-wilson/
+https://mattcolewilson.com/resources
+
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Assets/Fonts/License/SIL-OFL/OFL-FAQ.txt
+/Assets/Fonts/License/SIL-OFL/ofl-faq10.txt
+/Assets/Fonts/License/SIL-OFL/OFL.txt
+/Assets/Fonts/License/SIL-OFL/OFL10.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+
+---
+
+# Box_v2.0 Font (Expanded):
+# - - - - Regular: */
+@font-face {
+    font-family: box;
+    src: url(/Assets/Fonts/BOX_v2.0/BOXRounded-RegularExpanded.woff2);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: box;
+    src: url(/Assets/Fonts/BOX_v2.0/BOXRounded-BoldExpanded.woff2);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: box;
+    src: url(/Assets/Fonts/BOX_v2.0/BOXRounded-LightExpanded.woff2);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: box;
+    src: url(/Assets/Fonts/BOX_v2.0/BOXRounded-MediumExpanded.woff2);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # Quantum Font:
+# - - - - Regular: */
+@font-face {
+    font-family: quantum;
+    src: url(/Assets/Fonts/Quantum/quantum.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: quantum;
+    src: url(/Assets/Fonts/Quantum/quantum.otf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: quantum;
+    src: url(/Assets/Fonts/Quantum/quantum.otf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: quantum;
+    src: url(/Assets/Fonts/Quantum/quantum.otf);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # KILBY Font:
+# - - - - Regular: */
+@font-face {
+    font-family: KILBY;
+    src: url(/Assets/Fonts/Kilby/KILBY.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: KILBY;
+    src: url(/Assets/Fonts/Kilby/KILBY-Bold.otf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: KILBY;
+    src: url(/Assets/Fonts/Kilby/KILBY.otf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: KILBY;
+    src: url(/Assets/Fonts/Kilby/KILBY-Bold.otf);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # General Settings: 
+# - Variables: */
+:root {
+    /* # - - General-Colors: */
+    --background: #00000000;
+    --background2: rgba(0, 0, 0, 0.7);
+    --foreground: #ffffff;
+    --foreground2: #82deff;
+
+    /* Cursor: */
+    --cursorDefault: url('Images/CustomCursor/custom-cursor.png') 16 16, default;
+    --cursorPointer: url('Images/CustomCursor/custom-link-cursor.png') 16 32, pointer;
+
+    /* Padding: */
+    --left-padder: 2%;
+    --top-padder: 2%;
+
+    /* Reverse-Padding: */
+    --left-negativ-margin: -2%;
+    --top-negativ-margin: -2%;
+
+    /* CrossAir-Margin: */
+    --left-cross-margin: -1vh;
+    --top-cross-margin: -20vh;
+
+    /* Border: */
+    --borderSize: 0.2vh;
+    --borderRadius: 1vh;
+
+    /* BufferSize: */
+    --bufferSize: -10%;
+
+    /* Ensure black Page: */
+    background-color: var(--background);
+    background: var(--background);
+}
+
+/* # - Global Font and Color: */
+* {
+    /* # Area-Fixing: */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* # - Font and Text: */
+    font-family: 'box', 'KILBY', 'quantum', 'Courier New', 'monospace';
+    font-weight: bold; /* Makes the default font bold */
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
+    image-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+
+    /* Fixing Oversized Text globaly: */
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+}
+
+/* Body: */
+body, html {
+    height: 100%;
+}
+
+/* Custom - Cursor & Fixing long Links: */
+body {
+    cursor: var(--cursorDefault);
+}
+
+a {
+    cursor: var(--cursorPointer);
+
+    /* Long Links: */
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+
+    /* Making Links in better Visible: */
+    color: var(--foreground2);
+}
+
+/* Header: */
+.header-area {
+    /* Position: */
+    position: fixed; /* Fix the text in the top left corner. */
+    z-index: 3; /* Ensure it is above the everthing. */
+
+    /* Styling: */
+    background-color: black;
+    /* clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); */
+    transform: skew(-45deg);
+
+    /* Padding: */
+    top: 1vh;
+    left: 5vh;
+
+    /* Safe Space: */
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Text in header: */
+.header-area p {
+    /* For all Text in Header: */
+    /* Reverse Transform: */
+    transform: skew(45deg);
+    
+    /* Font: */
+    font-size: 3.5vw;
+    
+    /* Only for Text: */
+    color: var(--foreground);
+}
+
+/* Background Image - Makes the Wallpaper fixed, full and relativ: 
+SET IN DIV ITSELF!
+
+EXAMPLE:
+<div class="fixed-image" style="background-image: url('/Assets/Images/Transparent/DamagaMan.png');"></div>*/
+.background-image {
+    /* Background-Config: */
+    background-size: cover; /* Cover the entire page. */
+    background-position: center; /* Centers the Image. */
+    position: fixed; /* Fixes the background image. */
+
+    /* Making sure the Position is garantied: */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* BEHIND EVERTHING */
+}
+
+/* C-Image:
+SET IN DIV ITSELF!
+
+EXAMPLE:
+<div class="fixed-image" style="background-image: url('/Assets/Images/Transparent/DamagaMan.png');"></div>*/
+.fixed-image {
+    /* C-Config: */
+    background-size: contain; /* Cover the entire div. */
+    background-position: right; /* Center the image. */
+    background-repeat: no-repeat; /* PREVENT Image from repeating. */
+    position: absolute; /* Use absolute positioning for Position. */
+    top: 0; /* Ensure alignment to the top. */
+    right: 0; /* Ensure alignment to the right. */
+
+    /* Size: */
+    width: 100%; /* 50% width */
+    height: 100%; /* 100% height */
+
+    /* Position: */
+    z-index: 0; /* Ensure it is behind Text */
+}
+
+/* For the CrossAir: */
+.cross-Air {
+    /* Position: */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    /* Offset: */
+    margin-top: var(--top-cross-margin);
+    margin-left: var(--left-cross-margin);
+    
+    /* Position: */
+    z-index: 1; /* Ensure it is behind Text (Not working?) */
+
+    /* Styling: */
+    color: var(--foreground);
+    font-size: 1000%; /* Set font size to 20 pixels */
+}
+
+/* Main-Area - Everthing in the actual Body: */
+.main-Area {
+    /* Position: */
+    position: relative;
+    top: 50vh; /* Start at half of the StartUp-Size in height. */
+    z-index: 2; /* In front of Background. */
+
+    /* Padding: */
+    padding-left: var(--left-padder);
+    padding-right: var(--left-padder);
+    padding-top: var(--top-padder);
+    padding-bottom: var(--top-padder);
+}
+
+/* ScreenShotArea: */
+.image-container {
+    /* Positioning: */
+    display: flex; /* Use flexbox for layout. */
+    justify-content: space-between; /* Space images evenly. */
+    align-items: center;
+    padding: 2%; /* Padding around the container. */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line. */
+
+    /* Border and Background: */
+    /* border: var(--borderSize) solid var(--foreground); */
+    background-color: var(--background2);
+    border-radius:  var(--borderRadius);
+}
+
+/* ScreenShot's-Link: */
+.image-container a {
+    /* Positioning: */
+    flex: 1; /* Grow equally. */
+    text-align: center;
+
+    /* Styling: */
+    max-width: 22.5%; /* Looks nice. */
+    height: auto; /* Force Aspect ratio. */
+}
+
+/* ScreenShot's-Images: */
+.image-container img {
+    /* Styling: */
+    width: 100%; /* Makes images respon to the link size. */
+    height: auto; /* Maintain aspect ratio. */
+
+    /* Border: */
+    border: var(--borderSize) solid var(--foreground);
+    border-radius: var(--borderRadius);
+
+    /* Preview return: */
+    transition: transform 0.3s; /* Smooth transition for hover effect. */
+}
+
+/* Image Preview - Resize: */
+.image-container a:hover img, .inline-Image-Container a:hover img {
+    transform: scale(1.05); /* Scale up on hover */
+    border: var(--borderSize) solid var(--foreground);
+}
+
+/* Fooder Transition - The gradient between Text and Footer: */
+.footer-Transition {
+    /* Position: */
+    margin-top: var(--bufferSize);
+
+    /* Styling: */
+    height: 3vh;
+    background-image: linear-gradient(Transparent, black);
+
+    /* Padding: */
+    margin-left: var(--left-negativ-margin);
+    margin-right: var(--left-negativ-margin);
+    margin-top: var(--top-padder);
+    margin-bottom: var(--top-negativ-margin);
+}
+
+/* Footer Area: */
+.footer {
+    /* Positioning: */
+    display: flex;
+
+    /* Padding: */
+    margin-left: var(--left-negativ-margin);
+    margin-right: var(--left-negativ-margin);
+    margin-top: var(--top-padder);
+    margin-bottom: var(--top-negativ-margin);
+
+    /* Centering: */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+    /* Styling: */
+    background: black;
+}
+
+/* Links to other things in the Footer: */
+.footer-Links {
+    /* Positioning: */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* The Links to other things in the Footer themself: */
+.footer-Links * {
+    /* Clean Distances: */
+    padding: 2%;
+}
+
+/* Text inside the actual Footer: */
+.footer-Text * {
+    /* Positioning: */
+    /* Freeing: */
+    display: flex; /* Use flexbox */
+
+    /* Centering: */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    
+    /* Styling: */
+    margin-top: var(--top-padder);
+    margin-bottom: var(--top-padder);
+}
+
+/* Holds the Inline-Image: */
+.inline-Image-Container {
+    overflow: hidden; /* Clear floats */
+    padding-right: var(--left-padder);
+    padding-bottom: var(--top-padder);
+}
+
+/* Makes image "float" in Text and allows Text around it: */
+.inline-Image {
+    /* Positioning: */
+    float: right;
+
+    /* Styling: */
+    width: 20vw;
+
+    /* Clickable-Border: */
+    border: var(--borderSize) solid var(--foreground);
+    border-radius: var(--borderRadius);
+
+    /* Preview return: */
+    transition: transform 0.3s; /* Smooth transition for hover effect. */
+}
+
+/* Video-Player Holder: */
+.video-container {
+    width: 100%;
+    
+    /* Centering: */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+/* VideoPlayer - Resize: */
+.video-container video:hover {
+    transform: scale(1.05); /* Slightly grow the container on hover */
+}
+
+/* Video-Player itself: */
+.video-container video {
+    /* height: 40%; */
+    width: 70vw;
+
+    /* Border: */
+    border: var(--borderSize) solid var(--foreground);
+    border-radius: var(--borderRadius);
+
+    /* Grow Animation: */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    /* Better visibility to be clickable: */
+    cursor: var(--cursorPointer);
+}
+
+/* Just for centering Text alone: */
+.centredItems {
+    text-align: center;
+}

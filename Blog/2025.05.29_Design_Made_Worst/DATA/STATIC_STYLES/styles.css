@@ -1,0 +1,318 @@
+/* # Preparations:
+# - Licenses:
+
+# - - Colors:
+# - - - Color palette is used/inspired by "Bit Unit 8 Palette" from "thuginc":
+https://lospec.com/palette-list/bit-unit-8
+https://lospec.com/thuginc
+https://www.thug-inc.com/
+
+# - - Fonts:
+# - - - Vinston Font:
+CatWithCode.moe uses the "Vinston"-Font which was created by "Damian Leśniowski" and licensed under "SIL-OFL":
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL-FAQ.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/ofl-faq10.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/License/OFL10.txt
+/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/License/readme.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+https://dribbble.com/damianlesniowski
+https://fontesk.com/vinston-font/
+https://fontesk.com/designer/damian-lesniowski/
+https://www.instagram.com/lesniowski.design/
+
+mixedFonts:
+# - - - - Regular: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_FONTS/Vinston/Vinston.ttf);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # General Settings: 
+# - Variables: */
+:root {
+    /* # - - General-Colors: */
+    --background: #000000;
+    --alt_background: #0f051bb3;
+    --textColor: #cef1ff;
+    --headline_color: #8fd345;
+    --link_Color: #6565ab;
+    --border_color: #1e405bb3;
+
+    --image_border_color: #409f42;
+
+    /* # - - Images: */
+    --image_margin: 1%;
+    --image_padding: 1%;
+    --image_border: 0.2em;
+    --image_width: 25em;
+    --image_rounding: 1rem;
+
+    /* Border: */
+
+    /* Border-Radius: */
+    --borderRadius: 1.5rem;
+    --borderThiccness: 0.1rem;
+
+    /* Border Path: */    
+    --borderPath: polygon(calc(0% + var(--borderRadius)) 0%, 100% 0, 100% calc(100% - var(--borderRadius)), calc(100% - var(--borderRadius)) 100%, 0 100%, 0% calc(0% + var(--borderRadius)));
+
+    /* Background Base-Color: */
+    background-color: var(--background);
+    
+    /* Background-Image: */
+    /* background: url(/path/file.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: bottom; */
+}
+
+/* # - Global Font and Color: */
+* {
+    /* # - Font and Text: */
+    font-family: 'Vinston', 'Courier New', 'monospace';
+    color: var(--textColor);
+
+    /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
+    /*image-rendering: optimizeSpeed;*/
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+
+    /* Disable Font Smoothing: */
+    font-smooth: never;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Line: */
+hr {
+    /* # - Line (FIX for 1px-Width Issue): */
+    width: 100%;
+
+    /* Line Color: */
+    color: var(--textColor);
+}
+
+/* # - Body: */
+body {
+    /* # - Footer-Spacing (Fill Space in between): */
+    min-height: 98vh; /* May need to be lowered. Prevents scrolling from filling the space between the footer and body elements. */
+    display: flex;
+    flex-direction: column;
+
+    /* # - Background-Image: */
+    background-image: url(/Blog/2025.05.29_Design_Made_Worst/DATA/STATIC_STYLES/Image_Repository/Backgrounds/Layered/Rain.png);
+
+     /* # - - Background-Animations Propertys: */
+    background-repeat: repeat;
+    background-size: 20%;
+    animation: shiftBackground 500s linear infinite;
+}
+
+/* Animation for the Background-Rain. (vh should fix the Reset isssue) */
+@keyframes shiftBackground {
+    0% {
+        background-position: 0 -2000vw;
+    }
+    100% {
+        background-position: 0 2000vw;
+    }
+}
+
+/* Fixing Long Links: */
+a {
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+
+    /* Making Links in better Visible: */
+    color: var(--link_Color);
+}
+
+/* - - ImageBody-Content: */
+#ImageLibrary {
+    /* Align Images into Rows dynamically: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: var(--image_padding);
+}
+
+#ImageBody {
+    /* Image Body itself: */
+    border-radius: var(--image_rounding);
+    padding: var(--image_padding);
+    margin: var(--image_margin);
+    max-width: var(--image_width);
+    text-align: center;
+    cursor: pointer;
+}
+
+#ImageBody img {
+    /* Image size fix: */
+    border-radius: var(--image_rounding);
+    max-width: 100%;
+}
+/* # # #
+
+# Classes for custom items:
+# - Centred Items:
+    For Items that need to be Centred (Ideally used with div's). */
+.centredItems {
+    text-align: center;
+}
+
+/* # - Clean Text:
+    For Items that need to have Decorations like underline removed. */
+.cleanText {
+    text-decoration: none;
+}
+
+/* # - BORDER-CODE:
+
+# - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
+Main Elements: */
+body > *:not(
+    hr)
+{
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+
+    clip-path: var(--borderPath);
+    background-color: var(--border_color);
+    background-size: 100% 100%; /* Cover the entire element */
+    background-repeat: no-repeat; /* Prevent repeating */
+    /*border-radius: 5px; Optional: add rounded corners */
+    isolation: isolate;
+}
+
+/* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
+Main Elements: */
+body > *:not(
+    hr)::before
+{
+    content: '';
+    background-color: var(--alt_background);
+    inset: var(--borderThiccness);
+    position: absolute;
+    z-index: -1;
+    clip-path: var(--borderPath);
+}
+/* # # #
+
+# - Offset for Lists that would get cutoff because of the way the Borders works: */
+ul,
+ol,
+li
+{
+    padding-left: 3rem; 
+    list-style-position: inside;
+}
+
+/* Headline Color: */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--headline_color);
+}
+
+/* # # # */
+/* # - Header: */
+#Header {
+    /* # - - Styling: */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* # - - Header-Border: */
+#Header_Border {
+    /* # - - - Position: */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 25px; /* Make sure the Header-Text does not overlap the border. */
+}
+
+/* # - Fooder: */
+#Footer {
+    /* # - - Position: */
+    margin-top: auto;
+}
+
+/* # - - Fooder-Container: */
+#Fooder_Border {
+    /* # - - Position: */
+    margin-top: auto;  
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    padding-bottom: 0px;
+
+    /* # - - Styling: */
+    text-align: center;
+}
+
+/* # - - Fooder-Content: */
+#Fooder_Border * {
+    /* # - - - Spacing from Border*/
+    margin-left: 25px;
+    margin-right: 25px;
+
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+    /* # - - - Styling: */
+    background-color: var(--alt_background);
+}
+/* # # # */

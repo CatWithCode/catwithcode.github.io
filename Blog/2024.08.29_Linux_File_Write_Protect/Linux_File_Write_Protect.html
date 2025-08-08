@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Linux File Write Protection that can not be deleted from sudo</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Paranoid, anyone?");</script>
+    
+    <h1>Linux File Write Protection that can not be deleted from sudo</h1>
+    <p>Not much to say about it. I wanted to protect some Files and Folders from writing and deleting even from sudo users.</p>
+    <h2>Protect File and Folders (Recursive):</h2>
+    <p><u><i>sudo chattr +i -RV /PATH_TO_STUFF/MODS</i></u></p>
+    <h2>Free File and Folders (Recursive):</h2>
+    <p><u><i>sudo chattr -i -RV /PATH_TO_STUFF/MODS</i></u></p>
+    <h2>Protect File:</h2>
+    <p><u><i>sudo chattr +i /PATH_TO_STUFF/Test.sh</i></u></p>
+    <h2>Free File:</h2>
+    <p><u><i>sudo chattr -i /PATH_TO_STUFF/Test.sh</i></u></p>
+    <br>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.08.29 - 18:03');</script></div>
+  </body>
+</html>

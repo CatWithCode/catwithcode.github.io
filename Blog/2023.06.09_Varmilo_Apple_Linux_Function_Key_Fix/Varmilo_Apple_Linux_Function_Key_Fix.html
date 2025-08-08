@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Fixing Varmilo/Similar keyboards being mistaken for a Apple keyboard under Linux</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("How dose stuff like this even happen? Do manufactures not know about specifications?");</script>
+    
+    <h1>Fixing Varmilo/Similar keyboards being mistaken for a Apple keyboard under Linux</h1>
+    <p>I was given a Varmilo keyboard some time ago and it works fine on MacOS and Windows. But on Linux the FN (function) keys are reversed. Normally you hold down FN and press a number for an FN key, but on Linux you get media-keys instead. You can get FN-keys by pressing FN+PageDown, pressing the number and then FN-PageUp. This is annoying. The hid-apple kernel module is meant to fix this BUT for keyboards that are mistaken for an Apple keyboard it is a bit more finicky. I searched for quite a while and finally found a configuration that works for me.</p>
+    <p>This has been done on Arch Linux, but should also work on other distributions if you know where to put the files and configure things in the right places.</p>
+    <br>
+    <p>First I had to update the firmware. I would recommend doing this in a VM!</p>
+    <p><a href="https://en.varmilo.com/keyboardproscenium/Driverdownload">https://en.varmilo.com/keyboardproscenium/Driverdownload</a></p>
+    <br>
+    <p><i>Then I configured hid-apple correctly:</i></p>
+    <p>
+      Creating the config file:
+      <br>
+      <u><i>echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf</i></u>
+    </p>
+    <br>
+    <p>
+      Checking if the file was created correctly (EXIT! DON'T SAVE!):
+      <br>
+      <u><i>sudo nano /etc/modprobe.d/hid_apple.conf</i></u>
+    </p>
+    <br>
+    <p>
+      Reload the hid-apple-module-config to check if it works:
+      <br>
+      <u><i>sudo rmmod hid_apple; sudo modprobe hid_apple</i></u>
+    </p>
+    <br>
+    <p>
+      Makeing it permanent:
+      <br>
+      <u><i>sudo mkinitcpio -p linux</i></u>
+      <br>
+      or
+      <br>
+      <u><i>sudo dracut -v -f</i></u></p>
+    <br>
+    <p>
+      Time to reboot and check again:
+      <br>
+      <u><i>sudo reboot</i></u>
+    </p>
+    <br>
+    <p>Done. :)</p>
+    <br>
+    <p>If it did not work, you can check the links in the Sources section for all the resources that helped me getting it to work with my keyboard. (Ducky x Varmilo Miya Mac Moonlight [Varmilo Miya69-Mac]).</p>
+    <p>Many thanks to jpihl over at unix.stackexchange.com! There answer to an older question did the trick for me!: <a href="https://unix.stackexchange.com/a/609797">https://unix.stackexchange.com/a/609797</a></p>
+    <br>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://unix.stackexchange.com/questions/407501/make-apple-keyboard-settings-persistent-in-hid-apple-parameters">https://unix.stackexchange.com/questions/407501/make-apple-keyboard-settings-persistent-in-hid-apple-parameters</a></li>
+      <li><a href="https://unix.stackexchange.com/a/609797">https://unix.stackexchange.com/a/609797</a></li>
+      <li><a href="https://github.com/free5lot/hid-apple-patched">https://github.com/free5lot/hid-apple-patched</a></li>
+      <li><a href="https://www.reddit.com/r/MechanicalKeyboards/comments/te3xta/psa_varmilo_keyboards_dont_work_correctly_on_linux/">https://www.reddit.com/r/MechanicalKeyboards/comments/te3xta/psa_varmilo_keyboards_dont_work_correctly_on_linux/</a></li>
+      <li><a href="https://www.reddit.com/r/Varmilo/comments/we5d1v/varmilo_on_linux_do_they_work_well_now/">https://www.reddit.com/r/Varmilo/comments/we5d1v/varmilo_on_linux_do_they_work_well_now/</a></li>
+      <li><a href="https://bbs.archlinux.org/viewtopic.php?id=232973">https://bbs.archlinux.org/viewtopic.php?id=232973</a></li>
+      <li><a href="https://wiki.archlinux.org/title/Input_remap_utilities">https://wiki.archlinux.org/title/Input_remap_utilities</a></li>
+      <li><a href="https://discussion.fedoraproject.org/t/fix-fn-behavior-for-keyboards-which-are-identified-as-apple-keyboard/80635">https://discussion.fedoraproject.org/t/fix-fn-behavior-for-keyboards-which-are-identified-as-apple-keyboard/80635</a></li>
+      <li><a href="https://gist.github.com/vladak/b005b0446eeb049a8b4cd546bf11dbbc">https://gist.github.com/vladak/b005b0446eeb049a8b4cd546bf11dbbc</a></li>
+      <li><a href="https://www.reddit.com/r/ManjaroLinux/comments/m00tij/f_keys_not_working/">https://www.reddit.com/r/ManjaroLinux/comments/m00tij/f_keys_not_working/</a></li>
+      <li><a href="https://www.reddit.com/r/archlinux/comments/xmmso5/hid_apple_module_doesnt_work/">https://www.reddit.com/r/archlinux/comments/xmmso5/hid_apple_module_doesnt_work/</a></li>
+      <li><a href="https://wiki.archlinux.org/title/Apple_Keyboard#Function_keys_do_not_work">https://wiki.archlinux.org/title/Apple_Keyboard#Function_keys_do_not_work</a></li>
+      <li><a href="https://wiki.archlinux.org/title/Apple_Keyboard">https://wiki.archlinux.org/title/Apple_Keyboard</a></li>
+      <li><a href="https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=9125">https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=9125</a></li>
+      <li><a href="https://www.reddit.com/r/Varmilo/comments/g4sabk/fn_lock_on_va87m/">https://www.reddit.com/r/Varmilo/comments/g4sabk/fn_lock_on_va87m/</a></li>
+      <li><a href="https://forums.servethehome.com/index.php?threads/varmilo-keyboard-fn-keys-under-linux.29041/">https://forums.servethehome.com/index.php?threads/varmilo-keyboard-fn-keys-under-linux.29041/</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/604791/keyboard-function-keys-always-trigger-media-shortcuts-regardless-of-whether-fn">https://unix.stackexchange.com/questions/604791/keyboard-function-keys-always-trigger-media-shortcuts-regardless-of-whether-fn</a></li>
+      <li><a href="https://discussion.fedoraproject.org/t/getting-the-function-keys-to-work-properly-with-a-varmilo-keyboard/65457/4">https://discussion.fedoraproject.org/t/getting-the-function-keys-to-work-properly-with-a-varmilo-keyboard/65457/4</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/121395/on-an-apple-keyboard-under-linux-how-do-i-make-the-function-keys-work-without-t">https://unix.stackexchange.com/questions/121395/on-an-apple-keyboard-under-linux-how-do-i-make-the-function-keys-work-without-t</a></li>
+      <li><a href="https://superuser.com/questions/1410506/how-to-make-the-fn-key-work-on-the-apple-magic-keyboard-ubuntu-18-04">https://superuser.com/questions/1410506/how-to-make-the-fn-key-work-on-the-apple-magic-keyboard-ubuntu-18-04</a></li>
+      <li><a href="https://man.archlinux.org/man/modprobe.d.5">https://man.archlinux.org/man/modprobe.d.5</a></li>
+      <li><a href="https://en.varmilo.com/keyboardproscenium/Driverdownload">https://en.varmilo.com/keyboardproscenium/Driverdownload</a></li>
+      <li><a href="https://github.com/wget/un-apple-keyboard">https://github.com/wget/un-apple-keyboard</a></li>
+      <li><a href="https://www.reddit.com/r/Varmilo/comments/l5c5ek/comment/gmzr47i/?utm_source=share&utm_medium=web2x&context=3">https://www.reddit.com/r/Varmilo/comments/l5c5ek/comment/gmzr47i/?utm_source=share&utm_medium=web2x&context=3</a></li>
+      <li><a href="https://aur.archlinux.org/packages/un-apple-keyboard">https://aur.archlinux.org/packages/un-apple-keyboard</a></li>
+      <li><a href="https://www.reddit.com/r/MechanicalKeyboards/comments/8xusu2/varmilo_fn_key_issue/">https://www.reddit.com/r/MechanicalKeyboards/comments/8xusu2/varmilo_fn_key_issue/</a></li>
+      <li><a href="https://www.reddit.com/r/DuckyKeyboard/comments/qgxeqa/solved_ducky_x_varmilo_keyboard_reset/">https://www.reddit.com/r/DuckyKeyboard/comments/qgxeqa/solved_ducky_x_varmilo_keyboard_reset/</a></li>
+      <li><a href="https://www.reddit.com/r/MechanicalKeyboards/comments/g9gedw/ducky_varmilo_miya_pro/">https://www.reddit.com/r/MechanicalKeyboards/comments/g9gedw/ducky_varmilo_miya_pro/</a></li>
+      <li><a href="https://www.reddit.com/r/DuckyKeyboard/comments/fnjlnc/driverssoftware_for_ducky_x_varmilo_miya_pro/">https://www.reddit.com/r/DuckyKeyboard/comments/fnjlnc/driverssoftware_for_ducky_x_varmilo_miya_pro/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.06.09 - 09:40');</script></div>
+  </body>
+</html>

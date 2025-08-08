@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - How to actually get Q-Flash Plus to work</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("And that is the entry that escalated the rage against Gigabyte and 2 broken filesystems.");</script>
+    
+    <h1>How to actually get Q-Flash Plus to work</h1>
+    <p><u>UPDATE FROM 2025.07.13:</u> I don't use this gigabyte board anymore. It broke and something was always broken and causing all these issues!</p>
+    <p>Yes I mean it. Independent BIOS flash is a great idea but as usual the manufactures f*ck it up all the time. Q-Flash Plus on Gigabyte motherboards works. !BUT! it is very VEEERRRYY sensitive to the environment (USB2.0 or USB3.0, FAT or FAT32 and so on). I tortured myself to find the right config and found a Reddit Post with one answer that had the solution. Below is how to EXACTLY AND I MEAN E X A C T L Y do it to get it working.</p>
+    <p>The solution was originally found by "tencaig" on Reddit: <a href="https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/">https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/</a></p>
+    <ol>
+      <li>Use a USB 2.0 drive (3.0 can work but is even harder to get working).</li>
+      <li>Format it in Windows to the "FAT (Default)" profile in the format options. THIS IS IMPORTANT! It should be FAT16 at the end. AND NO, FORMATTING IT IN LINUX DOSE NOT WORK! If I do a byte by byte compare Linux dose something slightly different. The stick must also have a MRB Partition table.</li>
+      <li>Download the BIOS update from Gigabyte directly. I did an update from 21 to 33.</li>
+      <li>Extracted update file. Its extension is most likely its version. For me it was "X670GAMINGXAX.F33".</li>
+      <li>Rename the update file to "GIGABYTE.bin". MAKE SURE TO RENAME ITS EXTENSION! MAKE REALLY SURE IT IS EXACTLY NAMED LIKE THIS INCLUDING THE lower AND UPPER CASE CHARACTERS!</li>
+      <li>Copy it AND ONLY IT to the USB-Stick. Eject it! DON'T JUST PULL IT!</li>
+      <li>Shut down the PC and disconnect the following things:
+        <ul>
+          <li>ALL USB devices!</li>
+          <li>GPU</li>
+          <li>RAM</li>
+          <li>ALL SATA, NVME and M.2 devices!</li>
+        </ul>
+      </li>
+      <li>At the end the only thing really connected to the Mainboard should be the CPU and POWER. Make sure to also disconnect hubs if your case has those. The CPU can theoretically be also removed. The only needed and connected part MUST be power.</li>
+      <li>Connect the USB-Stick to the Q-Flash Plus USB-Port and turn on the power supply. Then press the Q-Flash-Plus button. The PC should turn itself on and the stick and the Q-Flash LED should flash.</li>
+      <li>At some point (for me around 4 Minutes or so) the PC will try to boot and scream (if it has a speaker) about the missing RAM (Or will turn off if the CPU is missing).</li>
+      <li>Now reconnect the bare minimum (RAM, USB-Mouse, USB-Keyboard, Display) and check the BIOS. If it worked, you are done and can rebuild the PC.</li>
+    </ol>
+    <p>Version 33 fixed most of my complains about my board (X670 GAMING X AX). BUT it fixed something about RAM stability and now my RAM no longer works (It was always very hard to get running with my CPU because the RAM sucks). THIS IS WRONG. Turns out the RAM was unstable, that's true but the mainboard just broke... 3 month out of warranty... AHH! I swear I will never buy Gigabyte EVER again. This is the 3th motherboard from them that broke on me. The first was a new Intel Core Gen1 something something, the second the "BIOS-FREEZE and Modding" one from older entry's and now this one that was only one year in use and one year in storage. Every other board (From ASUS to MSI or even DELL still run's! One is even 20 years old!).
+    </p>
+    <p>What I also found again, is that OpenSuse in the Default installation (WITHOUTH SECURE BOOT) is the ONLY Linux distribution I used to this day that can even boot if the UEFI is wiped and the NVRAM entry's are gone. I am sure this can be replicated or maybe has a name but I never see Distribution boot after a BIOS reset if they where installed via UEFI method. This is half right. From what I saw while fixing my PC was that both can be used, legacy and UEFI. But UEFI only works if the BIOS was not reset and OpenSuse wrote itself there once, else I need to enable CSM of legacy boot. ALSO: If you disable the internal AUDIO CARD you should disconnect internal HD-AUDIO connectors else the KERNEL will be confused about the under-powered port in use (at least on my MSI board).</p>
+    <br>
+    <p><b><u>UPDATE - 2025.04.23</u>:</b> I currently can not use my PC. Either the new BIOS dose not like my RAM or the RAM broke. The RAM (as can be read from older Posts) was always a b*tch to get running with my CPU. I'm currently waiting for new RAM that is the "most" recommenced RAM for my Mainboard and CPU. On my MSI board the RAM and CPU were also always fighting but it at least worked. But on the Gigabyte board it either not boots, crashes, RAM corrupts, LAN and USB not working, very weird looking CLI, ... . Yea, a lot of RAM f*ckery. I know I curse a lot the last few entry's but I am really mad. I hope after I install the new RAM I hope it works again (I can (and got) it working a few times by now. Once my husband and I played remote and it worked perfectly but well now it is broken down). BUT a small teaser: I got gifted a iMac 27' Late 2013. I wanted to upgrade it but the person that originally bought it back then, just got a MAXED OUT one. No joke. I got a 12 year old 10.000 euro PC gifted xD. And they knew what they had! I will only change the SSD (F*ck Fusion) and clean it. Then I install Arch (only viable OS because of the GTX 780M). Looking forward to write about it. I also got a G4 gifted but to be honest I don't know what to do with an old PowerPC computer. This (still relatively strong PC) will become my strong emergency PC if my main machine breaks down (again). The ThinkPad can do a lot but the iGPU is FAR to weak for gaming and GameDEV. As u probably expect I was not able to work on my game the last few days because my PC is not running. As soon as it dose again I will continue. Everything is always ready to continue and remotely saved, but my PC is the only PC I can currently use that is strong enough for GameDEV. The iMac could also do it but again, f*ck Fusion.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/">https://www.redditmedia.com/r/gigabyte/comments/1i87pys/x670_gaming_x_ax_v2rev_10_qflash_plus_issues/</a></li>
+      <li><a href="https://www.reddit.com/user/tencaig/">https://www.reddit.com/user/tencaig/</a></li>
+      <li><a href="https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10#kf">https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10#kf</a></li>
+      <li><a href="../2024.03.26_Retro_Compaq_Sleeper/Retro_Compaq_Sleeper.html">/2024.03.26_Retro_Compaq_Sleeper/Retro_Compaq_Sleeper.html</a></li>
+      <li><a href="../2022.12.26_X670_DDR5_XMP-EXPO_FIX/X670_DDR5_XMP-EXPO_FIX.html">/2022.12.26_X670_DDR5_XMP-EXPO_FIX/X670_DDR5_XMP-EXPO_FIX.html</a></li>
+      <li><a href="https://download.gigabyte.com/FileList/Manual/mb_manual_x670-aorus-elite-ax-v2_1303_e.pdf?v=519b9da6eab8e19b3787d431eed5e808">https://download.gigabyte.com/FileList/Manual/mb_manual_x670-aorus-elite-ax-v2_1303_e.pdf?v=519b9da6eab8e19b3787d431eed5e808</a></li>
+      <li><a href="../2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html">/2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.04.24 - 20:20');</script></div>
+  </body>
+</html>

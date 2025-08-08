@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Digitizing / Modernizing MiniDV Cameras is near impossible</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Old technology is old. Surprise. Code looks funny btw.");</script>
+    
+    <h1>Digitizing / Modernizing MiniDV Cameras is near impossible</h1>
+    <p>I was (and still am) sick over the last few days. So... I had time while lying there and just existing to do some more off and on research I onto a topic I was always interested in. Professional SD 3CCD-MiniDV Cameras. I wanted / want one real bad but there is one issue... they kinda suck when it comes to Modernizing. Lets keep it short: It is near impossible except if you carry around a laptop with Thunderbolt.</p>
+    <p>I love love LOVE the image of these cameras but hate MiniDV. The Sony DSR-PD150 or Panasonic AG-DVX100 are my favorites and seem to be the best in there field and price point. They even have the BEST connectivity compare to others but still SUUUCK tody when it comes to getting the Video Data from them.</p>
+    <p>I compiled ALL my research over the last few days (and off and on the last few month) here so the brain energy was not completely wasted:</p>
+    <ul>
+      <li>The only way to get a clean digital signal / files from these cameras is FireWire. The only way to get it nowadays is a clusterf*ck of adapters were you connect a FireWire 400 cable to a 400 to 800 FireWire converter. That gets connected to a FireWire 800 to Thunderbolt converter (Witch are no longer produced / were only really well made by Apple).</li>
+      <br>
+      <li>You could theoretically build a real clusterf*ck of hardware to record on the camera but that would look like this:
+        <ul>
+          <br>
+          <li>Raspberry PI 5 (or Raspberry PI 4 with a USB-Chip PCIe bridge and a cursed USB to PCIe-Adapter)
+            <ul>
+              <li>A PCIe 1x Adapter board
+                <ul>
+                  <li>A PCIe 1x Extension
+                    <ul>
+                      <li>A Raspberry PI / Linux / ARM64-Kernel compatible PCIe to FireWire-Adapter
+                        <ul>
+                          <li>A touchscreen interface / display
+                            <ul>
+                              <li>A Raspberry Pi battery hat
+                                <ul>
+                                  <li>FireWire 400 to 800 FireWire converter
+                                    <ul>
+                                      <li>And finally the Camera.</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <br>
+        </ul>
+        Don't forget that you need to compile the Raspberry Linux Kernel with enabled FireWire support. Then you need software to capture the video signal and to round it all up you need to build your own UI to manage it all on the touchscreen. If you want to be able to interact with the controls of the camera over FireWire like a Apple Computer you maybe need to build custom software for that too if non work or exist. The cost and time of this would be at least 3 times if not even far more of what those cameras a worth today.
+      </li>
+      <br>
+      <li>There must be surly some kind of ready made device from back then right? Well yes they are called "Firestore DS4" and "MCE Quickstream" and maybe the "Pinnacle Studio MovieBox Ultimate" (To some extend). They are out of production, are REALLY old and extreamly rare and expensive (and most often broken) and would need mods them self and not to mention that you STILL would need a MiniDV Tape.</li>
+      <li>Well most of the cameras have S-Video or Composite out, would that not be easy to convert and save? Yes there are adapters out there that can convert these signals to HDMI. Then all you need is a external HDMI-Camera recorder and you have your image right? The way I'm phrasing it surly gives the answer away right? NO! These 3CCD cameras are DIGITAL! The analog output would just ruin / at least make the quality suck a lot more then necessary. The images from these cameras are brilliant but if you convert a million times between analog and digital why even bother going with such a camera in the first place (Says the woman that converts vinyl audio like 5 times before she can hear it LOL).</li>
+      <li>USB-Out is an option on SOME very VERY few cameras of this type. The issue: As far is I could find they are either only lower the USB-2.0 or only support file transfer. If they support video streaming they are often newer, no longer 3CCD and almost always bad consumer cameras with dog sh*t quality and frame rate. Also: MiniDV for a lot of the cameras functionality would still be needed and even there would not be controls like with FireWire.</li>
+      <li>Converting a MiniDV drive to SD-CARD or SSD or something is surly possible right? My passive aggressive writing gives it already away: NO!. Theoretically yes, but these tape drives are very complex, are not build like music music cassette drives (you can just put a other head onto the read/write head and pipe aux audio into them). The pull the tape through a mechanism to write and read and even worst: The signals are (at least as far as I'm willing to research) not just a simple linear data stream you can just steal.</li>
+    </ul>
+    <p>As you could tell, I got really frustrated to the end on how nice and futuristic these cameras are but suck in connectivity in nearly every way possible. If you really and I mean REALLY want to use them, make yourself familiar with MiniDV tapes (and start a hate - hate relationship with them) record everything onto them and then use an Apple Computer with the aforementioned clusterf*ck or a PC with a PCIe FireWire card to get a Digital lossless DataStream. You could also cray around a Thunderbolt-Laptop but that defeats the “Handycam” aspect in my opinion.</p>
+    <p>That's all information I would absorb, brain dumped onto here. My MiniDV Camera project died as fast as it started. Sadly. I know from artists out there who use these types of cameras that the pipeline to make it work sucks no matter what and FireWire is a b*tch to this day. The only artists I know who really is using these cameras uses an Apple computer and the already mentioned clusterf*ck of adapters and software to make it work (And MiniDV for recordings outside). There is software out there to do it on Windows and obviously Linux too because the penguin can do everything LOL. But without FireWire it is near impossible.</p>
+    <p>If your reading this and know of a camera that can capture / output video in a LOSSLESS way to USB 2.0 or even better, saves LOSSLESS to some kind of MemoryCard / HDD / SD-CARD and is still a professional 3CCD camera in SD quality, let me know, PLEASE!</p>
+    <p>I linked all Sources I could still remember / find in the Sources-Section. And no I refuse to use MiniDV. I want to use stone age technology not live in it.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.videomaker.com/article/c5/8869-sony-dsr-pd150-dvcam-camcorder-review/">https://www.videomaker.com/article/c5/8869-sony-dsr-pd150-dvcam-camcorder-review/</a></li>
+      <li><a href="https://www.mediacollege.com/equipment/sony/camera/dsr/dsrpd150.html">https://www.mediacollege.com/equipment/sony/camera/dsr/dsrpd150.html</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Sony_camcorders">https://en.wikipedia.org/wiki/Sony_camcorders</a></li>
+      <li><a href="https://youtu.be/yT0oDYbqwwk">https://youtu.be/yT0oDYbqwwk</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Panasonic_AG-DVX100">https://en.wikipedia.org/wiki/Panasonic_AG-DVX100</a></li>
+      <li><a href="https://www.videomaker.com/article/c5/9410-panasonic-ag-dvx100-3ccd-24p-mini-dv-camcorder-review/">https://www.videomaker.com/article/c5/9410-panasonic-ag-dvx100-3ccd-24p-mini-dv-camcorder-review/</a></li>
+      <li><a href="https://www.mediacollege.com/equipment/panasonic/camera/ag-dv/agdvx100.html">https://www.mediacollege.com/equipment/panasonic/camera/ag-dv/agdvx100.html</a></li>
+      <li><a href="https://hackaday.com/2020/07/01/adding-pcie-to-your-raspberry-pi-4-the-easier-way/">https://hackaday.com/2020/07/01/adding-pcie-to-your-raspberry-pi-4-the-easier-way/</a></li>
+      <li><a href="https://mygeeekpi.com/">https://mygeeekpi.com/</a></li>
+      <li><a href="https://www.amazon.de/dp/B0D2VPYWX8">https://www.amazon.de/dp/B0D2VPYWX8</a></li>
+      <li><a href="https://www.amazon.de/dp/B0C68WZVVH">https://www.amazon.de/dp/B0C68WZVVH</a></li>
+      <li><a href="https://www.amazon.de/dp/B0C9T9L99V">https://www.amazon.de/dp/B0C9T9L99V</a></li>
+      <li><a href="https://www.amazon.de/dp/B0D2M75GMB">https://www.amazon.de/dp/B0D2M75GMB</a></li>
+      <li><a href="https://www.amazon.de/dp/B07VKL9V9Q">https://www.amazon.de/dp/B07VKL9V9Q</a></li>
+      <li><a href="https://www.reddit.com/r/videography/comments/uyefc0">https://www.reddit.com/r/videography/comments/uyefc0</a></li>
+      <li><a href="https://www.reddit.com/r/videography/comments/uyefc0/comment/ia3qc18">https://www.reddit.com/r/videography/comments/uyefc0/comment/ia3qc18</a></li>
+      <li><a href="https://www.reddit.com/r/videography/comments/1db7vjr">https://www.reddit.com/r/videography/comments/1db7vjr</a></li>
+      <li><a href="https://youtu.be/dH4n8fUjtLQ">https://youtu.be/dH4n8fUjtLQ</a></li>
+      <li><a href="https://www.reddit.com/r/DataHoarder/comments/yblzv9">https://www.reddit.com/r/DataHoarder/comments/yblzv9</a></li>
+      <li><a href="https://www.reddit.com/r/DataHoarder/comments/e4194o">https://www.reddit.com/r/DataHoarder/comments/e4194o</a></li>
+      <li><a href="https://youtu.be/Gzl-bKtG9GE">https://youtu.be/Gzl-bKtG9GE</a></li>
+      <li><a href="https://www.patreon.com/HazelYT">https://www.patreon.com/HazelYT</a></li>
+      <li><a href="https://www.youtube.com/@hhhazel">https://www.youtube.com/@hhhazel</a></li>
+      <li><a href="https://www.apple.com/au/shop/product/MD464ZM">https://www.apple.com/au/shop/product/MD464ZM</a></li>
+      <li><a href="https://pipci.jeffgeerling.com/">https://pipci.jeffgeerling.com/</a></li>
+      <li><a href="https://youtu.be/x0wl3ZaOq_g">https://youtu.be/x0wl3ZaOq_g</a></li>
+      <li><a href="https://www.tomshardware.com/news/raspberry-pi-4-pci-express-bridge-is-a-step-closer">https://www.tomshardware.com/news/raspberry-pi-4-pci-express-bridge-is-a-step-closer</a></li>
+      <li><a href="https://www.bhphotovideo.com/c/product/586067-REG/Pinnacle_8230_10028_71_Studio_MovieBox_Ultimate_USB.html">https://www.bhphotovideo.com/c/product/586067-REG/Pinnacle_8230_10028_71_Studio_MovieBox_Ultimate_USB.html</a></li>
+      <li><a href="/Blog/2024.05.21_The_most_convoluted_Vinyl_Setup_imaginable/The_most_convoluted_Vinyl_Setup_imaginable.html">/Blog/2024.05.21_The_most_convoluted_Vinyl_Setup_imaginable/The_most_convoluted_Vinyl_Setup_imaginable.html</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/DV_(video_format)">https://en.wikipedia.org/wiki/DV_(video_format)</a></li>
+      <li><a href="https://www.videouniversity.com/articles/dv-formats-everything-you-need-to-know/">https://www.videouniversity.com/articles/dv-formats-everything-you-need-to-know/</a></li>
+      <!-- <li><a href="">Link</a></li> -->
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.10.19 - 17:00');</script></div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Android Auto without Google Services</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("That is what a 1.5 ton, if you egoistic 2.5 ton, rolling murder machine needs, a screen.");</script>
+    
+    <h1>Android Auto without Google Services (MicroG [Disabled]) - [ROOT]</h1>
+    <p>This is written a bit differently as it was originally part of the Fairphone 5 entry. It should give you all the information you need to get started and to get it working.</p>
+    <p>Android Auto is nice to have. Unfortunately, Google forces you to use there BS when you want to use it. MicroG is officially incompatible with it, but you can get it to work anyway. Just install the Magisk module from sn-00-x, Rikj000 and bzReqz Nils called aa4mg (Say YES to everything! Apps like OSM-AND will work with an older version of Android Auto.). Check the code (always important when working with ROOT on Android), install it, follow the guide, and once you have got it working with your car you can disable MicroG again. This is why the "without" part has a *. Android Auto needs some libraries and without MicroG on the system it cannot find them. But !disabled! MicroG is completely safe without risking any Google BS and only is a few MB of unused data. Sometimes it may be necessary to enable MicroG for it to work. If this is the case, I recommend restricting MicroG as much as possible (battery, data and internet connections and permissions (Removing all permissions could cause a errors in Android Auto. If a feature does not work, you will need to re-enable all permissions and debug it. I recommend leaving them alone if you want a seamless experience (especially the MicroG in-App settings!). This will result in a slightly higher battery usage!)). This will make it behave as if it is more or less disabled and should only use a very small amount of power and the amount of Google connections should not change. Don't forget to restrict the internet and power usage of ANY Google app you had to install BEFOR the setup. LineageOS or /e/OS are great with their built-in firewall and power management configuration. Using Google Maps only works with MicroG enabled and is extremely unreliable. It will also be your worst enemy when it comes to setting up a new car connection. If it complains during setup about maps needing gps permission, you need to give it full permission for gps all the time, which is why I wrote make sure to limit data usage and power usage for all google apps needed by Android Auto. If you have followed my recommendations and sn-00-x, Rikj000 and bzReqz Nils instructions correctly, your battery usage and Google server connection amount should not change compared to before! Also make sure you change the installation method in AuroraStore to "Root Install" and enable the developer settings in Android Auto and allow unknown source. This is the only way Android Auto will recognise compatible apps! Apps that were installed before this setting was changed and are compatible with Android Auto will need to be reinstalled If you cannot use the 3rd party patch (continue reading!)!:</p>
+    <p>You will need to install Android Auto as an APK after installing the module for it to work. In terms of functionality, I have tested several versions. The one that worked best so far was "8.5.623924-release" ←(Not allowed to link to it. Search Engins will help you find it ;)). You may need to use the "Let Me Downgrade" module for LSPosed to install an older version of Android Auto. If you do not block internet access for Android Auto in the Android settings before starting it, it will set the update flag to true and WILL force you to update! I could get all screen mirroring apps to work [AAStream, AAMirror, ...] with the 3th party patch ← (This may be illegal in your country. There are reasons why Google is so strict about what can run on their Android Auto platform).</p>
+    <p>Also make sure that you make an exception for updates in AuroraStore to make sure you not update Android Auto.</p>
+    <p>You can use the available tweakers and unlockers to get some applications to work, but I have not had much success with this. What worked really well for me was the "XPrivacyLua hooks" from "UnlockAA". You need to install the XPrivacyLua and XPrivacyLua Pro(not payed version) app (both are discontinued. they should continue to work fine for the future, but as with all outdated modding stuff, there will come a point where it will no longer work). Import ALL json hooks into the XPrivacyLua Pro app and enable UnlockAA on the Main screen of the app in Globals, switch to the normal XPrivacyLua app, find Android Auto and enable only the newly appeared "UnlockApps" option. To use XPrivacyLua you need LSPosed and maybe the Shamiko addon. As the hooks say, this ONLY works in 7.7.622144 and 8.2.623924. 8.2.623924 is generally the best working and most feature rich (for some reason, google what are you doing that an older version has more features, probably fixes) version so far. In this version I could get more or less everything to work (except Google Maps, but you can use OsmAND~ as a replacement, maybe with a GoogleMaps API traffic overlay or something).</p>
+    <p>Some car's have a to new on board version of Android Auto. If your screen is only black and/or green you MUST enable MicroG and Reboot the phone. And if nothing is happening, you maybe need at least 8.3.624114 for that car. The hooks only work on the verions they were designed for. In ALL newer Versions 3th party apps will not work including OsmAnd~ and OsmAnd.</p>
+    <p>For OsmAND~ to work properly, it needs constant GPS access and unrestricted battery settings.</p>
+    <p>I recommend waiting a few seconds after starting the car before connecting the phone. If the infotainment system is not fully loaded, the phone will bug-out. Also, sometimes it could be necessary to unlock the phone to get Android Auto to start.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/sn-00-x/aa4mg">https://github.com/sn-00-x/aa4mg</a></li>
+      <li><a href="https://github.com/shmykelsa/AA-Tweaker">https://github.com/shmykelsa/AA-Tweaker</a></li>
+      <li><a href="https://github.com/Rikj000/Android-Auto-XLauncher-Unlocked">https://github.com/Rikj000/Android-Auto-XLauncher-Unlocked</a></li>
+      <li><a href="https://github.com/LSPosed/LSPosed">https://github.com/LSPosed/LSPosed</a></li>
+      <li><a href="https://f-droid.org/packages/com.berdik.letmedowngrade/">https://f-droid.org/packages/com.berdik.letmedowngrade/</a></li>
+      <li><a href="https://github.com/DavidBerdik/Let-Me-Downgrade">https://github.com/DavidBerdik/Let-Me-Downgrade</a></li>
+      <li><a href="https://github.com/endyrubbin/AAStream">https://github.com/endyrubbin/AAStream</a></li>
+      <li><a href="https://github.com/slashmax/AAMirror">https://github.com/slashmax/AAMirror</a></li>
+      <li><a href="https://github.com/UnlockAA/XPrivacyLuaHook">https://github.com/UnlockAA/XPrivacyLuaHook</a></li>
+      <li><a href="https://github.com/M66B/XPrivacyLua">https://github.com/M66B/XPrivacyLua</a></li>
+      <li><a href="https://github.com/M66B/XPrivacyLua/releases">https://github.com/M66B/XPrivacyLua/releases</a></li>
+      <li><a href="https://bitbucket.org/M66B/xlua-companion/downloads/">https://bitbucket.org/M66B/xlua-companion/downloads/</a></li>
+      <li><a href="https://github.com/LSPosed/LSPosed.github.io/releases">https://github.com/LSPosed/LSPosed.github.io/releases</a></li>
+      <li><a href="https://github.com/VR-25/acc">https://github.com/VR-25/acc</a></li>
+      <li><a href="https://f-droid.org/packages/mattecarra.accapp/">https://f-droid.org/packages/mattecarra.accapp/</a></li>
+      <li><a href="https://github.com/MatteCarra/AccA/releases">https://github.com/MatteCarra/AccA/releases</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.02.06 - 22:00');</script></div>
+  </body>
+</html>

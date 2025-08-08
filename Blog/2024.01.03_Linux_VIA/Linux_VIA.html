@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Fixing Linux VIA-Keyboard ERROR in VIA-Configuration-Software</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Trashy.");</script>
+    
+    <h1>Fixing Linux VIA-Keyboard ERROR in VIA-Configuration-Software</h1>
+    <p>Not much to say. I got to try out a keyboard that supports via configuration. I knew there was is a open source keyboard firmware (QMK), but I had never used a keyboard that supported it. The problem on Linux is that a security feature prevents the configuration page from accessing and communicating with the keyboard directly. I got it to work using Chromium because it supports WebHID (native, NOT flatpack, idk. what prevents flatpack from working with this workaround) thanks to a thread on the Arch Wiki. We need to allow the browser to access the software on the keyboard. Open "<u>chrome://device-log</u>" in Chromium, then open the/your VIA page and try to connect. Now check the output of the log tap in Chromium. You should be able to find a line like "<u>Failed to open '/dev/hidraw7': FILE_ERROR_ACCESS_DENIED</u>". Open a terminal and run the following command with your ID:</p>
+    <p><u><i>sudo chmod a+rw /dev/hidraw9</i></u></p>
+    <p>The ID WILL change with each reboot/reconnect to the PC. Just find the ID again and run the command again. With a simple reload of the VIA window and allowing access to the keyboard, it should work. It is annoying to do all the extra steps on Linux, but how often do you need to change the layout of your keyboard xD? This command allows everyone and anything on the PC to read and write to the device, this can be dangerous. A reboot will reset it.</p>
+    <p>Also, because no one else on the Internet knows it for some reason: The screen of the "<u>EPOMAKER CIDOO ABM066 Alice</u>" has a resolution of "<u>96x160px</u>" and/or only accepts images in that  resolution.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://bbs.archlinux.org/viewtopic.php?id=285709">https://bbs.archlinux.org/viewtopic.php?id=285709</a></li>
+      <li><a href="https://www.reddit.com/r/Keychron/comments/12iinsi/k3_pro_iso_not_working_with_via">https://www.reddit.com/r/Keychron/comments/12iinsi/k3_pro_iso_not_working_with_via</a></li>
+      <li><a href="https://usevia.app/">https://usevia.app/</a></li>
+      <li><a href="https://www.caniusevia.com/">https://www.caniusevia.com/</a></li>
+      <li><a href="https://qmk.fm/">https://qmk.fm/</a></li>
+      <li><a href="https://github.com/qmk/qmk_firmware">https://github.com/qmk/qmk_firmware</a></li>
+      <li><a href="https://www.amazon.de/dp/B0CKP91ZSN">https://www.amazon.de/dp/B0CKP91ZSN</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.01.03 - 21:20');</script></div>
+  </body>
+</html>

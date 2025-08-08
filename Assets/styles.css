@@ -1,0 +1,468 @@
+/* # Preparations:
+# - Licenses:
+
+# - - Colors:
+# - - - Color palette is used/inspired by "Bit Unit 8 Palette" from "thuginc":
+https://lospec.com/palette-list/bit-unit-8
+https://lospec.com/thuginc
+https://www.thug-inc.com/
+
+# - - Fonts:
+# - - - Vinston Font:
+CatWithCode.moe uses the "Vinston"-Font which was created by "Damian Leśniowski" and licensed under "SIL-OFL":
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Assets/Fonts/License/OFL-FAQ.txt
+/Assets/Fonts/License/ofl-faq10.txt
+/Assets/Fonts/License/OFL.txt
+/Assets/Fonts/License/OFL10.txt
+/Assets/Fonts/Vinston/License/readme.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+https://dribbble.com/damianlesniowski
+https://fontesk.com/vinston-font/
+https://fontesk.com/designer/damian-lesniowski/
+https://www.instagram.com/lesniowski.design/
+
+# - - Fonts:
+# - - - Kilby Font:
+CatWithCode.moe uses the "Kilby"-Font which was created by "Matt Cole Wilson" and licensed under "SIL-OFL":
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
+https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ10_web
+/Assets/Fonts/License/OFL-FAQ.txt
+/Assets/Fonts/License/ofl-faq10.txt
+/Assets/Fonts/License/OFL.txt
+/Assets/Fonts/License/OFL10.txt
+/Assets/Fonts/KILBY/License/KILBY-readme.txt
+/Assets/Fonts/KILBY/License/Liks_and_Creator.txt
+https://en.wikipedia.org/wiki/SIL_Open_Font_License
+https://fontesk.com/kilby-font/
+https://fontesk.com/designer/matt-cole-wilson/
+https://mattcolewilson.com/resources
+
+mixedFonts:
+# - - - - Regular: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* # - - - - Bold: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* # - - - - Italic: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* # - - - - Bold Italic: */
+@font-face {
+    font-family: Vinston;
+    src: url(/Assets/Fonts/Vinston/Vinston.ttf);
+    font-style: italic;
+    font-weight: bold;
+}
+/* # # # */
+
+/* # General Settings: 
+# - Variables: */
+:root {
+    /* # - - General-Colors: */
+    --background: #000000;
+    --alt_background: #0f051bb3;
+    --text_Color: #cef1ff;
+    --headline_Color: #8fd345;
+    --link_Color: #6565ab;
+    --border_color: #1e405bb3;
+
+    --image_border_Color: #409f42;
+
+    --popup_Background_Color: #464599da;
+
+    /* # - - Images: */
+    --image_margin: 1%;
+    --image_padding: 1%;
+    --image_border: 0.2em;
+    --image_width: 25em;
+    --image_rounding: 1rem;
+
+    /* Border: */
+
+    /* Border-Radius: */
+    --borderRadius: 1.5rem;
+    --borderThiccness: 0.1rem;
+
+    /* Border Path: */    
+    --borderPath: polygon(calc(0% + var(--borderRadius)) 0%, 100% 0, 100% calc(100% - var(--borderRadius)), calc(100% - var(--borderRadius)) 100%, 0 100%, 0% calc(0% + var(--borderRadius)));
+
+    /* ToolTippBorder: */
+    --toolTipp_Border: 15px 0px 50px 30px;
+    --toolTipp_Blend: 0.5s;
+    /* ###
+    Setting Background Base-Color: */
+    background-color: var(--background);
+    background: var(--background);
+    
+    /* Background-Image: */
+    /* (IS SET INSIDE JS) */
+    /* background: url(/Assets/Image_Repository/Backgrounds/Static/PLACEHOLDER.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
+/* # - Global Font, Fixes and Color: */
+* {
+    /* # - Font and Text: */
+    font-family: 'Vinston', 'Courier New', 'monospace';
+    color: var(--text_Color);
+
+    /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
+    /*image-rendering: optimizeSpeed;*/
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+
+    /* Disable Font Smoothing: */
+    font-smooth: never;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Fixing Oversized Text globaly: */
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+}
+
+/* Line: */
+hr {
+    /* # - Line (FIX for 1px-Width Issue): */
+    width: 100%;
+
+    /* Line Color: */
+    color: var(--text_Color);
+}
+
+/* # - Body: */
+body {
+    /* # - Footer-Spacing (Fill Space in between): */
+    min-height: 98vh; /* May need to be lowered. Prevents scrolling from filling the space between the footer and body elements. */
+    display: flex;
+    flex-direction: column;
+
+    /* # - Background-Image: */
+    background-image: url(/Assets/Image_Repository/Backgrounds/Layered/Rain.png);
+
+     /* # - - Background-Animations Propertys (No Background Image Size set because it breaks animation Loop Point): */
+    background-repeat: repeat;
+    animation: shiftBackground 1.5s linear infinite;
+    animation-fill-mode: both;
+}
+
+/* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
+@keyframes shiftBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 126px;
+    }
+}
+
+/* Fixing Long Links (And makes sure the SpeechBubble never breaks the site width): */
+a, .speechBubbleText {
+    word-wrap: break-word; /* For older browsers. */
+    overflow-wrap: break-word; /* For modern browsers. */
+    white-space: normal; /* Allow wrapping. */
+    max-width: 100%; /* Full page. */
+
+    /* Making Links in better Visible: */
+    color: var(--link_Color);
+}
+
+/* - - ImageBody-Content: */
+#ImageLibrary {
+    /* Align Images into Rows dynamically: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: var(--image_padding);
+}
+
+#ImageBody {
+    /* Image Body itself: */
+    border-radius: var(--image_rounding);
+    padding: var(--image_padding);
+    margin: var(--image_margin);
+    max-width: var(--image_width);
+    text-align: center;
+    cursor: pointer;
+}
+
+#ImageBody img {
+    /* Image size fix: */
+    border-radius: var(--image_rounding);
+    max-width: 100%;
+}
+/* # # #
+
+# Classes for custom items:
+# - Centred Items:
+    For Items that need to be Centred (Ideally used with div's). */
+.centredItems {
+    text-align: center;
+}
+
+/* # - Clean Text:
+    For Items that need to have Decorations like underline removed. */
+.cleanText {
+    text-decoration: none;
+}
+
+/* # - BORDER-CODE:
+
+# - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
+Main Elements: */
+body > *:not(
+    hr, 
+    .speechBubble)
+{
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+
+    clip-path: var(--borderPath);
+    background-color: var(--border_color);
+    background-size: 100% 100%; /* Cover the entire element */
+    background-repeat: no-repeat; /* Prevent repeating */
+    /*border-radius: 5px; Optional: add rounded corners */
+    isolation: isolate;
+}
+
+/* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
+Main Elements: */
+body > *:not(
+    hr, 
+    .speechBubble)::before
+{
+    content: '';
+    background-color: var(--alt_background);
+    inset: var(--borderThiccness);
+    position: absolute;
+    z-index: -1;
+    clip-path: var(--borderPath);
+}
+/* # # #
+
+# - Offset for Lists that would get cutoff because of the way the Borders works: */
+ul,
+ol,
+li
+{
+    padding-left: 3rem; 
+    list-style-position: inside;
+}
+
+/* Headline Color: */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--headline_Color);
+}
+
+/* Fixing Oversized Images: */
+img {
+    max-width: 100%;
+    padding: var( --image_padding);
+}
+
+/* # # #
+# - Header: */
+#Header {
+    /* # - - Styling: */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* # - - Header-Border: */
+#Header_Border {
+    /* # - - - Position: */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 25px; /* Make sure the Header-Text does not overlap the border. */
+}
+
+/* # # #
+# - Fooder: */
+#Footer {
+    /* # - - Position: */
+    margin-top: auto;
+}
+
+/* # - - Fooder-Container: */
+#Fooder_Border {
+    /* # - - Position: */
+    margin-top: auto;  
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    padding-bottom: 0px;
+
+    /* # - - Styling: */
+    text-align: center;
+}
+
+/* # - - Fooder-Content: */
+#Fooder_Border * {
+    /* # - - - Spacing from Border*/
+    margin-left: 25px;
+    margin-right: 25px;
+
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+    /* # - - - Styling: */
+    background-color: var(--alt_background);
+}
+
+/* # # #
+# - ToolTipp: */
+
+/* - - ToolTipp Container: */
+.speechBubble {
+    /* Positioning: */
+    position: fixed;
+    align-items: left;
+    width: 90%;
+    height: 25vw;
+    max-height: 33%;
+
+    /* Keep in front (Not matter what): */
+    z-index: 1000;
+    
+    /* Formating: */
+    display: flex;
+    align-items: flex-start;
+
+    /* Styling (Moved to the right else Cat is always in the way): */
+    bottom: 3%;
+    right: 1%;
+
+    /* Prevent interaction when invisible (img overwrites this for itself so it can act as a trigger): */
+    pointer-events: none;
+
+     /* Enables Scrolling: */
+    overflow: hidden
+}
+
+/* - - - - This is "Part 2" of the Animation (This makes it so if the Area is visible already and mouse moves from Image to Text the Text stays visible.): */
+.speechBubble:hover .speechBubbleText {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* - - - - This is "Part 2,1" of the Animation (Fixes Spacing): */
+.speechBubble:hover {
+    pointer-events: auto;
+}
+
+/* - - Manage Image inside SpeechBubble Area: */
+.speechBubble img {
+    /* Image set in CSS (Because switching image on Hover): */
+    background-image: url('/Assets/Image_Repository/GIF/T_Pose_Rotating.gif');
+
+    /* Positioning: */
+    padding-left: 2%;
+
+    /* Keep Aspect-Ratio (AND PREVENT CUT OF IMG): */
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Styling: */
+    opacity: 0.7;
+    
+    /* Make it possible to trigger the Visibility Event: */
+    pointer-events: auto;
+
+    /* Animates the Mouse Over (Dose not work): */
+    transition: background-image var(--toolTipp_Blend) ease;
+    transition: background-image var(--toolTipp_Blend) ease;
+}
+
+/* - - - Animation Part 0 - Remove OG Image: */
+.speechBubble:hover img {
+   background-image: url('/Assets/Image_Repository/PNG/Thinking.png');
+   opacity: 0.9;
+}
+
+/* - - - Animation in speechBubble to make Text Visible (The + somehow selects the img element. Else it would be the parant): */
+.speechBubble img:hover + .speechBubbleText {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* - - speechBubble Text Area: */
+.speechBubble .speechBubbleText {
+    /* Start invisible: */
+    opacity: 0;
+
+    /* Animation on Visible (This causes a little Bug: If the mouse moves of the Image befor the text is fully "opacity 1" it disappears again. Keep the timer low!):*/
+    transition: opacity 0.3s ease;
+
+    /* Positioning: */
+    width: 100%;
+    margin-left: 2%;
+    height: 100%;
+
+    /* Styling without Padding (To not brick the Animation with padding and margin Stuff): */
+    background-color: var(--popup_Background_Color);
+    border-radius: var(--toolTipp_Border);
+
+    /* Enables Scrolling: */
+    resize: none;
+    overflow: auto;
+}
+
+/* - - - speechBubble Text Area formatting and Styling Stuff (Separated so the Animations and the outer Elements are not bricked by spacing):*/
+.speechBubbleText * {
+    /* Positioning: */
+    padding-left: 3%;
+    text-align: left;
+}
+/* # # # */

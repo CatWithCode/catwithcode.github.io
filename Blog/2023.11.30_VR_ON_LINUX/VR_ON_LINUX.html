@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Using WMR on Linux with SteamVR (Windows Mixed Reality) and playing Cyberpunk 2077 VR [R.E.A.L Mod]</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("All this to escape reality, to see a world we are not to far from. Okay.");</script>
+    
+    <h1>Using WMR on Linux with SteamVR (Windows Mixed Reality) and playing Cyberpunk 2077 VR [R.E.A.L Mod]</h1>
+    <h2><u><b><i>WARNING!: Most of the tools used for WMR on Linux are in very early stages of development at the time of writing!</i></b></u></h2>
+    <p><u>Windows</u> Mixed Reality on Linux? Yes... yes, some people are just crazy and make everything possible. I tried it and it works very well. Much better than you would expect. More often than not, the Linux tools are far FAR more stable than the official windows tools (which are kinda not good. They are bad... like really bad. They are so bad that even my mum asked why the official tools are so unstable). Just wow and huge respect to the developers and the community behind the Linux Software!!!</p>
+    <h2><u><b>At the end of this entry I have written down my thoughts on whether it is worth it. Read it before you do all this</b></u></h2>
+    <p>Important: [AUR] means I used the AUR from Arch to install the software (using yay, pamac or any other software that can use the AUR). It's the same as installing the source code directly, but much more buggy and you need to check EVERY PKGBUILD for safety and make sure all dependencies are installed correctly. You can also just download the source of everything and just install it as it is done in the PKGBUILD files. [GIT] means you have to get it directly from the hosted repository to do a step. I use Steam normally (not as a flatpack). If you are using a flatpack, you will need to add "/run/host/" to each of the paths. I do not recommend flatpacks for this because of the bleeding edge nature of it all. You need quick and easy access to all the files, without extra steps to fix the tools. "###YOUR_USERNAME###" means that this should be your username from your linux porfile or you need to put your name there (ALSO IN SCRIPTS!).</p>
+    <p>At the time of writing, WMR controllers do not yet work. You have to use another controller, a ???Wii-Mote or hand tracking (which will never work very well with WMR because of the bad cameras. They were never meant to be used for this kind of detail detection, but that may change as I know the open source community by now :D).</p>
+    <hr>
+    <h2>> <u><b>Things used overview (More stuff in sources section!)</b></u>:</h2>
+    <p>First things first; This is the software and hardware I used. How I did setup everything, read on!</p>
+    <p><u><b>Hardware/OS</b></u>:</p>
+    <ul>
+      <li>HP Windows Mixed Reality Headset VR1000-100</li>
+      <li>AMD CPU and GPU - Both 7000 series</li>
+      <li>Arch Linux</li>
+    </ul>
+    <p><u><b>Software</b></u>:</p>
+    <p>(Install all dependencies, This not in the required installation-order! For the order read further)</p>
+    <ul>
+      <li>[AUR] xr-hardware</li>
+      <li>[AUR] OpenHMD</li>
+      <li>[AUR] OpenComposite</li>
+      <li>[AUR] OnnxRuntime</li>
+      <li>[AUR] libuvc</li>
+      <li>[AUR] libsurvive-git</li>
+      <li>[AUR] fmt9 [AUR]</li>
+      <li>[AUR] basalt-monado-git</li>
+      <li>[AUR] monado-git</li>
+      <li>OpenCV</li>
+      <li>[GIT] ht-models [From the monado scripts using; ./scripts/get-ht-models.sh]</li>      
+    </ul>
+    <p><u><b>Mod's</b></u>:</p>
+    <ul>
+      <li>Cyberpunk 2077 R.E.A.L. VR Mod from LukeRoss [<a href="https://www.patreon.com/realvr">https://www.patreon.com/realvr</a>]</li>
+    </ul>
+    <hr>
+    <h2><u><b>How I installed everything</b></u>:</h2>
+    <p>I tried it on OpenSuse first, but some libraries are compiled incorrectly for this usecase there, which makes it hard to get everything working. So I am using Arch Linux for this. The scripts in the AUR are unfortunately not very good. A lot of dependencies are missing, this means you have to read every error output during installation for the missing dependencies / read the comments under the PKGBUILD page and add them yourself to the system.</p>
+    <p> This video by one of the developers (I think) can help you get started; <a href="https://youtu.be/Oqla04P_2QA">https://youtu.be/Oqla04P_2QA</a>. This is what I did to install everything correctly:</p>
+    <ol>
+      <li>Installing fmt9 [AUR], OpenHMD [AUR], libuvc [AUR], OpenCV, OnnxRuntime [AUR] and then basalt-monado-git [AUR].</li>
+      <li>Downloading monado from there gitlab.freedesktop.org-page <a href="https://gitlab.freedesktop.org/monado/monado">https://gitlab.freedesktop.org/monado/monado</a> and executing the ./scripts/get-ht-models.sh batch-file to get the tracking-models.</li>
+      <li>Adding the Udev rules from the "Creation and manual installation of udev rules"-section <a href="https://github.com/OpenHMD/OpenHMD/wiki/Udev-rules-list#creation-and-manual-installation-of-udev-rules">https://github.com/OpenHMD/OpenHMD/wiki/Udev-rules-list#creation-and-manual-installation-of-udev-rules</a></li>
+      <li>Installing xr-hardware [AUR], OpenComposite [AUR] and monado-git [AUR] and making sure while monado-git is compiling (at the start) that the following items are correctly set/detected (DRIVER_HANDTRACKING: ON, FEATURE_SLAM: ON, BASALT: ON).</li>
+      <li>Open Steam again and install the following application:
+        <ul>
+          <li>SteamVR: <a href="https://store.steampowered.com/app/250820/">https://store.steampowered.com/app/250820/</a></li>
+        </ul>
+      </li>
+      <li>Execute: <u><i>~/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh adddriver /usr/share/steamvr-monado</i></u></li>
+      <li>Check that the output of this command has this at the end: <u><i>~/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh adddriver</i></u>
+        <br>
+        <br>
+        ###########
+        <br>
+        <p>
+          External Drivers:
+          <br>
+          monado : /usr/share/steamvr-monado
+          <br>
+        </p>
+        <p>###########</p>
+        <br>
+        <br>
+      </li>
+      <li>Add this to SteamVR's startup options: <u><i>STEAMVR_EMULATE_INDEX_CONTROLLER=1 %command%</i></u></li>
+        <li>Open Steam again and install the following application:
+          <ul>
+            <li>Windows Mixed Reality for SteamVR: <a href="https://store.steampowered.com/app/719950/">https://store.steampowered.com/app/719950/</a></li>
+          </ul>
+        </li>
+      </li>
+      <li>Create the script below, change "###YOUR_USERNAME###" to your Linux username, make it executable and place it in your home directory:
+        <br>
+        <br>
+        <p>###########</p>
+        <br>
+        <p>
+          #!/bin/bash
+          <br>
+
+          <br>
+          # For OpenComposite, sould SteamVR not work:
+          <br>
+          #VR_OVERRIDE=/run/host/usr/share/opencomposite XR_RUNTIME_JSON=/run/host/usr/share/openxr/1/openxr_monado.json PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/monado_comp_ipc %command%
+          <br>
+
+          <br>
+          # VR-SafeMode-CleanUp (https://linuxhint.com/replace_string_in_file_bash/):
+          <br>
+
+          <br>
+          # - Assign the filename
+          <br>
+          filename="/home/###YOUR_USERNAME###/.steam/steam/config/steamvr.vrsettings"
+          <br>
+
+          <br>
+          # - Take the search string
+          <br>
+          search="\"blocked_by_safe_mode\" : true"
+          <br>
+
+          <br>
+          # - Take the replace string
+          <br>
+          replace="\"blocked_by_safe_mode\" : false"
+          <br>
+
+          <br>
+          # - Replacing String:
+          <br>
+          if [[ $search != "" && $replace != "" ]]; then
+          <br>
+            sed -i "s/$search/$replace/" $filename
+          <br>
+          fi
+          <br>
+
+          <br>
+          # Start Steam:
+          <br>
+
+          <br>
+          export STEAMVR_PATH="~/.local/share/Steam/steamapps/common/SteamVR"
+          <br>
+
+          <br>
+          export STEAM_RUNTIME=~/.steam/root/ubuntu12_64/steam-runtime
+          <br>
+
+          <br>
+          export XDG_SESSION_TYPE=x11
+          <br>
+          export QT_QPA_PLATFORM=xcb
+          <br>
+
+          <br>
+          export -n XDG_BACKEND
+          <br>
+          export -n ELM_ENGINE
+          <br>
+          export -n ELM_DISPLAY
+          <br>
+          export -n WINIT_UNIX_BACKEND
+          <br>
+          export -n BEMENU_BACKEND
+          <br>
+          export -n SDL_VIDEODRIVER
+          <br>
+          export -n ECORE_EVAS_ENGINE
+          <br>
+          export -n CLUTTER_BACKEND
+          <br>
+          export -n QT_WAYLAND_DISABLE_WINDOWDECORATION
+          <br>
+          export -n QT_WAYLAND_FORCE_DPI
+          <br>
+
+          <br>
+          export STEAMVR_EMULATE_INDEX_CONTROLLER=1 
+          <br>
+          STEAMVR_EMULATE_INDEX_CONTROLLER=1
+          <br>
+          ~/.steam/steam/steamapps/common/SteamVR/bin/vrstartup.sh
+        </p>
+        <p>###########</p>
+        <br>
+        <br>
+      </li>      
+      <li>The following is for steam and user applications. If you are running a VR program with root privileges, you will need to use a different command; <a href="https://monado.freedesktop.org/getting-started.html">https://monado.freedesktop.org/getting-started.html</a></li>
+      <li>Execute: <u><i>systemctl --user enable monado.socket</i></u></li>
+      <li>Execute: <u><i>systemctl --user start monado.socket</i></u></li>
+      <li>Execute: <u><i>mkdir -p ~/.config/openxr/1</i></u></li>
+      <li>Execute: <u><i>ln -s /usr/share/openxr/1/openxr_monado.json ~/.config/openxr/1/active_runtime.json</i></u></li>
+      <li>Reboot!</li>
+      <li>Execute: <u><i>~/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh adddriver /usr/share/steamvr-monado</i></u></li>
+      <li>Check that the output of this command has this at the end (you may need to start SteamVR once to make this happen): <u><i>~/.steam/steam/steamapps/common/SteamVR/bin/vrpathreg.sh adddriver</i></u>
+        <br>
+        <br>
+        ###########
+        <br>
+        <p>
+          External Drivers:
+          <br>
+          monado : /usr/share/steamvr-monado
+          <br>
+          holographic : /home/###YOUR_USERNAME###/.local/share/Steam/steamapps/common/MixedRealityVRDriver
+          <br>
+        </p>
+        <p>###########</p>
+        <br>
+        <br>
+      </li>
+      <li>Now open steam, open a terminal in your home directory and run vr.sh. SteamVR should start without problems. If not, make sure the following file looks like this (It is important that "LastKnown" shows YOUR headset at "HMDModel"!Mmonado is still in very early development and can crash. Steam will block unstable drivers from starting after an unhandled exception. It is important that this setting is ALWAYS reset. The script from me does this automagically :D):
+        <br>
+        File: "/home/###YOUR_USERNAME###/.steam/steam/config/steamvr.vrsettings"
+        <br>
+        <br>
+        ###########
+        <br>
+        <p>
+          {"DesktopUI" : {
+          <br>
+              "pairing" : "1960,680,799,599,0",
+          <br>
+              "settings_desktop" : "1960,680,799,599,0"
+          <br>
+            },
+          <br>
+            "GpuSpeed" : {
+          <br>
+              "gpuSpeed0" : 1476,
+          <br>
+              "gpuSpeed1" : 1472,
+          <br>
+              "gpuSpeed2" : 1485,
+          <br>
+              "gpuSpeed3" : 1493,
+          <br>
+              "gpuSpeed4" : 1459,
+          <br>
+              "gpuSpeed5" : 1420,
+          <br>
+              "gpuSpeed6" : 1478,
+          <br>
+              "gpuSpeed7" : 1478,
+          <br>
+              "gpuSpeed8" : 1484,
+          <br>
+              "gpuSpeed9" : 1445,
+          <br>
+              "gpuSpeedCount" : 10,
+          <br>
+              "gpuSpeedDriver" : "96477185",
+          <br>
+              "gpuSpeedHorsepower" : 1474,
+          <br>
+              "gpuSpeedRenderTargetScale" : 1,
+          <br>
+              "gpuSpeedVendor" : "AMD Radeon RX 7900 XT (RADV GFX1100)",
+          <br>
+              "gpuSpeedVersion" : 2
+          <br>
+            },
+          <br>
+            "LastKnown" : {
+          <br>
+              "ActualHMDDriver" : "monado",
+          <br>
+              "HMDModel" : "HP Windows Mixed Reality Headset"
+          <br>
+            },
+          <br>
+            "driver_gamepad" : {
+          <br>
+              "blocked_by_safe_mode" : false
+          <br>
+            },
+          <br>
+            "driver_monado" : {
+          <br>
+              "blocked_by_safe_mode" : false
+          <br>
+            },
+          <br>
+            "steam.app.658920" : {
+          <br>
+              "DominantHand" : 2
+          <br>
+            },
+          <br>
+            "steamvr" : {
+          <br>
+              "installID" : "16430710729258384815",
+          <br>
+              "lastVersionNotice" : "2.1.8",
+          <br>
+              "lastVersionNoticeDate" : "1701302696"
+          <br>
+            }
+          <br>
+          }
+          <br>
+        </p>
+        <p>###########</p>
+        <br>
+        <br>
+      </li>
+      <li>After SteamVR runns you can start a game in VR. :D</li>
+      <li>For Cyberpunk 2077 VR you need to get the R.E.A.L. Mod from LukeRoss at (The patreon required at the time of writing is 10€): <a href="https://www.patreon.com/realvr">https://www.patreon.com/realvr</a></li>
+      <li>Place the file in the game folder as the developer intended. Open a terminal and run <u><i>wine RealConfig.bat</i></u>. It SOULD work. Then have a look at the "option.replace" for Cyberpunk and change the settings in the file "/###PATH_TO_YOUR_STEAM_LIBARY###/SteamLibrary/steamapps/compatdata/1091500/pfx/drive_c/users/steamuser/AppData/Local/CD Projekt Red/Cyberpunk 2077/UserSettings.json". You could also use protontricks to run the bath in the gamefolder inside the prefix BUT this only worked ONCE for me. I cannot share the file for copyright reasons. You could also do the install step on Windows and copy the json file and the game files to Linux.</li>
+      <li>To get the most out of Cyberpunk 2077, we need a few mods:
+        <ul>
+          <li>Use Protontricks and add "d3dcompiler_47.dll" to cyberpunk 2077</li>
+          <li>How to make ReShade effects work in VR (Enable in the R.E.A.L-Reshade-Settings: FXAA, FakeHDR and ColorLabs): <a href="https://www.patreon.com/posts/63441060">https://www.patreon.com/posts/63441060</a></li>
+          <li>Disable TAA and Bloom (ONLY IF YOU CANNOT HANDLE THE GHOSTING ARTEFACTS AROUND MOVING OBJECTS. I think the pros outweigh the cons of TAA. Looks so much better with it! Try without this mod and if it bothers you, use it.): <a href="https://www.nexusmods.com/cyberpunk2077/mods/63?tab=description">https://www.nexusmods.com/cyberpunk2077/mods/63?tab=description</a></li>
+          <li>[Can help performance. Found that more often than not these mods break things. Only use if you need every FPS you can get] General Optimization (Remove the following lines from the file: "[Rendering/AsyncCompute]" and "HairClears = true"): <a href="https://www.nexusmods.com/cyberpunk2077/mods/786?tab=description">https://www.nexusmods.com/cyberpunk2077/mods/786?tab=description</a></li>
+          <li>Set the resolution to around 2400 if your hardware can do that (In the R.E.A.L-Settings).</li>
+          <li>In the R.E.A.L-Settings under "Advanced", set the "Render Mode" to "1/2" or "Legacy AER". What feels better to you. Or "AER 2.0" if your Nvidia card supports it. This is the currently best setting.</li>
+          <li>In the Cyberpunk 2077 Settings set "Crowd Density" to high and FSR to Quality (or even better, use DLSS if you have Nvidia).</li>
+          <li>If the mouse stays on the screen in VR, you will need to tap out of the window. To access the Mod UI, use SteamInput to map the hotkey it uses.</li>
+          <li>I also recommend disabling a lot of the UI. Hitmarker or minimap are a must, but the rest is usually unreadable or ruins the imersion. Removing the quest markers also helps a lot with immersion. Do not bother with bloated HUD mods. Just use one that removes the quest mark an thats it. I used this one: <a href="https://www.nexusmods.com/cyberpunk2077/mods/10984">https://www.nexusmods.com/cyberpunk2077/mods/10984</a></li>
+          <li>Removing the Intro's/Logo's: <a href="https://www.nexusmods.com/cyberpunk2077/mods/533">https://www.nexusmods.com/cyberpunk2077/mods/533</a></li>
+          <li>I recommend disabling updates for the game. Sometimes updates break the VR-Mod. Better to be able to continue playing and update later when the VR mod is compatible again/checked for compatibility. The game can be downgraded, but it is annoying: <a href="https://www.makeuseof.com/how-to-downgrade-steam-games/">https://www.makeuseof.com/how-to-downgrade-steam-games/</a></li>
+        </ul>
+      </li>
+      <li>Optionally, you can increase performance and frame time by a good amount by running <u><i>sudo setcap CAP_SYS_NICE=eip ~/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher</i></u>. BUT this could break all controller support for good (e.g. in Cyberpunk or for racing sims and later for VR controllers!). To remove it, just run: <u><i>sudo setcap CAP_SYS_NICE-eip ~/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher</i></u></li>
+      <li>If something does not work, you can find the log for it at: "/home/###YOUR_USERNAME###/.steam/steam/logs/vrserver.txt"</li>
+      <li>If something does not work with SteamVR, you can try OpenComposite. Run the monado-service in the terminal and start a Steam game with these startup options (DON'T CHANGE THEM! THIS WILL WORK FOR ANY KIND OF !DEFAULT! STEAM INSTALLATION!): "VR_OVERRIDE=/run/host/usr/share/opencomposite XR_RUNTIME_JSON=/run/host/usr/share/openxr/1/openxr_monado.json PRESSURE_VESSEL_FILESYSTEMS_RW=$XDG_RUNTIME_DIR/monado_comp_ipc %command%"</li>
+      <li>Useful monado-service commands:
+        <ul>
+          <li>Normal: <u><i>monado-service</i></u></li>
+          <li>Debugging (Display On): <u><i>XRT_DEBUG_GUI=1 SLAM_UI=1 XRT_COMPOSITOR_COMPUTE=1 monado-service</i></u></li>
+          <li>Debbunig FULL (Display Off): <u><i>XRT_COMPOSITOR_FORCE_XCB=1 XRT_DEBUG_GUI=1 SLAM_UI=1 XRT_COMPOSITOR_COMPUTE=1 WMR_LOG=debug monado-service</i></u></li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+    <br>
+    <h2>> <u><b>How good dose it Work?</b></u>:</h2>
+    <p>Surprisingly well. The only time it crashes is when the heatset, or more precisely the basalt, loses its tracking completely and the position shoots into the stars. This can be prevented with a very variable and three dimensional area in front of you and the headset. My 3 displays cause tracking loss no matter what I do. But the table next to me with decorations on it and a few pictures on the wall works perfectly. I directed the room light to the table and it works really well and reliably. The problem is that sometimes the tracking gets lost very easily and on the next try it is unbreakable no matter what I do and tracks perfectly.</p>
+    <p>I often have to run the vr.sh script twice. The second time it usually works. I hold the headset where I want it to be and when everything is running, I put it on. The tracking is... fast enough. It definitely needs to get faster with development (basalt tracking) but its a good start.</p>
+    <p>Cyberpunk 2077 plays well. The settings and the fps are not ideal (around 90-120, thanks to the way the mod works, 45-60 at the headset). It is fine but not good. Other games made for VR are perfect because they are optimised for such high resolutions and fps for VR.</p>
+    <p>The big question is whether this is good enough for you. If you have a headset with outside-in tracking (infrared base station that helps your headset determine where it is. The best way to do tracking) or a well supported headset like the Valve Index or an HTC Vive then definitely (but then thanks to the native support you dont need to do any of the driver steps here. They just work!). With Inside-out tracking (cameras on the headset that scan the room and software that calculates your position), most WMR headsets for example, yes BUT only if you play games that are not too motion intensive and/or you have a room with a lot of stuff for the headset and software to detect and track reliably and quickly. Basalt is currently a little slow compared to the official tools and the delay in combination with standing up could cause nausea. But this can change quickly, or your setup may just work much better than mine, as always with such cutting-edge software :D. But for sitting VR (Racingsim or Cyberpunk 2077 for example) 100% YES! I do not currently play any games that require motion controls. Most WMR controllers are not supported at the time of writing (this will probably change relatively soon). If you have a workaround (3D camera and PS2/Wii/Hand Tracking with Basalt/any third party motion controller) then you can work around this. Basalt has also used hand tracking with the headset or even with a 3D camera I think (Kinect for example), but the tracking is not good (On WMR at least). Most WMR cameras just suck too much lol.</p>
+    <p>The last point I want to go over is: Should you buy a cheap WMR headset to get cheap and easy access to VR because Monado exists? The answer: NO! WMR sucks! Like real bad (In my opinion). It is like cheap fast food. It "tastes" """okay""" and you get it if there is no other option. Anything that is a SteamVR heatset, the Valve Index or HTC-Vive for example, preferably with outside in tracking, will work without special drivers (but you can still use them for even more compatibility in serten cases) and is FAR FAR F-A-R better. Inside-out tracking was, is and will always be very prone to desync, crashes and reboots every few hours !at least!. If you have a WMR headset for some reason and want to use it, this is a good way to make it useful without using a bad (IMO) OS, but if you don't have a VR headset, save the money and just buy something better. You will also be supporting SteamVR and the Linux driver to grow and keep a present on the market. Just avoid WMR (iMo!). But if you are "stuck" with it, yes, use Monado. At least your e-waste will be used :D. And yes, this rant was again fuelled by a bad WMR experience on Windows and an unstable Linux VR experience, fuelled by the inexplicably poor reliability of a VR headset everywhere. But I'm stuck with it, so I might as well use it.</p>
+    <p>Almost all games work with either SteamVR (works best) or OpenComposite.</p>
+    <p>A few things that helped me to get it more stable (and somtimes I dont know why):</p>
+    <ul>
+      <li>Using the ZEN-Kernel.</li>
+      <li>Conecting the Headset to my GPU with a USB-C to HDMI cable (AMD RX 7900XT/XTX have a USB-C port with DP and USB-DATA. IDK why...).</li>
+    </ul>
+    <br>
+    <hr>
+    <p>I hope I could help you getting a very obscure way of playing Windows VR on Linux to work. I linked EVERYTHING I found useful in the sources section. Thanks to all the development behind these projects, you do a great job! Consider donating to them for a healthy open source community!</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://support.hp.com/us-en/product/details/hp-windows-mixed-reality-headset-vr1000-series/model/17625705">https://support.hp.com/us-en/product/details/hp-windows-mixed-reality-headset-vr1000-series/model/17625705</a></li>
+      <li><a href="https://gitlab.freedesktop.org/monado/utilities/xr-hardware/">https://gitlab.freedesktop.org/monado/utilities/xr-hardware/</a></li>
+      <li><a href="https://aur.archlinux.org/packages/xr-hardware">https://aur.archlinux.org/packages/xr-hardware</a></li>
+      <li><a href="https://aur.archlinux.org/packages/openhmd-git">https://aur.archlinux.org/packages/openhmd-git</a></li>
+      <li><a href="https://github.com/OpenHMD/OpenHMD">https://github.com/OpenHMD/OpenHMD</a></li>
+      <li><a href="https://gitlab.com/znixian/OpenOVR">https://gitlab.com/znixian/OpenOVR</a></li>
+      <li><a href="https://aur.archlinux.org/packages/opencomposite-git">https://aur.archlinux.org/packages/opencomposite-git</a></li>
+      <li><a href="https://aur.archlinux.org/packages/onnxruntime-bin">https://aur.archlinux.org/packages/onnxruntime-bin</a></li>
+      <li><a href="https://onnxruntime.ai/">https://onnxruntime.ai/</a></li>
+      <li><a href="https://aur.archlinux.org/packages/monado-git">https://aur.archlinux.org/packages/monado-git</a></li>
+      <li><a href="https://monado.dev/">https://monado.dev/</a></li>
+      <li><a href="https://aur.archlinux.org/packages/libuvc">https://aur.archlinux.org/packages/libuvc</a></li>
+      <li><a href="https://int80k.com/libuvc/">https://int80k.com/libuvc/</a></li>
+      <li><a href="https://aur.archlinux.org/packages/libsurvive-git">https://aur.archlinux.org/packages/libsurvive-git</a></li>
+      <li><a href="https://github.com/cntools/libsurvive">https://github.com/cntools/libsurvive</a></li>
+      <li><a href="https://aur.archlinux.org/packages/fmt9">https://aur.archlinux.org/packages/fmt9</a></li>
+      <li><a href="https://fmt.dev/latest/index.html">https://fmt.dev/latest/index.html</a></li>
+      <li><a href="https://aur.archlinux.org/packages/basalt-monado-git">https://aur.archlinux.org/packages/basalt-monado-git</a></li>
+      <li><a href="https://gitlab.freedesktop.org/mateosss/basalt">https://gitlab.freedesktop.org/mateosss/basalt</a></li>
+      <li><a href="https://youtu.be/Oqla04P_2QA">https://youtu.be/Oqla04P_2QA</a></li>
+      <li><a href="http://www.openhmd.net/">http://www.openhmd.net/</a></li>
+      <li><a href="https://gitlab.freedesktop.org/monado/monado">https://gitlab.freedesktop.org/monado/monado</a></li>
+      <li><a href="https://www.reddit.com/r/virtualreality_linux/comments/11y4knp/psvr_on_linux_via_monado_a_setup_guide/">https://www.reddit.com/r/virtualreality_linux/comments/11y4knp/psvr_on_linux_via_monado_a_setup_guide/</a></li>
+      <li><a href="https://www.reddit.com/r/virtualreality_linux/">https://www.reddit.com/r/virtualreality_linux/</a></li>
+      <li><a href="https://www.youtube.com/channel/UCiQJD2ObVjsZvxw60J7rIZw">https://www.youtube.com/channel/UCiQJD2ObVjsZvxw60J7rIZw</a></li>
+      <li><a href="https://youtu.be/z2M77pzSfcM">https://youtu.be/z2M77pzSfcM</a></li>
+      <li><a href="https://www.youtube.com/channel/UCwQSU504SZzleOILmh9wgJQ">https://www.youtube.com/channel/UCwQSU504SZzleOILmh9wgJQ</a></li>
+      <li><a href="https://youtu.be/7ed_pL7v_fs">https://youtu.be/7ed_pL7v_fs</a></li>
+      <li><a href="https://gitlab.freedesktop.org/monado/utilities/xr-hardware#quick-start-build-and-use">https://gitlab.freedesktop.org/monado/utilities/xr-hardware#quick-start-build-and-use</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1_6z_0tX4dINjWxi6dMJbSi45rAlVInwO">https://drive.google.com/drive/folders/1_6z_0tX4dINjWxi6dMJbSi45rAlVInwO</a></li>
+      <li><a href="https://gitlab.freedesktop.org/mateosss">https://gitlab.freedesktop.org/mateosss</a></li>
+      <li><a href="https://monado.freedesktop.org/">https://monado.freedesktop.org/</a></li>
+      <li><a href="https://monado.freedesktop.org/getting-started.html">https://monado.freedesktop.org/getting-started.html</a></li>
+      <li><a href="https://monado.freedesktop.org/steamvr.html">https://monado.freedesktop.org/steamvr.html</a></li>
+      <li><a href="https://www.patreon.com/realvr">https://www.patreon.com/realvr</a></li>
+      <li><a href="https://linuxhint.com/replace_string_in_file_bash/">https://linuxhint.com/replace_string_in_file_bash/</a></li>
+      <li><a href="https://www.ebay.de/itm/404492678142">https://www.ebay.de/itm/404492678142</a></li>
+      <li><a href="https://www.amazon.de/dp/B07FM4TMNX">https://www.amazon.de/dp/B07FM4TMNX</a></li>
+      <li><a href="https://vrcover.com/product/acer-mixed-reality-foam-replacement/">https://vrcover.com/product/acer-mixed-reality-foam-replacement/</a></li>
+      <li><a href="https://vrcover.com/product/hp-mixed-reality-foam-replacement/">https://vrcover.com/product/hp-mixed-reality-foam-replacement/</a></li>
+      <li><a href="https://discord.com/channels/556527313823596604/832674300992815185/1179487868360597536">https://discord.com/channels/556527313823596604/832674300992815185/1179487868360597536</a></li>
+      <li><a href="https://discord.com/channels/556527313823596604/815234075644264448/1179704783058255882">https://discord.com/channels/556527313823596604/815234075644264448/1179704783058255882</a></li>
+      <li><a href="https://gitlab.com/gabmus/envision/">https://gitlab.com/gabmus/envision/</a></li>
+      <li><a href="https://github.com/OpenHMD/OpenHMD/wiki/Udev-rules-list">https://github.com/OpenHMD/OpenHMD/wiki/Udev-rules-list</a></li>
+      <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2805545613">https://steamcommunity.com/sharedfiles/filedetails/?id=2805545613</a></li>
+      <li><a href="https://github.com/microsoft/onnxruntime/releases/">https://github.com/microsoft/onnxruntime/releases/</a></li>
+      <li><a href="https://www.patreon.com/posts/63441060">https://www.patreon.com/posts/63441060</a></li>
+      <li><a href="https://www.reddit.com/r/linux_gaming/comments/i3md9w/getting_reshade_to_work_on_proton/">https://www.reddit.com/r/linux_gaming/comments/i3md9w/getting_reshade_to_work_on_proton/</a></li>
+      <li><a href="https://youtu.be/D_qJ5ak6Pt8">https://youtu.be/D_qJ5ak6Pt8</a></li>
+      <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/63?tab=description">https://www.nexusmods.com/cyberpunk2077/mods/63?tab=description</a></li>
+      <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/786?tab=description">https://www.nexusmods.com/cyberpunk2077/mods/786?tab=description</a></li>
+      <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/10984">https://www.nexusmods.com/cyberpunk2077/mods/10984</a></li>
+      <li><a href="https://www.ifixit.com/Teardown/HP+Windows+Mixed+Reality+Headset+Developer+Edition+Teardown/96608">https://www.ifixit.com/Teardown/HP+Windows+Mixed+Reality+Headset+Developer+Edition+Teardown/96608</a></li>
+      <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/533">https://www.nexusmods.com/cyberpunk2077/mods/533</a></li>
+      <li><a href="https://www.makeuseof.com/how-to-downgrade-steam-games/">https://www.makeuseof.com/how-to-downgrade-steam-games/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.12.07 - 17:00');</script></div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Review of the Dreamcast Controller to USB Adapter by Raphnet-Tech</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Hall effect sticks in 1998, LET'S GOOOOOOO!");</script>
+    
+    <h1>Review of the Dreamcast Controller to USB Adapter by Raphnet-Tech</h1>
+    <hr>
+    <hr>
+    <hr>
+    <h2><u><b>Important things first about how I run my blog:</b></u></h2>
+    <p>Nothing was paid/sponsored/offered/provided/anything that would benefit me financially/personally if I wrote about it on my blog under the influence of a products developer. Everything is here because I wanted to write about it, no strings attached! Links to services I have used are only here because I want to give as much information as possible about how I made everything work. I bought it myself and then decided to talk about it on my blog for one reason: literally no one talks about or even wants to use there Dreamcast controller on their PC. Two or three youtube videos here and there, but thats it. I want to change that. And before anyone starts crying: I bought it for myself, Raphnet-Tech doesn't even know I exist, except for an email exchange confirming they don't ship to Germany, even better, they haven't shipped to Germany since 2019 or so. I had to import it myself using a proxy service. Also: There are other projects for this and all I found are not suitable for everyday use. But the cool thing is that Raphnet-Tech openly shows how to build there adapter on their blog. That means: If you want to build one yourself, you can "easily" do it with enough knowledge about hardware and chips. I linked everything I found and used in the sources section. And with that Internet BS out of the way;</p>
+    <hr>
+    <hr>
+    <hr>
+    <br>
+    <h2><u>#1 - First use, configuration and Updating</u>:</h2>
+    <p>The first thing I noticed when testing it was that I could not use the manager from them on my PC (Windows or Linux). It runs but always gives the following errors. (Also; it kinda worked with the controller off, but the firmware update failed and I was afraid it was bricked. Luckily everything was still fine after unplugging and replugging it in:</p>
+    <p><u><i>rnt exchange timeout</i></u></p>
+    <p><u><i>Failed to Open Adapter</i></u></p>
+    <p>I tried another PC and everything worked in the manager. It seems like the adapter or a chip on it does not like my USB chipset. But using the controller itself worked perfectly! I had to set up SteamInput because the bindings were all over the place out of the box, but every input was recognised in any Software. Unfortunately the VMU is still useless (Unlike another Dreamcast to USB projects that can use the VMU as a USB drive. A little useless, but still VERY cool) and the Vibration-Pack does nothing.</p>
+    <p>Not related to the adapter: My D-pad was a little unreliable when I pressed right. Opening the controller, cleaning the pad and contacts a bit with contact cleaner and closing everything nice and tight made it work great again and for some reason, the analogue stick felt even better and smoother after reassembling, IDK why. I don't know if it was a manufacturing defect or the pads just got stuck after 20 years of not doing anything (my controller is literally brand new. Bought it a few years ago and did not used it much. I immediately fell in love with the controller, which is sadly not the case with most games on the console).</p>
+    <hr>
+    <br>
+    <h2><u>#2 - Gaming</u>:</h2>
+    <p>It works. No noticeable delay. No detection issues. SteamInput or a very extensive controller rebind menu in games/programs needed. Only Daylydrivin it on Linux. Tested on Windows and it worked fine with the same need for a rebind tool in Windows/Menu in games. Having only 2 shoulder buttons, no vibrations at the moment and only one good analogue stick can be annoying, but at least for me, if a game needs the full controller to work, more often than not I found it plays better with a keyboard and some tinkering (yes, even emulated games), but this is more of a "problem" with the controller (except for the lack of vibrations, which is a problem with the adapter currently) than with the adapter. The adapter, as far as I could see, should even allow you to use the buttons on the VMU if you were to modify your controller or use an after-market one. It supports many, and I mean many, Dreamcast controllers. From the fishing angle to the joysticks to the keyboard and mouse, everything is "well" supported. You can find a list of compatible controllers on the product page.</p>
+    <hr>
+    <br>
+    <h2><u>#3 - Would I recommend it?</u>:</h2>
+    <p>Yes... BUT only if you are not able to build one yourself. I have linked all the projects I found in the sources section. Most other projects have way WAY more features and options, but you need to be able to solder and read electrical schematics. Importing was also very expensive for me (would have been a bit cheaper if I didn't have to use a proxy service, but even then sipping costs, import taxes and so on would still add up). Shipping from Japan is just very expensive. Even though this product is the most "polished" of all the things out there, it still requires you to be prepared to tinker with rebinding software and possibly take the controller apart to fix a few things or clean it. 20 year old hardware, even if it's new old stock, needs a lot of care compared to newer hardware.</p>
+    <hr>
+    <br>
+    <h2><u>#4 Conclusion</u>:</h2>
+    <p>I love the Dreamcast controller and like the adapter because it allows me to finally use it again. Features like more options in the adapter manager software and VMU and/or Vibration-Pack support would be really nice, at least support for the Vibration-Pack is really important and sadly still missing.</p>
+    <p>As far as I could tell, Raphnet-Tech is run by one person and that, that is really impressive!</p>
+    <hr>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.raphnet-tech.com/products/dreamcast_usb_adapter/index.php">https://www.raphnet-tech.com/products/dreamcast_usb_adapter/index.php</a></li>
+      <li><a href="https://www.raphnet.net/electronique/dreamcast_usb/index_en.php">https://www.raphnet.net/electronique/dreamcast_usb/index_en.php</a></li>
+      <li><a href="https://github.com/raphnet/dreamcast_usb">https://github.com/raphnet/dreamcast_usb</a></li>
+      <li><a href="https://github.com/OrangeFox86/DreamcastControllerUsbPico">https://github.com/OrangeFox86/DreamcastControllerUsbPico</a></li>
+      <li><a href="https://youtu.be/7iSnx68Avwg">https://youtu.be/7iSnx68Avwg</a></li>
+      <li><a href="https://www.youtube.com/@MilesTailsPrower86/videos">https://www.youtube.com/@MilesTailsPrower86/videos</a></li>
+      <li><a href="https://youtu.be/dXG0RlphPo8">https://youtu.be/dXG0RlphPo8</a></li>
+      <li><a href="https://sendico.com/">https://sendico.com/</a></li>
+      <li><a href="https://youtu.be/sDyk0-0XrS4">https://youtu.be/sDyk0-0XrS4</a></li>
+      <li><a href="https://bliss-box.net/store/Gamer-Pro-Advanced-GPA-p573479351">https://bliss-box.net/store/Gamer-Pro-Advanced-GPA-p573479351</a></li>
+      <li><a href="https://youtu.be/Cx9ijQv1iDI">https://youtu.be/Cx9ijQv1iDI</a></li>
+      <li><a href="https://www.raphnet-tech.com/products/adapter_manager/">https://www.raphnet-tech.com/products/adapter_manager/</a></li>
+      <li><a href="https://bliss-box.net/4-play/">https://bliss-box.net/4-play/</a></li>
+      <li><a href="https://youtu.be/KFP9ibpdYBc">https://youtu.be/KFP9ibpdYBc</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.11.10 - 00:05');</script></div>
+  </body>
+</html>

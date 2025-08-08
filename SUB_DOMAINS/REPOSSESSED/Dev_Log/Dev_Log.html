@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/Assets/favicon.gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPOSSESSED - Development Log</title>
+    <link rel="stylesheet" href="/Assets/styles.css">
+</head>
+<body>
+    <!-- Header: -->
+    <div class="header-area"><p>&nbsp;<a href="/index.html">RE//POSSESSED</a>&nbsp;&nbsp;|&nbsp;&nbsp;&gt;&gt; Dev Log &lt;&lt;&nbsp;&nbsp;</p></div>
+
+    <!-- C: -->
+    <div class="fixed-image" style="background-image: url('/Assets/Images/Transparent/J0715.png');"></div>
+    <div class="fixed-image" style="background-image: url('/Assets/Images/Transparent/C_Holding.png');"></div>
+
+    <!-- Background: -->
+    <div class="background-image" style="background-image: url('/Assets/Images/Background/Warehouse.png');"></div>
+    
+    <!-- Actual Body: -->
+    <div class="main-Area">
+        <h1>&nbsp;&nbsp;&nbsp;DEVELOPMENT - LOG:</h1>
+        <!-- NEW_ENTRY_HERE: -->
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.07.22</u> - Church nearly done. Gigantic Performance improvements</h2>
+            <br>&nbsp;
+            <h3>The church is nearly done. Only one Room and the Basement room is missing. Then I can add the last 3 or so dialog's, 3 more character specific models, 2 songs and then document it all in my doc. After that the church is done and either the streets or the gov. building is next. An other thing a discovered thanks to brainstorming with my husband was a performance issue thanks to overdraw of all things. I use Blockbench for the models and the exports from it has a more or less "default" material applied by it to conform to gltf standards I guess. The issue is it disables "Culling" or to be more precise it  enables "DoubleSided". This caused a good amount of performance to get wasted. After discovering it, reading the documentation standard for gltf and checking the files I wrote a script to manually "patch" it into the models on export. Surprisingly only the most used models needed fixed (Buildings and ground-types). The rest is more or less good as is. The performance bump? About 70fps depending on hardware. My GPU is a monster so I did not notice it as much but that is a lot! I always was confused why the models were visible inside-out but now I have an explanation. The only bigger issue coming from that is that Level 1 now really needs cleanup. It was build before I had figured out how to efficiently structure scenes for my game. It was more or less used to figure this out in the first place. Now, thanks to this, the environment is, compared to Level 2, really inefficient. It needs to have its BaseMesh and Navigation mesh spitted and cleaned-up for OneSide Rendering. It is not too much work, just annoying. I will start with that as soon as Level 2 is finished and then use the experience from that to build Level 3. Level 2 is really my favorite part of my game and it's world. So beautiful, I nailed down my art-style so much and now really know how to do things to get what I want and then actually liking it. It is so much work but so worth it!</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_07_22/01.jpg" target="_blank">
+                    <img src="DATA/2025_07_22/01.jpg" alt="From the ground.">
+                </a>
+                <a href="DATA/2025_07_22/02.jpg" target="_blank">
+                    <img src="DATA/2025_07_22/02.jpg" alt="Around a corner.">
+                </a>
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.07.07</u> - Translation Framework fully integrated</h2>
+            <br>&nbsp;
+            <h3>Just a small update on that front. From the start I tried to use as much Game language independency as possible so translating will be extremely easy later. I still used static names and texts on items and the UI up until now. But I finally seat down and integrated the rest of the translation framework and moved everything over to the translation files. Now it should be extremely easy adding new languages. The settings for the main menu are usually made to the end of the game development because only then is known what exists and what is possible/needed. So I bound the translation function to a button for now. The plans for now are to release the game in English. Later more languages are possible but there would be native speakers that also speak English needed to translate the full game and it also depends on how worth it is to translate it.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.07.06</u> - A lot of small things done</h2>
+            <br>&nbsp;
+            <h3>I started working on the church and realized, because of its size and scale I need many assets around it too (It dose take up some parts of the streets) and so I needed a few more assets and Modules to be done next. Then I realized I need many of the same Modules in the starting area of Level 2. So I changed plans and starting developing the Modules, extended the Dialog script-parser and fixed a few bugs. Then I polished a few WIP.-Modules and now I will finish populating the starting area and then move on to the church area finally. I think currently the only thing missing in the start area is Neon Signs. The rest has been done already. And then I can create the outside of the church, then move on to creating a few models for the inside, write the dialog and triggers and then script the events. Music is definitely needed here to, maybe a theme for wandering the streets must be created earlier then expected too. I will see when it comes to it. That's about it for the current work. The stuff coming next is still open. I could either start filling the streets, or work one one of 3 outposts, the gov-building or even the ending area. Only after finishing all of that, full play-testing can start and polishing Level 2 can be completed. One thing is for sure, this is one of the biggest Levels I ever worked on. Even thought there were some downtime in between and I worked on different stuff in the game from time to time, the amount of research, IRL. exploring and then planing for Level 2 is unbelievable for me. I am a little happy that later Levels will be a little more abstract and need less research and ground up development to be honest. But I definitely will be the most proud about the amount of work in Level 2.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.06.22</u> - Warehouse fully completed</h2>
+            <br>&nbsp;
+            <h3>The warehouse has been fully completed. Some more testing, fixes and the music has been completed to be more precise. Now it is time for the church Area.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.06.19</u> - Warehouse dialog's, play-testing and fixes completed and small Updated about the progress</h2>
+            <br>&nbsp;
+            <h3>There was still a little bit to fix and play-test after completing it. I also fixed many bugs, added 5 new features to the framework, adjust the dialogs and trigger and updateded the lore and story documentation to make writing/the story fleshing out process easier. I still need one song for the warehouse. It must be the stealth and fight theme at the same time there. I will probably do it off and on over time or in one go. I never know with that music stuff, it's hard, still no updates in the maybe/maybe-not searching process for a musician for the OST. The next area to be worked on will be the church. The amount of assets needed there is manageable but gameplay mechanics, an imposing environment and interconnected story strings will be the bread and butter of this area. How far is the development? Hard to say but level 2, I would say, is 40% done. The % and amount of work is not that connected because many assets are for multiple areas. 3 main areas, stuff in between those, 4 smaller areas and a small things here and there are still missing. Is this amount of work for all levels needed? No, the city level is a thing I always wanted in the game and citys are just way to big LOL. But other levels like level 3 and 5 are far more streamlined and easier to implement. Dont get me wrong, the levels will still be big, but need far less then a city that is full with people.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.06.10</u> - Warehouse Assets, placement and quests completed</h2>
+            <br>&nbsp;
+            <h3>The warehouse is done. It needs a little play-testing still, one song and I must make sure the triggers work but it is now 100% playable. It is only one part of the big city and marks an other milestone with RE//POSSESSED because so, and I mean it, SO much stuff has been created used and needed all over Level 2. One of my favorites is the walkway and especially the SN433. Like any overpowered Sniper is it a lot of fun getting the enemy's out of the blue.</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_06_10/01.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/01.jpg" alt="Container Hallways.">
+                </a>
+                <a href="DATA/2025_06_10/02.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/02.jpg" alt="Pretty lights.">
+                </a>
+                <a href="DATA/2025_06_10/03.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/03.jpg" alt="Going above.">
+                </a>
+                <a href="DATA/2025_06_10/04.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/04.jpg" alt="Behind the Window.">
+                </a>
+            </div>
+            <div class="image-container">
+                <a href="DATA/2025_06_10/06.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/06.jpg" alt="The outsides.">
+                </a>
+                <a href="DATA/2025_06_10/07.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/07.jpg" alt="The lower floors.">
+                </a>
+                <a href="DATA/2025_06_10/08.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/08.jpg" alt="Time for a break.">
+                </a>
+            </div>
+            <div class="image-container">
+                <a href="DATA/2025_06_10/09.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/09.jpg" alt="Slide-Shooting.">
+                </a>
+                <a href="DATA/2025_06_10/10.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/10.jpg" alt="Jump-Shooting.">
+                </a>
+                <a href="DATA/2025_06_10/11.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/11.jpg" alt="Slide-Shooting outside.">
+                </a>
+                <a href="DATA/2025_06_10/12.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/12.jpg" alt="Using the Scope.">
+                </a>
+            </div>
+            <div class="image-container">
+                <a href="DATA/2025_06_10/13.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/13.jpg" alt="Looking over at the upper decks.">
+                </a>
+                <a href="DATA/2025_06_10/14.jpg" target="_blank">
+                    <img src="DATA/2025_06_10/Preview/14.jpg" alt="Time for some fun on the roofs above the warehouse.">
+                </a>
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.05.29</u> - Restaurant has been completed and the base of the warehouse is done</h2>
+            <br>&nbsp;
+            <h3>I wrote it on my blog already but I had many technical issues in my household that started around 2025.04.19 or so. My PC needed maintenance, then the PC of my husband started acting up and as if that is not enough he switched to Linux and I needed my help getting it setup and running and we also changed a few things in our living space. Sooo... yeah a lot of little things took up a lot of time. I still found time to continue working on the game but not as much as usual. Since last week my free time is free enough again to work on the game as much as before April. I finished the restaurant already a while ago and the warehouse is in work for around a month now. I already got all he basics done. Meaning models, placement, layout and so on. The only things missing now are lighting, NPC positions, dialog's, a few textures, one song and event-trigger. After this I either start working on one of the three outposts/world NPC's (they need relatively little work) or the church. As soon as the lighting and NPC's are done I will post images to show what has been in the kitchen.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.04.13</u> - Bar fully done</h2>
+            <br>&nbsp;
+            <h3>Bar again? Yes I decided to do the music on its own and not parallel. It is really exhausting for me and I still need to learn a lot about it and that takes more time then anyone would think. I also fixed a few bugs, added a few features to improve the ambiance sound a good bit. And now I am working on Restaurant in the starting area. It only needs a few dialog's, NPC's and pathfinding checks/adjustments, aka. not that much left to do there, and then I will continue with the warehouse. I am very exited to do that because it will be a big building with multiple separate patrols, mechanics and "Quests" that intersect there.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.04.05</u> - Bar area finished!</h2>
+            <br>&nbsp;
+            <h3>The bar are has been finished. Only... well the music is still missing but I will make the music in parallel while making the next area. Music takes me a lot of time and I can only do so much per day before my brain loses the energy for making it. Music is hard LOL. Most often I make some music/continue working on a song and the when I feel exhaust from it switch do level building or Lore/Dialog/Script writing. I really REALLY love how the Bar came out. And it is a HUGE progress for Level2 and assets in general. So SO many new assets needed all over the map are now done. The progress gets faster and faster for new areas because the assets most commonly needed are already there. I will also from now on add less and less detail what or where the area's are. Just so the players following the development closer still can get surprised. The amount of stuff I show stays the same, but less spoilers will be Included so to say. The game comes along absolutely GREAT!</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_04_05/01.gif" target="_blank">
+                    <img src="DATA/2025_04_05/01.gif" alt="Gif of the bar from one corner.">
+                </a>
+                <a href="DATA/2025_04_05/02.jpg" target="_blank">
+                    <img src="DATA/2025_04_05/02.jpg" alt="View over glasses.">
+                </a>
+                <a href="DATA/2025_04_05/03.jpg" target="_blank">
+                    <img src="DATA/2025_04_05/03.jpg" alt="U all know her.">
+                </a>
+                <a href="DATA/2025_04_05/04.jpg" target="_blank">
+                    <img src="DATA/2025_04_05/04.jpg" alt="Outside.">
+                </a>
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.03.23</u> - Level 2 - Integrated all Models into the Level and removed "BlockOut" completely</h2>
+            <br>&nbsp;
+            <h3>It was a lot of work but the full environment is done and can now be filled with some interiors, decorations, where needed, and the planed NPC's and there "Missions/Paths/Quests/What ever the name is for how I am doing that stuff" can be integrated. And now the important part. TEASER IMAGES. NOT FINAL AND NOT DONE:</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_03_23/01.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/01.jpg" alt="One of the cult buildings.">
+                </a>
+                <a href="DATA/2025_03_23/02.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/02.jpg" alt="They have the best burgers... and know the right people.">
+                </a>
+                <a href="DATA/2025_03_23/03.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/03.jpg" alt="Better be prepared.">
+                </a>
+                <a href="DATA/2025_03_23/04.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/04.jpg" alt="The Autobahn.">
+                </a>
+            </div>
+            <div class="image-container">
+                <a href="DATA/2025_03_23/05.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/05.jpg" alt="The cult headquarters.">
+                </a>
+                <a href="DATA/2025_03_23/06.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/06.jpg" alt="I love those streets.">
+                </a>
+                <a href="DATA/2025_03_23/07.jpg" target="_blank">
+                    <img src="DATA/2025_03_23/07.jpg" alt="Look to the sky's at work.">
+                </a>
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.03.13</u> - Small fix to the RSS-Feed</h2>
+            <br>&nbsp;
+            <h3>Just a small fix. The RSS-Feed of the Dev-Logs were not formatted correctly. Now the RSS-Feed should work well again.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.03.10</u> - Updated to Godot 4.4 and Jolt 15.0, cleaned Project structure, planed story and NPC's and finished all main City models</h2>
+            <br>&nbsp;
+            <h3>The last 2 to 3 weeks I had not as much time as I would have liked too (I was sick lol), but in the free hours I had I still managed to finish quite a few things. I finished all Models that are needed to now fully build the City level aka. Level 2 and replace all placeholders. The interiors will be build in engine with "Interiors Building blocks". They are also already planed out and only need to be placed. The Update to the new Godot and Jolt version was done today and was relatively easy. As usual a few things broke. One overside mine that never was a problem because of a Godot bug now manifested and needed to be fixed. That was easy, just a few Collider issues. Then a few Settings changes and ports to new implementations in Godot and that was it with code changes. A few settings in Jolt needed to be changed but after that it ran fine too. The new improvements showed instantly with the way shades are now faster to execute and THANK GOD Shader compilation is no longer a issue. Just a one time thing and done. Most of the work were the models at the end and I'm very happy they finally are done. A few special Models like Main Story NPC's or a few special assets like Interior parts of special Buildings will be created as needed. They don't take up much time and its easier to make them when everything around them is already prepared. I want to make sure that my ideas around them are fully planed out before creating them to avoid doing it multiple times and make them fit there environment. And also: It's a nice change of pace to create special assets from time to time. The Story and the places are around 90% done planing out. Currently I will need at least 5 new songs for Level 2, 1 for Level 1 and a lot of Dialog Text I'm already very eager to write. Creating dialog for the story is a lot of work but SO FUN. Making music is not my strength sadly xD but I will try my best. I would actually like to look into working with a musician that actually knows how to make good music but that would blow the roof of the budget for the game. This is a passion project after all and I already invested not a minuscule amount of money into it.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.03.01</u> - Level 2 Concept executed and "Blocking Out" done</h2>
+            <br>&nbsp;
+            <h3>The concept for level 2 is now fully laid out and the full level has been "Blocked out". For those who do not know what that means: The collision, placement of models and paths are done/reserved and only need to be replaced with the "final" actual model and not just a colored block. Now I need to finish the building models and integrate the NPC's and interiors of the open buildings. Maybe flesh out the underground area some more too. From concept to actually playable is so slow to develop for, but as soon as the Level Environment is inside the Level-Scene everything goes really fast (and then slow again because of the final 90% rule xD). I'm just happy the slow part is finally over and the fun part of actual lore integration can start. Currently everything is going as planed and is inside the predicted time frame.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.02.16</u> - Leaving Pre-Alpha, entering Alpha. Level-Load/Menus/Save/Load/File-Pipline done and way to many fixes.</h2>
+            <br>&nbsp;
+            <h3>FINALLY! I am happy to announce that RE//POSSESSED has left the Pre-Alpha stage! All features are implemented and "working". Now in the Alpha stage the playtesting will wramp up a lot and the primary focus lays now on lore, Level designing/building and getting the assets looking as intended (Like menus for example.). Besides that Bugs will be fixed that come up while level building or ticketed by the playtesters. I'm really happy to have come this far! The last goal in development was Save/Load and Level-Load and then it all escalated to the full completion of the menu system, the complete pipeline for loading levels and saves and crushing all bugs in the way of the Alpha stage. Scope what is that (Classic immersive sim dev mindset xD)? This resulted in the leaving of the Pre-Alpha stage. All levels currently shipped with the internal playtest-build can be completed and played as currently intended (they a still buggy probably as you can imagine for a alpha, duh.). A other great unrelated event is the EA release of Peripeteia! We all know what this means: A few days of maximum degeneracy and playing Peripeteia any free minute someone has! My greatest congratulations to the developers!</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.02.12</u> - Save/Load System completely done and Level transition code also finished implementing</h2>
+            <br>&nbsp;
+            <h3>Finally, FINALLY it is done. Including the UI, integration with the UI and UX, binding's and so on. The level switch code is also done and now only needs the signals connected and testing and maybe a level done screen or something so it is not just press here and next level. The Menu design is not final and only a framework so I can easily improve it with changing numbers later. Now it is Level 2 time and bug fixing for a few thing that came up with testing.</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_02_12/01.jpg" target="_blank">
+                    <img src="DATA/2025_02_12/01.jpg" alt="SaveMenu.">
+                </a>
+                <a href="DATA/2025_02_12/02.jpg" target="_blank">
+                    <img src="DATA/2025_02_12/02.jpg" alt="SaveMenu Dialog.">
+                </a>
+                <!-- <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a> -->
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.02.03</u> - Save/Load System nearly done</h2>
+            <br>&nbsp;
+            <h3>Nearly everything is working. I got it to behave like I wanted. It literately can be compared to a Save-State in Emulation Software or in Virtual Machines in regard how detailed the amount of information is that gets saved. TL;DR: EVERYTHING. How hard was it? HARD. Like really really HARD. I used the Binary serialization API and the the ResourceSaver and still had to incl. multiple custom ways to save data between running Sessions. Some did Godot just not touch or were reset regardless. Worst were at runtime created Objects and Animation States. Now I only have to fix a few things in the Player and NPC's code that are not set correctly from the start after loading a Save, then the Save/Load Framework is completed. After that the Level-Transition must be tested and integrated into the Save/Load framework too. The code is already done it only must be integrated incl. a Level Exit and Entry Node. That will be very easy. Just must be done cleanly so it must not be touched again. Building the Save-framework was very annoying and harder then it should be in a game engine but it is nearly done and I can hopefully leaf it alone after this. It is very generic and should work with all nodes build in the future and should only need a few flags in the Scene to be working immediately.</h3>
+            <br>&nbsp;
+            <br>&nbsp;
+            <h3>On thing I want to add: I did don't use the code linked below but it was a big help in seeing if different approaches would work in how to access Variables and how the officially shared way Godot whats you to save can be used and can definitely help many other developers later too:</h3>
+            <br>&nbsp;
+            <a href="https://www.reddit.com/r/godot/comments/17ky03k/">Reddit - By triple-cerberus - Behold a function to save an entire scene...</a>
+            <br>&nbsp;
+            <br>&nbsp;
+            <a href="https://youtu.be/Hbr88aPOXAw">YouTube - Jesse's Indie View - The SECRET to SAVING/LOADING your indie game | Cozy...</a>
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.24</u> - It's Save/Load and Level transition time</h2>
+            <br>&nbsp;
+            <h3>I have finally fixed and/or finished all systems and Backlog things in the way to be able to start testing/implementing the Save/Load system's. I'm really hoping this is gone be not to annoying or I'm in for a ride… . We will see. As soon as I have it working I will definitely post about it. This is not gonna be a easy checkpoint system as many games have. This will fully save the state of a level like in other immersive sim games like Deus Ex, Peripeteia, Prey (2017), also sometimes referred to as "Typhon", and so on. I really love these save system that let the player do what ever they want and try It as often as they want without wasting time, meaning very quick load times are important. I will try to keep file size, load and save times as low as possible and also, if possible, will also incorporate multithreading to keep the process from hanging.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.20</u> - Fixed all backlog bugs and added needed features</h2>
+            <br>&nbsp;
+            <h3>Fixed all bugs in the backlog that were still in the way of testing/implementing Save/Load. Added one gameplay-feature from the backlog. Now only one other feature needs to be completed to be able to test/implement Save/Load fully into the framework. With Save/Load also comes the Level-Switch and Data-Transfer code. Meaning the full Save/Load  implementation will probably take up some time (or maybe the concept implementation works from the start and it is easier then expected... probably not XD). Culling system works perfect so far from testing. Also did some balancing fixes with the enemy's and NPC's in the finished level.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.18</u> - Extended culling system, added Multithreading and fixed bugs</h2>
+            <br>&nbsp;
+            <h3>The culling system from the last update had some issues. If you move an Area3D in Godot the Area3D Triggers "body_exited" and "body_entered" A LOT. It is either by design because areas are designed to be moved continuously like this or it is probably just a bug. The fix was to make a custom old detection and new detection method and compare. I also added a separate layer for better performance when detecting and added multithreading for good measure. The performance improvements are now more then I expected. Multithreading makes games run better on low end modern hardware but makes it harder for older low end hardware because of the increased CPU architectural needs. But to simulate may things at the same time and put culling on the top of that, there is now way around it. After that I fixed the last bugs in the current backlog. Only one feature and 3 Bugs are now missing to start testing the Save/Load system.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.15</u> - Performance BOOST and fixes</h2>
+            <br>&nbsp;
+            <h3>As planed I started fixing bugs, got a few out of the way and then found a bit of a performance issue with the size of a few levels and the amount of enemy's. They decide many things on the fly and that takes a good amount of performance, especially when the player or items are involved. The build-in culling and LOD systems of Godot were not enough. I also use many (often dynamic) light source that also needs a good amount of performance. I plan to offer a pre-backed lights option at some point that will help weaker hardware. Godot makes it hard to get Level Nodes without iterating into other scenes by accident. This made it a little bit of a bigger task to figure out a way to get around that and disable nodes dynamically. I build a system that can disable nodes or parts of them I deem performance intensive and enable them if the player comes into the area. It is fully dynamic, not trigger or area bound but player bound and should work great with the large levels. Below is an example with the setting turned up to max to make it better visible.</h3>
+            <br>&nbsp;
+            <br>&nbsp;
+            <h4>A video of it with far better quality can be found here:            
+                <br>&nbsp;
+                <a href="https://bsky.app/profile/catwithcode.bsky.social/post/3lfshuhnrd22i">https://bsky.app/profile/catwithcode.bsky.social/post/3lfshuhnrd22i</a></h4>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2025_01_14/01.gif" target="_blank">
+                    <img src="DATA/2025_01_14/01.gif" alt="Extrem example.">
+                </a>
+                <!-- <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a> -->
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.12</u> - More cleanup and finishing Level structure</h2>
+            <br>&nbsp;
+            <h3>Fixing a few Bugs in the back log and added last Level details, the last few enemy's got placed, moved or equipped and the last few structure's in the ending area of the first level got placed. Now I have one fully finished and implemented/build level from beginning to end. Next are a few bugs with player node to fix and then the save/load system debugging/implementing/fixing can begin. After that, level 2 is on the list to be completed, tested and cleaned up.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2025.01.08</u> - Fixing Bugs and cleaning up</h2>
+            <br>&nbsp;
+            <h3>After my well deserved two weeks of Christmas vacation it's time to get back to gamedev. As expected, the game-testing and gameplay testing rounds showed a few bugs until right before release (and even after when just playing). That was what has been mostly been fixed today. I added more Crossair features and cleanups, tightened up the level design here and there and fixed the last few bugs on the list from the trailer production.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2024.12.31</u> - Rename from ProjectCWC to RE//POSSESSED</h2>
+            <br>&nbsp;
+            <h3>After some feedback from the lovely developers of Peripeteia, I decided to change the name and settled on one of my favorite from the possible candidates: RE//POSSESSED or REPOSSESSED. It fits with the theme and lore of the game world and has no direct connection to anything.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2024.12.24</u> - REPOSSESSED is now officially revealed!</h2>
+            <br>&nbsp;
+            <h3>I will from now on updated this log about everything involving the game, to some extend do some promotion and keep building the Levels and extend the story and world building. How frequent I will update this log or the promotional pages and account's depends on the current workload and time I have. I will continue working as much if not even more on the game as the last year and a half. And now the important part: Head over to the main page and have a look at the gameplay trailer.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <br>&nbsp;
+        <br>&nbsp;
+    
+        <h1 style="text-align: center;"><b><i><u>Rough documentation of the development timeline before the publication</u></i>:</b><br>
+            ↓↓↓ ↓↓↓ ↓↓↓</h1>
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2024.11.11</u> - Preparing to publicly announce REPOSSESSED</h2>
+            <br>&nbsp;
+            <h3>All the development until now were mostly private. Sometime I did mentioned in posts what is happening in the background on my blog. I also released a few teaser images in my media library. Now the game has everything what is needed to actually play the game. The last two or so months and most of the development from now on is nearly fully consumed by level design, NPC creation, world building, music creation, bug fixing and fleshing out the story.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2024.08.13</u> - Framework complete</h2>
+            <br>&nbsp;
+            <h3>Around that time I was done with the framework of the game. Many library's, systems and interactions needed to build the modules for the game are feature complete. Most of the modules usually needed for in-game interactions and gameplayevents were also nearly done. The custom Dialog system, custom audio system, and custom inventory system is finished and mainly needs the Assets now. Much of the current development time (the last (and next) 2 or 3 weeks) were focused on the audio Assets (meaning SFX, Music and ambiance. Thanks to a good friend for helping me getting all the sounds and ambiance track's) and world building / NPC' and there needs. Items and custom scripts that slot into the framework are build on the way. The framework should allows for fast development on that front thanks to all the exposed API's in the interaction's framework</h3>
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2024.01.10</u> - Full commitment</h2>
+            <br>&nbsp;
+            <h3>At this point I already hat a very very basic play environment with many mechanics implemented. Thankfully my husband convinced me, while we were on a date, to commit fully to the the development of dream game project from now on. I tried myself on different versions of the game in the past already but stooped development after a few days at the most. The idea of REPOSSESSED was existing for a long time already an vent through many different types of games, from with a 2D platformer, going to a 3D 'jump and run', "text adventure" inside a IDE, and so many more. My love for Immersive sim grew a lot over the years and then one and one came to getter and now we have REPOSSESSED.</h3>
+            <br>&nbsp;
+            <!-- <div class="image-container">
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+                <a href="PATH" target="_blank">
+                    <img src="PATH" alt="TEXT">
+                </a>
+            </div> -->
+            <br>&nbsp;
+            <hr>
+        </div>
+        <div>
+            <hr>
+            <br>&nbsp;
+            <h2><u>2023.10.07</u> - Started Model and Framework building</h2>
+            <br>&nbsp;
+            <h3>The game devolvement did not start at this point yet. I just toyed around with Godot and tried my hand on 3D model creation, music creation and texturing. Here a few models I was building to get familiar with the tools. Non of these models are in the game. I will not put the music from back then here. It did just not sound good. I also tested multiple joint types for arms, legs and body movement. The pre-final joint design can be seen in the last image. The final type I use is far simpler and works better.</h3>
+            <br>&nbsp;
+            <div class="image-container">
+                <a href="DATA/2023_10_07/00.gif" target="_blank">
+                    <img src="DATA/2023_10_07/00.gif" alt="K-Truck.">
+                </a>
+                <a href="DATA/2023_10_07/01.gif" target="_blank">
+                    <img src="DATA/2023_10_07/01.gif" alt="Old PC.">
+                </a>
+                <a href="DATA/2023_10_07/02.gif" target="_blank">
+                    <img src="DATA/2023_10_07/02.gif" alt="Sink">
+                </a>
+                <a href="DATA/2023_10_07/03.gif" target="_blank">
+                    <img src="DATA/2023_10_07/03.gif" alt="Testing model connection.">
+                </a>
+            </div>
+            <br>&nbsp;
+            <hr>
+        </div>
+        <br>&nbsp;
+        <br>&nbsp;
+        <br>&nbsp;
+        <div class="footer-Transition"></div>
+        <footer class="footer">
+            <div class="footer-Text">
+                <a href="https://catwithcode.moe/"> <img src="/Assets/Images/Icons/CwC/cwc.gif" alt="Cute Pixelart" style="width:12%;";></a> 
+                <h3><a href="https://catwithcode.moe/">A game by CatWithCode</a></h3>
+                <br>
+                <div class="footer-Links">
+                    <a href="/Feed/RSS.xml">📡 RSS - Feed</a>
+                    <a href="https://bsky.app/profile/catwithcode.bsky.social">🦋 Bluesky - CatWithCode</a>
+                    <a href="https://www.youtube.com/@CatWithCode">📺 YouTube - @CatWithCode</a>
+                    <p>🗨️ Discord: catwithcode</p>
+                    <a href="mailto:social@catwithcode.moe">📧 social@catwithcode.moe</a>
+                </div>
+                <br>
+                <a href="/License_and_Privacy.html">License and Privacy</a>
+                <br>
+                <h6>Last Updated:&nbsp;<b>2025.08.06 - 13:05</b></h6>
+                <h6>All Rights reserved. RE//POSSESSED (formerly known as ProjectCWC) is property of the person/people behind CatWithCode. Screenshots and Videos on this page are in engine / in game. Other images like artwork / decoration might be in engine / in game but could be composed to look better because the game is first person and not optimize for a close up third person perspective.</h6>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

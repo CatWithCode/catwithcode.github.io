@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - OpenSuse, Nvidia, Proton and 32bit-Games</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("There is that one guy saying something about Linux and Nvidia in the past. He  had a very positive outlook on the correlation between the two things.");</script>
+    
+    <h1>OpenSuse, Nvidia, Proton and 32bit-Games</h1>    
+    <p>I needed to reinstall my PC (It was so full of trash it started to get Buggy. 4 Year old Manjaro install that saw 2 GPUs and 3 motherboards) and I thought I could try something different. Didn't do that for years and as this Blog shows I love tinkering. So I did. I installed OpenSuse Tumbelweed. I Love OpenSuse since I started using Linux 7 years ago, but it is kinda annoying sometimes to use because you can definitely notice it is based on a Server-OS.</p>
+    <p>After installing with the network installer everything out of the box worked perfect (even Nvidia and Wayland together! WOW!). After a few hours I wanted to play a game and needed steam. I installed it and some games worked and some not. It was so weird. I got really annoyed... . But I found what was the difference between the games. Some were 32 bit and some were 64 bits. The wiki page of Opensuse for Nvidia did not mention that I need to install the 32 bit driver parts myself. If you think about it it makes sense BUT the driver packages a labeled the same, but have "-32" on them. That made me think these were the 32 bit driver for a 32bit installation but NO! You need to install them to! These are not driver, these are the 32 bits-libraries of the 64bit Nvidia driver. The 32 bit driver itself a not visible on a 64 bit install of the OS!</p>    
+    <p>Lets come to the important part and why you are reading this:</p>
+    <br>
+    <p>Install the following things to get 32bit-Games and Programmes to work.</p>
+    <p>If you have an older GPU then install the according driver type (they have something like G05 instead of G06 in the name). Which one you need, you can see behind the main drivers name in the details (it says which GPUs are restricted to the package (stuff like "for GTX 500, 600 and 700)). That is only the case if you have a GPU witch don't get driver support anymore. Else take the highest version (at the time of writing its the G06).</p>
+    <p><u><i>
+    nvidia-computeG06
+    <br>
+    nvidia-computeG06-32bit
+    <br>
+    nvidia-gfxG06-kmp-default
+    <br>
+    nvidia-glG06
+    <br>
+    nvidia-glG06-32bit
+    <br>
+    x11-video-nvidiaG06
+    <br>
+    x11-video-nvidiaG06-32bit
+    </i></u></p>
+    <p>To fulfilled every dependency of proton, just install "wine-staging, steam and lutris". These programs are always needed for gaming on Linux in the most cases and they automatically check other things in Yast while installing so they have everything they need.</p>
+    <p>I  wish I had found something like this blog entry while troubleshooting. And that's exactly what this blog is for: Random BS that I do and document while complain so no one else has to suffer like me or discover stuff that no one needs on their own. :)</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://en.opensuse.org/SDB:NVIDIA_drivers">en.opensuse.org</a></li>
+    </ul>    
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2022.05.21 - 18:30');</script></div>  
+  </body>
+</html>

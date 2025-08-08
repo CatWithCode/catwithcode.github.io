@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Retro Compaq Sleeper PC [RX 7900XT, Ryzen 9 7900X, 32GB DDR5 RAM @ 6000mhz]</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("It overheats?! Hands up who saw that coming.");</script>
+    
+    <h1>My Retro Compaq Sleeper PC with a AMD Radeon RX 7900XT, Ryzen 9 7900X, 32GB DDR5 RAM @ 6000mhz and a 1000W PSU</h1>
+    <a class="centredItems" href="DATA/Main.jpg"><img src="DATA/Main.jpg" alt="Main Image of the Blog Post. Sleeper PC with cute siamese cat on it sleeping." style="width:40%;";></a>
+    <h5 class="centredItems"><i>More images at the bottom of the blog post!</i></h5>
+    <br>
+    <p>I have collected a few old computers and "retro" consoles over the years. Recently I found a Compaq Prolinea 575e at my local recycling center. It is nothing special, just an old x86 computer that was not selling very well at the time. It looked all right from the outside, so I talked to the people there and took it home. Inside, the hardware was... well... some capacitors were not feeling well and puked their fluids all over the place. In short, the hardware was completely f*cked. But the case was still in ok condition and I decided to clean it up as much as possible and, if it looked decent after that, I would make it my new PC case.</p>
+    <p>This is not going to be a HowTO or something. I will post some drawings of what I had to do to make the case usable and some pictures and the hardware I used, but to replicate this you will have to make all the measurements yourself because it is such a compact and optimised build and it cannot be made generic to fit any hardware.</p>
+    <p>After removing the dead hardware and cleaning everything, it was time to plan. I was able to fit the following hardware:</p>
+    <ul>
+      <p><u><b>Main Hardware</b></u>:</p>
+      <li>AMD Ryzen 9 7900X</li>
+      <li>MSI MPG B650I EDGE WIFI - Mini-ITX</li>
+      <li>AMD Radeon RX 7900 XT - Reference Design</li>
+      <li>32GB DDR5 RAM @ 6000mhz</li>
+      <li>PURE POWER 11 FM - 1000W - ATX-PSU</li>
+      <li>1x 1TB M.2 SSD from Samsung</li>
+      <li>1x 1TB SATA SSD also from Samsung</li>
+      <p><u><b>Other Hardware</b></u>:</p>
+      <li>be quiet! Pure Loop 2 120mm</li>
+      <li>Asus BW-16D1HT UHD Blu-Ray-Drive ;)</li>
+      <li>EZDIY-FAB PCIE-Riser Gen 4 16x - 30CM</li>
+      <li>Floppy to USB-FrontPanal</li>
+      <li>7x Noctua NF-A4x20 (Yes... 7. xD)</li>
+      <li>PC building parts (screws, mainboard mounting hardware, front panel connectors, ...)</li>
+      <li>PSU mainboard POWER connector extension (needed because most mainboard power connectors are too rigid and often have hardware in the connector that makes them too high.).</li>
+      <p><u><b>You will need at least the following tools</b></u>:</p>
+      <li>A metal and plastic cutting tool.</li>
+      <li>A cordless screwdriver with metal drills</li>
+      <li>Soldering Iron</li>
+      <li>PC building parts (Screws, Mainboard mounting hardware, front panel conectors, ...)</li>
+      <li>Around 3 days of time</li>
+      <li>Screwdriver</li>
+      <li>"Old PC white" looking spraypaint</li>
+    </ul>
+    <p>I had to drill about 13 small holes to mount the small fans. The other half of the holes for the fans were already drilled in the case from the factory. There are 5 fans in the lower front and they draw air in from the air holes in the front. One is also above the leftmost one (there is a hole in the front panel that allows air to come to it from below) and one fan in the rear left of the case. There is only enough room for one next to the mainboard. The mainboard is fitted as far to the right as the mainboard's back panel will allow. To mount the mainboard, I had to drill 4 holes in the base plate and remove all the metal parts that protrude from the back panel. The hole connecting the left and right chambers had to be widened and everything vertical to the top bar (The horizontal part could stay) had to be removed to fit the PCIE riser connector. For many PSUs, the right side of the CD and Flopy-Drive ?tray? has to be cut off, because at least one connector is too close to it. For the PSU itself, it was necessary to cut the plastic and metal to allow airflow and access to the connectors. The UHD Blu-Ray drive ;) is mounted in the front with the help of two metal plates, the floppy drive is replaced with a USB-C adapter and the old plastic is cut off so that the left and right sides are closed of. Finally, the CPU cooler was chosen because of the flexible tube exits on the block, and the pump is on the tube and only on one side (the right tube just goes through a hole and is movable). I had to cut a large and very carefully measured hole in the base plate and mounted the cooler over it, with the fan to draw air through the cooler. All the fans are intake fans, except for the PSU-Fan and the fan next to the mainboard. In short, the thermal design is designed for high pressure. The hot air SHOULD be pushed out by all the incoming cool air (and the PSU and the one fan at the back will direct the air). The GPU is mounted using the existing PCIE bracket in the back and a small metal bracket holds the GPU tightly to one of the original HDD brackets. It is a good idea to add a counter-screw to the back of the used screw hole in case the nut ever comes loose from vibration and falls off. The PCIE riser goes under the GPU and to the mainboard, and every inch of the 30cm was needed. All the fans (except for the PSU, mainboard SDD fan, pump and radiator fans as they all have their own headers) were connected to the single FAN header on the mainboard with many Y-splitters that came with the fans. All 8 mini fans should never overpower the fan header from my calculations, but it's still a stretch LOL. The font panel of the UHD Blu-Ray drive ;) and the USB-C floppy replacement were sanded and then sprayed (not recommended because of the "cleanup" work on the Blu-Ray drive to get it to open and close nicely again). The power switch can be opened and a small black peace at the top can be cut off to make it into a button. Finally, all case switches and LED's (HDD/POWER-LED and the POWER-SWITCH) were soldered to the mainboard-connectors and then connected to the mainboard.</p>
+    <p>That was a lot of text, but that was it. It is VERY tight. And I mean VERY VERY tight. I had to push a lot of cables down and under the GPU bracket. I still cannot believe that the GPU fans are actually spinning xD.</p>
+    <p>Temperature? Fine. The case does get hot, but the GPU stays at 65-70 at IDEL, 90-95 at 100% load (not much worse than in my previous case, which was a good case with good and well-functioning airflow). The CPU is definitely a lot hotter than before. I used a 360mm radiator before this case and it cooled it much better and kept the CPU above the 95 degree mark for longer. Why 95 degrees? AMD designed this generation of CPUs to use as much power and boost as possible until they reach 95 degrees and then try to stay there. It works, but it is really weird. <b><u>I used my usual settings for better efficiency</u></b>:</p>
+    <p><u><i>Link to a Reddit post on how to find it is in the sources section. Actually hard to find on the web</i></u> (Keeps the general temperature under control without sacrificing performance).</p>
+    <ul>
+      <li>TDP set to 105W "ECO-MODE"</li>
+      <li>"Precision Boost Overdrive" set to "Set Thermal Point 85°C"</li>
+      <li>EXPO/EMP enabled</li>
+      <li>High Efficiency Mode for RAM</li>
+      <li>Internal Graphics to OFF</li>
+      <li>Internal Audio to OFF</li>
+      <li>All FANS set to PWM and system temperature with a slightly higher curve. Makes the computer a little louder than a normal case, but keeps the airflow stable.</li>
+      <li>SecureBoot OFF - (needed for the NCT6687D Kernel module!)</li>
+      <li>Post-Peep ON</li>
+    </ul>
+    <br>
+    <p><u><b>UPDATE - 2024.04.01</b></u>: One expected problem is that the fans only react to the CPU, and that is bad in a case where airflow is SO important! What I did was to set all the fan and pump settings in the BIOS to MAX. This makes sure that everything has enough air during downtime. And in the OS (Linux of course ;)) I had to install the "NCT6687D Kernel module" from "Fred78290". This is needed because the chipset used by MSI is not fully supported by the Linux kernel by default. The easiest way is to install it as a DKMS package, add it to "/etc/modules", get systemd to load it at boot time with the "modules-load.d" module, and enable the GPU parameter with the "amdgpu.ppfeaturemask=0xffffffff" kernel parameter in the boot loader. Now the sensor is detected, but software is needed to control the fans. There are tools such as CoolerControl or CoreCTL that can do this. The best way is to create a custom sensor that uses the current max value of both GPU and CPU and then react to it with a fan curve. As the computer cools down, a delayed fan slow-down is also a good idea to help push the hot air out. A delay of about 5 to 7 seconds each 3°C should be slow enough (I've linked everthing useful I found in the Sources section).</p>
+    <p><u><b>UPDATE - 2024.05.23</b></u>: The AMD Radeon RX 7900XT/XTX fan and overclocking controls are still not what they should be. There seems to be an architectural change in how the settings are applied in the driver. The only tool I could find that mostly works with them was Lact by ilya-zlobintsev. I have added / subtracted the following values for an overclock/undervolt:</p>
+    <ul>
+      <li>Power usage limit: +15% (In my case 38W)</li>
+      <li>Maximum GPU Clock (MHz): +100</li>
+      <li>Maximum VRAM Clock (MHz): +102</li>
+      <li>GPU voltage offset (mV): -200</li>
+      <li>And a very aggressive fan curve. Quiet at normal temperatures, but as soon as a heavy load comes in and heats things up (around 75°C) the fan goes into 100% mode. My reference card would never go 100% on its own, so I forced it.</li>
+    </ul>
+    <p><u><b>UPDATE - 2024.10.17</b></u>: Two days ago MSI released a new BIOS update. It fixed a lot of things. But... it also reset my NVRAM flash. Which means: I had to reinstall GRUB. Not difficult, just annoying. I did not have had 10 years of Linux experience, this would be a nightmare. But this has motivated me to document how I fixed the entries, and to publish my final fan curves so I don't lose them by accident. They are dialled in perfectly now.</p>
+    <p>The Fan-Curves:</p>
+    <ul>
+      <h3><u>>>> CoolerControl</u>:</h3>
+
+      <h3><i>FUNCTION</i>:</h3>
+      <li>Min. Duty Change: 2%</li>
+      <li>Max. Duty Change: 100%</li>
+      <li>Threshold: 7ºC</li>
+      <li>Response Time: 20sec</li>
+      <li>Only On Way Down: Disabled</li>
+
+      <h3><i>FAN's</i>:</h3>
+      <li>0ºC = 40%</li>
+      <li>25ºC = 40%</li>
+      <li>65ºC = 50%</li>
+      <li>80ºC = 80%</li>
+      <li>86.6ºC = 100%</li>
+
+      <h3><i>PUMP</i>:</h3>
+      <li>0ºC = 75%</li>
+      <li>60ºC = 80%</li>
+      <li>75ºC = 100%</li>
+      <li>80ºC = 100%</li>
+      <li>100ºC = 100%</li>
+
+      <!--NEXT:-->
+
+      <h3><u>>>> LACT</u>:</h3>
+
+      <h3><i>FAN's</i>:</h3>
+      <li>40ºC = 30%</li>
+      <li>50ºC = 40%</li>
+      <li>60ºC = 50%</li>
+      <li>70ºC = 65%</li>
+      <li>83ºC = 100%</li>
+    </ul>
+    <p>And here is the Boot-Fix:</p>
+    <p>It uses "TommyTran732 - Tommy"'s BRILLIANT Arch install script as a base. I just changed the script to fit my needs and installed with it. What is to be expected when working with such an install is in the README of my fork. I will only add my way of how I fixed my boot after an BIOS update.</p>
+    <a href="https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC">https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC</a>
+    <a href="https://github.com/TommyTran732/Arch-Setup-Script/issues/51">https://github.com/TommyTran732/Arch-Setup-Script/issues/51</a>
+    <br>
+    <p><u><b>UPDATE - 2024.10.30</b></u>: I did some maintenance on the computer and check everything. The air movement (visible thanks to the missing air filter at the AIO-Intake) is nearly exactly what I wanted. Nothing seems to get to hot or similar. I replaced the feet (which were and still are just cabinet door handle) with better ones that are also not as tall (still more then I wanted but far better), replaced the mainboard standoff's (which were standoff's with washer inside and outside to counter) with special nuts that I could counter screw from the outside (the perfect solution I wanted from the start but did not had the parts for at the time), added a little bit of foam on all contact points of the CPU-AIO, replaced the AIO-Fan with a 120mm Noctua Fan because Noctua and finally added a Air-Filter at the AIO-Intake. Far more work the just maintenance but these were things I wanted to fix for some time now. CoolerControl dose btw. support 7900XT/XTX-Fan control now! I still use LACT for overclocking and undervolting but have set the FAN's to "<i>Automatic</i>". Then I created the same Curve-Profil in CoolerControl. This allows the GPU and CPU to work as one Sensor for both System-Fans/CPU-Fans/Pump and GPU-Fan's. Far smoother behavior when performance is needed and less of a sudden jump if it is only a short spike.</p>
+    <br>
+    <p>That was about it. The computer works well, is a bit louder than other cases but not too bad. Lets see how long it works like soooo many other sleeper builds out there.</p>
+    <br>
+    <hr>
+    <br>
+    <h2><u><b>And now a gallery of pictures of it</b></u>:</h2>
+    <a href="DATA/01.jpg" class="centredItems"><img src="DATA/01.jpg" alt="01 Sleeper PC with cute cat on it sleeping." style="width:50%;";></a>
+    <a href="DATA/02.jpg" class="centredItems"><img src="DATA/02.jpg" alt="02 Sleeper PC with cute cat on it sleeping again." style="width:50%;";></a>
+    <a href="DATA/03.jpg" class="centredItems"><img src="DATA/03.jpg" alt="03 Cat behind open computer with tung out." style="width:50%;";></a>
+    <a href="DATA/04.jpg" class="centredItems"><img src="DATA/04.jpg" alt="04 AIO bend to fit into case." style="width:50%;";></a>
+    <a href="DATA/05.jpg" class="centredItems"><img src="DATA/05.jpg" alt="05 Mainboard with GPU above." style="width:50%;";></a>
+    <a href="DATA/06.jpg" class="centredItems"><img src="DATA/06.jpg" alt="06 Side view from the Mainboard side." style="width:50%;";></a>
+    <a href="DATA/07.jpg" class="centredItems"><img src="DATA/07.jpg" alt="07 Small fans and their orientation." style="width:50%;";></a>
+    <a href="DATA/08.jpg" class="centredItems"><img src="DATA/08.jpg" alt="08 Front with air intakes." style="width:50%;";></a>
+    <a href="DATA/09.jpg" class="centredItems"><img src="DATA/09.jpg" alt="09 Back of the case with PSU cutout and cat sitting in the background... menacingly." style="width:50%;";></a>
+    <a href="DATA/10.jpg" class="centredItems"><img src="DATA/10.jpg" alt="10 PSU side of the case." style="width:50%;";></a>
+    <a href="DATA/11.jpg" class="centredItems"><img src="DATA/11.jpg" alt="11 Case open shown from above" style="width:50%;";></a>
+    <a href="DATA/12.jpg" class="centredItems"><img src="DATA/12.jpg" alt="12 Cat sitting on the case... again." style="width:50%;";></a>
+    <p><u><b>UPDATE - 2024.06.15</b></u>: I added metal feet to the case and added an air channel which improved the air flow by a good amount. The gpu should now push most of its air out of the case. At the middle wall of the case I also added some plastic to make the hole less air flow friendly. If you are wondering what I am using for this: It is an old plastic box, cut into pieces as needed lol.</p>
+    <a href="DATA/13.jpg" class="centredItems"><img src="DATA/13.jpg" alt="13 Air channel System for GPU and Case." style="width:50%;";></a>
+    <br>
+    <p><u><b>UPDATE - 2025.04.19</b></u>: I sadly had to decommission the case. It worked very well most of the time. But the last few month and especially the last few weeks I need it to have all the performance the hardware can give me all the time. That sadly means switching to a more efficient case with much bigger cooling hardware aka. the old one. Believe me I am not happy about doing this, but I need the performance. I know that most of the time the few percent of performance limited by the design of the thermal solution and the settings made because of it by me, dose not make a difference but the times the PC is working the hardest the last few drops of performance must be available else it ruins the usage experience. I know, I know always the edge cases but it feels like all I do is edge cases xD.</p>
+    <p>I also dabbled a little in overclocking. My old Mainboard that was made for OC stuff broke as I wrote at some point (I never buy Gigabyte again. Thats the 3th one having issues) so I use my ITX Mainboard. It is very good but I dont think it will be able to push the CPU to the limit (CPU performance is way above what I currently need anyway) so I just OCed the GPU. The best stable OC with my XFX 7900XT Reference Model I got is (Power Limit: 333W | GPU-Clock: 3200MHz | VRAM-Clock: 2500MHz (Not a single MHz over factory was stable, so STOCK) | GPU-Voltage offset: -60mV).</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.reddit.com/r/MSI_Gaming/comments/y13m3t/a_quick_look_at_msi_b650_bios_features_pbo/">https://www.reddit.com/r/MSI_Gaming/comments/y13m3t/a_quick_look_at_msi_b650_bios_features_pbo/</a></li>
+      <li><a href="https://askubuntu.com/questions/1394680/unable-to-see-fan-speed-on-ubuntu-20-04-with-msi-board">https://askubuntu.com/questions/1394680/unable-to-see-fan-speed-on-ubuntu-20-04-with-msi-board</a></li>
+      <li><a href="https://github.com/Fred78290/nct6687d">https://github.com/Fred78290/nct6687d</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/71064/systemd-automate-modprobe-command-at-boot-time">https://unix.stackexchange.com/questions/71064/systemd-automate-modprobe-command-at-boot-time</a></li>
+      <li><a href="https://superuser.com/questions/1583194/how-to-make-amdgpu-ppfeaturemask-work-with-kernel-5-4-0-of-ubuntu-20-04">https://superuser.com/questions/1583194/how-to-make-amdgpu-ppfeaturemask-work-with-kernel-5-4-0-of-ubuntu-20-04</a></li>
+      <li><a href="https://gitlab.com/coolercontrol/coolercontrol">https://gitlab.com/coolercontrol/coolercontrol</a></li>
+      <li><a href="https://gitlab.com/corectrl/corectrl">https://gitlab.com/corectrl/corectrl</a></li>
+      <li><a href="https://wiki.archlinux.org/title/Fan_speed_control">https://wiki.archlinux.org/title/Fan_speed_control</a></li>
+      <li><a href="https://github.com/Maldela/Fancontrol-GUI">https://github.com/Maldela/Fancontrol-GUI</a></li>
+      <li><a href="https://github.com/ilya-zlobintsev/LACT">https://github.com/ilya-zlobintsev/LACT</a></li>
+      <li><a href="https://github.com/Fred78290/nct6687d/issues/94">https://github.com/Fred78290/nct6687d/issues/94</a></li>
+      <li><a href="https://www.reddit.com/r/Amd/comments/zzzhnh/a_short_report_and_guide_on_7900xtx_ocuv/">https://www.reddit.com/r/Amd/comments/zzzhnh/a_short_report_and_guide_on_7900xtx_ocuv/</a></li>
+      <li><a href="https://youtu.be/pZThC3ZHwuE">https://youtu.be/pZThC3ZHwuE</a></li>
+      <li><a href="https://github.com/TommyTran732">https://github.com/TommyTran732</a></li>
+      <li><a href="https://github.com/TommyTran732/Arch-Setup-Script">https://github.com/TommyTran732/Arch-Setup-Script</a></li>
+      <li><a href="https://community.frame.work/t/responded-arch-bios-update-guide/13551">https://community.frame.work/t/responded-arch-bios-update-guide/13551</a></li>
+      <li><a href="https://bbs.archlinux.org/viewtopic.php?id=289437">https://bbs.archlinux.org/viewtopic.php?id=289437</a></li>
+      <li><a href="https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC">https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC</a></li>
+      <li><a href="https://github.com/patarapolw/arch-btrfs">https://github.com/patarapolw/arch-btrfs</a></li>
+      <li><a href="https://github.com/patarapolw">https://github.com/patarapolw</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.04.19 - 06:50', "ALL RIGHTS RESERVED, INCLUDING IMAGES!");</script></div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - OpenSuse/Linux - Fix Very Long Shoutdown Time</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Just Linux things, right guys, right?");</script>
+    
+    <h1>How to fix a very long Shoutdown Time on OpenSuse/Linux</h1>    
+    <p>If your OpenSuse/Linux System takes very long to shutdown there is a thing you could try that fixed it for me in almost all cases.</p>
+    <p>If your OpenSuse/Linux dose not show what it dose on Boot/Shooutdown, aka. "Quiet boot" you need to temporarily disable it. That's very easy; Reboot your PC, in GRUB press 'E' and try to navigate the cursor to the following and remove it (this can be a little finicky):</p>
+    <p><u><i>splash=silent quiet</i></u></p>
+    <p><u>This is  temporary! Nothing permanent! It will be back to normal after one reboot!</u> Press F10. Now you can see what happens on boot/shoutdown. Boot your Linux, log in, wait a little and then reboot again. Now you see what your System dose, when it hangs on shutdown. If your screen is black just press CTRL+ALT+F1 to F12 to find a screen where it shows the current state. If it says something like the following you found your issue. If it is not that then this guide is over here. Sorry:</p>
+    <p><u><i>A stop job is running for System Logging Service ...</i></u></p>
+    <p>Its the system logging service that has issues closing. To fix it you need to find out what logging Software you use. Boot your PC again and search in your package manager what logging service you have installed. There two common ones: "rsyslog" and "SYSLOG-ng". If you have one of them you need to switch to the other. In OpenSuse you can open yeast and just uninstall the installed software (it will automatically ask you to install the other one). If that's not the case, mark the one to install and the other to uninstall. Pretty much the same an all other distros. After that you need to enable the service. If you have systemD type the following into your terminal (if you have something different you probably know how to do it, if not find out how to do it. If you don't know what you have just look if the systemD is installed in the package manager:</p>
+    <p><u><i>sudo systemctl enable syslog-ng</i></u></p>
+    <p>OR</p>
+    <p><u><i>sudo systemctl enable rsyslog</i></u></p>
+    <p>Depending on what you needed to install.</p>
+    <p>Now reboot. It should be fixed. At least for me it was. If you are a very low level developer or thinker with a lot very specific and kernel depending stuff this switch could make some things different from now on. Like stuff where you need a kernel log or something. If it causes issues just revert the changes.</p>
+    <p>That's pretty much it. For me this literally always was and fixed that issue. Hope I could help you. Bye! :)</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://forums.opensuse.org/showthread.php/571409-Ninety-second-shutdown-delay-quot-A-stop-job-is-running-for-system-logging-service-quot?p=3135179">forums.opensuse.org</a></li>
+      <li><a href="https://software.opensuse.org/package/syslog-ng">software.opensuse.org</a></li>
+      <li><a href="https://syslog-ng.gitbooks.io/getting-started/content/chapters/chapter_0/section_2.html">syslog-ng.gitbooks.io</a></li>
+      <li><a href="https://www.linuxquestions.org/questions/suse-opensuse-60/install-syslog-ng-on-opensuse-4175645163/">linuxquestions.org</a></li>
+      <li><a href="https://software.opensuse.org/package/rsyslog">software.opensuse.org</a></li>
+      <li><a href="https://techviewleo.com/configure-central-rsyslog-logging-server-on-opensuse/">techviewleo.com</a></li>
+      <li><a href="https://www.suse.com/support/kb/doc/?id=000019658">suse.com</a></li>
+    </ul>    
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2022.07.05 - 21:00');</script></div>  
+  </body>
+</html>

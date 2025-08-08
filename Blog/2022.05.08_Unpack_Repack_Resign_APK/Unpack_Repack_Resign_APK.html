@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Unpack, Repack and Resign APKs/APPs</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Mostly useless today. But at least one part of the best phone ever will survive for the foreseeable future. Did I mention I like blackberry's? Very tasty these.");</script>
+    
+    <h1>Unpack, Repack and Resign APKs/APPs</h1>    
+    <p>Sometimes it can be useful to make modifications to an Apps AndroidManifest.xml. When you have developed an app years ago and you want to change some propriety's and you deleted/lost the source code. When you have a very old android version and an app does not install because of some artificial limitation from developer even when the app is just a simple app like a text editor. Or you want to use an app like a file manager from your old phone on your new phone but the phone maker made a dependency to one file in the system so the app only installs on this phone and not any other. In such cases this method would work.</p>
+    <h1>This can <u><b>!NOT!</b></u> be used to remove DRM, remove Ads, cheat in games or modify any of the source code. You only get access to some assets like .png's and the AndroidManifest. THAT'S IT! This also not works with apps that check their certificate, Hash or connect to anything on the internet. This works only on offline only apps like some old apps/games or some system apps like keyboards, audio recorder or file manager. You also can not replace apps with this. Android sees the new apk as it completely new app. YOU ARE <U>!NOT!</U> ALLOWED TO UPLOAD, DISTRIBUTE OR SHARE THE FINAL APK FILE!</h1>
+    <h2><u>This may or may not be legal in your region.</u></h2>
+    <p>You also need to know how to work with text xml files.</p>
+    <p>This also ONLY works on Linux and WSL.</p>
+
+    <br>
+    <p>-Download apktool.</p>
+    <p>-You need to Unpack you apk. For that you use apktool:</p>
+    <p><u><i>java -jar apktool.jar d MyApp.apk</i></u></p>
+    <br>
+    <p>-Now you can change the AndroidManifest.xml and make your needed changes. If you are doing this to install an incompatible app, it can help to install the APK with help from android adb to see the exact error message. That can be a really good starting point.</p>
+    <br>
+    <p>-After that you need to Repack the apk. For that do the following:</p>
+    <p><u><i>java -jar apktool.jar b MyApp</i></u></p>
+    <br>
+    <p>You find your Repacked apk inside the dist folder in the Project folder (In my case /MyApp/dist/MyApp.apk)</p>
+    <br>
+    <p>Now you need to Resign the APK. You also need to generate a certificate for that. Java has a key tool build in in its jdk. You need to go into the java folder to make sure you use the same version of java to create a certificate and sign an app. I use arch. If the path is different on your distro change the path accordingly.</p>
+    <p><u><i>/usr/lib/jvm/java-8-openjdk/bin/keytool -genkey -v -keystore /home/#YOURNAME#/keyStore.keystore -alias app -keyalg RSA -keysize 2048 -validity 10000</i></u></p>
+    <p>Fill the Details with the needed things. How real these are is on you.</p>
+    <br>
+    <p>Now resign your app:</p>
+    <p><u><i>/usr/lib/jvm/java-8-openjdk/bin/jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/#YOURNAME#/keyStore.keystore home/#YOURNAME#/MyApp/dist/MyApp.apk app</i></u></p>
+    <br>
+    <p>If everything has gone right your APK is finished and can be installed.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://ibotpeaches.github.io/Apktool/">Apktool - GitHub Page</a></li>
+      <br>
+      <b><b>Helpful Link's:</b></b>
+      <li><a href="https://stackoverflow.com/questions/66354829/how-to-correctly-re-compile-an-apk-file">Unpack and Repack - Stackoverflow</a></li>
+      <li><a href="https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk">Resign App - Stackoverflow</a></li>
+    </ul>    
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2022.05.08 - 17:00');</script></div>
+  </body>
+</html>

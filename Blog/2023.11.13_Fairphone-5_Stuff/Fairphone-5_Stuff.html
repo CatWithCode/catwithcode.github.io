@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Everything about Fairphone 5 modding</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Not a good phone, a fair phone.");</script>
+    
+    <h1>Everything about Fairphone 5 modding:</h1>
+    <p>This time I will do things differently on my blog; I will just document everything useful I find out or do with the Fairphone 5 in one place without a goal in mind, as long as I am using it. Everything from modding to installing UbuntuTouch will be documented here:</p>
+    <p>A few important things first:</p>
+    <ul>
+      <li>I use Linux for everything.</li>
+      <li>I don't use MicroG and all my scripts don't install it, and if it's pre-installed I uninstall it with the scripts for better battery life. If you want to keep it you can just comment out all the MicroG lines in the scripts.</li>
+      <li>Any changes that involve root, other OS installations, custom roms or UbuntuTouch require AT LEAST an unlocked bootloader and unlock_critical, and often Magisk installed on the boot.img!</li>
+      <li><h2>Do <b><u>!!!NOT!!!</u></b> relock the bootloader or relock unlock_critical! Not even if you REALLY REALLY R-E-A-L-L-Y need to! <u>This will most likely brick your phone!!!</u> And if you really want to risk a 99.9% chance of bricking your phone, <u>at least</u> flash the stock firmware with the OFFICIAL tool first!</h2></li>
+      <li>If you are rooting your phone, please read the Rooting section carefully to find out how to update your ROM over OTA or in general!</li>
+    </ul>
+    <br>
+    <!--HERE NEW ENTRY (COPY, PASTE PLACEHOLDER)-->
+    <hr>
+    <h2><u>UbuntuTouch on the Fairphone 5</u>:</h2>
+    <p>IT HAS FINALLY HAPPENED! It is out! And I will be running it and documenting EVERYTHING for everyone. It will be quite extensive, so I have moved it to its own entry:</p>
+    <a href="/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html">/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html</a>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Installing LineageOS</u>:</h2>
+    <p>Finally, one year after the release of the Fairphone 5, LineageOS is officially available. The installation is a little more involved than it was back in the Android 10 days, but consists of little more than unlocking the bootloader, flashing some custom boot and vendor partitions and then using them to install LineageOS completely. It is by far (as usual on Android) the best AndroidROM you can use. With a de-Google script, you can remove the last few remnants of Google-BS and you have a really clean AndroidOS. I have a script linked in this entry that I use and it should work with LineageOS too (Just remove the APK and DISABLE parts, those are only needed on stock FairphoneOS! IDK what they would do on LineageOS). If you want to install it too just follow the official instructions.</p>
+    <a href="https://wiki.lineageos.org/devices/FP5/">https://wiki.lineageos.org/devices/FP5/</a>
+    <a href="https://wiki.lineageos.org/devices/FP5/install/">https://wiki.lineageos.org/devices/FP5/install/</a>
+    <a href="https://download.lineageos.org/devices/FP5/builds">https://download.lineageos.org/devices/FP5/builds</a>
+    <br>
+    <a href="https://github.com/CatWithCode/Fairphone5-Tweaks/blob/main/deGoogle/DeGoogle_Fairphone.sh">https://github.com/CatWithCode/Fairphone5-Tweaks/blob/main/deGoogle/DeGoogle_Fairphone.sh</a>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>ACC (ACCA) on FairphoneOS or /e/OS</u>:</h2>
+    <p>Currently, ACC does not work on the available Android ROMs. It will probably work on all custom ROMs, but I've only tested it on more or less two stock ROMs (FairphoneOS and /e/OS) and neither of them worked. I'm really sure it has something to do with the read-only system partitions. It should work on GSI's BUT I have tested and used them a lot in the past and they more often then not, not worth the effort and are only a good option if you have non good native port's. Currently /e/OS is the best way to get a good LineageOS Port on your Fairphone 5.</p>
+    <a href="https://github.com/VR-25/acc">https://github.com/VR-25/acc</a>
+    <a href="https://f-droid.org/packages/mattecarra.accapp/">https://f-droid.org/packages/mattecarra.accapp/</a>
+    <a href="https://github.com/MatteCarra/AccA/releases">https://github.com/MatteCarra/AccA/releases</a>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Android Auto with CustomRom's or /e/OS with and without* MicroG (ROOT)</u>:</h2>
+    <p>I moved it to it's own entry because the amount of work makes it worth it:</p>
+    <a href="/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html">/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html</a>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Switch stock/"/e/OS" builds/branches/channels from Stable to DEV without losing userdata</u>:</h2>
+    <p>It is not recommended and (can)/WILL break things. But you can do it;</p>
+    <p>Open the "flash_FP5_factory.sh"-file and comment out the following lines with a "#";</p>
+    <p>It sould go from this:</p>
+    <p>
+      ...
+      <br>
+      flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+      <br>
+
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" erase userdata
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
+
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" --set-active=a
+    </p>
+    <p>...</p>
+    <p>To this:</p>
+    <p>
+      ...
+      <br>
+      flash_image_ab_or_abort "${sn}" shrm "${IMAGES_DIR}/shrm.img"
+      <br>
+
+      <br>
+      #"$FASTBOOT_BIN" -s "${sn}" erase userdata
+      <br>
+      #"$FASTBOOT_BIN" -s "${sn}" erase metadata
+      <br>
+
+      <br>
+      "$FASTBOOT_BIN" -s "${sn}" --set-active=a
+    </p>
+    <p>...</p>
+    <p>That's it. Now run the file and you should have the new firmware on your device WITHOUT losing your userdata.</p>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Battery Runtime Scoreboard</u>:</h2>
+    <p>All the setups I used ranked on battery runtime (No scientific data, just daily usage, charge limit at 83% for battery health):</p>
+    <ol>
+      <li>/e/OS (Without MicroG and /e/Services) - REALLY GOOD!; 3 days on a charche with light use. About 8 hours with the screen on at normal to low brightness. </li>
+      <li>Fairphone 5 Stock-Rom [deGoogled] - OK; About 1.5 days on a charge, about 5-6 hours of screen time. Mostly due to problems in the OS, caused by parts of the system being disabled and/or uninstalled, causing errors in many places.</li>
+      <li>Fairphone 5 Stock-Rom - Meh; The usual problem with using Google services. About 4-5 hours of screen time and 1 day maximum battery runtime.</li>
+      <!--
+      <li>PLACEHOLDER</li>
+      -->        
+    </ol>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Fixed screen refresh rate (sometimes)</u>:</h2>
+    <p>Not much to it. Just force a high refreshrate (as far as the normal system will allow). This will fix wrong refreshrates on other roms like /e/OS. These ADB commands are also in my scripts. There is a bug in the current /e/OS build that breaks 90hz. After locking and unlocking the phone, the screen feels... weird. No idea why. Currently only 60hz works properly on /e/OS:</p>
+    <a href="https://source.android.com/docs/core/graphics/multiple-refresh-rate">https://source.android.com/docs/core/graphics/multiple-refresh-rate</a>
+    <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
+    <p>Stock and other Rom's:</p>
+    <ul>
+      <li><u><i>adb shell settings put system min_refresh_rate 90</i></u></li>
+      <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
+    </ul>
+    <p>On /e/OS (Bugged at the time of writing. Could already be fixed):</p>
+    <ul>
+      <li><u><i>adb shell settings put system min_refresh_rate 60</i></u></li>
+      <li><u><i>adb shell settings put system peak_refresh_rate 90</i></u></li>
+    </ul>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Installing /e/OS</u>:</h2>
+    <p>They have released the official /e/OS port for the Fairphone 5. The first release has a few minor issues (90hz mode randomly turns off, boot animation is a bit buggy with magisk installed, the system is sometimes laggy for a few seconds) but it is a good port and at the time of writing a good and easy way to de-Google the Fairphone 5. I wrote a script to remove MicroG and /e/OS components from the OS without breaking anything. I do not need MicroG and do not use any /e/OS services. You can find it in my "Fairphone5-Tweaks" repository. The Fairphone 5 can also be purchased with the /e/OS pre-installed for 50€ extra if this is important to you:</p>
+    <p>There are stable builds, which is updated every few months, and a dev builds, which is updated once or twice a month and can be viewed like LineageOS Nightly-Builds. Pick your poison. I use dev. Switching between dev and stable is possible, but not recommended by the creators of /e/OS (so much so that you will find NOTHING on how to do it for them). I have added how to do it to this blog post. Your welcome :3.</p>
+    <a href="https://doc.e.foundation/devices/FP5/install">https://doc.e.foundation/devices/FP5/install</a>
+    <br>
+    <a href="https://murena.com/shop/smartphones/brand-new/murena-fairphone-5/">https://murena.com/shop/smartphones/brand-new/murena-fairphone-5/</a>
+    <br>
+    <a href="https://github.com/CatWithCode/Fairphone5-Tweaks">https://github.com/CatWithCode/Fairphone5-Tweaks</a>
+    <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
+    <ol>
+      <li>Downloading the official Install Archive from there Website: <a href="https://doc.e.foundation/devices/FP5/install">https://doc.e.foundation/devices/FP5/install</a></li>
+      <li>Rebooting the phone into the bootloader <u><i>adb reboot bootloader</i></u></li>
+      <li>Extract the archive, open a bash in it, make the installer executable and run it: <u><i>chmod +x flash_FP5_factory.sh && ./flash_FP5_factory.sh
+      </i></u></li>
+      <li>Once everything is done and the phone has booted, you can use my script to clean up the OS to have a clean plate to work from (<u><b>!!!Important!!! Take all possible permissions from BlissLauncher. With permissions, BlissLauncher will crash!</b></u>) and/or root it (do not reuse your old modded boot.img! The /e/OS-Boot.img is different! You need to redo the rooting part to have a usable rooted boot.img to boot from for the full Magisk installation!).</li>
+    </ol>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>de-Google of the Stock-Rom</u>:</h2>
+    <p>At the time of writing, there are more or less no CustomRoms. They are all under development. This meant that I had to de-google the stock rom as much as possible without breaking things. After a lot of testing, I found a config that keeps everything working, including updates, without modifying the Stock-Rom at all, while cleaning it up as much as possible without root (The stock rom is closed source, which means cleaning everything up and making sure your done is impossible). I used Universal Android Debloater and some other tutorials on the internet to create a script. You can find it in my "Fairphone5-Tweaks" repository:</p>
+    <a href="https://github.com/CatWithCode/Fairphone5-Tweaks">https://github.com/CatWithCode/Fairphone5-Tweaks</a>
+    <p>You need to replace almost every app on your phone. The script will also install any APK it finds in the Assets/Basic/ subfolders. Make sure the apps are the correct architecture! I recommend installing them all on the phone itself with the F-Droid and Aurora App and then dumping them with an extractor. Then you can create your own apk folder for easy reinstall after a reset.</p>
+    <p>GPS provider and WebView needs also to be swaped out. The issue is that Bromite is more or less abandoned and other WebView replacements are not well supoorted. At the moment it dose not theme worth it. GPS provider can be changed to one in you area.</p>
+    <h1><u><b>IMPORTANT:</b></u></h1>
+    <p><u><b>>>> READ THE Aurora-Store FIX-SECTION!</b></u></p>
+    <p><u><b>>>> "Google Play Services" and "Google Services Framework" are only disabled! You need them to update the stock rom via OTA! Enable both and you can update again! A temporary uninstall would soft-brick this functionality! You could flash each OTA update (could not find any offical zip's) with the recovery, but this could lead to bricking and slot desynchronisation!</b></u></p>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Fixing wrong architecture in the Aurora-Store</u>:</h2>
+    <p>This was so annoying to figure out. Aurora-Store NORMALLY downloads the right architecture of Apps for the phone... NORMALLY. It had the correct default phone architecture selected in the settings, but many apps would install but not work. Fixing this is as simple as going into the Aurora Store device settings and selecting "Google Pixel 7a" with "arm64-v8a". Examples of apps with this problem were: Discord, Komoot, Maps, SteamLink, Spotify, ... . It is also good to know that a lot of app's today are multi apk, means: Many of them cannot be easily backed up and restored:
+    </p>
+    <a href="https://forum.fairphone.com/t/a-lot-of-apps-not-working-with-logs-discord-komoot-maps-steamlink-and-spotify/102736">https://forum.fairphone.com/t/a-lot-of-apps-not-working-with-logs-discord-komoot-maps-steamlink-and-spotify/102736</a>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Rooting the phone (Any Stock-Rom/Custom-Rom)</u>:</h2>
+    <p>As far as I have seen it is recommended on modern Android that you only BOOT a modified boot image (NOT FLASH) and then use Magisk in Android to directly root the installed bootloader:</p>
+    <a href="https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662">https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662</a>
+    <br>
+    <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
+    <ol>
+      <li>Getting the offical Firmware: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
+      <li>Extracting the boot.img</li>
+      <li>Installing the Magisk-App on the Phone: <a href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></li>
+      <li>Pathing the boot.img with the Magisk-App</li>
+      <li>Copy modded boot.img to PC</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot boot modded_boot.img</li>
+      <li>Opening Magisk-App and <u>NOT</u> pressing Yes at the further modifications needed popup</li>
+      <li>Select Install Magisk and choose direct install (For OTA: Open Magisk, Uninstall Root (DON'T REBOOT!), Install OTA-Update WITHOUT REBOOT, Open Magsik and let it Install into the "Inactive Slot", Now reboot! Don't do this if no Computer is nearby to restore your phone. Soft-Bricks are possible with this!): <a href="https://topjohnwu.github.io/Magisk/ota.html">https://topjohnwu.github.io/Magisk/ota.html</a></li>
+      <li>Reboot</li>
+      <li>Opening Magisk-App and pressing Yes at the further modifications needed popup</li>
+      <li>Reboot</li>
+    </ol>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <h2><u>Unlocking the Phone / Reinstalling the Stock Rom</u>:</h2>
+    <p>For some reason, you have to unlock the phone's bootloader and critical partitions to reinstall the stock ROM. An interesting part of doing this was that I never encountered any "warranty void" stuff on the way, neither on the phone nor in the OFFICIAL guides. They just mention that you need to flash the phone back to stock (and preferably lock the bootloader again) if you want to claim warranty. I am no expert, but as far as I can see, that seems to be the way they do it. Voiding the warranty because of software modifications is illegal anyway as far as I know, but still very cool that they are so open about it (DO NOT QUOTE ME OR USE THIS AS A SOURCE! THIS IS JUST UNCONFIRMED STUFF I PUT TOGETHER MYSELF! IF YOU SCREW UP, YOUR LOSS! I AM NOT A LAWYER AND THIS IS NOT LEGAL ADVICE! THIS IS JUST ME RAMBLING!!!):</p>
+    <a href="https://support.fairphone.com/hc/en-us/articles/10492476238865-Manage-the-Bootloader">https://support.fairphone.com/hc/en-us/articles/10492476238865-Manage-the-Bootloader</a>
+    <p>One VERY annoying thing is that you need an unlock code from them. And from a little bit of testing I saw that your code is checked by a server. This means that if you create 3 unlock codes, only the last one will work. This is one of the only really bad points on the phone for me at the moment. If the server or the company ever shuts down the bootloader will probably be locked forever and the software will become obsolete.</p>
+    <a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a>
+    <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a>
+    <br>
+    <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
+    <p><u>Unlocking</u>:</p>
+    <ol>
+      <li>Settings → About phone → scroll down to IMEI (SIM slot 1)</li>
+      <li>Settings → About phone → Model & Hardware → Serial number</li>
+      <li>Get your unlock code: <a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a></li>
+      <li>Settings → About phone → 5x Build number</li>
+      <li>Settings → System (→ Advanced) → Developer options</li>
+      <li>OEM unlocking</li>
+      <li>USE THE UNLOCK CODE (Internet connection required)</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot flashing unlock</li>
+      <li>YES</li>
+      <li>Settings → About phone → 5x Build number</li>
+      <li>adb reboot bootloader</li>
+      <li>fastboot flashing unlock_critical</li>
+      <li>YES</li>        
+    </ol>
+    <p><u>Flashing Stock Firmware</u>:</p>
+    <p>It could happen that you only get the following output without any flashing of files: "<u><i>Info: One Fairphone 5 in fastboot mode found (serial number: XXXXXXXX).</i></u>". This means that executables in the subfolders can not run and are missing the flag that allows them to be executed. Run "<b><u><i>chmod +x *.*</i></u></b>" in the main folder and every file that was in the archive should now be executable.</p>
+    <ol>
+      <li>adb reboot bootloader</li>
+      <li>Extracting the latest Firmware Archive: <a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
+      <li>Opening a Terminal in the folder and executing <u><i>./flash_fp5_factory.sh</i></u> and following the prompts.</li>
+    </ol>
+    <hr>
+    <!-- PLACEHOLDER -->
+    <!--
+    <hr>
+    <h2><u>PLACEHOLDER</u>:</h2>
+    <p>PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER:</p>
+    <a href="PLACEHOLDER">PLACEHOLDER</a>
+    <p>
+      <ul>
+        <li>PLACEHOLDER</li>
+        <li>PLACEHOLDER</li>
+      </ul>
+    </p>
+    <p><u>Command's used (ALWAYS READ THE OFFICIAL DOCUMENTATION! THIS IS ONLY FOR ARCHIVING PURPOSES!)</u>:</p>
+    <p>
+      <ol>
+        <li>PLACEHOLDER</li>
+        <li>PLACEHOLDER</li>
+      </ol>
+    </p>
+    <p><u><i>PLACEHOLDER</i></u></p>
+    <hr>
+    <br>
+    <br>
+    -->
+    <!-- PLACEHOLDER -->
+    <br>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://forum.fairphone.com/t/a-lot-of-apps-not-working-with-logs-discord-komoot-maps-steamlink-and-spotify/102736">https://forum.fairphone.com/t/a-lot-of-apps-not-working-with-logs-discord-komoot-maps-steamlink-and-spotify/102736</a></li>
+      <li><a href="https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone">https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone</a></li>
+      <li><a href="https://support.fairphone.com/hc/en-us/articles/10492476238865-Manage-the-Bootloader">https://support.fairphone.com/hc/en-us/articles/10492476238865-Manage-the-Bootloader</a></li>
+      <li><a href="https://github.com/CatWithCode/Fairphone5-Tweaks">https://github.com/CatWithCode/Fairphone5-Tweaks</a></li>
+      <li><a href="https://www.fairphone.com/en/legal/">https://www.fairphone.com/en/legal/</a></li>
+      <li><a href="https://ubports.com/fr/">https://ubports.com/fr/</a></li>
+      <li><a href="https://support.fairphone.com/hc/en-us/articles/18896094650513">https://support.fairphone.com/hc/en-us/articles/18896094650513</a></li>
+      <li><a href="https://download.lineageos.org/devices/FP5/builds">https://download.lineageos.org/devices/FP5/builds</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Fairphone_5_(fairphone-fp5)">https://wiki.postmarketos.org/wiki/Fairphone_5_(fairphone-fp5)</a></li>
+      <li><a href="https://shop.fairphone.com/de/shop">https://shop.fairphone.com/de/shop</a></li>
+      <li><a href="https://github.com/waydroid/waydroid/issues/226">https://github.com/waydroid/waydroid/issues/226</a></li>
+      <li><a href="https://forum.fairphone.com/t/operating-systems-for-fairphones/11425">https://forum.fairphone.com/t/operating-systems-for-fairphones/11425</a></li>
+      <li><a href="https://forums.ubports.com/">https://forums.ubports.com/</a></li>
+      <li><a href="https://forums.ubports.com/search?in=titlesposts&term=Fairphone+5&matchWords=all&by=&categories=&searchChildren=false&hasTags=&replies=&repliesFilter=atleast&timeFilter=newer&timeRange=&sortBy=topic.lastposttime&sortDirection=desc&showAs=posts">https://forums.ubports.com/search?in=titlesposts&term=Fairphone+5&matchWords=all&by=&categories=&searchChildren=false&hasTags=&replies=&repliesFilter=atleast&timeFilter=newer&timeRange=&sortBy=topic.lastposttime&sortDirection=desc&showAs=posts</a></li>
+      <li><a href="https://youtu.be/sIO36VRB-dw">https://youtu.be/sIO36VRB-dw</a></li>
+      <li><a href="https://github.com/fairphone/android_device_fairphone_FP5">https://github.com/fairphone/android_device_fairphone_FP5</a></li>
+      <li><a href="https://xdaforums.com/f/fairphone-5.12791/">https://xdaforums.com/f/fairphone-5.12791/</a></li>
+      <li><a href="https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662">https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662</a></li>
+      <li><a href="https://code.fairphone.com/projects/fairphone-5/kernel.html">https://code.fairphone.com/projects/fairphone-5/kernel.html</a></li>
+      <li><a href="https://github.com/0x192/universal-android-debloater">https://github.com/0x192/universal-android-debloater</a></li>
+      <li><a href="https://gist.github.com/androidneha/896ec6b08137ef75a95341550b9c60fc">https://gist.github.com/androidneha/896ec6b08137ef75a95341550b9c60fc</a></li>
+      <li><a href="https://github.com/0x192/universal-android-debloater/wiki/FAQ">https://github.com/0x192/universal-android-debloater/wiki/FAQ</a></li>
+      <li><a href="https://murena.com/shop/smartphones/brand-new/murena-fairphone-5/">https://murena.com/shop/smartphones/brand-new/murena-fairphone-5/</a></li>
+      <li><a href="https://doc.e.foundation/devices/FP5/install">https://doc.e.foundation/devices/FP5/install</a></li>
+      <li><a href="https://forum.fairphone.com/t/e-os-manual-installation/100321/6">https://forum.fairphone.com/t/e-os-manual-installation/100321/6</a></li>
+      <li><a href="https://community.e.foundation/t/week-46-2023-development-and-testing-updates/53363/23?u=anotherelk">https://community.e.foundation/t/week-46-2023-development-and-testing-updates/53363/23?u=anotherelk</a></li>
+      <li><a href="https://doc.e.foundation/devices">https://doc.e.foundation/devices</a></li>
+      <li><a href="https://doc.e.foundation/devices/FP5">https://doc.e.foundation/devices/FP5</a></li>
+      <li><a href="https://source.android.com/docs/core/graphics/multiple-refresh-rate">https://source.android.com/docs/core/graphics/multiple-refresh-rate</a></li>
+      <li><a href="https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662">https://xdaforums.com/t/rooting-fp5.4634181/#post-89111662</a></li>
+      <li><a href="https://topjohnwu.github.io/Magisk/ota.html">https://topjohnwu.github.io/Magisk/ota.html</a></li>
+      <li><a href="/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html">/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html</a></li>
+      <li><a href="https://forum.fairphone.com/t/e-os-installation-fastboot-do-not-detect-my-fp5/103222/6">https://forum.fairphone.com/t/e-os-installation-fastboot-do-not-detect-my-fp5/103222/6</a></li>
+      <li><a href="https://wiki.lineageos.org/devices/FP5/install/">https://wiki.lineageos.org/devices/FP5/install/</a></li>
+      <li><a href="https://download.lineageos.org/devices/FP5/builds">https://download.lineageos.org/devices/FP5/builds</a></li>
+      <li><a href="https://github.com/CatWithCode/Fairphone5-Tweaks/blob/main/deGoogle/DeGoogle_Fairphone.sh">https://github.com/CatWithCode/Fairphone5-Tweaks/blob/main/deGoogle/DeGoogle_Fairphone.sh</a></li>
+      <li><a href="https://wiki.lineageos.org/devices/FP5/">https://wiki.lineageos.org/devices/FP5/</a></li>
+      <!--
+      <li><a href="">Link</a></li>
+      -->
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.10.07 - 19:00');</script></div>
+  </body>
+</html>

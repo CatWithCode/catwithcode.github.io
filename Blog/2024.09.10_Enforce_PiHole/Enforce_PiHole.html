@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - How I enforce my PiHole in my Network</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Ads. Ads everywhere.");</script>
+    
+    <h1>How I enforce my PiHole in my Network</h1>
+    <p>One word before I explain: There are many ways device's try to reach there own wanted DNS-Server. TLS, directly or even through a VPN. VPN bypassing can not really be blocked except you close all VPN ports and block VPN IPs and DNS-Entry's but then VPN's will not work at all anymore. And even then they can use a external proxy for bypassing using a different port. In short: This only works for normal blocking and will work 99.999% of the time. If someone really, REALLY, and I mean REALLY try's to bypass this block they will be able to, but for normal usage this is perfect.</p>
+    <p>First of all you need a reliable Home-Server that will always run when you want to go onto the Internet. You can shut the Server down automatically if no-one is using the Internet at night. But, as you can probably guess, without an DNS the Internet will more or less not work anymore. Means: Good shutdown and power-up settings including a Ping check to see if someone is still online, are absolutely needed. I made a few posts about my server in the past about that and how to set that up.</p>
+    <p>In the router you need to create a default profile for every user were you block most URLs for DNS Services and there IP's. You should also add a block for all DNS-Ports in all directions and with all protocols. This can look like this (This is ONLY and example and will not be enough. You need to add a lot more DNS-Servces (URL and IP). Just check what is usually used in your area and by your devices in your network):</p>
+    <p><b><i><u>IP's and URL's</u></i></b>:</p>
+    <p>
+      1dot1dot1dot1.cloudflare-dns.com
+      <br>
+      https://1dot1dot1dot1.cloudflare-dns.com
+      <br>
+      1.1.1.1
+      <br>
+      https://1.1.1.1
+      <br>
+      1.0.0.1
+      <br>
+      https://1.0.0.1
+      <br>
+      dns.google
+      <br>
+      https://dns.google
+      <br>
+      dns.google/dns-query
+      <br>
+      https://dns.google/dns-query
+      <br>
+      dns.google/resolve
+      <br>
+      https://dns.google/resolve
+      <br>
+      8.8.8.8
+      <br>
+      https//8.8.8.8
+      <br>
+      8.8.4.4
+      <br>
+      https//8.8.4.4
+    </p>
+    <p><b><i><u>Port's</u></i></b>:</p>
+    <p>
+      TCP - OUT/IN 53 → ANY
+      <br>
+      TCP - OUT/IN 853 → ANY
+      <br>
+      TCP - OUT/IN ANY ← 53
+      <br>
+      TCP - OUT/IN ANY ← 853
+      <br>
+      UDP - OUT/IN 53 → ANY
+      <br>
+      UDP - OUT/IN 853 → ANY
+      <br>
+      UDP - OUT/IN ANY ← 53
+      <br>
+      UDP - OUT/IN ANY ← 853
+    </p>
+    <p>You must also create a profile were you only add your PI-Hole DNS-Server. That Server needs to be manually added into a Profile were it dose not have those restrictions unlike normal users.</p>
+    <p>The default DNS in the Router should be a DNS-Server you like and trust. Thanks to the restrictions, normal users can not reach it and will try finding a local DNS and that's were our Pi-Hole comes in. And the Pi-Hole will use the default DNS as a starting point. You should enable DNS over TLS in the Pi-Hole to be as secure as possible. Also put the same trusted and wanted DNS-Server into it too just to make sure it can reach the Internet.</p>
+    <p>On some devices you will need to set the custom DNS manually because they don't do it on there own, but that's more an exception then the rule. And with one restart of everything (Devices, router and Pi-Hole) everything should (TM :D) work.</p>
+    <p>You will maybe notice that there are devices (most often the really data hungry once like smart devices or smart TVs) that have service not working anymore. If that happens I would reconsider using them in the first place. If devices or Software want to always reach a custom DNS of there own is really... let's say unopen. The only way to fix those “issues” is to allow these device to use the unrestricted internet-access profile our Pi-Hole has.</p>
+    <p>To make sure that the Pi-Hole works good for a long time keep it up-to-date and disable logging as soon as everything works fine for a few days and the blocked and allowed lists start to fill and indicate a working setup.</p>
+    <p>From my testing you can add A LOT  of Ad-lists to your Pi-Hole (once I tested over 5.000.000 domains no problem) before performance becomes an issue (I use docker with a real server, IDK. about a raspberry pi to be honest. But if you go this far with your Home-Setup you will probably have a server soon enough. A correctly configured old desktop PC works great for that!). Sometimes we need to remove the tracking part of URLs or can not access a website (but most often the site was trash anyway, so the Pi-Hole did its job).</p>
+    <p>Now you will probably wonder where to find lists to start with before you start your own? I will not mention any list in pedicular, but will list a few good starting points (at the time of writing. If that is still the case IDK.):</p>
+    <ul>
+      <li>Sekhan/TheGreatWall</li>
+      <li>The Block List Project</li>
+      <li>Fireblog</li>
+      <li>StevenBlack/hosts</li>
+      <li>hagezi/dns-blocklists</li>
+      <li>mullvad/dns-blocklists</li>
+    </ul>
+    <p>This time there are not many sources because I knew how to do these things myself (networking is easy to apply once learned). I will not link to any lists. Do your own research and use the starting points :D.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://pi-hole.net/">https://pi-hole.net/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.09.10 - 00:01');</script></div>
+  </body>
+</html>

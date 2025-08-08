@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Wii Sensor Bar to USB and Wii Remote on PC</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("It burned out, unsurprisingly.");</script>
+    
+    <h1>Wii Sensor Bar to USB and Wii Remote on PC</h1>
+    <p>I have modded stuff on the weekend... and one of the things was to make a Wii Sensor Bar universal aka. USB-Powered. But I did not want to invest to much money into it (meaning doing it with just an USB-Cable and solder).</p>
+    <p>There are multiple ways to do it (In order witch one would be best to worst aka. the way I did it):</p>
+    <ul>
+      <li>❌ - 🥱 Buying a USB-Sensor Bar online.</li>
+      <li>❌ - 🤔 Soldering a Step-Up converter into the circuit so USB-Power (5V) can power everything without extra chips.</li>
+      <li>❌ - 🙂 Removing LED's from the circuit to have two on each side so the 5V can power both LED rows.</li>
+      <li>✅ - 🤘 Bridging everything together with way to much solder so you can power 4 LED's in on go without an resistor and then and hot glue everything together.</li>
+    </ul>
+    <p>I won't talk much about it or show images because it is already been glued together and I would probably end up in a bad-solder-job compilation. BUT here are some schematics on how the circuit looks like and how I connected / removed everything. I also drew the original configuration but never checked what goes where because I don't care. Enjoy:</p>
+    <ul>
+      <li>Blue: Circuit-board</li>
+      <li>Green: Circuit-traces</li>
+      <li>Gray: Circuit-connections</li>
+      <li>Purple: Solder / Soldered Cables</li>
+      <li>White/Red: Cable's</li>
+      <li>Black: Ground</li>
+      <li>Yellow: LED's</li>
+      <li>Orange: Resistor</li>
+    </ul>
+    <h2><b><u>Original</u></b>:</h2>
+    <a href="DATA/Normal.png"><img src="DATA/Normal.png" alt="Normal Wii Sensor Bar circuit without input information" style="width:90%";></a>
+    <h2><b><u>Modded</u></b>:</h2>
+    <a href="DATA/Mod.png"><img src="DATA/Mod.png" alt="Modded Wii Sensor Bar circuit" style="width:90%";></a>
+    <p><b><u>IMPORTANT</u>:</b> You need to set the sensitivity on your Wii/Wii U/vWii to 5. Two LED's peer side dose work but is less the the Wii Remote expects. This is also true for "other" Software. Maybe you need to install the System OS in the "other" Software first to be able to set the sensitivity for all games in the Software</p>
+    <br>
+    <p>After all that I connected the Wii Remote to my PC and discovered that the compatibility is spotty. You can get it to work in Steam but it is not guarantied that it stops blinking and many features like the IR-Camera are very hard to map but seem to be exposed and usable with scripts (there is software to use the Wii Remote as a mouse) and maybe to map everything in Steam-Input after enabling generic controllers. I have an issue when it comes to reconnecting. The search function of the Wii Remote dose not seem to work. Pressing 1+2 often works, but pressing the Sync-Button under the battery cover ALWAYS works for reconnecting. This issue only happen with normal Bluetooth and Steam Input not with "other" Software. To get dolphion to pick up the bluetooth driver I need to start the bluetooth manager (blueman-manager) and make sure it is enabled and search at least once, then when I start the "other" Software it picks up the bluetooth module reliably.</p>
+    <p>To use it in "other" Software I needed to setup my system a little (I use Linux, idk. and I don't care about Windows). I outlined my steps below (THIS ALSO WORKS ONLY WITH AN NORMAL INSTALL! FLATPAK SANDBOXES THE SOFTWARE AND DOSE NOT ALLOW ACCESS TO LIBUSB!):</p>
+    <ol>
+      <li>Find your Bluetooth Adapter (Nearly all Bluetooth-Adapter on PC are connected over the USB protocol even if its a PCIe card!) with:</li>
+      <li><u><i>lsusb</i></u></li>
+      <li>Find your adpater in the list. It could look like this; "<i>Bus 004 Device 055: ID 0a34:0666 COMPANY ABC Wireless_Device</i>"</li>
+      <li>You need the VendorID and the Device ID. The are next to the ID-Label in that order. Now you need to add a rule to your system to allow "other" Software to grab the adapter:</li>
+      <li><u><i>sudo nano /etc/udev/rules.d/52-dolphin.rules</i></u></li>
+      <li>Now add the rule with YOUR IDs!:</li>
+      <li><u><i>SUBSYSTEM=="usb", ATTRS{idVendor}=="0a34", ATTRS{idProduct}=="0666", TAG+="uaccess"</i></u></li>
+      <li>Now save and exit and REBOOT. If the adapter is connected over USB it you can reload the rules and reconnect it, but over PCIe you need to reboot (just... reboot).</li>
+      <li>And now the passthrough can be used. Just add your adapter to the Software whitelist and the enable the passthrough in the Controls settings.</li>
+    </ol>
+    <p><u><b>UPDATE - 2024.10.25</b></u>: Bluetooth can be very crash prone with the passthrough. I added some scripts that can try to fix a bugged driver or try prevent it in the first place: <a href="https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC">https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC</a></p>
+    <p>I linked everything in the Sources section so you can read everything clearly communicated and verbose. I will not entertain the idea of naming the software. We all know what would happen.</p>
+    <hr>
+    <p>I also removed the battery out of my Wii U Gamepad. To use it without one you need to modify the cable going to the battery.</p>
+    <p>You just need to remove the battery, and solder red to white, and gray to black. All credits go to "u/StillhasaWiiU" over at reddit:</p>
+    <a href="https://www.reddit.com/r/wiiu/comments/of8fg9/">https://www.reddit.com/r/wiiu/comments/of8fg9/</a>
+    <a href="https://www.reddit.com/user/StillhasaWiiU/">https://www.reddit.com/user/StillhasaWiiU/</a>
+    <a href="https://www.reddit.com/r/wiiu/comments/of8fg9/comment/h4bjnva/">https://www.reddit.com/r/wiiu/comments/of8fg9/comment/h4bjnva/</a>
+    <br>
+    <hr>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://youtu.be/oPF3KloExIs">https://youtu.be/oPF3KloExIs</a></li>
+      <li><a href="https://rolandtapken.de/blog/2017-07/mod-wii-sensor-bar-usb-power-supply">https://rolandtapken.de/blog/2017-07/mod-wii-sensor-bar-usb-power-supply</a></li>
+      <li><a href="https://www.reddit.com/r/DolphinEmulator/comments/91k9ye/">https://www.reddit.com/r/DolphinEmulator/comments/91k9ye/</a></li>
+      <li><a href="https://wiki.dolphin-emu.org/index.php?title=Bluetooth_Passthrough">https://wiki.dolphin-emu.org/index.php?title=Bluetooth_Passthrough</a></li>
+      <li><a href="https://youtu.be/0RyDNRgRGAs">https://youtu.be/0RyDNRgRGAs</a></li>
+      <li><a href="https://wii.hacks.guide/homebrew-dolphin.html">https://wii.hacks.guide/homebrew-dolphin.html</a></li>
+      <li><a href="https://wiki.dolphin-emu.org/index.php?title=USB_Passthrough#Guide_to_Whitelist_a_USB_Device_in_Dolphin">https://wiki.dolphin-emu.org/index.php?title=USB_Passthrough#Guide_to_Whitelist_a_USB_Device_in_Dolphin</a></li>
+      <li><a href="https://wiki.dolphin-emu.org/index.php?title=USB_Passthrough">https://wiki.dolphin-emu.org/index.php?title=USB_Passthrough</a></li>
+      <li><a href="https://2.bp.blogspot.com/-aRwcWORVZ8Y/UCrlPiLPQ8I/AAAAAAAAANE/CNzWtb_eCJk/s1600/IMG_0658.JPG">https://2.bp.blogspot.com/-aRwcWORVZ8Y/UCrlPiLPQ8I/AAAAAAAAANE/CNzWtb_eCJk/s1600/IMG_0658.JPG</a></li>
+      <li><a href="https://www.reddit.com/r/wiiu/comments/of8fg9/">https://www.reddit.com/r/wiiu/comments/of8fg9/</a></li>
+      <li><a href="https://www.reddit.com/user/StillhasaWiiU/">https://www.reddit.com/user/StillhasaWiiU/</a></li>
+      <li><a href="https://www.reddit.com/r/wiiu/comments/of8fg9/comment/h4bjnva/">https://www.reddit.com/r/wiiu/comments/of8fg9/comment/h4bjnva/</a></li>
+      <li><a href="https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC">https://github.com/CatWithCode/Arch-Linux-BTRFS-CWC</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.10.25 - 22:00');</script></div>
+  </body>
+</html>

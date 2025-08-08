@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Linux with HDR, Ultrawide and Sunshine? KDE 6.3!</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("The jank never stops with her and ultrawide.");</script>
+    
+    <h1>Linux with HDR, Ultrawide and Sunshine? KDE 6.3!</h1>
+    <p>I used Hyprland for a longer time now. I also was using tilling window managers for a few years now. But Hyprland had its issues again (most likly something I setup wrong). I reinstalled and switched to OpenSuse and tried KDE just a little and was blown away how good it now is!</p>
+    <p>I used Hyprland because of tilling and ultrawide Gaming. I use a PLP setup (2 Rotated 1080p screens and a 1440p bigger one in the middle). I open my games over gamescope in the resolution 4720x1440. And Hyprland worked with that most often the best. But not only has it a nasty left screen click bug where mouse inputs are misaligned, it also had many issues for me the last few weeks with coding, crashes and clipboard stuff.</p>
+    <p>I explain how I worked with it to show you all from were I came from. As soon as I tried out the newest KDE release 6.3.4 I noticed a big difference. THE PERFORMANCE. In the past KDE was always slow in edge cases but this time everything I threw at it worked. Giant gamescope window = no problem, weird setups of screens = easy, GPU intensive tasks and using the desktop at the same time, smooth without stutter! It sadly has no tilling (without scripts that work not all that well). But the Meta+LEFT,RIGHT,... works well enough and can be used to tile at least a little.</p>
+    <p>I only needed to set a few window rules to force windows of the class gamescope into position 0.0x50.0 and size it to 4720x1440 (and not forgetting to above all other windows) and that was it. I could game no issue with my gamescope config. I wanted my hotkey to reposition the window to work like Hyprland. My script I made in the past is incompatible with the newest Plasma 6 release. So... a lot of searching and a few changes later and it worked again too (the scripting, testing and documentation got a little better but is still really messy). I must say I really love KDE now. It works SO WELL.</p>
+    <h2>HDR:</h2>
+    <p>I remember I read a few weeks back that HDR now """works""" on Linux with KDE. So I checked and YES it works! Hyprland could never manage my displays correctly with HDR but KDE JUST WORKED. Then I thought, can I use it to watch stuff and checked MPV (jellyfin-mpv-shim to be precise) and YES IT ALSO WORKS! Just like that. Then I needed to test one last thing, gaming. And well. It is MEGA JANKY (<a href="https://www.reddit.com/r/kde/comments/1ampxta/comment/mhw99h3/">https://www.reddit.com/r/kde/comments/1ampxta/comment/mhw99h3/</a>) but it works. Then I had a really REALLY cursed idea... .</p>
+    <p>After playing around with HDR in a few games I came to the realization that its true. HDR is a hell in Games. So many games implement it wrong or broken and never fix it. reshade of all things can fix that often because many modders make addons or shader for it to fix the output. In remote the HDR-Settings are extremely important because it dose kinda "stack" the settings a little.</p>
+    <p>On my setup to get it to work correctly I set the HDR settings on my Linux client how I need it (In my case 800 peak an 800 SDR), sRGB color intensity 100%, 16bit colors and "Prefer color accuracy" (Important, else colors break a little). On my Linux Host on the fake display I set it to "sRGB color intensity" 0% (Important, no Tone-Mapping stacking), 16bit colors and "Prefer color accuracy" (Important, else colors break a lot) and then I start HDR remote streaming, enabling the performance overlay in Moonlight to make sure HDR is working (Only works for me in Appimage inside gamescope or flatpack) and then "Calibrating" the HDR brightness. I set it to settings that make it look the same as on the remote display (for me 200, 200). I don't know why and from my understanding this should not happen, but if I put it higher or the same as native it blows out ALL the bright things on screen and colors. The reshade-linux scripts from kevinlekiller was a lot of help to get reshade working.</p>
+    <p>One other thing I saw again and AGAIN: F*ck Nvidia. HDR is hell a broken and bugged on Linux with the current drivers. I got so annoyed that I installed OpenSuse on my SteamDeck just so I can stream HDR. Take this as a lessen: Only use AMD in HDR streaming/HDR in general on Linux or you will make your life harder then it needs to be.</p>
+    <p>I also added a script to my Script HDR collection that enables HDR and forces HDR settings onto my FAKE-Display, KDE loves reseting it. It is called "HDR_Setter.sh"</p>
+    <p>From a little usage I could alreadz tell, if you know how to work with Linux OpenSuse, or any other Linux OS for that matter, can be used without Issue on it. One config for SDDM (Or any other Greeter with On Screen Keyboard Supoort) a little KDE setup and Steam configuration and you u have yourself a MobileOS like SteamOS. But don't get me wrong, the A/B-System of SteamOS and the writeprotection makes a lot, A LOT, of sense in consumer Hardware.</p>
+    <h2>Sunshine on Linux with HDR to Linux Client with HDR HEADLESS on the HOST and using the real color mapping:</h2>
+    <p>As soon as I discovered for my self Linux can do HDR, like actually do it, I switched my living room PC to Bazzite (if you are wondering, Bazzite is nice but annoying because many things a broken when you need to fix stuff. It deviates from Fedora so far that it breaks layering of packages and similar stuff. I also needed to install jellyfin-mpv-shim over pip and copy my config from my PC because Bazzite dose not come with python3-tkinter (or it is incompatible)). It works. It even fixed some of the Color bending sh*t windows had. I thought to myself, Cyberpunk on this beast of a TV with such great support would be really nice... wait as sec...</p>
+    <p>The PC in the living room is far FAR too weak for 120FPS 4k (only 60hz works because HDMI and GTX1080). And my PC is a pain to move every time. So I came up with the idea of streaming Cyberpunk 2077 from my PC with AV1 or H265 to the living room with Sunshine WITH HDR. Sunshine supports it (but only tested it on windows).</p>
+    <p>This coursed setup works. I need to do the following things:</p>
+    <ol>
+      <li>Install and configure Sunshine on my main PC. I use OpenSuse so <del>I had to work around the missing packages. It currently is broken in the semi official repository "games:tools". It needs "libdisplaydevice0_0_0". That is semi officaly available at the "devel:libraries:c_c++" repository. It is not accepted to factory yet:</del> Update: Sunshine now can be used without the workaround: (<a href="https://build.opensuse.org/package/show/games:tools/sunshine">https://build.opensuse.org/package/show/games:tools/sunshine</a>).</li>
+      <li>After I got that up and running (See my old entry about "Headless_Sunshine_Hyprland_Remote" for that: <a href="../2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html">Sunshine_Remote_Headless_Hyprland.html</a>)I had to get the EDID's of my TV. That was far harder then it should have been. I tried "get-edid", getting the binary directly from the /dev/ bus, using "xrandr --verbose", using Linux, Windows and a RaspberryPi with Linux and Android but I always got the same Invalid file that would cause the fake display to be 480p... . I found these hand made EDID's from "xi784" online on GitHub (<a href="https://github.com/xi784/EDID-Emulator-Profiles">https://github.com/xi784/EDID-Emulator-Profiles</a>) that work. I used HDR4K_120.bin and copied all details and added a few details that were different for my TV (Phillips 65oled708/12).</li>
+      <li>The way to fake a display is a little different on OpenSuse. First I had to create the file import file (sudo nano /etc/dracut.conf.d/99-headless.conf). The import is this: <u>install_items+=" /usr/lib/firmware/edid/uhdTV.bin "</u>. Then I added it to the GRUB parameters: "drm.edid_firmware=DP-2:edid/uhdTV.bin video=DP-2:e". The e at the end is important!. And then I added the file: "sudo mv uhdTV.bin /usr/lib/firmware/edid/". AND finally I rebuild the initframes: "sudo dracut --regenerate-all --force".</li>
+      <li>After one reboot the display was there. I configured it in KDE (Position, 4k, 60hz, HDR), wrote down the details how everything is setup and then disabled it.</li>
+      <li>I needed to change my script a good bit because display management is very different in KDE. The long delays ARE NEEDED! Else KDE dose whatever it wantsa LOL.</li>
+      <li>I added the script to the “AutoStart Login-Scripts” in KDE and added the argument "e" so it, so it would make sure under any condition it resets the Displays even after a crash.</li>
+      <li>Then I added a hotkey so I have one more way to reset it. This time mid season. I also added a "e" parameter here.</li>
+      <li>And then I added it to the Application in sunshine as a Undo Script with the "e" parameter.</li>
+      <li>On the client I tested multiple setups and only the appimage of moonlight would work to make it use HDR. HDR needs to be enabled in the Settings of Moonlight.</li>
+      <li>On the OpenSuse Host I needed to add codes (even though I hate the Packman repositories). Else the encoder would not work: <b><u>sudo zypper in opi && opi codecs</u></b>. For HDR your GPU on the HOST (AMD and INTEL ONLY. Nvidia is unable to work with Fake Displays because obviously the needed to break it) MUST support HEVC H265 or AV1 encoding in Hardware. H264 dose not support HDR in sunshine.</li>
+      <li>Now with my “RemoteGaming_KDE_HDR.sh” script I can start sunshine on the Host and play remote. And as soon as I exit, it resets the Displays cleanly. You MUST input your exact setup into the script twice! The current values are only for my setup!</li>
+      <li>
+        You need to setup two profiles for HDR and SDR. Both need one of those commands in there Do Commands:
+        <br>
+        <br>
+        >> HDR:
+        <br>
+        kscreen-doctor output.DP-2.hdr.enable && kscreen-doctor output.DP-2.wcg.enable
+        <br>
+        <br>
+        >> SDR:
+        <br>
+        kscreen-doctor output.DP-2.hdr.disable && kscreen-doctor output.DP-2.wcg.disable
+        <br>
+        <br>
+      </li>
+      <li>I also needed to set the "Color accuracy" on client AND host to "Prefer efficiency" else it would break the HDR pipeline.</li>
+      <li>
+        <br>
+        To run the games I use this command. It rarely works outside of Steam (only ran once). In Steam it works nearly every time.
+        <br><br>
+        <br>
+        <b><u><i>gamescope --hdr-enabled --nested-refresh 165 --fullscreen --steam -w 3840 -W 3840 -h 2160 -H 2160 --force-grab-cursor -- %command%</i></u></b>
+        <br>
+        <br>
+        <br>
+        Or for UltraWide locally:
+        <br>
+        <br>
+        <b><u><i>LD_PRELOAD="" gamescope --hdr-enabled --nested-refresh 165 -b --steam -w 4720 -W 4720 -h 1440 -H 1440 --force-grab-cursor -- %command%</i></u></b>
+        <br>
+        <br>
+        Other HDR setups I use (<a href="https://youtu.be/B_87kmAAlRw">https://youtu.be/B_87kmAAlRw</a>):
+        <br>
+        <br>
+        <b><u><i>PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 %command%</i></u></b>
+        <br>
+        <br>
+        <b><u><i>PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 ENABLE_HDR_WSI=1 %command%</i></u></b>
+      </li>
+    </ol>
+    <p>From my usage the last few days with an HDR QD-OLED monitor I noticed that you should have a command/Hotkey/Script that enables HDR and WCG if you work or code so the display and your eyes don't get strained unnecessarily. Can be made with an If-Else case in a script that uses the same command used in the HDR profile for Sunshine.</p>
+    <p>
+      I tested a little more (I have bought myself a HDR QD-OLED Ultrawide Display) and to get HDR everywhere working I needed many different types of setup's. The setup above sometimes work. But sometimes if I want to play Cyberpunk 2077 for example I need native Proton-HDR (Only some builds have HDR enabled. "proton-cachyos-10.0-20250601-slr-x86_64_v3" works for me). Then the only option is either using Mesa 25.1 and newer and KDE 6.4 or newer. But both is are in Beta. For now I use a trick originally only needed for Nvidia and some AMD setups. It is a library called "vk_layer_hdr". A fork needs to be compiled on the system if not available in the repository with the installed MESA build at compile time. A good demonstration is this video by "LinuxNext" on Youtube: <a href="https://youtu.be/B_87kmAAlRw">https://youtu.be/B_87kmAAlRw</a>. The fork I used (From “Zamundaaa” forked from "Drakulix"): <a href="https://github.com/Zamundaaa/VK_hdr_layer">https://github.com/Zamundaaa/VK_hdr_layer</a>. It works on OpenSuse Slowroll with the following start command (This one is for Cyberpunk 2077):
+      <br>
+      <br>
+      <u>PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 ENABLE_HDR_WSI=1 %command% --launcher-skip -skipStartScreen -modded</u></p>
+    <p>The Important part is the "<u>ENABLE_HDR_WSI=1</u>" that many guides are missing. It tells proton and/or Mesa to use the external HDR layer from the library. If you KDE and MESA version's are new enough this will do nothing.</p>
+    <p>I Heroic Launcher I could not get Control to work with HDR. It has a dose soemthing that causes a Bug in Protons Wayland/HDR part that breaks mouse movment. BUT I got it to work with gamescope with the arguments as followed: <u>-W 5120 -H 1440 -w 5120 -h 1440 -f --hdr-debug-force-support --hdr-enabled --adaptive-sync --immediate-flips</u></p>
+    <p>From my testing gamescope is very sensitive with settings. No FSR (From gamescope), no scaling (Meaning W/w and H/h must be identical) and no special parameters except for the once above!. I also only got it to work with GE-Proton 10.4 and newer.</p>
+    <p>As you can see there currently no one way to always go on Linux for HDR. You need to try around until you get a setup just right and to work. This will change soon with KDE 6.4, Mesa 25.1, Proton 10.x (Most likely the unofficial once for longer, Valve will probably only enable general HDR in the compile when Wine's wayland port is done).</p>
+    <p>I tested some games by now and the following work beautiful with HDR (Locally and Remote, with or without UltraWide):</p>
+    <ul>
+      <li>Metaphor: ReFantazio</li>
+      <li>Cyberpunk 2077</li>
+    </ul>
+    <br>
+    <p>I noticed many issues with frame drops. It was WLAN. The only way to fix it was a LAN cable. The issue is that in my place I can not directly connect my router (believe me I f*cked it up trying once). BUT sunshine is peer 2 peer (P2P). This means after connecting the router can be ignored. Thankfully my office and living room are next to each other and with a little restructuring of my network-topology I now only need to connect on cable so the living room client has a wired connection. The switch gets its internet from a mesh node connected over WIFI. The connection start uses the router, the stream not. I even disconnected the mesh node once and everything keept streaming! Just a small tip for all not owning there home and don't have Ethernet in there walls... .</p>
+    <p>This is as much a cluster f*ck as it sounds like. And now the best part. It just works butterfly. The only issue I am unable to fix is that the priority of the KDE displays gets messed up on reset every time. That's it. Every time I do something like this I think to myself that this must be the most jank I ever did... and then I do something even worst xD. I am already exited to see what tops this level of jank.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.reddit.com/r/kde/comments/1ampxta/comment/mhw99h3/">https://www.reddit.com/r/kde/comments/1ampxta/comment/mhw99h3/</a></li>
+      <li> <a href="https://www.reddit.com/r/kde/comments/1ampxta/">https://www.reddit.com/r/kde/comments/1ampxta/</a></li>
+      <li><a href="https://github.com/CatWithCode/KDETripleScreenGaming">https://github.com/CatWithCode/KDETripleScreenGaming</a></li>
+      <li><a href="../2023.10.16_No_Desktop_Is_Ready_For_Ultrawide/No_Desktop_Is_Ready_For_Ultrawide.html">../2023.10.16_No_Desktop_Is_Ready_For_Ultrawide/No_Desktop_Is_Ready_For_Ultrawide.html</a></li>
+      <li><a href="https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote">https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote</a></li>
+      <li><a href="https://download.opensuse.org/repositories/devel:/libraries:/c_c%2B%2B/openSUSE_Factory/">https://download.opensuse.org/repositories/devel:/libraries:/c_c%2B%2B/openSUSE_Factory/</a></li>
+      <li><a href="https://download.opensuse.org/repositories/games:/tools/openSUSE_Tumbleweed/">https://download.opensuse.org/repositories/games:/tools/openSUSE_Tumbleweed/</a></li>
+      <li><a href="https://download.opensuse.org/repositories/games/openSUSE_Tumbleweed/">https://download.opensuse.org/repositories/games/openSUSE_Tumbleweed/</a></li>
+      <li><a href="https://build.opensuse.org/package/show/games:tools/sunshine">https://build.opensuse.org/package/show/games:tools/sunshine</a></li>
+      <li><a href="https://askubuntu.com/questions/81370">https://askubuntu.com/questions/81370</a></li>
+      <li><a href="https://github.com/xi784/EDID-Emulator-Profiles">https://github.com/xi784/EDID-Emulator-Profiles</a></li>
+      <li><a href="https://archlinux.org/packages/extra/x86_64/read-edid/">https://archlinux.org/packages/extra/x86_64/read-edid/</a></li>
+      <li><a href="https://edidcraft.com/">https://edidcraft.com/</a></li>
+      <li><a href="https://github.com/moonlight-stream/moonlight-qt/releases">https://github.com/moonlight-stream/moonlight-qt/releases</a></li>
+      <li><a href="https://www.reddit.com/r/openSUSE/comments/ht0slm/">https://www.reddit.com/r/openSUSE/comments/ht0slm/</a></li>
+      <li><a href="https://github.com/Zamundaaa/VK_hdr_layer">https://github.com/Zamundaaa/VK_hdr_layer</a></li>
+      <li><a href="https://youtu.be/B_87kmAAlRw">https://youtu.be/B_87kmAAlRw</a></li>
+      <li><a href="https://youtu.be/wcs7JsMLHFY">https://youtu.be/wcs7JsMLHFY</a></li>
+      <li><a href="https://discuss.kde.org/t/when-enabling-hdr-through-command-with-kscreen-doctor-it-behaves-weirdly/28827">https://discuss.kde.org/t/when-enabling-hdr-through-command-with-kscreen-doctor-it-behaves-weirdly/28827</a></li>
+      <li><a href="https://wiki.archlinux.org/title/HDR_monitor_support">https://wiki.archlinux.org/title/HDR_monitor_support</a></li>
+      <li><a href="https://github.com/kevinlekiller/reshade-steam-proton">https://github.com/kevinlekiller/reshade-steam-proton</a></li>
+      <li><a href="https://github.com/kevinlekiller/reshade-steam-proton/issues/72">https://github.com/kevinlekiller/reshade-steam-proton/issues/72</a></li>
+      <li><a href="https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/31">https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/31</a></li>
+      <li><a href="/Blog/2025.04.25_iMac_2013_in_2025/iMac_2013_in_2025.html">/Blog/2025.04.25_iMac_2013_in_2025/iMac_2013_in_2025.html</a></li>
+      <li><a href="/Blog/2024.12.07_Ultimate_T440P/Ultimate_T440P.html">/Blog/2024.12.07_Ultimate_T440P/Ultimate_T440P.html</a></li>
+      <li><a href="https://discuss.kde.org/t/how-to-change-monitor-layout-and-orientation-in-sddm/3377">https://discuss.kde.org/t/how-to-change-monitor-layout-and-orientation-in-sddm/3377</a></li>
+      <li><a href="https://discuss.kde.org/t/how-to-change-monitor-layout-and-orientation-in-sddm/3377/2">https://discuss.kde.org/t/how-to-change-monitor-layout-and-orientation-in-sddm/3377/2</a></li>
+      <li><a href="https://wiki.archlinux.org/title/List_of_applications/Utilities">https://wiki.archlinux.org/title/List_of_applications/Utilities</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.07.05 - 15:00');</script></div>
+  </body>
+</html>

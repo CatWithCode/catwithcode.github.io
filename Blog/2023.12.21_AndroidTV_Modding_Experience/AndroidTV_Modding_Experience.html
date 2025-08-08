@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Modding Android TV to make it not suck (and why you should not use the smart features, in my opinion)</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Android TV, more like Android Spyware with force arbitration.");</script>
+    
+    <h1>Modding Android TV to make it not suck (and why you should not use the smart features, in my opinion)</h1>
+    <p>We bought a new TV (OLED and yes it is really nice) and it has Android TV on it. Android == modding for me, LOL. I enabled USB debugging and installed a few apks via network. Finding apks that work on Android TV is hard. Firefox CAN work, but you need a universal apk, which can be hard to get/find. There are websites that host the official Universal image mirrored from the Playstore. Getting it from the Google Play server is possible, but I did not succeed with this method. A good indicator is that the apk is around 200mb instead of around 100mb. After I got firefox working, I installed alternative stores and open source alternatives to the play store, installed flauncher (open source alternative launcher for the home menu (android tv stock home menus are so useless and cluttered with ads)), disabled the stock launcher completely with two commands that need to be executed really really fast for it to work (one of the packages renables the other), added the wifi password again (after disabling the stock luncher you have to do that) and I was almost done. I installed a few missing apps like vlc and steamlink, removed as much garbage as possible with the andoird app settings and set dark images as wallpaper so the oled is not strained with stupit stuff and that was it. A few hours of work, a lot of disabling, replacing and correcting stuff but now the tv is really nice to use. The replacement launcher makes everything easy to access without ads, the TV feels faster with the developer setting for animation speed enabled at 0.5x. I really like it now.</p>
+    <br>
+    <h2><u>The PiHole Amazone Prime issue:</u></h2>
+    <p>The only problem was that Amazon Prime did not work, it seems to use DNS requests to geolock you. I enforce the pihole in my network by blocking all outgoing dns requests in the router except for the pihole itself, which forces all devices to use local dns. The only way to get prime to work is to allow the tv to send dns requests out to the internet and manually set the dns in the android tv settings (most apps will respect this setting and work, but some that think they need to be special and as strong as possible anti-consumer can still access there stupit BS to make them work). There could be a better way to fix this, but this was the easiest.</p>
+    <p>The commands to disable the default stock launcher (install a WORKING alternative! Factory resetting a TV could be quite difficult without a way to use it, due to the strong dependency on the launcher):</p>
+    <p><u><i>adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx</i></u></p>
+    <p><u><i>adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith</i></u></p>
+    <br>
+    <p>But more importantly, should you use Android/Google TV or even connect your TV to the internet in the first place? NO (In my Opinion)! It only works half the time for me, stuff like geo-checking via DNS or something like that is just total anti-consumer BS, and a camera and microphone in the TV and its remote makes it perfect for bad people or data-harvesting companies to get information about you. The best part is that you should never unplug your OLED TV after using it, you should leave it in standby mode so that the hardware can help the panel to refresh or something like that, the manufacturers say. Just plug in a PC or Raspberry Pi and add the apps/streaming platforms you use there. Works better, faster and is not an open door to your living room.</p>
+    <p>And if firmware updates to the TV software are important to you for some reason, they can be downloaded to a PC, copied to a USB stick and flashed from the settings of the TV.</p>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://xdaforums.com/t/how-to-disable-google-tv-launcher-install-3rd-party-launcher.4601397/">https://xdaforums.com/t/how-to-disable-google-tv-launcher-install-3rd-party-launcher.4601397/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.12.21 - 15:00');</script></div>
+  </body>
+</html>

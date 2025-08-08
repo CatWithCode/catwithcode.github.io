@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Fixing Firefox taking forever to start on Linux (OpenSuse)</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("DNS deez ****.");</script>
+    
+    <h1>Fixing Firefox taking forever to start on Linux (OpenSuse)</h1>
+    <p>I was having a problem on one of my OpenSuse installations where Firefox was taking about 30 seconds to start. After changing some network settings it fixed itself, but the longer the system ran the worse it got again.</p>
+
+    <p>After a lot, and I mean a LOT, of research I could never find a direct fix on the internet, but it seems to have to do with DNS stuff. In my network I enforce the use of the pihole and this seems to be one of the sources of the problem (may be other things too).</p>
+    
+    <p>The way I found to fix it was to install the KDE network manager "<b><u>plasma-nm</u></b>"", this will give you the necessary dependencies and the ability to use KDE system settings on a non-KDE system (if you use Sway or Hyperland, for example, GNOME's network manager should also work well. You can even enter all the settings manually if you know how). In the KDE-System-Settings Network Manager settings, I changed the IPv4 settings to manual, entered the DNS IP directly (if you do not host your own, just enter an external one), gave myself a static IP (do that in your router to if you can, just to be sure) and set the netmask and gateway according to my routers defaults. The last thing to change is "<b><u>IPv4 is required for this connection</u></b>" to "<b><u>True</u></b>", which forces the system to use the configured DNS. After that (and perhaps a reboot) your Firefox should work normaly again.</p>
+    
+    <p>It has no choice but to use your configured DNS and can not run into a DNS timeout any more. Hope I could help you. This was so annoying to fix... .</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/KDE/plasma-nm">https://github.com/KDE/plasma-nm</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.01.30 - 17:30');</script></div>
+  </body>
+</html>

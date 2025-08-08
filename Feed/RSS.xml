@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>CatWithCode - Home</title>
+        <link>https://catwithcode.moe/</link>
+        <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
+        <!-- RSS ENTRYS - START -->
+        <item>
+			<title>CatWithCode - New add-on to the website design</title>
+			<link>https://catwithcode.moe/Blog/2025.07.31_New_Addon_To_Design/New_Addon_To_Design.html</link>
+			<description>After a long hard week, both with work and game-dev, I deiced I want to do something stupid. Something really really stupid.
+			
+			https://catwithcode.moe/Blog/2025.07.31_New_Addon_To_Design/New_Addon_To_Design.html
+			</description>
+			<pubDate>Thu, 31 Jul 2025 20:03:39 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Blockbench Culling / DoubleSided</title>
+			<link>https://catwithcode.moe/Blog/2025.07.22_Blockbench_Culling/Blockbench_Bulling.html</link>
+			<description>Blockbench if you export to .gltf inserts "doubleSided":true into it. This causes in Godot and other Engines that do not suport import material overwrites culling to be disabled. This causes textures to be rendered inside the model too. This is a huge performance killer and VRAM eater. By setting this to false the model is one-sided. This needs to be taken into account when creating a model or fixed by comparing the render with the model software and rotate or split the meshes that a wrongly rotated. Can be time consuming but worth the performance boost! Overdraw is heavy on the GPU.
+			
+			https://catwithcode.moe/Blog/2025.07.22_Blockbench_Culling/Blockbench_Bulling.html
+			</description>
+			<pubDate>Mon, 21 Jul 2025 22:27:20 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - My experience with Linux on Mobile</title>
+			<link>https://catwithcode.moe/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html</link>
+			<description>I tested Ubuntu Touch again. It works great now. Everything is working but I notices something for myself. FOR ME, it works, but is not viable.
+			
+			https://catwithcode.moe/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html
+			</description>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Philips Evnia 49M2C8900L - Perfect Settings, Bug fixes, Workarounds and little Review</title>
+			<link>https://catwithcode.moe/Blog/2025.06.14_Philips_OLED_49/Philips_OLED_49.html</link>
+			<description>I bought an Ultrawide (And I mean ULTRA) monitor and also used the opportunity to jump on the PC monitor OLED train. In the past I used a janky Gamescope setup and stretch my image over all screen, but now I have a screen that just dose a stupidly ultra wide image from factory.
+			
+			https://catwithcode.moe/Blog/2025.06.14_Philips_OLED_49/Philips_OLED_49.html
+			</description>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Design made worst</title>
+			<link>https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html</link>
+			<description>I added more effects to the website. I called this entry “Design made worst” because everyone I asked says it makes the design worst. I will probably fix a few things and will maybe also add a few things. This page will updated for it to keep the “final” new design preserved as all the old ones were too (I linked to them in the Sources).
+			
+			https://catwithcode.moe/Blog/2025.05.29_Design_Made_Worst/Design_Made_Worst.html
+			</description>
+			<pubDate>Mon, 30 Jun 2025 17:29:07 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - TUF GAMING B450-PLUS II NVMe BUG</title>
+			<link>https://catwithcode.moe/Blog/2025.05.14_TUF_GAMING_B450-PLUS_II_NVMe_BUG/TUF_GAMING_B450-PLUS_II_NVMe_BUG.html</link>
+			<description>My husband's PC has this board (BIOS: 4631 - 292156861A336E1F25B66934958F9770F263366C09687F03450F12D99943516D - 2025/04/01), and on Linux it causes heavy and I mean HEAVY stutters and freezes. It has something to do with NVMe and power-saving mode. I fixed it with the following grub boot parameters found on the Arch Wiki. If that affects something we did not try or check IDK.:
+			
+			https://catwithcode.moe/Blog/2025.05.14_TUF_GAMING_B450-PLUS_II_NVMe_BUG/TUF_GAMING_B450-PLUS_II_NVMe_BUG.html
+			</description>
+			<pubDate>Wed, 14 May 2025 17:29:21 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - 3DS no Battery mod (Hardwired)</title>
+			<link>https://catwithcode.moe/Blog/2025.05.13_3DS_No_Battery_Mod/3DS_No_Battery_Mod.html</link>
+			<description>My husband and I needed decorations for our new surround sound setup. We added a shelf to our living room and that now needs decorations and, as young adults nowadays are, we don't own and/or want generic seasonal bulls*it decorations. So we got random gaming crap from our childhood's from the basement and put it in there. While doing this I discovered literally all battery's of any Nintendo console was bloated.
+			
+			https://catwithcode.moe/Blog/2025.05.13_3DS_No_Battery_Mod/3DS_No_Battery_Mod.html
+			</description>
+			<pubDate>Wed, 14 May 2025 07:19:34 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - 7.1 Soround sound from E-Waste</title>
+			<link>https://catwithcode.moe/Blog/2025.05.08_Ewaste_Surround/Ewaste_Surround.html</link>
+			<description>I know I am pumping so many entry's out at the moment that it is not funny anymore. To be honest, most of the last entry's happened over time and the projects just start to close up relatively closely to each other. Today I have followed an advice I read online way to often. Building a "sick" surround sound setup from used parts. Some people call that stuff E-Waste.
+			
+			https://catwithcode.moe/Blog/2025.05.08_Ewaste_Surround/Ewaste_Surround.html
+			</description>
+			<pubDate>Mon, 12 May 2025 20:19:42 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - iMac LATE 2013 27-inch in 2025 and Nvidia 470 with modern Proton</title>
+			<link>https://catwithcode.moe/Blog/2025.04.25_iMac_2013_in_2025/iMac_2013_in_2025.html</link>
+			<description>The iMac project (If you want to know the NVIDIA part scroll down to "Installing Linux and using modern Proton"). This was one hell of a ride. I will tell the story how I got it, why it is special, the painful process of upgrading it and how to run MODERN proton versions with the old Nvidia 470 Driver (and a rant on, what in my opinion is, plant obsolescence).
+			
+			https://catwithcode.moe/Blog/2025.04.25_iMac_2013_in_2025/iMac_2013_in_2025.html
+			</description>
+			<pubDate>Sun, 27 Apr 2025 01:03:13 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - How to actually get Q-Flash Plus to work</title>
+			<link>https://catwithcode.moe/Blog/2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html</link>
+			<description>Yes I mean it. Independent BIOS flash is a great idea but as usual the manufactures f*ck it up all the time. Q-Flash Plus on Gigabyte motherboards works. !BUT! it is very VEEERRRYY sensitive to the environment (USB2.0 or USB3.0, FAT or FAT32 and so on). I torture myself to find the right config and found a Reddit Post with one answer that had the solution. Below is how to EXACTLY AND I MEAN E X A C T L Y do it to get it working.
+			
+			https://catwithcode.moe/Blog/2025.04.21_QFlashPlus_Fix/QFlashPlus_Fix.html
+			</description>
+			<pubDate>Mon, 21 Apr 2025 14:36:06 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Linux with HDR, Ultrawide and Sunshine? KDE 6.3!</title>
+			<link>https://catwithcode.moe/Blog/2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html</link>
+			<description>I used Hyprland for a longer time now. I also was using tilling window managers for a few years now. But Hyprland had its issues again (most likly something I setup wrong). I reinstalled and switched to OpenSuse and tried KDE just a little and was blown away how good it now is!
+			
+			https://catwithcode.moe/Blog/2025.04.17_Linux_HDR_Ultrawide/Linux_HDR_Ultrawide.html
+			</description>
+			<pubDate>Thu, 17 Apr 2025 21:14:47 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - First of April, I Guess</title>
+			<link>https://catwithcode.moe/Blog/2025.04.01_First_Of_April_I_Guess/First_Of_April_I_Guess.html</link>
+			<description>To be honest IDK. why I did that. A friend challenged me and I thought it would be funny. So... I made my OC a CatGirl... Racon girl? I guess IDK. to be honest xD. This was also a challenge to myself to see how much my ability to create my ideas in 3D models improved and well, I think I am able to do it now for what it is worth. And I like my art style if you can call it that. I can not imagine any images in my head, like at all. That always made it really hard for me to draw or fully imagine if something would look good. At first I did not know what I was doing but now I can use the tools provided to me, and actually create what I want. The latest thing I did yesterday in RE//POSSESSED was to complete one of the BAR areas. And I also wanted to slip a reference to "VA-11 Hall-A" into it. And I think I did what I wanted to do.
+			
+			https://catwithcode.moe/Blog/2025.04.01_First_Of_April_I_Guess/First_Of_April_I_Guess.html
+			</description>
+			<pubDate>Tue, 01 Apr 2025 22:45:17 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Using Sunshine with Hyprland on a Headless Display</title>
+			<link>https://catwithcode.moe/Blog/2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html</link>
+			<description>To get a remote desktop session to work without crapy or crapy proprietary tools you can use Sunshine with moonlight. The only issue would be the mouse could get off screen and the displays still would suck power (and are screen would be free to see for everyone in the room). My setup based on the tutorial by "xTeixeira" uses a script that sets everything up for me. The only issue is you must close all windows before entering or exiting remote but that's it. Oh and the swayidel, lock and waybar processes have issues to work after Sunshine closes. It seems like that Sunshine can not disown the sub-scripts. This needs a hotkey/menu-enty to work around it. But that's really it with issues.
+			
+			https://catwithcode.moe/Blog/2025.03.21_Sunshine_Remote_Headless_Hyprland/Sunshine_Remote_Headless_Hyprland.html
+			</description>
+			<pubDate>Sat, 22 Mar 2025 21:46:48 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - New Website Design</title>
+			<link>https://catwithcode.moe/Blog/2025.01.25_New_Design/New_Design.html</link>
+			<description>Well... we go back in time even more. Borders? YES, Font? PIXELS, Readability? Actually a little better, CSS-Code? More jank. The new design has inspiration from different directions. From Serial Experiments Lain, to my own game to Neon Genesis Evangelion and old Linux Desktops like 4Dwm themes or old OpenBox setups or very old GNOME. I think you get it.
+			
+			https://catwithcode.moe/Blog/2025.01.25_New_Design/New_Design.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - I found a PRO 3CCD Camera with SD-Cards! The JVC GY-HM100</title>
+			<link>https://catwithcode.moe/Blog/2025.01.21_3CCD_Digital_SD_Camera/3CCD_Digital_SD_Camera.html</link>
+			<description>I searched for some time already. In the past I was researching and found many good MiniDV cameras with the lovely 3CCD sensor. The issue is in the name, MiniDV. Very bad for modern usage. I could sadly never find a 480p 3CCD camera with SD-Cards that is not a crappy consumer camera. Until now: The JVC GY-HM100! It can do: 1080i, 720p AND 480p (In the Photo mode). This is near perfect! Native 480p in Video mode too would be perfect but this is still very good. It is a professional camera on all fronts! It is from 2009 and if you go even a little more high end you end up with MiniDV again. There are SOME SD-Card models for professionals that are actual higher end BUT they are like 2000 euro even in 2025! Even the JVC GY-HM100 is already on the expensive side of things and really rare already. The JVC GY-HM700 would peak... camera and price wise~. 
+			
+			https://catwithcode.moe/Blog/2025.01.21_3CCD_Digital_SD_Camera/3CCD_Digital_SD_Camera.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Building a Workbench with Trash (And a KALLAX from IKEA)</title>
+			<link>https://catwithcode.moe/Blog/2025.01.03_Building_Workbench_with_trash/Building_Workbench_with_trash.html</link>
+			<description>I always used my PC table for my projects and that always sucked. For anything else I always needed to remove the current project from it to do stuff. I have, next to my PC table, a "KALLAX" shelf-thingy from IKEA. We needed furniture fast the last time we moved and it is from my study years so we kept it. I actually wanted to gift it to the next person moving in but that did not work out obviously.
+			
+			https://catwithcode.moe/Blog/2025.01.03_Building_Workbench_with_trash/Building_Workbench_with_trash.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Looking back</title>
+			<link>https://catwithcode.moe/Blog/2025.01.02_Looking_back/Looking_Back.html</link>
+			<description>I have my online presents/website and this hole project now for around 3 years already... I just needed to count the time myself and wow 3 years already.
+			
+			https://catwithcode.moe/Blog/2025.01.02_Looking_back/Looking_Back.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - RE//POSSESSED is Public</title>
+			<link>https://catwithcode.moe/Blog/2024.12.25_REPOSSESSED_Public/REPOSSESSED_Public.html</link>
+			<description>I'm very happy to officially announce RE//POSSESSED (Not final name). A webpage with screenshots, social media presence and a gameplay showcase video go online at the same time this entry gets published.
+			
+			https://catwithcode.moe/Blog/2024.12.25_REPOSSESSED_Public/REPOSSESSED_Public.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - The ultimate (no compromise) Thinkpad T440P (Coreboot and Mods)</title>
+			<link>https://catwithcode.moe/Blog/2024.12.07_Ultimate_T440P/Ultimate_T440P.html</link>
+			<description>Yes I know I'm literally the Thinkpad-Meme but, hey it was a lot of fun.
+			
+			https://catwithcode.moe/Blog/2024.12.07_Ultimate_T440P/Ultimate_T440P.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Enshittification of Everything. Stop it.</title>
+			<link>https://catwithcode.moe/Blog/2024.10.25_Enshittification_Opinion/Enshittification_Opinion.html</link>
+			<description>No one asked - Then go the f*ck of my Website.
+			
+			https://catwithcode.moe/Blog/2024.10.25_Enshittification_Opinion/Enshittification_Opinion.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Digitizing / Modernizing MiniDV Cameras is near impossible</title>
+			<link>https://catwithcode.moe/Blog/2024.10.19_Digitizing-Modernizing_MiniDV_Cameras/Digitizing-Modernizing_MiniDV_Cameras.html</link>
+			<description>I was (and still am) sick over the last few days. So... I had time while lying there and just existing to do some more off and on research I onto a topic I was always interested in. Professional SD 3CCD-MiniDV Cameras. I wanted / want one real bad but there is one issue... they kinda suck when it comes to Modernizing. Lets keep it short: It is near impossible except if you carry around a laptop with Thunderbolt.
+			
+			https://catwithcode.moe/Blog/2024.10.19_Digitizing-Modernizing_MiniDV_Cameras/Digitizing-Modernizing_MiniDV_Cameras.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Everything about Ubuntu Touch on the Fairphone 5</title>
+			<link>https://catwithcode.moe/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html</link>
+			<description>In this entry I will document everything about using Ubuntu Touch on the Fairphone 5. I independently volunteer as a beta tester.
+			
+			https://catwithcode.moe/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - F*uck Search Engines. Time to exploit there system</title>
+			<link>https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html</link>
+			<description>They don't / have a hard time indexing/finding my website. Just because I don't follow the predatory rules that many of them (not all) enforce.
+			
+			https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Progress with RE//POSSESSED and a custom Page</title>
+			<link>https://catwithcode.moe/Blog/2024.09.28_REPOSSESSED_Progress_and_Page/REPOSSESSED_Progress_and_Page.html</link>
+			<description>RE//POSSESSED has left the state of proof of concept around 3 month ago with the full commitment to it. Next to my daily work there is sadly not as much time as I would like to invest into it but I work nearly every day multiple hours on it.
+			
+			https://catwithcode.moe/Blog/2024.09.28_REPOSSESSED_Progress_and_Page/REPOSSESSED_Progress_and_Page.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Significant simplification of my Websites Pipline and update to RE//POSSESSED</title>
+			<link>https://catwithcode.moe/Blog/2024.09.25_Simplification_Of_Website_Pipline/Simplification_Of_Website_Pipline.html</link>
+			<description>I took a small break from RE//POSSESSED and modded some Wii-Stuff, see last entry, and build a script for my Website. that helps updating certain things.
+			
+			https://catwithcode.moe/Blog/2024.09.25_Simplification_Of_Website_Pipline/Simplification_Of_Website_Pipline.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Wii Sensor Bar to USB and Wii Remote on PC</title>
+			<link>https://catwithcode.moe/Blog/2024.09.24_Wii_Remote_and_SensorBar_On_PC/Wii_Remote_and_SensorBar_On_PC.html</link>
+			<description>I have modded stuff on the weekend... and one of the things was to make a Wii Sensor Bar universal aka. USB-Powered. But I did not want to invest to much money into it (meaning doing it with just an USB-Cable and solder).
+			
+			https://catwithcode.moe/Blog/2024.09.24_Wii_Remote_and_SensorBar_On_PC/Wii_Remote_and_SensorBar_On_PC.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - How I enforce my PiHole in my Network</title>
+			<link>https://catwithcode.moe/Blog/2024.09.10_Enforce_PiHole/Enforce_PiHole.html</link>
+			<description>One word before I explain: There are many ways device's try to reach there own wanted DNS-Server. TLS, directly or even through a VPN. VPN bypassing can not really be blocked except you close all VPN ports and block VPN IPs and DNS-Entry's but then VPN's will not work at all anymore. And even then they can use a external proxy for bypassing using a different port. In short: This only works for normal blocking and will work 99.999% of the time. If someone really, REALLY, and I mean REALLY try's to bypass this block they will be able to, but for normal usage this is perfect.
+			
+			https://catwithcode.moe/Blog/2024.09.10_Enforce_PiHole/Enforce_PiHole.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Help the Internet Archive</title>
+			<link>https://catwithcode.moe/Blog/2024.09.09_Help_Internet_Archive/Help_Internet_Archive.html</link>
+			<description>The Internet Archive needs help, donate or help raise awareness:
+			
+			https://catwithcode.moe/Blog/2024.09.09_Help_Internet_Archive/Help_Internet_Archive.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Linux File Write Protection that can not be deleted from sudo</title>
+			<link>https://catwithcode.moe/Blog/2024.08.29_Linux_File_Write_Protect/Linux_File_Write_Protect.html</link>
+			<description>Not much to say about it. I wanted to protect some Files and Folders from writing and deleting even from sudo users.
+			
+			https://catwithcode.moe/Blog/2024.08.29_Linux_File_Write_Protect/Linux_File_Write_Protect.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Getting Flawless Widescreen to work on Linux with Mod-Launchers (e.g. HedgeModManager) and GameScope</title>
+			<link>https://catwithcode.moe/Blog/2024.06.28_Linux_Flawless_Widescreen_With_GameScope_Mod_Launchers/Linux_Flawless_Widescreen_With_GameScope_Mod_Launchers.html</link>
+			<description>There is actually quite a bit to do to get it to work. I will start by explaining how I got mod managers (e.g. HedgeModManager) to work and how to get Flawless Widescreen working on Linux.
+			
+			https://catwithcode.moe/Blog/2024.06.28_Linux_Flawless_Widescreen_With_GameScope_Mod_Launchers/Linux_Flawless_Widescreen_With_GameScope_Mod_Launchers.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Image Librarys are now available and a Teaser for my upcoming Project</title>
+			<link>https://catwithcode.moe/Blog/2024.06.22_ImageLibrary_and_Teaser/ImageLibrary_and_Teaser.html</link>
+			<description>Not much to say about it. It is accessible in the header bar and contains images I want to share. The images are higher quality then usual around here BUT still heavily compressed or edited to keep the size down. Web space is expensive.
+			
+			https://catwithcode.moe/Blog/2024.06.22_ImageLibrary_and_Teaser/ImageLibrary_and_Teaser.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - My DND-TV-Table</title>
+			<link>https://catwithcode.moe/Blog/2024.06.01_My_DND-TV-Table/My_DND-TV-Table.html</link>
+			<description>Yeah, I have build my own boardgame TV table, better known as the DND-TV-Table. If you want to build one yoursef, you can use my model for measurements. The units are real life centimetres. And, sorry not sorry, it's a Blockbench model, so it can't be used for ordering parts or building things directly, but it can help a lot. The TV I used was the SHARP LC-43CFG6452E. I had to remove the rebuild model of the TV from the Blockbench model. You will need to model your TV yourself. You only need to do this if you have a different TV, which is very likely :D. The holes are made to fit most TV's with a little bit of cutting. All rights reserved! Don't share or sell it! IT IS FOR PERSONAL USE ONLY! I WILL ENFORCE MY COPYRIGHTS!
+			
+			https://catwithcode.moe/Blog/2024.06.01_My_DND-TV-Table/My_DND-TV-Table.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - The most convoluted Vinyl Setup imaginable</title>
+			<link>https://catwithcode.moe/Blog/2024.05.21_The_most_convoluted_Vinyl_Setup_imaginable/The_most_convoluted_Vinyl_Setup_imaginable.html</link>
+			<description>For reasons I have a Turntable that I can not use currently. I wanted to be able to use it, even though it is relatively rare. The easiest way I found was to use my guitar mix panel and my PC.
+			
+			https://catwithcode.moe/Blog/2024.05.21_The_most_convoluted_Vinyl_Setup_imaginable/The_most_convoluted_Vinyl_Setup_imaginable.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Expecting Software/Hardware is wrong</title>
+			<link>https://catwithcode.moe/Blog/2024.05.01_Expecting_Software_is_wrong/Expecting_Software_is_wrong.html</link>
+			<description>What do I mean by that? I mean expecting people to have an Android/iPhone phone with the Play-Store/App-Store on it so you can download a stupid data-harvesting app so you can get your concert tickets (if you know who I mean, you know who I mean). It doesn't even stop at private companies, even the government expects you to have one these days.
+			
+			https://catwithcode.moe/Blog/2024.05.01_Expecting_Software_is_wrong/Expecting_Software_is_wrong.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Art is NOT Content!</title>
+			<link>https://catwithcode.moe/Blog/2024.04.12_MAKE_ART/MAKE_ART.html</link>
+			<description>Art and every kind of creation, especially in digital media, get's called content nowadays. From paintings to games to music, from videos to even books. How much, how long, how good? that is all people talk about. You could say it is just a word, but it represents a deeper issue with the way people look at art today: it is, for most, mindless stimulation. It is content.
+			
+			https://catwithcode.moe/Blog/2024.04.12_MAKE_ART/MAKE_ART.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - My Retro Compaq Sleeper PC with a AMD Radeon RX 7900XT, Ryzen 9 7900X, 32GB DDR5 RAM @ 6000mhz and a 1000W PSU</title>
+			<link>https://catwithcode.moe/Blog/2024.03.26_Retro_Compaq_Sleeper/Retro_Compaq_Sleeper.html</link>
+			<description>I have collected a few old computers and "retro" consoles over the years. Recently I found a Compaq Prolinea 575e at my local recycling center. It is nothing special, just an old x86 computer that was not selling very well at the time. It looked all right from the outside, so I talked to the people there and took it home. Inside, the hardware was... well... some capacitors were not feeling well and puked their fluids all over the place. In short, the hardware was completely f*cked. But the case was still in ok condition and I decided to clean it up as much as possible and, if it looked decent after that, I would make it my new PC case.
+			
+			https://catwithcode.moe/Blog/2024.03.26_Retro_Compaq_Sleeper/Retro_Compaq_Sleeper.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Android Auto without Google Services (MicroG [Disabled]) - [ROOT]</title>
+			<link>https://catwithcode.moe/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html</link>
+			<description>This is written a bit differently as it was originally part of the Fairphone 5 entry. It should give you all the information you need to get started and to get it working.
+			
+			https://catwithcode.moe/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Fixing Firefox taking forever to start on Linux (OpenSuse)</title>
+			<link>https://catwithcode.moe/Blog/2024.01.30_Firefox_DNS_ISSUE/Firefox_DNS_ISSUE.html</link>
+			<description>I was having a problem on one of my OpenSuse installations where Firefox was taking about 30 seconds to start. After changing some network settings it fixed itself, but the longer the system ran the worse it got again.
+			
+			https://catwithcode.moe/Blog/2024.01.30_Firefox_DNS_ISSUE/Firefox_DNS_ISSUE.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - HyprLain: My first Dot Files</title>
+			<link>https://catwithcode.moe/Blog/2024.01.20_HyprLain_DotFiles/HyprLain_DotFiles.html</link>
+			<description>Not much to say about it. I made dot files based on a game/anime. Very simple but effective. Many files are missing (mainly wallpapers and sound effects). But there is no way to include them. They are copyrighted. I documented a way to recreate them (and yes, it took me at least as much time to figure it out as it feels like while reading, which is like several days). Was it worth it? No. Would I do it again if I could time travel? Yes. ;P
+			
+			https://catwithcode.moe/Blog/2024.01.20_HyprLain_DotFiles/HyprLain_DotFiles.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Minecraft with FSR and Gamescope</title>
+			<link>https://catwithcode.moe/Blog/2024.01.07_Minecraft_Gamescope/Minecraft_Gamescope.html</link>
+			<description>Let's keep this short. If you want to play Minecraft with Gamescope for multi-monitor gaming, or FSR upscaling for better performance (or both), you will probably encounter several errors. The easy way to fix this is to use graphics mods, which seem to change a lot of things in the rendering pipeline to fix the problems encountered in vanilla Minecraft with this setup.
+			
+			https://catwithcode.moe/Blog/2024.01.07_Minecraft_Gamescope/Minecraft_Gamescope.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Fixing Linux VIA-Keyboard ERROR in VIA-Configuration-Software</title>
+			<link>https://catwithcode.moe/Blog/2024.01.03_Linux_VIA/Linux_VIA.html</link>
+			<description>Not much to say. I got to try out a keyboard that supports via configuration. I knew there was is a open source keyboard firmware (QMK), but I had never used a keyboard that supported it. The problem on Linux is that a security feature prevents the configuration page from accessing and communicating with the keyboard directly. I got it to work using Chromium because it supports WebHID (native, NOT flatpack, idk. what prevents flatpack from working with this workaround) thanks to a thread on the Arch Wiki. We need to allow the browser to access the software on the keyboard. Open "chrome://device-log" in Chromium, then open the/your VIA page and try to connect. Now check the output of the log tap in Chromium. You should be able to find a line like "Failed to open '/dev/hidraw7': FILE_ERROR_ACCESS_DENIED". Open a terminal and run the following command with your ID:
+			
+			https://catwithcode.moe/Blog/2024.01.03_Linux_VIA/Linux_VIA.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - The new Design is finally here</title>
+			<link>https://catwithcode.moe/Blog/2023.12.29_NewDesignIsHere/NewDesignIsHere.html</link>
+			<description>I will really try not to make all the gifs too annoying / performance intensive XD. But I will allow myself at least for this post to put a lot of stupit useless Assistent gif and more everywhere. Just for fun.
+			
+			https://catwithcode.moe/Blog/2023.12.29_NewDesignIsHere/NewDesignIsHere.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Modding Android TV to make it not suck (and why you should not use the smart features, in my opinion)</title>
+			<link>https://catwithcode.moe/Blog/2023.12.21_AndroidTV_Modding_Experience/AndroidTV_Modding_Experience.html</link>
+			<description>We bought a new TV (OLED and yes it is really nice) and it has Android TV on it. Android == modding for me, LOL. I enabled USB debugging and installed a few apks via network. Finding apks that work on Android TV is hard. Firefox CAN work, but you need a universal apk, which can be hard to get/find. There are websites that host the official Universal image mirrored from the Playstore. Getting it from the Google Play server is possible, but I did not succeed with this method. A good indicator is that the apk is around 200mb instead of around 100mb. After I got firefox working, I installed alternative stores and open source alternatives to the play store, installed flauncher (open source alternative launcher for the home menu (android tv stock home menus are so useless and cluttered with ads)), disabled the stock launcher completely with two commands that need to be executed really really fast for it to work (one of the packages renables the other), added the wifi password again (after disabling the stock luncher you have to do that) and I was almost done. I installed a few missing apps like vlc and steamlink, removed as much garbage as possible with the andoird app settings and set dark images as wallpaper so the oled is not strained with stupit stuff and that was it. A few hours of work, a lot of disabling, replacing and correcting stuff but now the tv is really nice to use. The replacement launcher makes everything easy to access without ads, the TV feels faster with the developer setting for animation speed enabled at 0.5x. I really like it now.
+			
+			https://catwithcode.moe/Blog/2023.12.21_AndroidTV_Modding_Experience/AndroidTV_Modding_Experience.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - 404 - Page added for the forthcoming new design and some tweaks</title>
+			<link>https://catwithcode.moe/Blog/2023.12.13_404_Page_Added/404_Page_Added.html</link>
+			<description>I never noticed it was missing until I found a broken link to another blog post. So I built one. I also added a few things in the background to prepare the site for further changes. I mainly wanted a 404 page, the ability to display gifs without them being blurry and to disable interpolation as much as possible. LET THE PIXELS BREATHE >:D. I will be adding many more changes over the next few days and weeks, without making much of a fuss, until major changes are done. This entry will probably never be read by anyone but me BUT it's there :D.
+			
+			https://catwithcode.moe/Blog/2023.12.13_404_Page_Added/404_Page_Added.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Fix: USB has only Power and No Data on Linux</title>
+			<link>https://catwithcode.moe/Blog/2023.12.07_FIx_USB_NO_DATA_ONLY_POWER/FIx_USB_NO_DATA_ONLY_POWER.html</link>
+			<description>A recent kernel update made my front USB ports and a USB-C to HDMI adapter on my GPU unusable (yes, the AMD RX7900XT/XTX have a USB-C port and yes they are USB-4 port with Displayport AND data for USB for example. Docks actually work on them lol). The problem was that the ports had power BUT no data going through them. Linux did't even saw the ports with lsusb.
+			
+			https://catwithcode.moe/Blog/2023.12.07_FIx_USB_NO_DATA_ONLY_POWER/FIx_USB_NO_DATA_ONLY_POWER.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Finally! RSS-Feed for CatWithCode.moe x3</title>
+			<link>https://catwithcode.moe/Blog/2023.12.02_CatWithCode_RSS-Feed/CatWithCode_RSS-Feed.html</link>
+			<description>A very VERY simple implementation and still handmade because my custom webpage tool is still in the early stages of development. Hope you like it! I have added items for old entries with very basic information. New ones will probably get a custom text and formatting if I'm not too lacy, but for any old entry its just not worth it. Now everyone can keep up with my BS. Probably no one will, lol, but its there now ;).
+			
+			https://catwithcode.moe/Blog/2023.12.02_CatWithCode_RSS-Feed/CatWithCode_RSS-Feed.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Using WMR on Linux with SteamVR (Windows Mixed Reality) and playing Cyberpunk 2077 VR [R.E.A.L Mod]</title>
+			<link>https://catwithcode.moe/Blog/2023.11.30_VR_ON_LINUX/VR_ON_LINUX.html</link>
+			<description>Windows Mixed Reality on Linux? Yes... yes, some people are just crazy and make everything possible. I tried it and it works very well. Much better than you would expect. More often than not, the Linux tools are far FAR more stable than the official windows tools (which are kinda not good. They are bad... like really bad. They are so bad that even my mum asked why the official tools are so unstable). Just wow and huge respect to the developers and the community behind the Linux Software!!!
+			
+			https://catwithcode.moe/Blog/2023.11.30_VR_ON_LINUX/VR_ON_LINUX.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - New Design!</title>
+			<link>https://catwithcode.moe/Blog/2023.11.23_New_Design/New_Design.html</link>
+			<description>Not much to say. I saw a font in a game, thought it looked really cool and after reading the licence I wanted to use it for my website. All resources can be found in the sources section. Thanks to "Abbie Gonzalez" for creating the beautiful and very readable "OpenDyslexic"-Font!
+			
+			https://catwithcode.moe/Blog/2023.11.23_New_Design/New_Design.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Everything about Fairphone 5 modding:</title>
+			<link>https://catwithcode.moe/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</link>
+			<description>This time I will do things differently on my blog; I will just document everything useful I find out or do with the Fairphone 5 in one place without a goal in mind, as long as I am using it. Everything from modding to installing UbuntuTouch will be documented here:
+			
+			https://catwithcode.moe/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Review of the Dreamcast Controller to USB Adapter by Raphnet-Tech</title>
+			<link>https://catwithcode.moe/Blog/2023.11.06_Raphnet-Tech_Dreamcast-USB/Raphnet-Tech_Dreamcast-USB.html</link>
+			<description>Nothing was paid/sponsored/offered/provided/anything that would benefit me financially/personally if I wrote about it on my blog under the influence of a products developer. Everything is here because I wanted to write about it, no strings attached! Links to services I have used are only here because I want to give as much information as possible about how I made everything work. I bought it myself and then decided to talk about it on my blog for one reason: literally no one talks about or even wants to use there Dreamcast controller on their PC. Two or three youtube videos here and there, but thats it. I want to change that. And before anyone starts crying: I bought it for myself, Raphnet-Tech doesn't even know I exist, except for an email exchange confirming they don't ship to Germany, even better, they haven't shipped to Germany since 2019 or so. I had to import it myself using a proxy service. Also: There are other projects for this and all I found are not suitable for everyday use. But the cool thing is that Raphnet-Tech openly shows how to build there adapter on their blog. That means: If you want to build one yourself, you can "easily" do it with enough knowledge about hardware and chips. I linked everything I found and used in the sources section. And with that Internet BS out of the way;
+			
+			https://catwithcode.moe/Blog/2023.11.06_Raphnet-Tech_Dreamcast-USB/Raphnet-Tech_Dreamcast-USB.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Adding Sound-Effects to Sway, Hyprland and other Tilling-WM's</title>
+			<link>https://catwithcode.moe/Blog/2023.10.27_Sway_Tilling_WM_Sound_Effects/Sway_Tilling_WM_Sound_Effects.html</link>
+			<description>I wanted to add sound effects to my Sway desktop for different actions like ScreenLock and similar things. Thanks to the way most dot-File WMs work, you can add commands to almost any action. There is a little program that lets you play music in your terminal called sox. It has a command called "play". You can use this to play a sound when you start your sway season, for example:
+			
+			https://catwithcode.moe/Blog/2023.10.27_Sway_Tilling_WM_Sound_Effects/Sway_Tilling_WM_Sound_Effects.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Welcome to CatWithCode.moe</title>
+			<link>https://catwithcode.moe/Blog/2023.10.07-02_New_Website_Location/New_Website_Location.html</link>
+			<description>Well... that was quick. I'm already finished with moving my website from github pages to its own domain and webhost. The old site is now an archive and will only redirect the user to this site and will be deleted as soon as the search engine picks up the change. And now the big question: Why .moe? Answer: It's funny, cheap and fits the technical focus, nerdy atmosphere and style of my blog. I originally wanted .io but... wow is that domain expensive. Sorry not sorry. LOL
+			
+			https://catwithcode.moe/Blog/2023.10.07-02_New_Website_Location/New_Website_Location.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Rework and relocation of my lovely Website</title>
+			<link>https://catwithcode.moe/Blog/2023.10.07-01_Rework_Website/Rework_Website.html</link>
+			<description>I have reworked some parts of my website, making it as "releativ" as possible (and fixing some jank where possible). This will make moving as easy as possible. Moving? YES! I will move my website to its own domain. It's currently hosted on the GitHub pages, but I want to move it to its own domain and host. The name and links will probably change. Most of it is still in the works. I am just happy that the site now only uses relative paths. A lot of things are still not perfect, but good enough for a hobby project. If I could fix these few things, my site would not need Javascript. The problem is that I still have not found a way to make everything modular without using external libraries. And if you wanted to use only HTML and CSS right now, I would be reusing a lot of code and not be able to change the header for example on the fly without changing everything. I know, I know, static HTML websites are not meant to be used like this, but I want to. If I could do it without overloading browsers and using external libraries, I would go the other way and put everything in a DB and only load from there with basic Javascript. Unfortunately without external stuff this is not easy to do (in a reasonable amount of time for a hobby blog). Well, this is it for now. As soon as I'm done with the moving the website, I'll update a few pages and create a simple page to offer users a redirect from here to the new site. Everything will still be OpenSource, of course ;).
+			
+			https://catwithcode.moe/Blog/2023.10.07-01_Rework_Website/Rework_Website.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - I THINK YOU SOULD NOT USE UNITY!</title>
+			<link>https://catwithcode.moe/Blog/2023.09.23_I_THINK_YOU_SOULD_NOT_USE_UNITY/I_THINK_YOU_SOULD_NOT_USE_UNITY.html</link>
+			<description>They tried to change their model on how they make money by forcing a payment with every installation if your product meets certain conditions. What came out of it is irrelevant. Just the fact that they tried something like this shows how far a few people behind the company would go, risking the income and livelihood of so many costumers, just to make more money. That's besides the probability that the people behind this idea probably have enough money for 10 lifetimes. This is why I am removing all Unity related posts from my blog. You can still find them on older commits of this blog, but I will not link to them and will not help you find them. Use Godot, Unreal or something else, preferably Open Source.
+			
+			https://catwithcode.moe/Blog/2023.09.23_I_THINK_YOU_SOULD_NOT_USE_UNITY/I_THINK_YOU_SOULD_NOT_USE_UNITY.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - My experience with tiling window managers / dot-WM's and part2 of the Ultrawide gaming on Linux entry</title>
+			<link>https://catwithcode.moe/Blog/2023.08.08_Linux_dotWMs_and_Ultrawide_Gaming2/Linux_dotWMs_and_Ultrawide_Gaming2.html</link>
+			<description>Here is the first entry with KDE and ultrawide gaming:
+			
+			https://catwithcode.moe/Blog/2023.08.08_Linux_dotWMs_and_Ultrawide_Gaming2/Linux_dotWMs_and_Ultrawide_Gaming2.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Installing Linux on Android in chroot with 3D acceleration</title>
+			<link>https://catwithcode.moe/Blog/2023.07.20_Chroot_Linux_3D_Android/Chroot_Linux_3D_Android.html</link>
+			<description>Well... it was a lot of work. But it was worth it! Once everything is set up, you have a Linux installation on your Android phone at native speed (if you don't think about the resources Android needs to run). Even 3D acceleration for games works! It is still buggy and in very early development, but it works well enough. And the X11 hardware acceleration works great for everything else. It is literally an ARM PC in your phone. I used a lot of pre made tools to set everything up. All the stuff you need to do is soooo muuuucccchh. I would take weeks if I had to learn, try and setup everything muliple times. Read all the scripts and what each file does before e you use/execute them!
+			
+			https://catwithcode.moe/Blog/2023.07.20_Chroot_Linux_3D_Android/Chroot_Linux_3D_Android.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - How to fix broken Video/Audio in scrcpy</title>
+			<link>https://catwithcode.moe/Blog/2023.07.16_Scrcpy_Fix_Broken_Image/Scrcpy_Fix_Broken_Image.html</link>
+			<description>I am using a GSI on my phone and when I try to use scrcpy I get this output:
+			
+			https://catwithcode.moe/Blog/2023.07.16_Scrcpy_Fix_Broken_Image/Scrcpy_Fix_Broken_Image.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - I tried to continue a Ubuntu Touch port for the Unihert Titan and failed</title>
+			<link>https://catwithcode.moe/Blog/2023.07.15_Unihertz_Titan_Slim_UbuntuTouch_Fail/Unihertz_Titan_Slim_UbuntuTouch_Fail.html</link>
+			<description>I've knew about it for a while, but didn't think about it again until yesterday. I have had my Titan Slim for a while now and only now did it occur to me to try this port. My conclusion: this port is magic and a dead end at the same time, at least for me.
+			
+			https://catwithcode.moe/Blog/2023.07.15_Unihertz_Titan_Slim_UbuntuTouch_Fail/Unihertz_Titan_Slim_UbuntuTouch_Fail.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Playing Music with your PC-Speaker on Linux</title>
+			<link>https://catwithcode.moe/Blog/2023.07.02_Linux_Music_with_PC-Speaker/Linux_Music_with_PC-Speaker.html</link>
+			<description>If you are still a "fan" (It is just very useful to have when troubleshooting, OK?) of PC-Speaker (the thing that beeps at you when your PC starts) like me you defiantly wondered at least once if you can make noise inside of your OS with it. Turns out you can.
+			
+			https://catwithcode.moe/Blog/2023.07.02_Linux_Music_with_PC-Speaker/Linux_Music_with_PC-Speaker.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - SteamDeck 64GB SSD upgrade - System performance differences (eMMC to NVMe)</title>
+			<link>https://catwithcode.moe/Blog/2023.07.01_SteamDeck_SSD_Swap/SteamDeck_SSD_Swap.html</link>
+			<description>I swapped the SDD of my SteamDeck. This is not a How To, I just wanted to document my experience with system performance after the upgrade.
+			
+			https://catwithcode.moe/Blog/2023.07.01_SteamDeck_SSD_Swap/SteamDeck_SSD_Swap.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Automatic reboot of a Linux Server</title>
+			<link>https://catwithcode.moe/Blog/2023.06.30-02_Automatic_Linux_Server_Reboot/Automatic_Linux_Server_Reboot.html</link>
+			<description>I have just set up a Linux home server. I want it to shut down at night when no one is using it. After a bit of research I figured it out. I just wanted to document how I did it.
+			
+			https://catwithcode.moe/Blog/2023.06.30-02_Automatic_Linux_Server_Reboot/Automatic_Linux_Server_Reboot.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - My experiance installing a Nextcloud-Server.</title>
+			<link>https://catwithcode.moe/Blog/2023.06.30-01_Self_Hosting_Nextcloud/Self_Hosting_Nextcloud.html</link>
+			<description>I had an old PC sitting around doing nothing and I wanted a home server. After researching and looking up how to do things I got to work on it. I wanted an easy way to host my own game servers for games like minecraft, services like a youtube proxy or a RSS-feed and many more. But what I wanted most was a NextCloud server. I had to learn how to use Docker and Docker networking in such a way that it remained secure and accessible within my network, only by devices that we allowed. Everything should also be easily reversible or removable if we stop playing a game or a self-hosted service stops working. Docker is perfect for this.
+			
+			https://catwithcode.moe/Blog/2023.06.30-01_Self_Hosting_Nextcloud/Self_Hosting_Nextcloud.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Brother Network-Scanner on Linux with a Firewall in between</title>
+			<link>https://catwithcode.moe/Blog/2023.06.14_Brother_Network-Scanner_Linux_with_Firewall/Brother_Network-Scanner_Linux_with_Firewall.html</link>
+			<description>Well... Brother printers and scanners can be tricky to get working under Linux because they often use or need their own drivers. Now put a firewall in between and you are ready for some fun... . Yayyy... . I got it to work and documented my way of doing it, so you don't have to 😞. I used ufw with gufw as the frontend. This should work on all firewall's by just replacing the steps in there configuration.
+			
+			https://catwithcode.moe/Blog/2023.06.14_Brother_Network-Scanner_Linux_with_Firewall/Brother_Network-Scanner_Linux_with_Firewall.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Fixing Varmilo/Similar keyboards being mistaken for a Apple keyboard under Linux</title>
+			<link>https://catwithcode.moe/Blog/2023.06.09_Varmilo_Apple_Linux_Function_Key_Fix/Varmilo_Apple_Linux_Function_Key_Fix.html</link>
+			<description>I was given a Varmilo keyboard some time ago and it works fine on MacOS and Windows. But on Linux the FN (function) keys are reversed. Normally you hold down FN and press a number for an FN key, but on Linux you get media-keys instead. You can get FN-keys by pressing FN+PageDown, pressing the number and then FN-PageUp. This is annoying. The hid-apple kernel module is meant to fix this BUT for keyboards that are mistaken for an Apple keyboard it is a bit more finicky. I searched for quite a while and finally found a configuration that works for me.
+			
+			https://catwithcode.moe/Blog/2023.06.09_Varmilo_Apple_Linux_Function_Key_Fix/Varmilo_Apple_Linux_Function_Key_Fix.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Using Eclipse with JavaFX (with SceneBuilder, e(fx)clipse and fixed .fxml-Bug) on Linux</title>
+			<link>https://catwithcode.moe/Blog/2023.06.04_Linux_Eclipse_JavaFX_efxclipse/Linux_Eclipse_JavaFX_efxclipse.html</link>
+			<description>I wanted to use my Eclipse work environment on Linux, but if you look a bit into it you will see that there is a lot of tinkering needed to get everything working when it comes to JavaFX. Here I will document how I did it.
+			
+			https://catwithcode.moe/Blog/2023.06.04_Linux_Eclipse_JavaFX_efxclipse/Linux_Eclipse_JavaFX_efxclipse.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Unihertz Titan Slim - GSI's and Modding</title>
+			<link>https://catwithcode.moe/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html</link>
+			<description>It's me again trying to mod Unihertz Titan Phone. But this time all of the sesearch and documentation work was already done by rumplestilzken @ Github with absolutely great tools and documentation. This entry is only to show in what order I did everything and how it worked out. This one will be written more like a continues Blog entry because I'm writing this over the time I wait for the phone to arrive until I have it modded and working. Last time I modded a Unihertz and wrote an entry about it I primarily did research and testing. The development and reverse engineering was already done by others, just not in one place and all over the internet.
+			
+			https://catwithcode.moe/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Forcing Triple Screen Gaming without Eyefinity or Surround on Linux (KDE)</title>
+			<link>https://catwithcode.moe/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html</link>
+			<description>This is outdated. More updated information: /Blog/2023.10.16_No_Desktop_Is_Ready_For_Ultrawide/No_Desktop_Is_Ready_For_Ultrawide.html
+			
+			https://catwithcode.moe/Blog/2023.04.07_Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Linux_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Forcing Triple Screen Gaming without Eyefinity or Surround on Windows</title>
+			<link>https://catwithcode.moe/Blog/2023.02.16_Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html</link>
+			<description>I wanted to play Racing-Games and others in a very weird tripple screen setup on windows. It is a "Portrait Lanscape Portrait"(PLP)-Setup. And to top it off, it is P1080p-60hz, L1440p-165hz-P1080p-60hz.
+			
+			https://catwithcode.moe/Blog/2023.02.16_Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround/Windows_Force_Triple_Screen_Gaming_without_Eyefinity_or_Surround.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - AM5, X670, DDR5 and fixing XMP/EXPO</title>
+			<link>https://catwithcode.moe/Blog/2022.12.26_X670_DDR5_XMP-EXPO_FIX/X670_DDR5_XMP-EXPO_FIX.html</link>
+			<description>UPDATE FROM 2023.02.01: LOL. They removed F4d as well (Thank's to NickHumphries: https://github.com/CatWithCode/catwithcode.moe/issues/3#issue-1566352686). It is still online: [SHA256: b142eb7f96505e26b4667737b820afa6afb41487e69052b0137f963a2e168b31]: https://download.gigabyte.com/FileList/BIOS/mb_bios_x670-gx-ax_f4d.zip
+			
+			https://catwithcode.moe/Blog/2022.12.26_X670_DDR5_XMP-EXPO_FIX/X670_DDR5_XMP-EXPO_FIX.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - AMD Radeon RX 7900 XT/XTX on Linux shortly after release:</title>
+			<link>https://catwithcode.moe/Blog/2022.12.16_Radeon_7900XT-XTX_On_Linux/Radeon_7900XT-XTX_On_Linux.html</link>
+			<description>UPDATE FROM 2023.01.08: Thx to some people in this Github-Issue: "https://github.com/CatWithCode/catwithcode.moe/issues/1" I discovered that Arch is not really working... actually... it kinda works great... IDK. It ONLY works if the iGPU of the CPU is enabled. Nothing is connected to it, but for some unknown reason everything works as long as this condition is checked. NO performance issues or anything! With iGPU disabled everything is extremely broken. As far as everyone can tell, it has something to do with a still outdated version of LLVM (The 7900XT/XTX needs version 15 or higher). For me it is perfectly working so I don't worry about it, but if you don't have a iGPU on your CPU the 7900XT/XTX will still not work without some fixing work! I left some good discoveries and information in the Sources Section if you need a starting point. All this will definitely change in the very near future, but for now that's all we got. When even Arch is too outdated for your hardware you know you bought bleeding edge. Also, some games show multiple ways to display the game (I only have displays on the 7900XT and some games give me the option to display it on one of the three displays with 2 different GPUs each (https://github.com/CatWithCode/catwithcode.moe/issues/1#issuecomment-1374572918). Some games that come as a Flatpack have the issue of relying on some Flatpack dependency that is too outdated to recognize the 7900XT/XTX and only render the game on the iGPU (DXVK-HUD can tell you what the game gets rendered on). XIVLauncher for example. AUR or compiling yourself is the only option currently (Will also definitely change in the near future!).
+			
+			https://catwithcode.moe/Blog/2022.12.16_Radeon_7900XT-XTX_On_Linux/Radeon_7900XT-XTX_On_Linux.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Removing Google from my Website and leaving Twitter</title>
+			<link>https://catwithcode.moe/Blog/2022.11.11_Removing-Google_Goodbye-Twitter/Removing-Google_Goodbye-Twitter.html</link>
+			<description>Most search engines finally found my Website and indexed it (Everything from DuckDuckGo to even Bing). Now I don't need to force any indexing anymore and decided to remove the Google-HTML-Tag from this Website completely. Now that the search engines do the indexing them self I don't need to force it through Google anymore. That means in the near future I can not use the google search console and don't see anything google search related information about my website anymore because google will not know that I am more or less the owner of this website. Privacy GO! But Google still can see everything about you... well, sucks to use google.
+			
+			https://catwithcode.moe/Blog/2022.11.11_Removing-Google_Goodbye-Twitter/Removing-Google_Goodbye-Twitter.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Modding M.2 NVMe Boot-Support into the BIOS/UEFI</title>
+			<link>https://catwithcode.moe/Blog/2022.10.16_Mainboard-M.2_NVMe-Mod/Mainboard-M.2_NVMe-Mod.html</link>
+			<description>First of all: If someone wants to follow in my footsteps and do this mod them self, be warned. If you don't have dual BIOS, you could brick your motherboard without an easy way to repair it, you use Modding tools with very integrated parts of your system and need to trust the creator of the Modding Tools and files that they are clean! Don't do this in safety applications or if you are not able to fix a broken motherboards. As usual and always on the internet: If you do this kind of BS it is always at your own risk. !OBVIOUSLY!
+			
+			https://catwithcode.moe/Blog/2022.10.16_Mainboard-M.2_NVMe-Mod/Mainboard-M.2_NVMe-Mod.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Fixing Gigabyte Mainboard Freeze at Logo</title>
+			<link>https://catwithcode.moe/Blog/2022.10.06_Fixing_Mainboard_Freeze/Fixing_Mainboard_Freeze.html</link>
+			<description>I used the Gigabyte Z97X-UD5H-BK. All Links are in the Sources-Section at the bottom of the page.
+			
+			https://catwithcode.moe/Blog/2022.10.06_Fixing_Mainboard_Freeze/Fixing_Mainboard_Freeze.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Gigabyte GTX 1080 G1 Gaming - BIOS-Mod Overclocking - Remove Power Limit (Crossflashing)</title>
+			<link>https://catwithcode.moe/Blog/2022.10.02_BIOS-Mod_Gigabyte-GTX-1080-G1-Gaming/BIOS-Mod_Gigabyte-GTX-1080-G1-Gaming.html</link>
+			<description>I have a Gigabyte GTX 1080 G1 Gaming 8GB and it WAS AND STILL IS a great GPU BUT for some games it is too weak (Or the game is to badly optimized LOL). I use Linux with Wayland so I can not overclock it at the moment. Years ago on Winodws I tried, but I hit the GPU-BIOS power-limit and could not overclock any further. Today GPUs also try to overclock themselves as far as possible and Gigabyte GPUs often are already at there Stock-BIOS limit.
+			
+			https://catwithcode.moe/Blog/2022.10.02_BIOS-Mod_Gigabyte-GTX-1080-G1-Gaming/BIOS-Mod_Gigabyte-GTX-1080-G1-Gaming.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Unihertz Titan, GSI, Android 13 and UFS</title>
+			<link>https://catwithcode.moe/Blog/2022.08.07_Unihertz_Titan_GSI_UFS/Unihertz_Titan_GSI_UFS.html</link>
+			<description>First of all; What is UFS and what does it mean for me. The first Titans have EMMC-Memory (The phone storage). UFS is a faster type of memory and in pretty much every model after the first year of production as far as the community is concernt. UFS is faster and generally better BUT the way how it interacts with Modding stuff and the firmware is drastic... . That's why you need to be very careful and do a lot of research before you try anything or you will end up with a seemingly HardBricked phone. At the moment the TWRP ONLY really works on EMMC and the start of unlocking and Modding is different. GSIs, after everything is prepared and installed, are used and flashed the same way. But the SP-Flash-Tool needs different files for different types of memory and most importantly, you cannot install any ZIPs with UFS Titans at the moment. This can, but most likely will not, change in the future. You will probably will lose your warranty.
+			
+			https://catwithcode.moe/Blog/2022.08.07_Unihertz_Titan_GSI_UFS/Unihertz_Titan_GSI_UFS.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - How to fix a very long Shoutdown Time on OpenSuse/Linux</title>
+			<link>https://catwithcode.moe/Blog/2022.07.05_OpenSuse-Linux_Very_Long_Shoutdown_Time/OpenSuse-Linux_Very_Long_Shoutdown_Time.html</link>
+			<description>If your OpenSuse/Linux System takes very long to shutdown there is a thing you could try that fixed it for me in almost all cases.
+			
+			https://catwithcode.moe/Blog/2022.07.05_OpenSuse-Linux_Very_Long_Shoutdown_Time/OpenSuse-Linux_Very_Long_Shoutdown_Time.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - I was the one who found the Totaka's Song Easter Egg on a offical Animal Crossing: New Leaf Website in 2015</title>
+			<link>https://catwithcode.moe/Blog/2022.07.02_Totakas_Song_Easter_Egg_On_Animal_Crossing_New_Leaf_Website/Totakas_Song_Easter_Egg_On_Animal_Crossing_New_Leaf_Website.html</link>
+			<description>I loved to play this game back then. I visited the website and saw that there was a little note animation above K.K. Slider. I clicked on him and there it was- Totaka's Song. I found it so cool! So I recorded it with a screen recorder. After that I slapped a cringey intro in front of it because 2015 and posted it to YouTube. The website was gone a few days later and nothing was left. No backups. No Wayback Machine Archive. As far as I know no one else had found it back then. My friends did not believe me because the website wasn't there anymore. A lot of Websites and YouTube-Channels over the years took my Video or the information. Often they did not credit me... yeah modern internet. I wanted a way to preserve it. So I got into contact with someone at Archive.org and now it is on there Archive and preserved.
+			
+			https://catwithcode.moe/Blog/2022.07.02_Totakas_Song_Easter_Egg_On_Animal_Crossing_New_Leaf_Website/Totakas_Song_Easter_Egg_On_Animal_Crossing_New_Leaf_Website.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - OpenSuse, Nvidia, Proton and 32bit-Games</title>
+			<link>https://catwithcode.moe/Blog/2022.05.21_OpenSuse_Nvidia_Gaming/OpenSuse_Nvidia_Gaming.html</link>
+			<description>I needed to reinstall my PC (It was so full of trash it started to get Buggy. 4 Year old Manjaro install that saw 2 GPUs and 3 motherboards) and I thought I could try something different. Didn't do that for years and as this Blog shows I love tinkering. So I did. I installed OpenSuse Tumbelweed. I Love OpenSuse since I started using Linux 7 years ago, but it is kinda annoying sometimes to use because you can definitely notice it is based on a Server-OS.
+			
+			https://catwithcode.moe/Blog/2022.05.21_OpenSuse_Nvidia_Gaming/OpenSuse_Nvidia_Gaming.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Microphone to Speaker passthrough on Linux/WSL</title>
+			<link>https://catwithcode.moe/Blog/2022.05.15_Microphone_to_Speaker/Microphone_to_Speaker.html</link>
+			<description>Sometimes you want to use a device and watch a video at the same time and you need to use headphones. In such cases it would be useful to pass the sound through your computer to your headphones without some sort of external mixing because reasons. On Linux this is actually very easy. You can use the pulsaudio(pavucontrol)'s loopback function to pipe a microphone or any other audio source through the microphone jack to the headphone jack. There is actually only one command needed. I use a bash file and created a menu entry so I can open it like a normal program. You can the audio-mixing of your desktop to controll the volume of the passthrough. Just use the microphone volume setting on your system. And YES this only works on Linux and WSL
+			
+			https://catwithcode.moe/Blog/2022.05.15_Microphone_to_Speaker/Microphone_to_Speaker.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Unpack, Repack and Resign APKs/APPs</title>
+			<link>https://catwithcode.moe/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html</link>
+			<description>Sometimes it can be useful to make modifications to an Apps AndroidManifest.xml. When you have developed an app years ago and you want to change some propriety's and you deleted/lost the source code. When you have a very old android version and an app does not install because of some artificial limitation from developer even when the app is just a simple app like a text editor. Or you want to use an app like a file manager from your old phone on your new phone but the phone maker made a dependency to one file in the system so the app only installs on this phone and not any other. In such cases this method would work.
+			
+			https://catwithcode.moe/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Force/Manual Update on KaiOS Nokia-Phones</title>
+			<link>https://catwithcode.moe/Blog/2022.05.03-03_Nokia_Force_Update/Nokia_Force_Update.html</link>
+			<description>You need to use the Script on Linux or WSL.
+			
+			https://catwithcode.moe/Blog/2022.05.03-03_Nokia_Force_Update/Nokia_Force_Update.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - MonoGame with MGCB-Editor on a Rolling-Release Linux Distros</title>
+			<link>https://catwithcode.moe/Blog/2022.05.03-02_MonoGame_MGCB_Linux_Error/MonoGame_MGCB_Linux_Error.html</link>
+			<description>If you get the following Error when you are trying to use the MGCB-Editor:
+			
+			https://catwithcode.moe/Blog/2022.05.03-02_MonoGame_MGCB_Linux_Error/MonoGame_MGCB_Linux_Error.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - </title>
+			<link>https://catwithcode.moe/Blog/2022.05.03-01_Unity_VS-Code_Linux/Unity_VS-Code_Linux.html</link>
+			<description>
+			
+			https://catwithcode.moe/Blog/2022.05.03-01_Unity_VS-Code_Linux/Unity_VS-Code_Linux.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+        <item>
+			<title>CatWithCode - Hello World</title>
+			<link>https://catwithcode.moe/Blog/2022.05.02_Hello_World/Hello_World.html</link>
+			<description>This is my first Blog-Entry ever made. So hello. I'm a girl from Germany. I work as a software Developer. I know a lot but not enough about C# and WPF and make Industrial software for machinery and bookkeeping. I love playing games, modding and tinkering. Thanks to that I find a lot of random and obscure stuff in my daily life. I always wanted a way to document it. I just posted that stuff on Twitter or Reddit but as everyone knows after some time it gets archived on Reddit or drowns under other posts on Twitter. But I found that every few weeks I get a message about some things I did a while ago from people that need help with doing it them self and often the information was already archived or drowning in other posts. Now I have a Webpage to document everything I want. My plans for now is to take all the things I posted in the past and post them here (with some updated information). After that I post from time to time stuff on here. Because I use GitHub for this Blog (and I m just lazy) there is no comments function. Checking ever comment if it is clean and not dangerous takes to much time (and as already mentioned, I'm L-A-Z-Y). If you have something to add just message me on Twitter or GitHub (look at the 'CONTACT"-Page) and I will update the Blog-entry if needed or add your comment.
+			
+			https://catwithcode.moe/Blog/2022.05.02_Hello_World/Hello_World.html
+			</description>
+			<pubDate>Thu, 13 Mar 2025 22:30:05 GMT</pubDate>
+		</item>
+    </channel>
+</rss> 

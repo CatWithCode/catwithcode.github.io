@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Hyprland Sunshine Headless</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("The amount of jank and work involved to get this working flawlessly is so stupid. But at least she did not had to buy a slightly longer HDMI cable.");</script>
+    
+    <h1>Using Sunshine with Hyprland on a Headless Display</h1>
+    <p>To get a remote desktop session to work without crapy or crapy proprietary tools you can use Sunshine with moonlight. The only issue would be the mouse could get off screen and the displays still would suck power (and are screen would be free to see for everyone in the room). The best way around that would be to have a headless display and use that for remote or send the output of one display but turn the real screen of. The screen off idea is the most logical but dose not work on any platform. The headless approach is possible but needs a little jank to get working (Specially now because the current headless implementation of Hyprland is unsupported by Sunshine for some reason since a few versions ago). My setup based on the tutorial by "xTeixeira" uses a script that sets everything up for me. The only issue is you must close all windows before entering or exiting remote but that's it. Oh and the swayidel, lock and waybar processes have issues to work after Sunshine closes. It seems like that Sunshine can not disown the sub-scripts. This needs a hotkey/menu-enty to work around it. But that's really it with issues.</p>
+    <p>A few important requirements: Secure boot must be disabled, you must have a free display output on your GPU must use MESA.</p>
+    <p><u><i>(Hyprland can create Headless Monitors. Currently the headless Hyprland monitor support is broken in Sunshine (More that the implementation dose not support the Wayland way Hyprland is using. Older version do still work). It's a bit messy on Sunshine's end as far as I can tell)</i></u></p>
+    <p>I normally use gdm for login but it has a, no joke, 8 year old bug that prevents gdm from respecting the monitor.xml. Only under wayland. I refuse to use xorg for that so I just switched to ly. GDM would display no matter what the login on the fake display. Have a look, I'm not joking: <a href="https://gitlab.gnome.org/GNOME/gdm/-/issues/224">https://gitlab.gnome.org/GNOME/gdm/-/issues/224</a></p>
+    <p>The way this works is by jankly adding a firmware to the boot process, and then mapping it as a "Fake" display and using it as an "Headless" output. That's why your GPU needs a free port.</p>
+    <p>You will have to try around for your setup and also change many things when setting this up for your setup and changing paths if your dot files work differently but after that this should work very VERY well for now. Make sure Sunshine dose not start on boot to make the scripts work cleanly.</p>
+    <p>I used <a href="https://www.reddit.com/r/linux_gaming/comments/199ylqz/">https://www.reddit.com/r/linux_gaming/comments/199ylqz/</a> as a base. It explains perfectly how to set up a FAKE Display. Thanks "xTeixeira"!</p>
+    <ol>
+      <li>Using the setup guide to setup Sunshine and everything needed and do a test run: <a href="https://github.com/LizardByte/Sunshine/blob/master/docs/getting_started.md">https://github.com/LizardByte/Sunshine/blob/master/docs/getting_started.md</a>. You must define a Display with it's ID for that. It uses a internal listing ID and NOT the Wayland ID. Just go to the troubleshooting section and find your display and it's ID and save and apply it. If everything works continue. The UI can be reached with: <a href="https://localhost:47990/">https://localhost:47990/</a></li>
+      <li>At this point I wanted to explain how to get gdm to behave but f*ck that. Just make sure your way of login in is Displaying on ALL Screens. You can never view the Fake screen except in Remote after the Desktop is loaded! I just use ly.</li>
+      <li>Get yourself a EDID. Either extract one yourself from a unused display or get on from <a href="https://git.linuxtv.org/v4l-utils.git/tree/utils/edid-decode/data">https://git.linuxtv.org/v4l-utils.git/tree/utils/edid-decode/data</a>. I use "samsung-q800t-hdmi2.1" like many other. I tested a little an it works the best. Some slowed boot for some reason and other made wayland or x11 confused for a few seconds every boot. This Display supports many resolutions but reports as a 4k screen by default for some reason.</li>
+      <li>With "for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done" find a open Port on your GPU. If there are non, this will not work. I will use DP-2.</li>
+      <li>Create the following folder: "/usr/lib/firmware/edid".</li>
+      <li>Copy the EDID to it: "/usr/lib/firmware/edid/samsung-q800t-hdmi2.1"</li>
+      <li>Change your Kernel parameter in grub. Add "drm.edid_firmware=HDMI-A-1:edid/samsung-q800t-hdmi2.1 video=HDMI-A-1:e" to the end of it. Separate these parameter from the original once with a space. You could use grub-customizer or edit the config directly: "/etc/default/grub". Replace the display file with yours, same with the Output.</li>
+      <li>Now you need to edit your "/etc/mkinitcpio.conf". Find the line with "FILES" and add your path. If there are already files separate your new file with a space from the old once. Example: "FILES=(/xxx/.xxx.xx /usr/lib/firmware/edid/samsung-q800t-hdmi2.1)" DON'T BREAK YOUR CONFIG!</li>
+      <li>Now regenerate the init: "sudo mkinitcpio -P"</li>
+      <li>Don't forget to change the configs of Hyprland, Waybar and any other Display bound tool you use so the Desktop stays usable.</li>
+      <li>After a reboot everything should work and you have a new Display added. To fix Hyprland to ignore the display add a disable to your config: "monitor = DP-2,disable".</li>
+      <li>Now the important part. I have created a script you can start that will disable all displays, only enables the FAKE one and then sets the ID inside the Sunshine config. I also added unused code that could set the wayland-display-ID if Sunshine ever start using that.</li>
+      <li>In the script, you must change the enabled display to your output, resolution and refresh rate. I would also recommend putting it in the center of the main display. If you forget to close a window or something crashes, you can see the window at least to close it.</li>
+      <li>You must also add all you real displays to be disabled. You can find them in your config or by executing: "hyprctl monitors".</li>
+      <li>In Sunshine remove all applications except "Desktop". Then add a "UNDO" command, the  "RemoteGaming.sh" script with a random letter or number as a parameter. This will execute the other part of the script that resets everything.</li>
+      <li>Now you should be able to execute the script, wait around 20 seconds and then use your moonlight client to connect. The test step at the beginning mus be done so you can add the client!</li>
+      <li>If you can not connect it could be that your Linux firewall is in the way. Just open all ports needed by Sunshine listed in the UI under network. Make sure to only allow access to the UI from localhost!!!</li>
+      <li>To exit just press CTRL+SHIFT+ALT+Q AND then exit the current Application. That executes the reset in the Script.</li>
+      <li>I also added a script called "MoonlightStarter.sh". It makes sure that the idler on the client is disabled. I could never make windowrules detect that moonlight is used and invoke idleinhibit. Just add it to you Applications Menu and start moonlight with it.</li>
+      <li>Now some mega jank: The script will start the sleeper (in my case swayidle) and then executes a ScreenLock script (these also need to be changed to your way of doing it). That ensures ScreenOff and that you PC is locked after closing Remote. But as soon as you unlock the PC Sunshine will actually close and the lockscreen and swayidle as well. It seems to be that the disown is somehow broken by Sunshine when executed by it. I could not fix it in a timely manner. The way to get around it is to just use the "WayBarMaker.sh" script to reset that stuff. It is the best way to use it by binding it to a hotkey in Hyprland or you just add it to you applauncher. Not perfect but it works and once executed everything the really works as before.</li>
+      <li>As you might expect most of the scripts are optimized to my dot file structure. You must read over the scripts and add your applications or tools you use for your setup so everything gets executed. That is the only downside if you ask me with dot file desktops. Everyone has there own jank to maintain and adapt scripts to lol.</li>
+    </ol>
+    <h2>The Scripts to use it: <a href="https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote">https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote</a></h2>
+    <br>
+    <p>Make sure to not have any "hyprctl reload" executed while in remote or the displays will turn back on! The command is usually in a reset hotkey or in the "GamingMode" script. I included my adapted version of the "official" Hyprland Gamingmode script that checks if it is safe to execute a reload.</p>
+    <p>Waybar can be sensitive to the Display changes sometimes. That's why it is part of the Workaround script.</p>
+    <p>If you start the Remote script but your client can not see you PC then Sunshine did not start. This can happen if after entering the Desktop the Remote-Script was started to early. A way out of this 'Softlock' is just to press you reload Hotkey/Gaming Mode Hotkey. The GamingMode script will execute, because Sunshine is not running and config can be reloaded. This will turn the Displays back on and you can logout, log back in to make sure everything is back to normal, wait a little an THEN execute the Remote-Script.</p>
+    <p>You need to add your idle Software to the script to kill it. If the Sunshine PC falls a sleep or locks itself you will not be able to see anything and the connection is lost.</p>
+    <p>I also only could get Sunshine to work without issues when install through pacman (Arch Linux). And for some reason only the Flatpak version of Moonlight could work with hardware acceleration on my Thinkpad (Also Arch Linux).</p>
+    <p>You should also add some windowrules to make the client better adapt to the usecase. Here a mine:</p>
+    <ul>
+      <li>windowrulev2 = float, class:^(.*moonlight.*)</li>
+      <li>windowrulev2 = size 1920 1080, class:^(.*moonlight.*)</li>
+      <li>windowrulev2 = fullscreen, class:^(.*moonlight.*)</li>
+      <li>windowrulev2 = idleinhibit, fullscreen, class:^(.*moonlight.*)</li>
+      <li>windowrule = idleinhibit, class:^(.*moonlight.*)</li>
+      <li>windowrule = idleinhibit focus, class:^(.*moonlight.*)</li>
+    </ul>
+    <p>I know that is not, far from it, as straight forward as you might hoped. Even on windows this is A LOT of jank. Screen off remote gaming/high end remote desktoping just not a normal usecase. But this setup, when it is setup completely correctly, works extremely well. I wrote this entry on my corebooted Thinkpad T440P from my bed on my PC over Sunshine so yeah, this is great :D.</p>
+    <p>Tip: If u want to have custom cover images for applications, just copy them to the config folder of sunshine (because you can be it is 100% sure that it will be able to access it) and put the ABSOLUTE path to the image into the application configuration. Meaning: /home/USER_NAME/.../sunshine/cover/test.png</p>
+    <p>I noticed it dose no longer allow me to connect if no connection between sunshine and moonlight is made in the first 1 or 2 minutes. I checked everything and it normal should not do that but it dose. Maybe the screen turns off and sunshine counts that as offline, even if it is "blocked" by an inhibitor.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://www.reddit.com/r/linux_gaming/comments/199ylqz/streaming_with_sunshine_from_virtual_screens/">https://www.reddit.com/r/linux_gaming/comments/199ylqz/streaming_with_sunshine_from_virtual_screens/</a></li>
+      <li><a href="https://www.reddit.com/r/linux_gaming/comments/199ylqz/">https://www.reddit.com/r/linux_gaming/comments/199ylqz/</a></li>
+      <li><a href="https://git.linuxtv.org/v4l-utils.git/tree/utils/edid-decode/data">https://git.linuxtv.org/v4l-utils.git/tree/utils/edid-decode/data</a></li>
+      <li><a href="https://www.reddit.com/r/linux_gaming/comments/199ylqz/comment/m1uoo9l">https://www.reddit.com/r/linux_gaming/comments/199ylqz/comment/m1uoo9l</a></li>
+      <li><a href="https://wiki.archlinux.org/title/GRUB">https://wiki.archlinux.org/title/GRUB</a></li>
+      <li><a href="https://github.com/LizardByte/Sunshine">https://github.com/LizardByte/Sunshine</a></li>
+      <li><a href="https://github.com/LizardByte/Sunshine/blob/master/docs/getting_started.md">https://github.com/LizardByte/Sunshine/blob/master/docs/getting_started.md</a></li>
+      <li><a href="https://localhost:47990/">https://localhost:47990/</a></li>
+      <li><a href="https://wiki.hyprland.org/Configuring/Uncommon-tips--tricks/#toggle-animationsbluretc-hotkey">https://wiki.hyprland.org/Configuring/Uncommon-tips--tricks/#toggle-animationsbluretc-hotkey</a></li>
+      <li><a href="https://gitlab.gnome.org/GNOME/gdm/-/issues/224">https://gitlab.gnome.org/GNOME/gdm/-/issues/224</a></li>
+      <li><a href="https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote">https://github.com/CatWithCode/Headless_Sunshine_Hyprland_Remote</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/4004/how-can-i-run-a-command-which-will-survive-terminal-close">https://unix.stackexchange.com/questions/4004/how-can-i-run-a-command-which-will-survive-terminal-close</a></li>
+      <li><a href="https://superuser.com/questions/990336/why-doesnt-disown-operate-on-the-last-job-if-i-background-it#992443">https://superuser.com/questions/990336/why-doesnt-disown-operate-on-the-last-job-if-i-background-it#992443</a></li>
+      <li><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3867">https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3867</a></li>
+      <li><a href="https://discourse.gnome.org/t/how-to-set-gdm-to-fallback-to-laptop-screen-if-external-monitor-is-absent-on-fedora-41/25042">https://discourse.gnome.org/t/how-to-set-gdm-to-fallback-to-laptop-screen-if-external-monitor-is-absent-on-fedora-41/25042</a></li>
+      <li><a href="https://github.com/orgs/LizardByte/discussions/288">https://github.com/orgs/LizardByte/discussions/288</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.03.23 - 15:10');</script></div>
+  </body>
+</html>

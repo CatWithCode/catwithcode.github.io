@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Minecraft with FSR and Gamescope</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("I don't drink coffee and I don't like Java.");</script>
+    
+    <h1>Minecraft with FSR and Gamescope</h1>
+    <p>Let's keep this short. If you want to play Minecraft with Gamescope for multi-monitor gaming, or FSR upscaling for better performance (or both), you will probably encounter several errors. The easy way to fix this is to use graphics mods, which seem to change a lot of things in the rendering pipeline to fix the problems encountered in vanilla Minecraft with this setup.</p>
+    <p>If you want near 0 mods in your game, you can use mods that change the API from opengl to vulkan. The other way is to use fabric with sodium, iris and indium. after you get these mods you need to go into your ".minecraft" folder, then into "config" and open the file "sodium-options.json". Change "use_no_error_g_l_context" to "false".</p>
+    <p>Sometimes it may be necessary to start the launcher with xwayland to get everything working. This can easily be done with flatseal for flatpak.</p>
+    <p>Now you can launch Minecraft in your preferred way with the following command (I changed the resolution to 720p and upscaled it to 1080 with FSR and limited the fps to 90. You can change this to whatever you like. Upscaling only works well if your two resolutions are divisible without having to round up or down. This can easily be done by dividing the screen resolution by the desired amount wanted, for example 3/4 of 1440p (1080p)).</p>
+    <p><u>These are the commands I use to start Minecraft (if you are not using flatpaks, change them to your executable).</u>:</p>
+    <p><u><i>gamemoderun gamescope -h 720 -w 1280 -H 1080 -W 1920 -b -r 90 -F fsr flatpak run com.mojang.Minecraft</i></u></p>
+    <p>or</p>
+    <p><u><i>gamemoderun gamescope -h 720 -w 1280 -H 1080 -W 1920 -b -r 90 -F fsr flatpak run org.prismlauncher.PrismLauncher</i></u></p>
+    <p>Minecraft never runs as well as it should, but this helps a lot without making it look bad. Sometimes you have high frame rates, but Minecraft with shaders still feels bad because the game's programming is overloading something on the way to your screen (the desktop, for example). This helped me to make my multi-screen ultra-wide setup feel much better than before with Minecraft.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/CaffeineMC/sodium-fabric/issues/2155">https://github.com/CaffeineMC/sodium-fabric/issues/2155</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2024.01.07 - 00:58');</script></div>
+  </body>
+</html>

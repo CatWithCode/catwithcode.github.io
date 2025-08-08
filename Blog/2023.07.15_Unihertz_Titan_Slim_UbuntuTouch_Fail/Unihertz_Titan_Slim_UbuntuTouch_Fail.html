@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - I tried to continue a Ubuntu Touch port for the Unihert Titan and failed</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("What a sh*t show.");</script>
+    
+    <h1>I tried to continue a Ubuntu Touch port for the Unihert Titan and failed</h1>
+    <p>I've knew about it for a while, but didn't think about it again until yesterday. I have had my Titan Slim for a while now and only now did it occur to me to try this port. My conclusion: this port is magic and a dead end at the same time, at least for me.</p>
+    <p>First of all I would like to say that the developer has done a fantastic job here, the port runs great and fast and the way it boots ubuntu from the userdata partition with a modded boot.img is just brilliant! But as far as I know, this project is going to be slow and hard to develop for. Without the kernel source, we cannot use dkms, which makes adding needed stuff like waydroid almost impossible because of the missing binder module. For every fix/mod, you would have to chnage the module to work with a generic kernel against the Titan kernel. And all this will not change until A: someone reverse-engineers the kernel (which is an unbelievable amount of work for such a small brand) or B: Unihertz stops being a GPL violator. They do not release the kernel source, which they are legally required to do under the GPL licence that the Linux kernel is under. THIS IS LITERALLY ILLEGAL! Many people send them requests and never get an answer, or are put on hold indefinitely. But there are far too few people who care about the phone, and even less about modifying it for custom roms and Linux. With enough time this port could be fixed up technically and work flawlessly, but the crazy amount of time needed and the amount of knowledge about kernel, Android and modules is just too much and not worth it! DO NOT BUY UNIHERTZ PHONES IF YOU CAN! There are only about 5 manufacturers of keyboard phones these days, and only two where the phones are actually good, but only one of them gives out the source code, but it costs twice as much. But as far as I have been able to read online, almost all the keyboard phones currently out there have problems. The hardware can be good/ok but the source is missing, the hardware is bad but the software is good, but nothing in between. The keyboard phone market it truly nearly dead.</p>
+    <p>One thing is for sure. I WILL NEVER BUY ANOTHER UNIHERTZ PHONE AGAIN. It is not much more then putting a few files into a zip-Archive and sending it out and they are just not doing it and wasting a lot of people's time for no good reason. Buy something else from someone who at least does not violate the GPL. THE THING that made their business viable/possible in the first place... 😡.</p>
+    <p>And now, after my rant, everything I could find out about the Ubuntu Touch Port. Might help someone if they want to try it out or pick up the project:</p>
+    <p>ALSO: THIS ONLY APPLIES TO THE TITAN POCKET AND TITAN SLIM! THE OG TITAN HAS A DIFFERENT MEMORY LAYOUT! THERE IS AN <u>UNTESTED</u> PORT OUT THERE, BUT AS FAR AS I KNOW IT IS ONLY FOR THE <u>EMMC</u>!</p>
+    <ol>
+      <li><p>Your Android installation will not be removed BUT your userdata will be erased. Your phone needs to be magisk-rooted and vbmeta pached. I did this in an older blog post. (link in sources section)</p></li>
+      <li><p>To run it, download the latest artifact for your phone and extract it. Inside is a boot.img and an .xz file. Extract the .xz file and put the .img image it contains into a folder called "userdata".</p>
+        <p>
+          Go inside the folder and execute this
+          <br>
+          (This will resize the Ubuntu-System to 10GB. This is useful if you want to modify the system or use apt):
+        </p>
+        <p><u><i>resize2fs ubuntu.img 10G</i></u></p>
+        <p>
+          Now go up one folder and run this:
+          <br>
+          (This will create the actual userdata.img with a size of 20GB. You can make all sizes as big as you want AS LONG as it dose not go above the actual size of the userdata-patition of the Titan.)
+        </p>
+        <p><u><i>mke2fs -t ext4 -O ^metadata_csum userdata.img 20240000 -d userdata</i></u></p>
+      </li>
+      <li>
+        <p>
+          <u><i>fastboot flash boot boot.img</i></u>
+          <br>
+          and
+          <br>
+          <u><i>fastboot flash userdata userdata.img</i></u>
+          <br>
+          to install the System.
+        </p>
+      </li>
+      <li><p>To get back to your Android system, just flash your rooted boot.img (magisk) and erase the userdata partition once.</p></li>
+      <li>
+        <p>
+          To change the system partition, go into settings, enable developer mode and connect the phone to a pc with a usb and adb shell on it. Now just execute and the system is writable until reboot. If this writes into an overlay in the userdata-patition or directly into the ubuntu.img idk.
+          <br>
+          <br>
+          <u><i>sudo mount -o remount,rw /</i></u>
+        </p>
+      </li>
+      <li><p>DKMS actually works as expected</p></li>
+      <li><p>Without the right kernel headers you will not be able to compile modules.</p></li>
+      <li><p><u>What did not work for me:</u> GPS, Video recording, VoLTE, Speaker Audio, Headphone-Audio and SADLY waydroid (missing binder module)</p></li>
+      <li><p>Everything i found while researching is in the sources section.</p></li>
+    </ol>
+    <p>THX to rumplestilzken for helping to get the Port running for me!</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://askubuntu.com/questions/399709/sudo-apt-get-install-is-showing-not-using-locking-for-read-only-file-var-lib">https://askubuntu.com/questions/399709/sudo-apt-get-install-is-showing-not-using-locking-for-read-only-file-var-lib</a></li>
+      <li><a href="https://unix.stackexchange.com/questions/22024/increasing-the-size-limit-for-var-cache-apt-archives">https://unix.stackexchange.com/questions/22024/increasing-the-size-limit-for-var-cache-apt-archives</a></li>
+      <li><a href="https://forum.xda-developers.com/t/increase-gsi-system-image-size-guide.3980189/">https://forum.xda-developers.com/t/increase-gsi-system-image-size-guide.3980189/</a></li>
+      <li><a href="https://www.youtube.com/watch?v=5Fl3Vg0ALYw">https://www.youtube.com/watch?v=5Fl3Vg0ALYw</a></li>
+      <li><a href="https://forum.xda-developers.com/t/gsi-arm64-a-ab-ubuntu-touch-ubports.4110581/">https://forum.xda-developers.com/t/gsi-arm64-a-ab-ubuntu-touch-ubports.4110581/</a></li>
+      <li><a href="https://github.com/anbox/anbox-modules">https://github.com/anbox/anbox-modules</a></li>
+      <li><a href="https://github.com/ubports/porting-notes/wiki/Generic-system-image-(GSI)#how-to-install-gsi">https://github.com/ubports/porting-notes/wiki/Generic-system-image-(GSI)#how-to-install-gsi</a></li>
+      <li><a href="https://github.com/ubuntu-touch-unihertz-titan/unihertz-titanslim-pocket">https://github.com/ubuntu-touch-unihertz-titan/unihertz-titanslim-pocket</a></li>
+      <li><a href="https://github.com/ubuntu-touch-unihertz-titan/unihertz-titanslim-pocket/actions/workflows/build.yml">https://github.com/ubuntu-touch-unihertz-titan/unihertz-titanslim-pocket/actions/workflows/build.yml</a></li>
+      <li><a href="https://github.com/rumplestilzken">https://github.com/rumplestilzken</a></li>
+      <li><a href="https://www.reddit.com/r/fxtec/">https://www.reddit.com/r/fxtec/</a></li>
+      <li><a href="https://community.fxtec.com">https://community.fxtec.com</a></li>
+      <li><a href="/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html">/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.07.15 - 20:30');</script></div>
+  </body>
+</html>

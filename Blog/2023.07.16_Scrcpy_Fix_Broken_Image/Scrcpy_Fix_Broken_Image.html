@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - How to fix broken Video/Audio in scrcpy</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("GSI’s are nice as a stopgap solution but suck over all.");</script>
+    
+    <h1>How to fix broken Video/Audio in scrcpy</h1>
+    <p>I am using a GSI on my phone and when I try to use scrcpy I get this output:</p>
+    <a href="DATA/scrcpy_broken_img.jpg"><img src="DATA/scrcpy_broken_img.jpg" alt="Screenshot of Device Info HW, Blured with Flash Type marked" style="width:20%";></a>
+    <p>The solution was simple (so simple, in fact, that I am angry at myself for not having thought of it sooner / finding it sooner). Execute this in your Terminal:</p>
+    <p><u><i>scrcpy --list-encoders</i></u></p>
+    <p>Then try codec after codec until one works, and use that one from now on. It really is that simple. For my Unihertz Titan Slim with a LinageOS 20 GSI it was:</p>
+    <p><u><i>scrcpy --video-codec=h264 --video-encoder='c2.android.avc.encoder' --audio-codec=opus --audio-encoder='c2.android.opus.encoder' --forward-all-clicks</i></u></p>
+    <br>
+    <p>More readable:</p>
+    <ul>
+      <li>scrcpy</li>
+      <li>--video-codec=h264</li>
+      <li>--video-encoderc2.android.avc.encoder'</li>
+      <li>--audio-codec=opus</li>
+      <li>--audio-encoder='c2.android.opus.encoder'</li>
+      <li>--forward-all-clicks</li>
+      <p>---</p>
+      <li>scrcpy</li>
+      <li>--video-codec=h264 --video-encoderc2.android.avc.encoder'</li>
+      <li>--audio-codec=opus --audio-encoder='c2.android.opus.encoder'</li>
+      <li>--forward-all-clicks</li>      
+    </ul>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/Genymobile/scrcpy/issues/4143">https://github.com/Genymobile/scrcpy/issues/4143</a></li>
+      <li><a href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy</a></li>
+      <li><a href="https://www.reddit.com/r/scrcpy/comments/vteg5z/mouse_right_click_back_button/">https://www.reddit.com/r/scrcpy/comments/vteg5z/mouse_right_click_back_button/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.07.16 - 19:45');</script></div>
+  </body>
+</html>
