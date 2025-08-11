@@ -393,7 +393,7 @@ img {
     /* Prevent interaction when invisible (img overwrites this for itself so it can act as a trigger): */
     pointer-events: none;
 
-     /* Enables Scrolling: */
+    /* Enables Scrolling: */
     overflow: hidden
 }
 
