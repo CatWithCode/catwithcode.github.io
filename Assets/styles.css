@@ -182,7 +182,7 @@ body {
     animation-fill-mode: both;
 
     /* # - - Blur Effect for Background of ROOT: */
-    backdrop-filter: blur(var(--backgroundBlur));
+    /* backdrop-filter: blur(var(--backgroundBlur)); */
 
     /* # - - - Reversing "margin" on *-body and applying padding to blur fully to the corners. */
     margin: 0%;
