@@ -181,7 +181,7 @@ body {
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
 
-    /* # - - This breaks way to much. Find diffrent way! Blur breaks Viewport, Padding for Blur to be fullscreen breaks scroll.*/
+    /* # - - This breaks way to much. Find different way! Blur breaks Viewport, Padding for Blur to be fullscreen breaks scroll.*/
     /* # - - Blur Effect for Background of ROOT (CURRENTLY BREAKS THE "CAT"-BUTTON POSITION BECAUSE IT CREATES A CONTAINER IN THE BACKEND AND BREAKS VIEWPORT-FIXED-POS): */
     /* backdrop-filter: blur(var(--backgroundBlur)); */
 
