@@ -19,7 +19,7 @@ const wallpaperOptions = [
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/WalkWay.jpg",
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Window.jpg",
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Cube.jpg",
-    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/ServerRoom.png"
+    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/ServerRoom2.jpg"
 ];
 
 // - Main Components:
