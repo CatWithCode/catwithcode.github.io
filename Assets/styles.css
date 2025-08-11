@@ -181,7 +181,7 @@ body {
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
 
-    /* # - - Blur Effect for Background of ROOT: */
+    /* # - - Blur Effect for Background of ROOT (CURRENTLY BREAKS THE "CAT"-BUTTON POSITION BECAUSE IT CREATES A CONTAINER IN THE BACKEND AND BREAKS VIEWPORT-FIXED-POS): */
     /* backdrop-filter: blur(var(--backgroundBlur)); */
 
     /* # - - - Reversing "margin" on *-body and applying padding to blur fully to the corners. */
