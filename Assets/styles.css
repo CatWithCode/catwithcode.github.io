@@ -181,12 +181,13 @@ body {
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
 
+    /* # - - This breaks way to much. Find diffrent way! Blur breaks Viewport, Padding for Blur to be fullscreen breaks scroll.*/
     /* # - - Blur Effect for Background of ROOT (CURRENTLY BREAKS THE "CAT"-BUTTON POSITION BECAUSE IT CREATES A CONTAINER IN THE BACKEND AND BREAKS VIEWPORT-FIXED-POS): */
     /* backdrop-filter: blur(var(--backgroundBlur)); */
 
     /* # - - - Reversing "margin" on *-body and applying padding to blur fully to the corners. */
-    margin: 0%;
-    padding: var(--bodyPadding);
+    /* margin: 0%; */
+    /* padding: var(--bodyPadding); */
 }
 
 /* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
@@ -338,6 +339,10 @@ img:not(.speechBubble img){
 #Footer {
     /* # - - Position: */
     margin-top: auto;
+    
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
 }
 
 /* # - - Fooder-Container: */
