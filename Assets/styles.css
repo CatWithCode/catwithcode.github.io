@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Fixing Oversized Images: */
-img {
+img:not(.speechBubble img){
     max-width: 100%;
     padding: var( --image_padding);
 }
