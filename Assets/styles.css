@@ -177,6 +177,9 @@ body {
     background-repeat: repeat;
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
+
+    /* Blur Effect for Background of ROOT: */
+    backdrop-filter: blur(10px);
 }
 
 /* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
