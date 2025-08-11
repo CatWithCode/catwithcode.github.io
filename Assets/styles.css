@@ -94,6 +94,8 @@ mixedFonts:
 
     --popup_Background_Color: #464599da;
 
+    --backgroundBlur: 10px;
+
     /* # - - Images: */
     --image_margin: 1%;
     --image_padding: 1%;
@@ -102,6 +104,7 @@ mixedFonts:
     --image_rounding: 1rem;
 
     /* Border: */
+    --bodyPadding: 20px;
 
     /* Border-Radius: */
     --borderRadius: 1.5rem;
@@ -178,8 +181,12 @@ body {
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
 
-    /* Blur Effect for Background of ROOT: */
-    backdrop-filter: blur(10px);
+    /* # - - Blur Effect for Background of ROOT: */
+    backdrop-filter: blur(var(--backgroundBlur));
+
+    /* # - - - Reversing "margin" on *-body and applying padding to blur fully to the corners. */
+    margin: 0%;
+    padding: var(--bodyPadding);
 }
 
 /* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
@@ -251,8 +258,8 @@ body > *:not(
     .speechBubble)
 {
     position: relative;
-    padding: 20px;
-    margin: 20px;
+    padding: var(--bodyPadding);
+    margin: var(--bodyPadding);
 
     clip-path: var(--borderPath);
     background-color: var(--border_color);
