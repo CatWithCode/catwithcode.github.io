@@ -123,9 +123,9 @@ mixedFonts:
     /* background: url(/Assets/Image_Repository/Backgrounds/Static/PLACEHOLDER.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: center;
 }
 
 /* # - Global Font, Fixes and Color: */
