@@ -17,7 +17,9 @@ const wallpaperOptions = [
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/ServerRoom.jpg",
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Sniper.jpg",
     "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/WalkWay.jpg",
-    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Window.jpg"
+    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Window.jpg",
+    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/Cube.jpg",
+    "/Assets/Image_Repository/Backgrounds/Static/01_REPOSSESSED/ServerRoom.png"
 ];
 
 // - Main Components:
