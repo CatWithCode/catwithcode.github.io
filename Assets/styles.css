@@ -251,12 +251,17 @@ a, .speechBubbleText {
 }
 
 /* # - BORDER-CODE:
+# NOTE: This should be removed as soon as the design changes. Stuff like this below
+        should not be done to body or even root. The issue is it apply’s to everything.
+        This should targeted be applied to elements. This only can be done in a clean one go like this.
+        This also creates an edge on the background blur. It is fine and I like it but it is actually a Bug caused by the bad practice below.
 
 # - - This is the actual Background and at the end creates the Design with the clip-path and the border color:
 Main Elements: */
 body > *:not(
     hr, 
-    .speechBubble)
+    .speechBubble,
+    img)
 {
     position: relative;
     padding: var(--bodyPadding);
@@ -274,7 +279,8 @@ body > *:not(
 Main Elements: */
 body > *:not(
     hr, 
-    .speechBubble)::before
+    .speechBubble,
+    img)::before
 {
     content: '';
     background-color: var(--alt_background);

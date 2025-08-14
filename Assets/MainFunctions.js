@@ -28,19 +28,8 @@ async function WriteHeader() {
     // Set's Header Bar:
     document.getElementById("Header").innerHTML = (await this.aSyncLoadFile('/Assets/BaseFiles/Page/Header.html'));
 
-    // Get Wallpaper at Random (Fit't header good. More custom call's not good):
-    const randomImage = wallpaperOptions[Math.floor(Math.random() * wallpaperOptions.length)];
-
-    // Setting BackgroundColor again to ensure flicker prevention:
-    document.documentElement.style.backgroundColor = getCurrentStyle_Property('--background');
-
-    // Preload Image in Browser AND THEN set it:
-    await preloadImage(randomImage);
-    document.documentElement.style.backgroundImage = `url(${randomImage})`;
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    // Load random Background:
+    WriteBackgroundImageWithEffects()
 }
 
 // - - Creating Page-Footer:
@@ -64,6 +53,53 @@ function WriteHead(skipCss = false) {
     // END:
     document.write('<link rel="icon" type="image/x-icon" href="/Assets/favicon.gif">\
         <meta name="description" content="Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.">');
+}
+
+// - - Creates Background Image (Called from Header becaus good time to do so):
+async function WriteBackgroundImageWithEffects() {
+    // Get Wallpaper at Random (Fit't header good. More custom call's not good):
+    const randomImage = wallpaperOptions[Math.floor(Math.random() * wallpaperOptions.length)];
+    
+    // Get Blur amount:
+    const blurAmount = getCurrentStyle_Property("--backgroundBlur");
+    
+    // Preload Image in Browser AND THEN set it:
+    await preloadImage(randomImage);
+
+    // Creating div (For now IMG) and set Background (Use IMG to get around Body::before issue):
+    const backgroundHolder = document.createElement('img');
+
+    // Set Position:
+    backgroundHolder.style.position = 'fixed';
+    backgroundHolder.style.top = '0';
+    backgroundHolder.style.bottom = '0';
+    backgroundHolder.style.left = '0';
+    backgroundHolder.style.right = '0';
+    backgroundHolder.style.zIndex = -1;
+    
+    // Set Size:
+    backgroundHolder.style.width = '100%';
+    backgroundHolder.style.height = '100%';
+ 
+    // Make it go to the edges:
+    backgroundHolder.style.padding = 0;
+    backgroundHolder.style.margin = 0;
+
+    // Apply Filter:
+    backgroundHolder.style.filter = `blur(${blurAmount})`;;
+    
+    // Configure Background behavior:
+    backgroundHolder.style.objectFit = 'cover';
+    backgroundHolder.style.backgroundSize = 'cover';
+    backgroundHolder.style.backgroundRepeat = 'no-repeat';
+    backgroundHolder.style.backgroundPosition = 'center';
+
+    // Set Images and add to body (Most often at the end of the page):
+    backgroundHolder.src = randomImage;
+    backgroundHolder.alt = 'Error while loading random Background.'
+    //backgroundHolder.style.backgroundImage = `url('${randomImage}')`;
+
+    document.body.appendChild(backgroundHolder);
 }
 
 // - - Warning for "New Design"-Pages. Used to indicate the design currently shown may be old.):
@@ -135,6 +171,11 @@ function CreateSpeechBubble(speechBubbleTextToInsert = "") {
 // Internel Functions:
 
 // - Misc:
+// - - Fake JS-Sleep:
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // - - Loads File from a desired location asynchronously:
 async function aSyncLoadFile(filePath) {
     return fetch(filePath)
