@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - SIP Clients on Linux without it sucking</title>
+  </head>   
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">GITHUB PAGES IS ONLY FOR SEARCH ENGINES! CLICK HERE TO FIND OUT WHY! IF YOU ARE ON CATWITHCODE.MOE ALREADY, YOU MAY BLOCK JS AND THATS WHY YOU SEE THIS. GOOD FOR YOU :).</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Who uses phones anymore, grandma?");</script>
+
+    <h1>SIP Clients on Linux without it sucking</h1>
+    <p>Weird title I know. But nearly every client I tried sucked in its own unique way. After a lot of trying around I found that gnome-calls with gnome-contacts works the best. But I use KDE, so getting it to work was a little annoying but doable. And no, there is no KDE alternative that is not unmaintained or no proprietary.</p>
+    <ol>
+      <li>I had to install gnome-calls, gnome-contacts, gnome-control-center and gnome-online-accounts. On OpenSuse Tumbleweed you will not install with that (but nearly everything else for gnome LOL).</li>
+      <li>I started gnome-calls, added a SIP-Account for my PC to my Router, then logged into it in gnome-calls.</li>
+      <li>After this it should already work but I wanted to sync my contacts that why I needed gnome-control-center to add a Nextcloud account. To use the Gnome Settings inside other desktops you need to overwrite the current Session ID for the new process with: “XDG_CURRENT_DESKTOP=GNOME gnome-control-center”. Log into you Account and then close it again. And after adding Calls to the AutoStart and rebooting once it worked perfectly. Tray icons and Minimized start dose not work because GNOME... .</li>
+    </ol>
+    <p>But why gnome-calls? Every other program is either proprietary because this type of PC calling is mostly used in businesses and what do company's lover more then bloat, proprietary mandatory and bad software, and most people don't use phones anymore so most programs are either over-engineered and way to complicated or outdated beyond usable. Thanks to Gnome Mobile and Linux on Phones (And to some extend PostmarkedOS and UbuntuTouch) gnome-calls and gnome-contacts are maintained very well. plasma-dialer should also work but most distributions don't have it because it is only meant for Plasma Mobile.</p>
+    <br>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://en.fritz.com/service/knowledge-base/dok/FRITZ-Box-7530/42_Registering-an-IP-telephone-with-the-FRITZ-Box-and-setting-it-up/">https://en.fritz.com/service/knowledge-base/dok/FRITZ-Box-7530/42_Registering-an-IP-telephone-with-the-FRITZ-Box-and-setting-it-up/</a></li>
+      <li><a href="https://github.com/KDE/plasma-dialer">https://github.com/KDE/plasma-dialer</a></li>
+      <li><a href="https://askubuntu.com/questions/1542634/">https://askubuntu.com/questions/1542634/</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_SIP_software">https://en.wikipedia.org/wiki/List_of_SIP_software</a></li>
+      <li><a href="https://gitlab.gnome.org/GNOME/calls">https://gitlab.gnome.org/GNOME/calls</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.08.22 - 21:46');</script></div>
+  </body>
+</html>

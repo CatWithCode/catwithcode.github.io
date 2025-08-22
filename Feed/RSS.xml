@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - SIP Clients on Linux without it sucking</title>
+			<link>https://catwithcode.moe/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html</link>
+			<description>Weird title I know. But nearly every client I tried sucked in its own unique way. After a lot of trying around I found that gnome-calls with gnome-contacts works the best. But I use KDE, so getting it to work was a little annoying but doable. And no, there is no KDE alternative that is not unmaintained or no proprietary.
+			
+			https://catwithcode.moe/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html
+			</description>
+			<pubDate>Fri, 22 Aug 2025 19:47:57 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - New add-on to the website design</title>
 			<link>https://catwithcode.moe/Blog/2025.07.31_New_Addon_To_Design/New_Addon_To_Design.html</link>
 			<description>After a long hard week, both with work and game-dev, I deiced I want to do something stupid. Something really really stupid.

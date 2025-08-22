@@ -15,6 +15,18 @@
     <p>Blockbench if you export to .gltf inserts <u>"doubleSided":true</u> into the file. This causes in Godot and other Engines that do not suport "import material overwrites" culling to be disabled. This causes textures to be rendered inside the model too. This is a huge performance killer and VRAM eater. By setting this to false the model is one-sided. This needs to be taken into account when creating a model or fixed by comparing the render with Blockbench and then rotating or spliting the meshes that a wrongly displayed. Can be time consuming but worth the performance boost! Overdraw is heavy on the GPU.</p>
     <p>Blockbench dose not let you set this option. This must be done after export with a script for example. With "find", "grep -q" and "sed" this can be fully automated into a script file executed on export or manualy.</p>
     <p>My script-file is to project specific and also dose some other things but, with the shown commands you can build a script for that really easily.</p>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.07.22 - 00:20');</script></div>
+    <br>
+    <br>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.pdf">https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.pdf</a></li>
+      <li><a href="https://www.khronos.org/gltf/#gltf-spec">https://www.khronos.org/gltf/#gltf-spec</a></li>
+      <li><a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html">https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html</a></li>
+      <li><a href="https://www.blockbench.net/wiki/blockbench/formats/">https://www.blockbench.net/wiki/blockbench/formats/</a></li>
+      <li><a href="https://www.blockbench.net/wiki/guides/export-formats/">https://www.blockbench.net/wiki/guides/export-formats/</a></li>
+      <li><a href="https://www.blockbench.net/wiki/guides/model-rendering/">https://www.blockbench.net/wiki/guides/model-rendering/</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.08.22 - 17:20');</script></div>
   </body>
 </html>
