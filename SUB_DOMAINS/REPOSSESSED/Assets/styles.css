@@ -265,7 +265,7 @@ a {
 }
 
 /* Header: */
-.header-area {
+.header-area, footer-area{
     /* Position: */
     position: fixed; /* Fix the text in the top left corner. */
     z-index: 3; /* Ensure it is above the everthing. */
@@ -284,7 +284,27 @@ a {
     padding-right: 2%;
 }
 
-/* Text in header: */
+/* Footer: */
+.footer-area {
+    /* Position: */
+    position: fixed; /* Fix the text in the top left corner. */
+    z-index: 3; /* Ensure it is above the everthing. */
+
+    /* Styling: */
+    background-color: black;
+    /* clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); */
+    transform: skew(45deg);
+
+    /* Padding: */
+    bottom: 1vh;
+    right: 5vh;
+
+    /* Safe Space: */
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Text in headerBar: */
 .header-area p {
     /* For all Text in Header: */
     /* Reverse Transform: */
@@ -295,6 +315,24 @@ a {
     
     /* Only for Text: */
     color: var(--foreground);
+}
+
+/* Text in footerBar: */
+.footer-area p {
+    /* For all Text in Header: */
+    /* Reverse Transform: */
+    transform: skew(-45deg);
+    
+    /* Font: */
+    font-size: 3vw;
+    
+    /* Only for Text: */
+    color: var(--foreground);
+}
+
+/* Overwrite for Links in FooterBar so the lines are gone: */
+.footer-area a {
+    color: black;
 }
 
 /* Background Image - Makes the Wallpaper fixed, full and relativ: 
