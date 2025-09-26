@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Don't use Jolt extension, use the Godot Build in Jolt version!</title>
+			<link>https://catwithcode.moe/Blog/2025.09.26_Dont_Use_Joilt_Extention_Version/Dont_Use_Joilt_Extention_Version.html</link>
+			<description>In short: I used Jolt (The extension version) in my Project for a while now and on some hardware it causes extreme performance issues (to be precise on "i7 4790 and GTX 1060" and on SteamDeck). You just lose a hole lot of FPS for no reason and the Profile is completely confused where it goes and blames random scripts. It is worth working around the very few limitations the build in version still has, if any anymore. This took me longer then it should and I want to scream. I am still not sure if this is a bug, I think it is just no longer as maintained for 4.5 and newer because it is build in now. So, UPDATE YOUR PROJECT SETUP AND THANK ME LATER :)
+			
+			https://catwithcode.moe/Blog/2025.09.26_Dont_Use_Joilt_Extention_Version/Dont_Use_Joilt_Extention_Version.html
+			</description>
+			<pubDate>Fri, 26 Sep 2025 21:04:20 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - SIP Clients on Linux actually worth using</title>
 			<link>https://catwithcode.moe/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html</link>
 			<description>Weird title I know. But nearly every client I tried sucked in its own unique way. After a lot of trying around I found that gnome-calls with gnome-contacts works the best. But I use KDE, so getting it to work was a little annoying but doable. And no, there is no KDE alternative that is not unmaintained or no proprietary.
