@@ -2,6 +2,7 @@
 
 // Public Variables (Without slash because replace issue):
 var websiteURL = "https://catwithcode.moe";
+var websiteURLdnsFix = "https://catwithcode.github.io/";
 
 // Wallpapers:
 const wallpaperOptions = [
@@ -212,8 +213,10 @@ async function creatCheckViewer() {
 // - - Check if on DNS-Host or localy hosted, if not execute Anti-Bot forwarding:
 // Variables only of executed because Performance.
 function checkViewerType() {
-    if (!document.location.origin.includes(websiteURL) &&
-        !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+    // NOTE: Breaks rehosting
+    // if (!document.location.origin.includes(websiteURL) &&
+    //     !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+    if (document.location.origin.includes(websiteURLdnsFix)) {
         
         // Variables (toString because else it would work on the internel Refernece):
         let currentHost = document.location.origin.toString()
