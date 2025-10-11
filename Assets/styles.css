@@ -116,6 +116,10 @@ mixedFonts:
     /* ToolTippBorder: */
     --toolTipp_Border: 15px 0px 50px 30px;
     --toolTipp_Blend: 0.5s;
+
+    /* GPU-Offset: */
+    --gpu_Offset: 0.1;
+
     /* ###
     Setting Background Base-Color: */
     background-color: var(--background);
@@ -175,11 +179,21 @@ body {
 
     /* # - Background-Image: */
     background-image: url(/Assets/Image_Repository/Backgrounds/Layered/Rain.png);
-
+    
      /* # - - Background-Animations Propertys (No Background Image Size set because it breaks animation Loop Point): */
     background-repeat: repeat;
     animation: shiftBackground 1.5s linear infinite;
     animation-fill-mode: both;
+    
+    /* Fake force GPU:
+    Enable 3D:*/
+    transform: translateZ(var(--gpu_Offset));
+    transform: translate3d(var(--gpu_Offset), var(--gpu_Offset), var(--gpu_Offset));
+    
+    /* Optimize: */
+    backface-visibility: hidden;
+    perspective: 1000;
+    /* will-change: transform; BREAKS KA. */
 
     /* # - - This breaks way to much. Find different way! Blur breaks Viewport, Padding for Blur to be fullscreen breaks scroll.*/
     /* # - - Blur Effect for Background of ROOT (CURRENTLY BREAKS THE "CAT"-BUTTON POSITION BECAUSE IT CREATES A CONTAINER IN THE BACKEND AND BREAKS VIEWPORT-FIXED-POS): */
@@ -296,7 +310,7 @@ ul,
 ol,
 li
 {
-    padding-left: 3rem; 
+    /* padding-left: 3rem; BREAKS ON MOBILE. */
     list-style-position: inside;
 }
 
