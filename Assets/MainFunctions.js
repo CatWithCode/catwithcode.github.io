@@ -216,6 +216,7 @@ function checkViewerType() {
     // NOTE: Breaks rehosting
     // if (!document.location.origin.includes(websiteURL) &&
     //     !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+    console.log(document.location.origin)
     if (document.location.origin.includes(websiteURLdnsFix)) {
         
         // Variables (toString because else it would work on the internel Refernece):
