@@ -59,7 +59,7 @@ insertTempFile=$(mktemp)
 # Read file again:
 while IFS= read -r line || [ -n "$line" ]; do
     # Check for trigger:
-    if [[ "$line" == *"### HARDE_CODE_TRIGGER ###"* ]]; then
+    if [[ "$line" == *"### HARD_CODE_TRIGGER ###"* ]]; then
         
         # Get Data (By reading lines):
         read -r constLine

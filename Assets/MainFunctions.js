@@ -16,39 +16,39 @@ var cssReplacer = '<link rel="stylesheet" href="/Assets/styles.css">';
 // >>> READ FILE WILL BE INSERED HERE! LEAVE LINE EMPTY <<<
 
 // >>> MAIN <<<
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // head
 // Assets/BaseFiles/Head/Head.html
 const head_STATIC_HTML_INSERT = '<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/Assets/styles.css"><meta name="darkreader-lock"><link rel="icon" type="image/x-icon" href="/Assets/favicon.gif"><meta name="description" content="Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.">';
 
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // header
 // Assets/BaseFiles/Page/Header.html
 const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a href="/"> <img src="/Assets/favicon.gif" alt="Cute Pixelart" style="width:55px;height:55px";></a>  <a href="/">CatWithCode</a>  <br>  <br>  <b>&nbsp;</b>  <a href="/blog.html">BLOG</a>  <b>&nbsp;</b>  <a href="/projects.html">PROJECTS</a>  <b>&nbsp;</b>  <a href="/MediaLibraries/MediaLibraries.html">LIBRARYS</a>  <b>&nbsp;</b>  <a href="/privacy.html">PRIVACY</a>  <b>&nbsp;</b>  <a href="/license.html">LICENSE</a>  <b>&nbsp;</b>  <a href="/contact.html">CONTACT</a>   <b>&nbsp;</b>  <a href="/Feed/RSS.xml">📡&nbsp;RSS</a>  <b>&nbsp;</b></h2>';
 
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // footer
 // Assets/BaseFiles/Page/Footer.html
-const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.10.12 - 21:15</b></h5>';
+const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.10.12 - 22:44</b></h5>';
 
 // >>> SUB <<<
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // imageBody
 // Assets/BaseFiles/Modules/ImageBody.html
 const imageBody_STATIC_HTML_INSERT = '<div id="ImageBody" ###CCSS### ###LINK_BODY###" style="cursor: pointer;">    <img loading="lazy" src="###IMG_SRC###" alt="###ALT###">    <p><u>###DISC###</u></p>    <p>###DATE###</p></div>';
 
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // speechBubble
 // Assets/BaseFiles/Modules/SpeechBubble.html
 const speechBubble_STATIC_HTML_INSERT = '<div class="speechBubble">    <div class="speechBubbleText">        <h2>What does Cat think about this?</h2>        <p>###TEXT###</p>    </div>    <img src="/Assets/Image_Repository/PNG/PLACEHOLDERs/empty.png" alt="Empty."></div>';
 
 // >>> MISC <<<
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // checkViewer
 // Assets/BaseFiles/Modules/Misc/CheckViewer.html
 const checkViewer_STATIC_HTML_INSERT = '<script type="text/javascript">checkViewerType();</script>';
 
-// ### HARDE_CODE_TRIGGER ###
+// ### HARD_CODE_TRIGGER ###
 // designPageWarning
 // Assets/BaseFiles/Modules/Misc/DesignPageWarning.html
 const designPageWarning_STATIC_HTML_INSERT = '<br><hr><h2>THE DESIGN YOU\'RE SEEING MY BE OUTDATED! DESIGN-ANNOUNCEMENT-PAGE\'S ARE KEPT IN THE ORIGINAL DESIGN SO IT CAN STILL BE VIEWED IN THE FUTURE. GO TO ANY OTHER PAGE OF MY WEBSITE TO SEE THE ACTUAL DESIGN. ANY OTHER ASPECT OF DESIGN-ANNOUNCEMENT-PAGE\'S EXCEPT FOR THE DESIGN ARE NOT KEPT ORIGINAL, MEANING THIS PAGE CAN LOOK BROKEN FROM TIME TO TIME!</h2><hr><br>';
