@@ -395,4 +395,9 @@ rm $output_file
 current_date_time=$(date +"%Y.%m.%d - %H:%M")
 sed -i -E "s/(Latest Build:<b>)(.*?)(<\/b>)/\1$current_date_time\3/" "$timeStempFile"
 
+# - Update Statics: ####################################################################################################
+# Updates the Statics:
+reWriteScripte="./reWriteStatics.sh"
+"$reWriteScripte"
+
 exit
