@@ -22,6 +22,7 @@
     // VARIABLES: ####################################################################################################
     // Neko-Container:
 		const nekoContainer = document.createElement("div");
+    const nekoScaling = 2.4;
     const nekoSleep = 100;
     const nekoMinDistance = 48;
     const randomIdleEventDelay = 10;
@@ -46,7 +47,7 @@
     let lastFrameTimestamp = 0;
 
     // Running Speed:
-		const nekoSpeed = 10;
+		const nekoSpeed = 20;
 
     // Sprite locations:
 		const spriteSets = {
@@ -125,6 +126,7 @@
     function init() {
       // Configuring Container:
 			nekoContainer.id = "oneko";
+      nekoContainer.style.transform = `scale(${nekoScaling})`; // Backticks to turn value into String.
 			nekoContainer.ariaHidden = true;
 			nekoContainer.style.width = "32px";
 			nekoContainer.style.height = "32px";
