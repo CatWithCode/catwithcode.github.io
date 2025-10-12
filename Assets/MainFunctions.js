@@ -196,10 +196,10 @@ function WriteImageBody(img_Source, alt_text, img_disc, uploadDate, newWindow = 
 // - - Gets, modifies and returns SpeechBubble-Code with text (Must be static, else class and evet CSS breaks!):
 function CreateSpeechBubble(speechBubbleTextToInsert = "") {
     // Copy Static:
-    var speachBubbleCode = speechBubble_STATIC_HTML_INSERT;
+    var speechBubbleCode = speechBubble_STATIC_HTML_INSERT;
 
     // Adjust and write bubble:
-    document.write(speachBubbleCode.replace("###TEXT###", (speechBubbleTextToInsert === "") ? "Nothing. Absolutely nothing." : speechBubbleTextToInsert));
+    document.write(speechBubbleCode.replace("###TEXT###", (speechBubbleTextToInsert === "") ? "Nothing. Absolutely nothing." : speechBubbleTextToInsert));
 }
 
 // Internel Functions:

@@ -9,7 +9,9 @@
 // /Assets/SubScripts/OnekoJS/LICENSE/LICENSE
 // LICENSE/LICENSE
 
-// License:
+// oneko.js.cwc
+// oneko.js.cwc: https://github.com/CatWithCode/oneko.js.cwc
+
 // MIT
 // /Assets/SubScripts/OnekoJS/LICENSE/LICENSE
 // LICENSE/LICENSE
@@ -20,9 +22,13 @@
   // Main Function:
 	function oneko() {
     // VARIABLES: ####################################################################################################
-    // Neko-Container:
+    // Neko-Container and File:
 		const nekoContainer = document.createElement("div");
-    const nekoScaling = 2.4;
+    const nekoFile = "/Assets/SubScripts/OnekoJS/Assets/oneko.gif"
+    
+    // Adjustable Variables:
+    const nekoSpeed = 37;
+    const nekoScaling = 4;
     const nekoSleep = 100;
     const nekoMinDistance = 48;
     const randomIdleEventDelay = 10;
@@ -30,7 +36,7 @@
     const sleepyOffset = 8;
     const maxSleepTime = 192;
     const maxIdleAnimationTime = 9;
-
+    
     // Nekos Position:
 		let nekoPosX = 32;
 		let nekoPosY = 32;
@@ -47,7 +53,7 @@
     let lastFrameTimestamp = 0;
 
     // Running Speed:
-		const nekoSpeed = 20;
+    let currentScaledNekoSpeed = 0;
 
     // Sprite locations:
 		const spriteSets = {
@@ -126,7 +132,6 @@
     function init() {
       // Configuring Container:
 			nekoContainer.id = "oneko";
-      nekoContainer.style.transform = `scale(${nekoScaling})`; // Backticks to turn value into String.
 			nekoContainer.ariaHidden = true;
 			nekoContainer.style.width = "32px";
 			nekoContainer.style.height = "32px";
@@ -135,10 +140,9 @@
 			nekoContainer.style.imageRendering = "pixelated";
 			nekoContainer.style.left = `${nekoPosX - 16}px`;
 			nekoContainer.style.top = `${nekoPosY - 16}px`;
-			nekoContainer.style.zIndex = 2147483647;
+			nekoContainer.style.zIndex = 999; // Slightly behind speechBubble.
 
       // Sprite-Sheet:
-			let nekoFile = "/Assets/SubScripts/OnekoJS/Assets/oneko.gif"
     	nekoContainer.style.backgroundImage = `url(${nekoFile})`;
 
       // Add to body:
@@ -150,10 +154,14 @@
 				mousePosY = event.clientY;
 			});
 
-      // Enable first Animation-Frame:
+      // Enforce Size with scaling (Double DIV causes to many issues):
+      window.addEventListener('load', updateDivScale);
+      window.addEventListener('resize', updateDivScale);
+
+      // Beginn Loop:
 			window.requestAnimationFrame(onAnimationFrame);
 		}
-
+    
     // MAIN-LOOP: ####################################################################################################
 		function onAnimationFrame(timestamp) {
 			// Stops execution if the neko element is removed from DOM:
@@ -186,7 +194,7 @@
 			const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
       // Check for min. distance, else idle:
-			if (distance < nekoSpeed || distance < nekoMinDistance) {
+			if (distance < currentScaledNekoSpeed || distance < nekoMinDistance) {
 				idle();
 				return;
 			}
@@ -216,8 +224,8 @@
       setSprite(direction, frameCount);
 
       // Calculate Position based on speed:
-			nekoPosX -= (diffX / distance) * nekoSpeed;
-			nekoPosY -= (diffY / distance) * nekoSpeed;
+			nekoPosX -= (diffX / distance) * currentScaledNekoSpeed;
+			nekoPosY -= (diffY / distance) * currentScaledNekoSpeed;
 
       // Keep distance to window Border:
 			nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
@@ -318,5 +326,19 @@
 			idleAnimation = null;
 			idleAnimationFrame = 0;
 		}
+
+    // Returns the current Scaling of the Window:
+    function getCurrentPageScale() {
+      const zoom = Math.round(window.devicePixelRatio * 100);
+      return zoom / 100;
+    }
+
+    // Adjusting the Scale to the current Zoom of the Page to keep a consistent size:
+    function updateDivScale() {
+      const currentScale = getCurrentPageScale();
+      const adjustedScale = nekoScaling / currentScale;
+      currentScaledNekoSpeed = nekoSpeed / currentScale
+      nekoContainer.style.transform = `scale(${adjustedScale})`; // Backticks to turn value into String.
+    }
 	}
-)();
+)(); // IDK.
