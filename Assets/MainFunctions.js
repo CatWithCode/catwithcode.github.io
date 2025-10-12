@@ -8,7 +8,7 @@ var websiteURLdnsFix = "https://catwithcode.github.io";
 var cssReplacer = '<link rel="stylesheet" href="/Assets/styles.css">';
 
 // Path to OnekoJS-File:
-var onekoJsFile = 'Assets/SubScripts/OnekoJS/OnekoJS.js'
+var onekoJsFile = '/Assets/SubScripts/OnekoJS/OnekoJS.js'
 
 // STATICS - START ####################################################################################################
 // (Hard-Coded on Deploy (Or on execution of reWriteStatics) so they can be loaded in Sync so Archvie-Pages and co. work).
@@ -109,6 +109,11 @@ function WriteHead(skipCss = false) {
     }
 
     document.write(workHead);
+}
+
+// - - Loads Oneko into the current page dynamically:
+function loadOneko() {
+   runOneko()
 }
 
 // - - Creates Background Image (Called from Header becaus good time to do so):
@@ -233,11 +238,22 @@ function preloadImage(url) {
     });
 }
 
-// - - Loads Oneko into the current page dynamically (Without change the Encapsulation of the original JS file):
-function loadOneko() {
-    const onekoScript = document.createElement('script');
-    script.src = onekoJsFile;
+// This can load a Script file into the current page. Works with a callback. The return needs to be executed on to launch the function in the script. See loadOneko for an example:
+function loadScript(url, callback) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = callback;
     document.head.appendChild(script);
+}
+
+// Loads Oneko without being a Module or imported. This works with using a onload callback call to execute a method on. This is very VERY janky (This can be also be viewed as an example on how to use "loadScript"):
+function runOneko() {
+    loadScript(onekoJsFile, function() {
+        // Call the function after loading:
+        if (typeof window.oneko === 'function') {
+            window.oneko();
+        }
+    });
 }
 
 // - - Access CurrentStylePropetys in Method call:
