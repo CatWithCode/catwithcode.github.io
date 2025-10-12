@@ -4,7 +4,11 @@
 var websiteURL = "https://catwithcode.moe";
 var websiteURLdnsFix = "https://catwithcode.github.io";
 
+// To remove CSS from pages if wanted:
 var cssReplacer = '<link rel="stylesheet" href="/Assets/styles.css">';
+
+// Path to OnekoJS-File:
+var onekoJsFile = 'Assets/SubScripts/OnekoJS/OnekoJS.js'
 
 // STATICS - START ####################################################################################################
 // (Hard-Coded on Deploy (Or on execution of reWriteStatics) so they can be loaded in Sync so Archvie-Pages and co. work).
@@ -79,7 +83,10 @@ const wallpaperOptions = [
 function WriteHeader(skipCss = false) {
     // Set's Header Bar:
     document.getElementById("Header").innerHTML = (header_STATIC_HTML_INSERT);
- 
+
+    // Load Oneko:
+    loadOneko();
+
     // Load random Background:
     if (!skipCss) {
         WriteBackgroundImageWithEffects();
@@ -224,6 +231,13 @@ function preloadImage(url) {
         img.src = url;
         img.onload = () => resolve(url);
     });
+}
+
+// - - Loads Oneko into the current page dynamically (Without change the Encapsulation of the original JS file):
+function loadOneko() {
+    const onekoScript = document.createElement('script');
+    script.src = onekoJsFile;
+    document.head.appendChild(script);
 }
 
 // - - Access CurrentStylePropetys in Method call:
