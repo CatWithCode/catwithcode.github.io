@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Restaurant Sa Quadra - Menorca</title>
+			<link>https://catwithcode.moe/Blog/2025.10.12_Restaurant_Sa_Quadra/Restaurant_Sa_Quadra.html</link>
+			<description>Okay, listen, hear me out, I know I normally do only tech stuff but I was on a little vacation with my husband and we found this restaurant somewhat near our hotel. It was so UNBELIEVABLY good I just MUST write about it to quiet done the gobline in my brain. That way I will at least never fully forget it. They only have a small google maps entry and a facebook page and that is it, no online presents. So if you want to read something different then the usual from me, I will now write for like 4 minutes about how good the food was there and be sad because the restaurant is on an island and unreachable for me from now on.
+			
+			https://catwithcode.moe/Blog/2025.10.12_Restaurant_Sa_Quadra/Restaurant_Sa_Quadra.html
+			</description>
+			<pubDate>Sun, 12 Oct 2025 00:21:58 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Don't use Jolt extension, use the Godot Build in Jolt version!</title>
 			<link>https://catwithcode.moe/Blog/2025.09.26_Dont_Use_Joilt_Extention_Version/Dont_Use_Joilt_Extention_Version.html</link>
 			<description>In short: I used Jolt (The extension version) in my Project for a while now and on some hardware it causes extreme performance issues (to be precise on "i7 4790 and GTX 1060" and on SteamDeck). You just lose a hole lot of FPS for no reason and the Profile is completely confused where it goes and blames random scripts. It is worth working around the very few limitations the build in version still has, if any anymore. This took me longer then it should and I want to scream. I am still not sure if this is a bug, I think it is just no longer as maintained for 4.5 and newer because it is build in now. So, UPDATE YOUR PROJECT SETUP AND THANK ME LATER :)

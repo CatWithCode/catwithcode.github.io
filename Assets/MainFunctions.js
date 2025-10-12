@@ -1,6 +1,6 @@
 // Public Functions:
 
-// Public Variables (Without slash because replace issue):
+// Public Variables (!!! Without slash because replace issue !!!):
 var websiteURL = "https://catwithcode.moe";
 var websiteURLdnsFix = "https://catwithcode.github.io";
 
