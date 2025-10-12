@@ -275,6 +275,7 @@ Main Elements: */
 body > *:not(
     hr, 
     .speechBubble,
+    #oneko,
     img)
 {
     position: relative;
@@ -294,6 +295,7 @@ Main Elements: */
 body > *:not(
     hr, 
     .speechBubble,
+    #oneko,
     img)::before
 {
     content: '';
@@ -320,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Fixing Oversized Images: */
-img:not(.speechBubble img){
+img:not(.speechBubble img, #oneko){
     max-width: 100%;
     padding: var( --image_padding);
 }
