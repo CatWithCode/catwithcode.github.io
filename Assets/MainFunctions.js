@@ -238,7 +238,7 @@ function preloadImage(url) {
     });
 }
 
-// This can load a Script file into the current page. Works with a callback. The return needs to be executed on to launch the function in the script. See loadOneko for an example:
+// This can load a Script file into the current page. Works with a callback. The return needs to be executed on, to launch the function in the script. See loadOneko for an example:
 function loadScript(url, callback) {
     const script = document.createElement('script');
     script.src = url;
@@ -249,10 +249,8 @@ function loadScript(url, callback) {
 // Loads Oneko without being a Module or imported. This works with using a onload callback call to execute a method on. This is very VERY janky (This can be also be viewed as an example on how to use "loadScript"):
 function runOneko() {
     loadScript(onekoJsFile, function() {
-        // Call the function after loading:
-        if (typeof window.oneko === 'function') {
-            window.oneko();
-        }
+        // Call function after loading:
+        window.oneko();
     });
 }
 
