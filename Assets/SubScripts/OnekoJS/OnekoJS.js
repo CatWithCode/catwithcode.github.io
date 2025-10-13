@@ -18,7 +18,7 @@
 
 // Notes:
 // Encapsulation for direct execution, standalone:
-// Main Function:
+// Function-Wrapper:
 (function() {
     // Main Function:
     window.oneko = function() {
@@ -37,6 +37,7 @@
       const sleepyOffset = 8;
       const maxSleepTime = 192;
       const maxIdleAnimationTime = 9;
+      const minWallDistanceToScratch = 32;
       
       // Nekos Position:
       let nekoPosX = 32;
@@ -159,6 +160,9 @@
         window.addEventListener('load', updateDivScale);
         window.addEventListener('resize', updateDivScale);
 
+        // Fix StartUp Frame:
+        idle()
+
         // Beginn Loop:
         window.requestAnimationFrame(onAnimationFrame);
       }
@@ -228,7 +232,7 @@
         nekoPosX -= (diffX / distance) * currentScaledNekoSpeed;
         nekoPosY -= (diffY / distance) * currentScaledNekoSpeed;
 
-        // Keep distance to window Border:
+        // Keep distance to window Border (Fixes of-screen when resizing):
         nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
         nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
         
@@ -249,19 +253,19 @@
           let avalibleIdleAnimations = ["sleeping", "scratchSelf"];
 
           // Window Border Scratching:
-          if (nekoPosX < 32) { // X_L:
+          if (nekoPosX < minWallDistanceToScratch) { // X_L:
             avalibleIdleAnimations.push("scratchWallW");
           }
           
-          if (nekoPosY < 32) { // Y_T:
+          if (nekoPosY < minWallDistanceToScratch) { // Y_T:
             avalibleIdleAnimations.push("scratchWallN");
           }
 
-          if (nekoPosX > window.innerWidth - 32) { // Y_B:
+          if (nekoPosX > window.innerWidth - minWallDistanceToScratch) { // Y_B:
             avalibleIdleAnimations.push("scratchWallE");
           }
 
-          if (nekoPosY > window.innerHeight - 32) { // X_R:
+          if (nekoPosY > window.innerHeight - minWallDistanceToScratch) { // X_R:
             avalibleIdleAnimations.push("scratchWallS");
           }
           
@@ -291,7 +295,6 @@
             }
 
             break
-          // WALL SCRATCHING -> UNIMPLEMENTED:
           case "scratchWallN":
           case "scratchWallS":
           case "scratchWallE":
@@ -334,12 +337,18 @@
         return zoom / 100;
       }
 
-      // Adjusting the Scale to the current Zoom of the Page to keep a consistent size:
+      // Adjusting the Scale and Speed to the current Zoom of the Page to keep a consistent size:
       function updateDivScale() {
+        // Get Scale:
         const currentScale = getCurrentPageScale();
+
+        // Collect Variables:
         const adjustedScale = nekoScaling / currentScale;
-        currentScaledNekoSpeed = nekoSpeed / currentScale
+        const adjustedNekoSpeed = nekoSpeed / currentScale;
+        
+        // Apply adjustments:
         nekoContainer.style.transform = `scale(${adjustedScale})`; // Backticks to turn value into String.
+        currentScaledNekoSpeed = adjustedNekoSpeed
       }
     };
 })();
