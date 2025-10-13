@@ -286,7 +286,7 @@
             avalibleIdleAnimations.push("scratchWallS");
           }
           
-          // "Lambda" for idle Animation time length:
+          // "Lambda" for idle Animation selection:
           idleAnimation =
             avalibleIdleAnimations
             [
