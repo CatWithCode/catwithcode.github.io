@@ -381,7 +381,7 @@ img:not(.speechBubble img, #oneko){
     text-align: center;
 }
 
-/* # - - Fooder-Content: */
+/* # - - Fooder-Content (This causes Timestamp discoloration): */
 #Fooder_Border * {
     /* # - - - Spacing from Border*/
     margin-left: 25px;
