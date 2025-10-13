@@ -27,9 +27,13 @@
       const nekoContainer = document.createElement("div");
       const nekoFile = "/Assets/SubScripts/OnekoJS/Assets/oneko.gif"
       
-      // Adjustable Variables:
-      const nekoSpeed = 37;
-      const nekoScaling = 4;
+      // >>> Adjustable Variables - START <<<
+
+      // Speed and Scale:
+      const nekoSpeed = 60;
+      const nekoScaling = 6;
+
+      // Behavior:
       const nekoSleep = 100;
       const nekoMinDistance = 48;
       const randomIdleEventDelay = 10;
@@ -37,11 +41,19 @@
       const sleepyOffset = 8;
       const maxSleepTime = 192;
       const maxIdleAnimationTime = 9;
+      const minWallDistance = 16;
       const minWallDistanceToScratch = 32;
-      
+
+      // Start-Position:
+      const ranomStartPositon = true;
+      const nekoStartPosX = 32;
+      const nekoStartPosY = 32;
+
+      // >>> Adjustable Variables - END <<<
+
       // Nekos Position:
-      let nekoPosX = 32;
-      let nekoPosY = 32;
+      let nekoPosX = 0;
+      let nekoPosY = 0;
 
       // Mouse Position:
       let mousePosX = 0;
@@ -132,6 +144,9 @@
       
       // INITIALIZER: ####################################################################################################
       function init() {
+        // Start-Position:
+        setStartPosition()
+
         // Configuring Container:
         nekoContainer.id = "oneko";
         nekoContainer.ariaHidden = true;
@@ -152,9 +167,11 @@
 
         // Add event Lisitener with "Lambda" method to Update Script-Global Mouse position:
         document.addEventListener("mousemove", function(event) {
-          mousePosX = event.clientX;
-          mousePosY = event.clientY;
+          updateMousePosition(event.clientX, event.clientY)
         });
+
+        // Fix StartUp Position so it can be freely defined (As long as the mouse-move event has not fired the known mouse position is 0, 0):
+        updateMousePosition(nekoPosX, nekoPosY)
 
         // Enforce Size with scaling (Double DIV causes to many issues):
         window.addEventListener('load', updateDivScale);
@@ -233,8 +250,8 @@
         nekoPosY -= (diffY / distance) * currentScaledNekoSpeed;
 
         // Keep distance to window Border (Fixes of-screen when resizing):
-        nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
-        nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+        nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - minWallDistance);
+        nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - minWallDistance);
         
         // Set Neko Position:
         nekoContainer.style.left = `${nekoPosX - 16}px`;
@@ -349,6 +366,37 @@
         // Apply adjustments:
         nekoContainer.style.transform = `scale(${adjustedScale})`; // Backticks to turn value into String.
         currentScaledNekoSpeed = adjustedNekoSpeed
+      }
+
+      // Define START-Position on screen by fixed value or random:
+      function setStartPosition() {
+        // At random:
+        if (ranomStartPositon == true) {
+          // Get Viewport-Size:
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+
+          // Page Limits:
+          const maxX = width - minWallDistance;
+          const maxY = height - minWallDistance;
+
+          // Generate random Pos:
+          const x = Math.random() * maxX;
+          const y = Math.random() * maxY;
+
+          // Position Oneko:
+          nekoPosX = x
+          nekoPosY = y
+        } else { // Static:
+          nekoPosX = nekoStartPosX
+          nekoPosY = nekoStartPosY
+        }
+      }
+
+      // Updates the Position of the Mouse on screen (In function so it can be offset for start Position):
+      function updateMousePosition(myPosX, myPosY) {
+          mousePosX = myPosX;
+          mousePosY = myPosY;
       }
     };
 })();
