@@ -31,11 +31,11 @@
 
       // Speed and Scale:
       const nekoSpeed = 60;
-      const nekoScaling = 6;
+      const nekoScaling = 4;
 
       // Behavior:
       const nekoSleep = 100;
-      const nekoMinDistance = 48;
+      const nekoMinDistance = 180;
       const randomIdleEventDelay = 10;
       const randomIdleEventOffset = 200;
       const sleepyOffset = 8;
