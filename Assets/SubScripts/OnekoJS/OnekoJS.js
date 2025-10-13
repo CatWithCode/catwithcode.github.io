@@ -158,6 +158,7 @@
         nekoContainer.style.left = `${nekoPosX - 16}px`;
         nekoContainer.style.top = `${nekoPosY - 16}px`;
         nekoContainer.style.zIndex = 999; // Slightly behind speechBubble.
+        nekoContainer.style.opacity = "0.8";
 
         // Sprite-Sheet:
         nekoContainer.style.backgroundImage = `url(${nekoFile})`;
