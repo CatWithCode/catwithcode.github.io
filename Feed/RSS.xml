@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Design Made even more Worst</title>
+			<link>https://catwithcode.moe/Blog/2025.10.13_Design_Made_even_Worst/Design_Made_even_Worst.html</link>
+			<description>I added Oneko like many other tech blog and project pages to my website :D. I did adjust OnekoJS a good amount to fit my workflow and be more readable for me. After that I adjusted A LOT of stuff on how the dynamic elements on my website work so they don't break in edge cases like google translate pages or in the Internet Archive. I little time ago I also adjusted the DNS redirect for the GitHub pages version for search engines so it also not cause issues in Mirrors or Archives but added detection and notice if it is viewed that way. The redirect is now domain specific.
+			
+			https://catwithcode.moe/Blog/2025.10.13_Design_Made_even_Worst/Design_Made_even_Worst.html
+			</description>
+			<pubDate>Mon, 13 Oct 2025 09:35:06 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - My visit(s) at the Restaurant Sa Quadra - Menorca</title>
 			<link>https://catwithcode.moe/Blog/2025.10.12_Restaurant_Sa_Quadra/Restaurant_Sa_Quadra.html</link>
 			<description>Okay, listen, hear me out, I know I normally do only tech stuff but I was on a little vacation with my husband and we found this restaurant somewhat near our hotel. It was so UNBELIEVABLY good I just MUST write about it to quiet done the gobline in my brain. That way I will at least never fully forget it. They only have a small google maps entry and a facebook page and that is it, no online presents. So if you want to read something different then the usual from me, I will now write for like 4 minutes about how good the food was there and be sad because the restaurant is on an island and unreachable for me from now on.
