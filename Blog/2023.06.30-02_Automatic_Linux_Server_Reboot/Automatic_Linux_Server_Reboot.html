@@ -51,6 +51,9 @@
       fi
     </p>
     <p>I hope I could help you with this example setup for an automatic shoudown for a server to save energy / keep software running cleanly.</p>
+    <hr>
+    <p><u>Update 2025.10.18</u>: I was facing the issue that a shutdown in the night did not want for some time now. What exactly it was idk. but the linked askubuntu question with one commend on it that even got down-voted was the solution of all things. Just change in your "/etc/default/grub" the commands by adding "acpi=noirq" to the "GRUB_CMDLINE_LINUX_DEFAULT", update grub with "sudo update-grub" or equivalent on your server and reboot once. Solution by "<a href="https://askubuntu.com/users/1652974/yuriy-petyuk">https://askubuntu.com/users/1652974/yuriy-petyuk-l</a>" answered for "<a href="https://askubuntu.com/users/1483905/fred-l">https://askubuntu.com/users/1483905/fred-l</a>".</p>
+    <hr>
     <br>
     <h2>Sources:</h2>
     <ul>
@@ -59,8 +62,10 @@
       <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804">https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804</a></li>
       <li><a href="https://stackoverflow.com/questions/42792467/how-to-create-a-bash-script-in-linux-that-checks-if-the-user-is-local-or-not">https://stackoverflow.com/questions/42792467/how-to-create-a-bash-script-in-linux-that-checks-if-the-user-is-local-or-not</a></li>
       <li><a href="https://linuxhandbook.com/linux-logged-in-users/">https://linuxhandbook.com/linux-logged-in-users/</a></li>
-      <li><a href="/Blog/2023.06.30-02_Automatic_Linux_Server_Reboot/Automatic_Linux_Server_Reboot.html">/Blog/2023.06.30-02_Automatic_Linux_Server_Reboot/Automatic_Linux_Server_Reboot.html</a></li>
+      <li><a href="https://askubuntu.com/questions/1433700/">https://askubuntu.com/questions/1433700/</a></li>
+      <li><a href="https://askubuntu.com/users/1652974/yuriy-petyuk">https://askubuntu.com/users/1652974/yuriy-petyuk</a></li>
+      <li><a href="https://askubuntu.com/users/1483905/fred-l">https://askubuntu.com/users/1483905/fred-l</a></li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2023.06.30 - 19:50');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.10.18 - 13:55');</script></div>
   </body>
 </html>
