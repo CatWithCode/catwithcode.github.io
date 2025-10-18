@@ -160,6 +160,10 @@
         nekoContainer.style.zIndex = 999; // Slightly behind speechBubble.
         nekoContainer.style.opacity = "0.8";
 
+        // Fake 3D for 3D hardware acceleration:
+        nekoContainer.style.transform = 'translateZ(0.1)';
+        nekoContainer.style.transform = 'translate3d(0.1, 0.1, 0.1)';
+
         // Sprite-Sheet:
         nekoContainer.style.backgroundImage = `url(${nekoFile})`;
 
