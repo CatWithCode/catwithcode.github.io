@@ -33,7 +33,7 @@
 			<pubDate>Fri, 26 Sep 2025 21:04:20 GMT</pubDate>
 		</item>
         <item>
-			<title>CatWithCode - SIP Clients on Linux actually worth using</title>
+			<title>CatWithCode - SIP Client on Linux actually worth using</title>
 			<link>https://catwithcode.moe/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html</link>
 			<description>Weird title I know. But nearly every client I tried sucked in its own unique way. After a lot of trying around I found that gnome-calls with gnome-contacts works the best. But I use KDE, so getting it to work was a little annoying but doable. And no, there is no KDE alternative that is not unmaintained or no proprietary.
 			
