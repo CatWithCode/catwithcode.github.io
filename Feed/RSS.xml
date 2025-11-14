@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Instrument Recording on Linux</title>
+			<link>https://catwithcode.moe/Blog/2025.11.14_Instrument_Recording_Linux/Instrument_Recording_Linux.html</link>
+			<description>Should be easy and clear but that topic is so obscure and search engines so flooded with BS it is hard to find what to do. I wanted to document how I connected everything and what to use. I use an E-Bass but this works the same with all instruments that are E-Guitars. Midi devices like keyboards can be connected directly to a Midi to USB device (Or like many modern keyboards are Midi to USB internally already) and piped into the software using it (Just make sure your keyboard or whatever is just Midi on the USB end and not some proprietary BS), but for Analog E-Guitars it is a little more involved.
+			
+			https://catwithcode.moe/Blog/2025.11.14_Instrument_Recording_Linux/Instrument_Recording_Linux.html
+			</description>
+			<pubDate>Fri, 14 Nov 2025 10:40:35 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Design Made even more Worst</title>
 			<link>https://catwithcode.moe/Blog/2025.10.13_Design_Made_even_Worst/Design_Made_even_Worst.html</link>
 			<description>I added Oneko like many other tech blog and project pages to my website :D. I did adjust OnekoJS a good amount to fit my workflow and be more readable for me. After that I adjusted A LOT of stuff on how the dynamic elements on my website work so they don't break in edge cases like google translate pages or in the Internet Archive. I little time ago I also adjusted the DNS redirect for the GitHub pages version for search engines so it also not cause issues in Mirrors or Archives but added detection and notice if it is viewed that way. The redirect is now domain specific.

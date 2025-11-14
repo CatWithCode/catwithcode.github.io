@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Instrument Recording on Linux</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Pee, Boo.");</script>
+
+    <h1>Instrument Recording on Linux</h1>
+    <p>Should be easy and clear but that topic is so obscure and search engines so flooded with BS it is hard to find what to do. I wanted to document how I connected everything and what to use. I use an E-Bass but this works the same with all instruments that are E-Guitars. Midi devices like keyboards can be connected directly to a Midi to USB device (Or like many modern keyboards are Midi to USB internally already) and piped into the software using it (Just make sure your keyboard or whatever is just Midi on the USB end and not some proprietary BS), but for Analog E-Guitars it is a little more involved.</p>
+    <h2>Connecting everything:</h2>
+    <p>You WILL have to connect the guitars to a DI-BOX. Why? To be honest, I still not fully understand, but something with smoothing and adjusting the what comes out of the guitar. Without it the input is way to quiet and loud at the same time. Unusable for anything. Many of them can be powered by 48V phantom power. The DI box needs to be connected to a USB-Interface. Nothing fancy is needed here. The USB-Interface will then connect to the PC and you got your input.</p>
+    <h2>The software side:</h2>
+    <p>At this point you will have an "okay" sounding Input but you need to amplify it and also apply effects or digital pedals (real pedals are better, plug them in between the guitar and the DI-Box). I use PipeWire as my audio system (most Linux setups do so). By using "gpwgraph" you get a Patchbays look a like view where you can connect your Inputs to other software. To modify the sound you can use "claf-plugins" which is a collection of great effects and amps (It is also its own software, no software needed to use the plugins just use claf itself, but the plugin system can be used with other software too), or "guitarx" witch is a similar peace of software with even more ways to create custom pedals or effects. Both can do essentially the same but "claf-plugins" is more plug in play and "guitarx" feels more like a synth where the sky is the limit how the sound gets mangled. You can also just use both and pipe them into each-other. One issues that this setup has is it gets a smoothed input from the DI-Box that gets already changed by the USB-Interface and the downsides of digital processing also come into play with the digital amps and pedals that toy around with an already louder then normal signal. It works and cost near nothing compared to a full analog setup.</p>
+    <h2>Permissions?:</h2>
+    <p>It could be that, depending on you OS, the security guidelines could prevent the audio processing software from accessing the inputs on the needed lower kernel level. Just start the software from the terminal, read the output and check what udev rules or user permissions are needed. Often a udev rule for direct audio access or the audio group is missing for the current user. On OpenSuse I needed the groups "audio, input, plugdev, realtime".</p>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://linuxmusicians.com/viewtopic.php?t=27191">https://linuxmusicians.com/viewtopic.php?t=27191</a></li>
+      <li><a href="https://youtu.be/Hn3Aeen1snA">https://youtu.be/Hn3Aeen1snA</a></li>
+      <li><a href="https://guitarix.org/">https://guitarix.org/</a></li>
+      <li><a href="http://calf-studio-gear.org/">http://calf-studio-gear.org/</a></li>
+      <li><a href="https://github.com/rncbc/qpwgraph">https://github.com/rncbc/qpwgraph</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.11.14 - 11:00');</script></div>
+  </body>
+</html>
