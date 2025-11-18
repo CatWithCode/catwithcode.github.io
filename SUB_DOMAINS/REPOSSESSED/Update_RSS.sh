@@ -103,6 +103,7 @@ timeStampFiles=(
     "index.html"
     "Dev_Log/Dev_Log.html"
     "License_and_Privacy.html"
+    "OutgoingLinks.html"
 )
 
 # Get Date:

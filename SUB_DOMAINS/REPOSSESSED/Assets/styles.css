@@ -204,12 +204,20 @@ https://en.wikipedia.org/wiki/SIL_Open_Font_License
     --borderSize: 0.2vh;
     --borderRadius: 1vh;
 
+    /* Store Container Size */
+    --storeImageHight: 100%;
+    --storeImageWidth: 100%;
+
     /* BufferSize: */
     --bufferSize: -10%;
 
+    /* HUD-Opacity: */
+    --hudOpacity: 80%;
+
+    /* --- */
     /* Ensure black Page: */
-    background-color: var(--background);
-    background: var(--background);
+    --background-color: var(--background);
+    --background: var(--background);
 }
 
 /* # - Global Font and Color: */
@@ -274,7 +282,8 @@ a {
     background-color: black;
     /* clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); */
     transform: skew(-45deg);
-
+    opacity: var(--hudOpacity);
+    
     /* Padding: */
     top: 1vh;
     left: 5vh;
@@ -294,6 +303,7 @@ a {
     background-color: black;
     /* clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); */
     transform: skew(45deg);
+    opacity: var(--hudOpacity);
 
     /* Padding: */
     bottom: 1vh;
@@ -402,11 +412,31 @@ EXAMPLE:
     top: 50vh; /* Start at half of the StartUp-Size in height. */
     z-index: 2; /* In front of Background. */
 
+    width: 90%;
+    margin: auto;
+
     /* Padding: */
     padding-left: var(--left-padder);
     padding-right: var(--left-padder);
     padding-top: var(--top-padder);
     padding-bottom: var(--top-padder);
+}
+
+/* Store Container: */
+.store-container {
+    /* Position: */
+    width: 75%;
+    margin: auto;
+}
+
+/* Store Container - Image Resize: */
+.store-container .image-container img {
+    /* Enforce Resize: */
+    min-height: var(--storeImageHight);
+    max-height: var(--storeImageHight);
+
+    min-width: var(--storeImageWidth);
+    max-width: var(--storeImageWidth);
 }
 
 /* ScreenShotArea: */
@@ -432,7 +462,7 @@ EXAMPLE:
 
     /* Styling: */
     max-width: 22.5%; /* Looks nice. */
-    height: auto; /* Force Aspect ratio. */
+    height: auto;
 }
 
 /* ScreenShot's-Images: */
@@ -469,6 +499,10 @@ EXAMPLE:
     margin-right: var(--left-negativ-margin);
     margin-top: var(--top-padder);
     margin-bottom: var(--top-negativ-margin);
+
+    /* Full width: */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 /* Footer Area: */
@@ -490,6 +524,10 @@ EXAMPLE:
 
     /* Styling: */
     background: black;
+
+    /* Full width: */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 /* Links to other things in the Footer: */
@@ -566,7 +604,7 @@ EXAMPLE:
 /* Video-Player itself: */
 .video-container video {
     /* height: 40%; */
-    width: 70vw;
+    width: 70%;
 
     /* Border: */
     border: var(--borderSize) solid var(--foreground);
