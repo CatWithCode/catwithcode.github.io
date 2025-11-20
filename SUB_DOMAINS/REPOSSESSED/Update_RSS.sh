@@ -104,6 +104,7 @@ timeStampFiles=(
     "Dev_Log/Dev_Log.html"
     "License_and_Privacy.html"
     "OutgoingLinks.html"
+    "Presskit/Presskit.html"
 )
 
 # Get Date:
