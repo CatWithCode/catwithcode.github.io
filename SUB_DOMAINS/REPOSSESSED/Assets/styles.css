@@ -235,13 +235,14 @@ https://en.wikipedia.org/wiki/SIL_Open_Font_License
     color: var(--foreground);
 
     /* Images and Pixelart Fixes (with some browser-engine specific fixes... I think): */
-    image-rendering: optimizeSpeed;
+    /* DISABLED: Causes detailed artwork to break. */
+    /* image-rendering: optimizeSpeed;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
+    -ms-interpolation-mode: nearest-neighbor; */
 
     /* Fixing Oversized Text globaly: */
     word-wrap: break-word; /* For older browsers. */
