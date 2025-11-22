@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://repossessed.catwithcode.moe/index.html</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2025-11-22</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Dev_Log/DATA/2025_01_14/01.gif</loc>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Dev_Log/Dev_Log.html</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2025-11-22</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Assets/Videos/GamePlayTeaser1/GamePlayTeaser1.mp4</loc>
@@ -250,7 +250,7 @@
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Assets/Images/Commissioned/001_pandaru32790_Cat.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Assets/Images/ScreenShots/00/00.jpg</loc>
@@ -353,6 +353,14 @@
     <lastmod>2025-08-11</lastmod>
   </url>
   <url>
+    <loc>https://repossessed.catwithcode.moe/Assets/Images/Background/City2.png</loc>
+    <lastmod>2025-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Assets/Images/Background/Warehouse_2.png</loc>
+    <lastmod>2025-11-22</lastmod>
+  </url>
+  <url>
     <loc>https://repossessed.catwithcode.moe/Assets/Images/StoreImages/Copyrighted/itch_io.png</loc>
     <lastmod>2025-11-15</lastmod>
   </url>
@@ -381,8 +389,12 @@
     <lastmod>2024-12-23</lastmod>
   </url>
   <url>
-    <loc>https://repossessed.catwithcode.moe/Assets/Images/Transparent/C.png</loc>
+    <loc>https://repossessed.catwithcode.moe/Assets/Images/Transparent/C_OLD.png</loc>
     <lastmod>2024-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Assets/Images/Transparent/C.png</loc>
+    <lastmod>2025-11-21</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Assets/Images/Transparent/C_Holding.png</loc>
@@ -398,66 +410,106 @@
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/OutgoingLinks.html</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2025-11-22</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/License_and_Privacy.html</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2025-11-22</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit.html</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2025-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/04_END_CARD_01.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/08_store_capsule_small.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/01_TITLE_CARD.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/02_C.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/09_store_capsule_vertical.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/06_store_capsule_header.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/03_Logo3.png</loc>
+    <lastmod>2025-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/03_HighRes.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/03_Logo2.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/05_Icon.png</loc>
+    <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Branding/07_store_capsule_main.png</loc>
+    <lastmod>2025-11-21</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/01.png</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/03.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/02.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/04.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/06.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/05.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/09.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/07.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/08.png</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Screenshots/10.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Showcase/weapon_moving_gif.gif</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Artworks/02_Eyes.png</loc>
-    <lastmod>2025-11-15</lastmod>
-  </url>
-  <url>
-    <loc>https://repossessed.catwithcode.moe/Presskit/Presskit-Assets/Artworks/01_Logo.png</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-11-20</lastmod>
   </url>
 </urlset>
