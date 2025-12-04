@@ -33,7 +33,7 @@ const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a hr
 // ### HARD_CODE_TRIGGER ###
 // footer
 // Assets/BaseFiles/Page/Footer.html
-const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.11.30 - 03:11</b></h5>';
+const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.12.04 - 01:03</b></h5>';
 
 // >>> SUB <<<
 // ### HARD_CODE_TRIGGER ###
