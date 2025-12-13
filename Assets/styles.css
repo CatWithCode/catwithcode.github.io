@@ -258,6 +258,15 @@ a, .speechBubbleText {
     text-align: center;
 }
 
+/* # Class for non-pixelated items. Applies to ALL sub-items. Only place as high as needed!: */
+.pixelFree * {
+    image-rendering: auto;
+    -webkit-image-rendering: auto;
+    -moz-image-rendering: auto;
+    -o-image-rendering: auto;
+    -ms-interpolation-mode: auto;
+}
+
 /* # - Clean Text:
     For Items that need to have Decorations like underline removed. */
 .cleanText {
