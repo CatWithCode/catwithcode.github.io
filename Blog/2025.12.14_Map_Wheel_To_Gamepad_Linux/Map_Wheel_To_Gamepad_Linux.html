@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Mapping Steering Wheel to Gamepad on Linux</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("");</script>
+
+    <h1>Mapping Steering Wheel to Gamepad on Linux</h1>
+    <p>It is that time of the year again. No burnout inducing game-dev for two weeks and true vacation days for once. I wanted to play "Easy Delivery Co". and noticed how cool it would be to use my Steering wheel with the game. Long story short: I made my steering wheel work on Linux with ANY game by mapping it to a X-Input gamepad.</p>
+    <p>I use the "Thrustmaster T300RS" and so needed to install its driver. "Kimplul" made a river and tantalizer for Linux over at GitHub called "hid-tmff2". I needed to install it manually on OpenSUSE. The version in the official repository's did not work. I just did all steps in "Manual installation" and then "DKMS (Dynamic Kernel Module Support)" just to make sure. One reboot later it worked and detected the wheel. Issue is that no many games support wheels.</p>
+    <p>To fix that I used input-remapper. I had it already up and running so I added a profile and added every button to it. The hardest thing to get right is the wheel itself. You need to try a few times until it get detected as "Joystick-X". To find what button needs what I connected a X-BOX-Controller and checked with "evtest" what button on a controller is what Key-code in the backend. Assign Axis and buttons as needed (Create a base profile and then copy it and make one for your game. Having a base and the hard part out of the way is important. Every game needs custom settings! Not every racing game is mapped to a gamepad the same).</p>
+    <p>The hardest part in the mapping part was getting the Wheel Axis parameter right. Every game is setup differently for analog sticks. Meaning finding settings that map well from the IRL-Wheel to the game is important. For me it was Mapping the Wheel ("Joystick-X"), setting it to Analog and Outputting to Analog Axis into ABS_X on a Gamepad. The setting: "Deadzone" 0.00, "Gain" 2.00, "Expo" -0.60. That is my setup for "Easy Delivery Co". ONLY!</p>
+    <p>To get force feedback working outside of supported games I used "Oversteer" from "berarma". Use the Appimage version, else it is a pain in the a** to install. After applying the U-DEV rules I set the "AutoCenter strength" to something that feels realistic for my current game and save that as a Profile for this game. To get it to "stick". Open "input-remapper", select your profile for your current game, stop it, set your profile in "Oversteer" and then re-Apply in "input-remapper"! Now the force feedback will work as long as "Oversteer" stays open. Now just start your game and have fun. You maybe need to set the steering settings in the game to fit your setup even better. Use the wheels or the steering wheel in game as a orientation.</p>
+    <p>It could be that you still need the gamepad mapped or passed through "Steam-Input" if it still dose not work.But that would be very unlikely! Most likely something else is wrong. Also: Force feedback means ONLY re-centering with this setup. The game MUST support wheels or have a mod for it to have ANYTHING else then re-centering.</p>
+    <p>Modding part: Many games have interpolation applied to make feel gamepads not feel like a** so you need to remove that. Either your game supports that in the settings, in the config-file or you need to mod it out. For "Easy Delivery Co." it is "r2modman" (Appimg) with "BepInExPack" and the mod "SteeringWheel".</p>
+    <p>If your game supports wheels you need to install the driver inside the prefix of proton using "protontricks" (incl. the driver for Linux and "Oversteer" installed on Linux). Then the remapping part SHOULD not be needed. A few years ago I tried "Asseto Corsa" with this setup (without remapping) BUT the launcher was so bad (community and official) on Linux that I stopped trying. Maybe that changed. I won't check LOL. BUT it works.</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/Kimplul/hid-tmff2">https://github.com/Kimplul/hid-tmff2</a></li>
+      <li><a href="https://github.com/sezanzeb/input-remapper">https://github.com/sezanzeb/input-remapper</a></li>
+      <li><a href="https://github.com/berarma/oversteer">https://github.com/berarma/oversteer</a></li>
+      <li><a href="https://github.com/pkgforge-dev/Oversteer-AppImage/releases">https://github.com/pkgforge-dev/Oversteer-AppImage/releases</a></li>
+      <li><a href="https://thunderstore.io/c/easy-delivery-co/p/BepInEx/BepInExPack/">https://thunderstore.io/c/easy-delivery-co/p/BepInEx/BepInExPack/</a></li>
+      <li><a href="https://thunderstore.io/c/easy-delivery-co/p/craftxbox/SteeringWheel/">https://thunderstore.io/c/easy-delivery-co/p/craftxbox/SteeringWheel/</a></li>
+      <li><a href="https://github.com/ebkr/r2modmanPlus/releases">https://github.com/ebkr/r2modmanPlus/releases</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.12.14 - 18:31');</script></div>
+  </body>
+</html>

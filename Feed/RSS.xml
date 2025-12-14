@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Mapping Steering Wheel to Gamepad on Linux</title>
+			<link>https://catwithcode.moe/Blog/2025.12.14_Map_Wheel_To_Gamepad_Linux/Map_Wheel_To_Gamepad_Linux.html</link>
+			<description>It is that time of the year again. No burnout inducing game-dev for two weeks and true vacation days for once. I wanted to play "Easy Delivery Co". and noticed how cool it would be to use my Steering wheel with the game. Long story short: I made my steering wheel work on Linux with ANY game by mapping it to a X-Input gamepad.
+			
+			https://catwithcode.moe/Blog/2025.12.14_Map_Wheel_To_Gamepad_Linux/Map_Wheel_To_Gamepad_Linux.html
+			</description>
+			<pubDate>Sun, 14 Dec 2025 17:36:08 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Instrument Recording on Linux</title>
 			<link>https://catwithcode.moe/Blog/2025.11.14_Instrument_Recording_Linux/Instrument_Recording_Linux.html</link>
 			<description>Should be easy and clear but that topic is so obscure and search engines so flooded with BS it is hard to find what to do. I wanted to document how I connected everything and what to use. I use an E-Bass but this works the same with all instruments that are E-Guitars. Midi devices like keyboards can be connected directly to a Midi to USB device (Or like many modern keyboards are Midi to USB internally already) and piped into the software using it (Just make sure your keyboard or whatever is just Midi on the USB end and not some proprietary BS), but for Analog E-Guitars it is a little more involved.
