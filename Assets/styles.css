@@ -96,6 +96,9 @@ mixedFonts:
 
     --backgroundBlur: 10px;
 
+    /* # - - Buttons: */
+    --buttonReSize: 2em;
+
     /* # - - Images: */
     --image_margin: 1%;
     --image_padding: 1%;
@@ -334,6 +337,20 @@ h1, h2, h3, h4, h5, h6 {
 img:not(.speechBubble img, #oneko){
     max-width: 100%;
     padding: var( --image_padding);
+}
+
+/* - - Literally just button things: */
+button {
+    /* # - - Styling: */
+    cursor: pointer;
+    font-size: var(--buttonReSize);;
+}
+
+/* - - Buttons normally hide stuff. So the result should be similarly sized: */
+#ButtonResult {
+    /* # - - Styling: */
+    font-size: var(--buttonReSize);;
+    text-align: center;
 }
 
 /* # # #

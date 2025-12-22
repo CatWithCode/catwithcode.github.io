@@ -33,7 +33,7 @@ const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a hr
 // ### HARD_CODE_TRIGGER ###
 // footer
 // Assets/BaseFiles/Page/Footer.html
-const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.12.19 - 21:10</b></h5>';
+const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2025.12.22 - 17:45</b></h5>';
 
 // >>> SUB <<<
 // ### HARD_CODE_TRIGGER ###
@@ -259,6 +259,54 @@ function getCurrentStyle_Property(propertyName) {
     // Getting current Style dynamically:
     const rootStyles = getComputedStyle(document.documentElement);
     return document.documentElement.style.backgroundColor = rootStyles.getPropertyValue(propertyName).trim();
+}
+
+// - - E-Mail Obfuscation:
+// - - Why? Because internet sucks sometimes.
+
+// Next step in showing E-Mail:
+function secureEmail() {
+    // Ger Button Reference:
+    var ogButton = document.getElementById("emailCheck");
+
+    // Create new Button:
+    const nextButton = document.createElement('button');
+    nextButton.innerText = 'Are you sure?';
+    nextButton.id = 'nextButton'
+    nextButton.onclick = function()
+    {
+        showEmail();
+    };
+
+    // Replace:
+    ogButton.replaceWith(nextButton);
+}
+
+// Final E-Mail show step (Still encoded and coded step by step because internet):
+function showEmail() {
+    // Get Button Reference:
+    var nextButton = document.getElementById("nextButton");
+
+    // Holds and get E-Mail:
+    var encodedEmail = "cF5yaXZhXnRlIFBVIGNvXm50YWNedCBBVCBjYXRed2ledGhjXm9kZSBQVSBtXm9l";
+    var decodedEmail = atob(encodedEmail);
+
+    // Make it readable:
+    var readable = decodedEmail;
+
+    // Cleaning:
+    readable = readable.replaceAll("^", "");
+    readable = readable.replaceAll(" PU ", ".");
+    readable = readable.replaceAll(" AT ", "@");
+
+    // Insert:
+    var mailToLink = document.createElement('a');
+    mailToLink.href = 'mailto:' + readable;
+    mailToLink.textContent = readable;
+    mailToLink.id = 'ButtonResult';
+
+    // Replace:
+    nextButton.replaceWith(mailToLink);
 }
 
 // - - User Agent Checker (VERY JANKY):
