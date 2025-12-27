@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Switching from Ubuntu-Server to Proxmox</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("The hardware will always be a BIOS-M.2 modded mainboard, consumer SSD's, bargain bin RAM from nearly 12 years ago and a 14 year old CPU. Stop forcing the old dog to run and let it finally sleep!");</script>
+
+    <h1>Switching from Ubuntu-Server to Proxmox</h1>
+    <p>In the past I wrote about how I setup my home-server but it became near unmaintainable. I had multiple issues with raid assembling wrong and nearly breaking all my large data and many configuration had issues. Most of this (more like everything) is 100% my fault but I don't have time all day fixing my home-server every other day.</p>
+    <p>So I wanted to fix it once and for all and… well 2025 and multi billion heavy island visitor happened and now hardware, even used, is unaffordable. So no used server hardware for me.</p>
+    <p>I looked into how I can improve the situation the most, and first was just cleaning, adding SATA and cable management and other basic stuff. After that I knew I need a new OS and setup else the Container would keep on breaking. I decided on Proxmox, open source, payed but free in the community version. Normal consumer can not afford the subscription version because primary business software aka. expensive af.</p>
+    <p>From here most went well. I installed Proxmox, checked out how everything worked, put my 4 SSD's in a zfs zRAID1 (not storage) then added it as folder and created many MANY Directory Mappings, fixed permission so unprivileged containers can work with them, then added them to my LXC by mapping them in the config file directly and finally added the Directory Mappings to my VM's and mount them with fstab on boot. Here I needed to re assign owner in the VM to the non-root default VM-Server-User. After checking I can see changes on both ends I used docker and Portainer to setup everything I needed. I even could reuse most of my old docker-compose files. I tried to install Nextcloud-AIO again and again saw why I hate docker so much. This AIO thing is so bad it is painful. Only works with HTTPS which in a Home-setup is NOT NEEDED and just causes issues, hell it causes issues even in business environments. Enough ranting.</p>
+    <p>I installed stuff like pi-hole directly in a LXC container for less overhead and easy SEPARATE management of it to prevent DNS issues once for real. Some stuff is only really usable with docker which is not recommended in LXC but for simple stuff like Nginx Proxy Manager it works like a VM. Create an Ubuntu or Debian container, update, install docker, install with compose the needed app and only the app. Done. Keep it simple with CORE utils like DNS or reverse Proxy, trust me.</p>
+    <p>ZFS has quite a big overhead and sending files over FTP to some folders can really use A LOT OF RAM. And I mean a lot. Like 24 GB just for 200 GB backup files. The system slows down the IO-Speed to keep the VM from overflowing the ZFS stuff but wow.</p>
+    <p>Only anoying thing is updating. On a basic Ubuntu-Server a simple batch script can jump around and execute all update commands one after the other. With this setup I would need to find a way to enter VM's and LXC containers and update them without losing context or script flow and state, exit them and even somehow use API's of Portainer to trigger re-pulls. AKA. Auto-Update is not easily possible with Proxmox. I saw setups online with services all over the place and jobs timed everywhere and so on. Just update everything once a month and be happy it dose not break for no reason after you looked at it funny.</p>
+    <p>Is this ideal or the best setup? No! The virtiofs use with VM's and folder mounting in Container has a good amount of overhead, how stuff is run, if in a VM or LXC container could have been better selected, scripts to manage everything and even the docker-compose's them self could have been cleaned up, but it works. Everything is done clean, with in spec of Proxmox and there recommendations, to some extend, no out of spec jank and all monitor-able and backup-able. I like it far more the the old jank setup with Ubuntu-Server. I might not be a fan of the way some software like Ubuntu-Server, Docker or Proxmox is run but all I use is OpenSource, dose not phone anywhere I don't tell it to and works how I want it. And also: Having EXTREMELY EASY AND AUTOMATIC separate IP addresses for different types of container and VM's I mad is brilliant. Not even the need to static IP them. Tell the router to give the MAC-Address a static IP and the Container or VM will use it no questions asked!</p>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/2024%E2%80%932025_global_memory_supply_shortage">https://en.wikipedia.org/wiki/2024%E2%80%932025_global_memory_supply_shortage</a></li>
+      <li><a href="https://youtu.be/YxpCVAC_H1o">https://youtu.be/YxpCVAC_H1o</a></li>
+      <li><a href="https://pve.proxmox.com/wiki/Unprivileged_LXC_containers">https://pve.proxmox.com/wiki/Unprivileged_LXC_containers</a></li>
+      <li><a href="https://forum.proxmox.com/threads/proxmox-8-4-virtiofs-virtiofs-shared-host-folder-for-linux-and-or-windows-guest-vms.167435/">https://forum.proxmox.com/threads/proxmox-8-4-virtiofs-virtiofs-shared-host-folder-for-linux-and-or-windows-guest-vms.167435/</a></li>
+      <li><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></li>
+      <li><a href="https://docs.portainer.io/start/install-ce/server/docker/linux#docker-compose">https://docs.portainer.io/start/install-ce/server/docker/linux#docker-compose</a></li>
+      <li><a href="/Blog/2024.09.10_Enforce_PiHole/Enforce_PiHole.html">/Blog/2024.09.10_Enforce_PiHole/Enforce_PiHole.html</a></li>
+      <li><a href="/Blog/2023.06.30-01_Self_Hosting_Nextcloud/Self_Hosting_Nextcloud.html">/Blog/2023.06.30-01_Self_Hosting_Nextcloud/Self_Hosting_Nextcloud.html</a></li>
+      <li><a href="/Blog/2022.10.16_Mainboard-M.2_NVMe-Mod/Mainboard-M.2_NVMe-Mod.html">/Blog/2022.10.16_Mainboard-M.2_NVMe-Mod/Mainboard-M.2_NVMe-Mod.html</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.12.27 - 03:10');</script></div>
+  </body>
+</html>

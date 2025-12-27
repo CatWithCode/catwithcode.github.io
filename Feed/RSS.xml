@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Switching from Ubuntu-Server to Proxmox</title>
+			<link>https://catwithcode.moe/Blog/2025.12.27_Switch_UbuntuServer_to_Proxmox/Switch_UbuntuServer_to_Proxmox.html</link>
+			<description>In the past I wrote about how I setup my home-server but it became near unmaintainable. I had multiple issues with raid assembling wrong and nearly breaking all my large data and many configuration had issues. Most of this (more like everything) is 100% my fault but I don't have time all day fixing my home-server every other day.
+			
+			https://catwithcode.moe/Blog/2025.12.27_Switch_UbuntuServer_to_Proxmox/Switch_UbuntuServer_to_Proxmox.html
+			</description>
+			<pubDate>Sat, 27 Dec 2025 02:24:22 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Mapping Steering Wheel to Gamepad on Linux</title>
 			<link>https://catwithcode.moe/Blog/2025.12.14_Map_Wheel_To_Gamepad_Linux/Map_Wheel_To_Gamepad_Linux.html</link>
 			<description>It is that time of the year again. No burnout inducing game-dev for two weeks and true vacation days for once. I wanted to play "Easy Delivery Co". and noticed how cool it would be to use my Steering wheel with the game. Long story short: I made my steering wheel work on Linux with ANY game by mapping it to a X-Input gamepad.
