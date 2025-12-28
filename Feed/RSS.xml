@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Drakengard is not as bad as everyone says, but it is not that good either</title>
+			<link>https://catwithcode.moe/Blog/2025.12.28_Drakengard/Drakengard.html</link>
+			<description>I played Drakengard after so many years and wow... it diffidently was something.
+			
+			https://catwithcode.moe/Blog/2025.12.28_Drakengard/Drakengard.html
+			</description>
+			<pubDate>Sun, 28 Dec 2025 01:43:14 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Switching from Ubuntu-Server to Proxmox</title>
 			<link>https://catwithcode.moe/Blog/2025.12.27_Switch_UbuntuServer_to_Proxmox/Switch_UbuntuServer_to_Proxmox.html</link>
 			<description>In the past I wrote about how I setup my home-server but it became near unmaintainable. I had multiple issues with raid assembling wrong and nearly breaking all my large data and many configuration had issues. Most of this (more like everything) is 100% my fault but I don't have time all day fixing my home-server every other day.
