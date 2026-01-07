@@ -35,7 +35,7 @@
 
       // Behavior:
       const nekoSleep = 100;
-      const nekoMinDistance = 280;
+      const nekoMinDistance = 400;
       const randomIdleEventDelay = 10;
       const randomIdleEventOffset = 200;
       const sleepyOffset = 8;
