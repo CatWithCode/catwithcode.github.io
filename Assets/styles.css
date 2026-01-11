@@ -256,7 +256,7 @@ a, .speechBubbleText {
     margin: var(--image_margin);
     max-width: var(--image_width);
     text-align: center;
-    cursor: pointer;
+    cursor: var(--cursorPointer);
 }
 
 #ImageBody img {
@@ -354,7 +354,7 @@ img:not(.speechBubble img, #oneko){
 /* - - Literally just button things: */
 button {
     /* # - - Styling: */
-    cursor: pointer;
+    cursor: var(--cursorPointer);
     font-size: var(--buttonReSize);;
 }
 
