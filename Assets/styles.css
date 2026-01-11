@@ -96,6 +96,10 @@ mixedFonts:
 
     --backgroundBlur: 10px;
 
+    /* Cursor: */
+    --cursorDefault: url('/Assets/Image_Repository/CustomCursor/custom-cursor.png') 16 16, default;
+    --cursorPointer: url('/Assets/Image_Repository/CustomCursor/custom-link-cursor.png') 16 32, pointer;
+
     /* # - - Buttons: */
     --buttonReSize: 2em;
 
@@ -193,6 +197,9 @@ body {
     transform: translateZ(var(--gpu_Offset));
     transform: translate3d(var(--gpu_Offset), var(--gpu_Offset), var(--gpu_Offset));
     
+    /* Cursor: */
+    cursor: var(--cursorDefault);
+
     /* Optimize: */
     backface-visibility: hidden;
     perspective: 1000;
@@ -205,6 +212,11 @@ body {
     /* # - - - Reversing "margin" on *-body and applying padding to blur fully to the corners. */
     /* margin: 0%; */
     /* padding: var(--bodyPadding); */
+}
+
+/* Click-Cursor: */
+a {
+    cursor: var(--cursorPointer);
 }
 
 /* Animation for the Background-Rain. (px of Image so it is smoot from one Position to the other): */
