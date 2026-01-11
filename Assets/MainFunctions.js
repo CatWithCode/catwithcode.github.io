@@ -190,7 +190,7 @@ function WriteImageBody(img_Source, alt_text, img_disc, uploadDate, newWindow = 
     var linkTo = (diffrentLink != '') ? diffrentLink : img_Source;
 
     // BOOLEAN SAFE Link opener:
-    var linkType = (newWindow === true) ? 'onclick="window.open(\'###LINK###\');' : 'onclick="location.href=\'###LINK###\';';
+    var linkType = (newWindow === true) ? 'onclick="window.open(\'###LINK###\');"' : 'onclick="location.href=\'###LINK###\';"';
 
     // Custom Width:
     var customCss = (maxWidthOverwrite === true) ? 'style="min-width:98%; padding: 2px; border: var(--image_border) solid var(--foreground);"' : '';
