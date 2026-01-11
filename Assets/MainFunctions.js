@@ -33,13 +33,13 @@ const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a hr
 // ### HARD_CODE_TRIGGER ###
 // footer
 // Assets/BaseFiles/Page/Footer.html
-const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2026.01.07 - 23:11</b></h5>';
+const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border">###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2026.01.11 - 15:36</b></h5>';
 
 // >>> SUB <<<
 // ### HARD_CODE_TRIGGER ###
 // imageBody
 // Assets/BaseFiles/Modules/ImageBody.html
-const imageBody_STATIC_HTML_INSERT = '<div id="ImageBody" ###CCSS### ###LINK_BODY###" style="cursor: pointer;">    <img loading="lazy" src="###IMG_SRC###" alt="###ALT###">    <p><u>###DISC###</u></p>    <p>###DATE###</p></div>';
+const imageBody_STATIC_HTML_INSERT = '<div id="ImageBody" ###CCSS### ###LINK_BODY### style="cursor: var(--cursorPointer);">    <img loading="lazy" src="###IMG_SRC###" alt="###ALT###">    <p><u>###DISC###</u></p>    <p>###DATE###</p></div>';
 
 // ### HARD_CODE_TRIGGER ###
 // speechBubble
