@@ -12,6 +12,9 @@
     <script type="text/javascript">CreateSpeechBubble("Linux on a phone. Good. Linux on a phone with custom software that creates issues with existing Linux software so it can be more efficient. Something.");</script>
     
     <h1>Everything about Ubuntu Touch on the Fairphone 5</h1>
+    <hr>
+    <h2>This is outdated for 24.05. I used mainly 20.04. Proceed with caution.</h2>
+    <hr>
     <p>In this entry I will document everything about using Ubuntu Touch on the Fairphone 5. I independently volunteer as a beta tester.</p>
     <h4>Update about Linux on Mobile: <a href="/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html">/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html</a></h4>
     <h4>Many parts can be done on any Ubuntu Touch device!</h4>
@@ -92,9 +95,9 @@
     <br>
     <hr>
     <br>
+    <h2>>> Snap's:</h2>
     <br>
     <hr>
-    <h2><u>Snap's</u>:</h2>
     <p>Snaps do work on the Fairphone 5. Compatibility far better now, but still hit or miss.</p>
     <p>Snaps can be enabled with the app "Snapz0r". The only issue I have is that it lets you uninstall things in ways where you don't know what is being done. It is great for installing snap and seeing whats on the phone but I installed and managed snap's with the terminal.</p>
     <p>Snap also dose not allow some hardware access, camera or Microphones for example.</p>
@@ -134,10 +137,9 @@
     <br>
     <hr>
     <br>
-    <h2>>> Guides:</h2>
+    <h2>>> Fixing Libertine create:</h2>
     <br>
     <hr>
-    <h2><u>Fixing Libertine create</u>:</h2>
     <p>Libertine is not as often used as you might expect what causes fucked create processes sometimes. That has way to often to do with core and the uname version. That can be forced and fixed by following this tutorial by "NewBit"</p>
     <p><a href="https://forums.ubports.com/post/73301">https://forums.ubports.com/post/73301</a></p>
     <p>You just need to create the script in your Downloads folder and then create a script inside you home folder. Make both executable and execute the replacement script and in a separate remote terminal launch the creation process. Sadly if it still fails you have to retry again, cancel the install to the end and then check the log what went wrong. And sadly every retry requires a re-download of every package because reasons.</p>
@@ -210,17 +212,17 @@
     <br>
     <hr>
     <br>
+    <h2>>> Backups:</h2>
     <br>
     <hr>
-    <h2><u>Backups</u>:</h2>
     <p>TWRP is sadly not an option. It can be booted with fasboot boot twrp.img and it even can decrypted all partitions (unlike with Android) but it can not backup anything because it dose not know how to work with a Linux (or more precisely Ubuntu Touch) partition. It finds everything but that's it.</p>
     <p>I think the best way to do this is to just “adb pull /home/phablet”. It backups everything the user changes. All system changes like Waydroid or Snaps must be done beforehand but then just overwrite everything in the home folder with your old config. This will probably crash a lot of stuff and a hard-reboot is needed to prevent overwrite of configs but it works.</p>
     <br>
     <hr>
     <br>
+    <h2>>> App Replacements (Moving in/Getting fully Setup):</h2>
     <br>
     <hr>
-    <h2><u>App Replacements (Moving in/Getting fully Setup)</u>:</h2>
     <p>List of apps that can be used/can be replaced or the best way to use them (and sometimes a explanation why it is done that way).</p>
     <ul>
       <li>
@@ -301,9 +303,9 @@
     <br>
     <hr>
     <br>
+    <h2>>> Installing Signal (Desktop):</h2>
     <br>
     <hr>
-    <h2><u>Installing Signal (Desktop)</u>:</h2>
     <p>(((Warning: The way to get root inside a container might have chnaged. I tested this once and it still works but I am not sure what way to get root is the right way to dos it. But I don't use any of these Signal steps because they are near unmaintainable.)))</p>
     <p>This was a lot of work. And believe me when I say: be prepared for a lot of jank.</p>
     <p>I got Signal Desktop fully working. Yes its a bit janky to use, but keyboard, UI, Calls, Microphone, Popup-notifications (EVEN WHEN THE SCREEN IS OF FOR A LONG TIME! !BUT! only if you leave Signal, meaning: Open Signal without opening a chat (too safe battery) and then swith to a other App or simmular. Off screen detection in X11 is a little inconsistent) (Not notifications in the Ubuntu Touch notifications center) and File Browser work. Video call dose work but dose not get any feed (Probably a Libertine limitation): <a href="https://forums.ubports.com/topic/10431/">https://forums.ubports.com/topic/10431/</a></p>
@@ -474,9 +476,9 @@
     <br>
     <hr>
     <br>
+    <h2>>> Installing a usable Browser (FULL FIREFOX):</h2>
     <br>
     <hr>
-    <h2><u>Installing a usable Browser (FULL FIREFOX)</u>:</h2>
     <p>Installing as usable browser is possible with Libertine.</p>
     <p>Open Libertine and create a new Container, open view and show log. Then wait until nothing happens anymore for 2 minutes. Then install the package "Firefox". Make sure to open the container and show the shell log while it is doing its thing. After it is done and Firefox (and VIM...) is in your Homemenu you can install a other app called "pavucontrol". Open it once. After that you can start Firefox. It will be way to small and unusable. You need to do a few modifications to fix that. We will fix the scaling, the UI and a few other things.</p>
     <p>When changing the UI connect a mouse to right click or make precise inputs can be helpful. You must configure the UI now because later Firefox will crash when moving UI elements. Make everything as large as possible (density) and remove all elements you don't need. Add resize to the bookmarkbar and set it to always be visible. The enable TitelBar to make the Titelbar go away (LOL). If you need a reference, an image is at the end of this section.</p>
@@ -494,9 +496,9 @@
     <br>
     <hr>
     <br>
+    <h2>>> Installation:</h2>
     <br>
     <hr>
-    <h2><u>Installation</u>:</h2>
     <p>I had LinageOS installed, so I flashed the Stock Android 13 Rom (Android 14 was already out but the installer wants Android 13. It is very important to use the right Android Version).</p>
     <p>It is also important to install Android 13 once before switching and then enable Developer mode AND OEM unlock. Then install should work. Else it will not be able to change the slot or flash firmware or format partitions.</p>
     <p>I use Arch (BTW.) and used the official UBports Installer. It did all the udev stuff for me and flashed the phone without any issues.</p>
@@ -589,6 +591,6 @@
       <li><a href="https://forums.ubports.com/topic/7550">https://forums.ubports.com/topic/7550</a></li>
       <!-- <li><a href="FFF">FFF</a></li> -->
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2025.07.18 - 00:13');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.01.19 - 18:13');</script></div>
   </body>
 </html>
