@@ -31,7 +31,7 @@
 
       // Speed and Scale:
       const nekoSpeed = 60;
-      const nekoScaling = 5;
+      const nekoScaling = 3;
 
       // Behavior:
       const nekoSleep = 100;
