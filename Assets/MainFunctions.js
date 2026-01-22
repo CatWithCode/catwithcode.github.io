@@ -3,6 +3,7 @@
 // Public Variables (!!! Without slash because replace issue !!!):
 var websiteURL = "https://catwithcode.moe";
 var websiteURLdnsFix = "https://catwithcode.github.io";
+var websiteRSSLink = "https://catwithcode.moe/Feed/RSS.xml"
 
 // To remove CSS from pages if wanted:
 var cssReplacer = '<link rel="stylesheet" href="/Assets/styles.css">';
@@ -28,12 +29,12 @@ const head_STATIC_HTML_INSERT = '<meta name="viewport" content="width=device-wid
 // ### HARD_CODE_TRIGGER ###
 // header
 // Assets/BaseFiles/Page/Header.html
-const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a href="/"> <img src="/Assets/favicon.gif" alt="Cute Pixelart" style="width:55px;height:55px";></a>  <a href="/">CatWithCode</a>  <br>  <br>  <b>&nbsp;</b>  <a href="/blog.html">BLOG</a>  <b>&nbsp;</b>  <a href="/projects.html">PROJECTS</a>  <b>&nbsp;</b>  <a href="/MediaLibraries/MediaLibraries.html">LIBRARYS</a>  <b>&nbsp;</b>  <a href="/contact.html">CONTACT</a>   <b>&nbsp;</b>  <a href="/Feed/RSS.xml">📡&nbsp;RSS</a>  <b>&nbsp;</b></h2><div class="centredItems pixelFree">  <a href="https://repossessed.catwithcode.moe/"> <img src="/Assets/Image_Repository/Promotions/REPOSSESSED_AD.png" alt="REPOSSESSED GAME LINK"></a></div>';
+const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a href="/"> <img src="/Assets/favicon.gif" alt="Cute Pixelart" style="width:55px;height:55px";></a>  <a href="/">CatWithCode</a>  <br>  <br>  <b>&nbsp;</b>  <a href="/blog.html">BLOG</a>  <b>&nbsp;</b>  <a href="/projects.html">PROJECTS</a>  <b>&nbsp;</b>  <a href="/MediaLibraries/MediaLibraries.html">LIBRARYS</a>  <b>&nbsp;</b>  <a href="/contact.html">CONTACT</a>   <b>&nbsp;</b>  <a href="/rss.html">📡&nbsp;RSS</a>  <b>&nbsp;</b></h2><div class="centredItems pixelFree">  <a href="https://repossessed.catwithcode.moe/"> <img src="/Assets/Image_Repository/Promotions/REPOSSESSED_AD.png" alt="REPOSSESSED GAME LINK"></a></div>';
 
 // ### HARD_CODE_TRIGGER ###
 // footer
 // Assets/BaseFiles/Page/Footer.html
-const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border"><a href="/privacy.html">PRIVACY</a>&nbsp;&nbsp;<a href="/license.html">LICENSE</a><br>###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2026.01.19 - 20:51</b></h5>';
+const footer_STATIC_HTML_INSERT = '<h5 id="Fooder_Border"><a href="/privacy.html">PRIVACY</a>&nbsp;&nbsp;<a href="/license.html">LICENSE</a><br>###DATE_TEXT###&nbsp;&nbsp;|&nbsp;&nbsp;©️ CatWithCode&nbsp;&nbsp;|&nbsp;&nbsp;###LICENSE###<br>&nbsp;&nbsp;Latest Build:<b>2026.01.23 - 00:55</b></h5>';
 
 // >>> SUB <<<
 // ### HARD_CODE_TRIGGER ###
@@ -307,6 +308,15 @@ function showEmail() {
 
     // Replace:
     nextButton.replaceWith(mailToLink);
+}
+
+
+
+// - - RSS-Stuff:
+
+// Copy RSS to clipboard:
+function rssToClipboard() {
+    navigator.clipboard.writeText(websiteRSSLink);
 }
 
 // - - User Agent Checker (VERY JANKY):
