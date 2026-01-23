@@ -179,8 +179,7 @@ hr {
 
 /* # - Body: */
 body {
-    /* # - Footer-Spacing (Fill Space in between):
-     - Currently broken! */
+    /* # - Footer-Spacing (Fill Space in between): */
     min-height: 98vh; /* May need to be lowered. Prevents scrolling from filling the space between the footer and body elements. */
     display: flex;
     flex-direction: column;
@@ -303,16 +302,40 @@ body > *:not(
     #oneko,
     img)
 {
+    /* For better Spacing: */
     position: relative;
     padding: var(--bodyPadding);
-    margin: var(--bodyPadding);
 
+    /* For Border: */
     clip-path: var(--borderPath);
     background-color: var(--border_color);
     background-size: 100% 100%; /* Cover the entire element */
     background-repeat: no-repeat; /* Prevent repeating */
     /*border-radius: 5px; Optional: add rounded corners */
     isolation: isolate;
+
+    /* First step for Margin: */
+    margin-left: var(--bodyPadding);
+    margin-right: var(--bodyPadding);
+    margin-bottom: var(--bodyPadding);
+}
+
+/* # - - This adds a padding on top of Objects:
+
+        This !NEEDS! to be done separately to not apply it to the footer.
+        BUT other changes NEED to be a applied to the footer, that is why this style was split into two.
+        With the next design change PLEASE remove this border stuff, it is all so janky. */
+body > *:not(
+    hr, 
+    .speechBubble,
+    #oneko,
+    img,
+    #Footer)
+{
+    /* Second step for Margin:
+        Top-Margin is done here, to not break Spacing for Footer.
+    */
+    margin-top: var(--bodyPadding);
 }
 
 /* # - - This is the second Background that lays over the actual Background and causes the borderline to show up:
