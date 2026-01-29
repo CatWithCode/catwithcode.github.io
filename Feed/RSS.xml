@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Clicks Keyboard for  Fairphone 5 (CUSTOM)</title>
+			<link>https://catwithcode.moe/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html</link>
+			<description>Yes... yes it is that time again. 👏 Keyboard 👏 Phone 👏 ! 👏 Why 👏 don't 👏 I 👏 just 👏 give 👏 up 👏 on 👏 Blackberry 👏 Phones 👏 ???.
+			
+			https://catwithcode.moe/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html
+			</description>
+			<pubDate>Thu, 29 Jan 2026 22:23:07 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - PostmarkedOS daily driver experiments (Soon TM)</title>
 			<link>https://catwithcode.moe/Blog/2026.01.16_FP5_PostmarkedOS/FP5_PostmarkedOS.html</link>
 			<description>This is my third try with Linux on a phone, but I know this time will be better, buggier and more fun then last time. In the past I daily-drove Ubuntu Touch and came to dislike it somewhat. Don't get me wrong, I like, no love, the project BUT it's use of Halium as a stop-gap solution to get Linux running without all drivers ported makes it hard to use for me. Why? It makes it so, that, to some extend, you can not use normal Desktops and to some extend Apps. This can probably be overcome overtime, they did somewhat with (soon (TM) Wayland) Libertine and Snap. But to it is also NOT the project goal, the goal is a "User Friendly" OS like Android and not jank. This makes it so the keyboard is not usable without engaging the pipeline that only Libertine and Store apps can use/trigger by design.
