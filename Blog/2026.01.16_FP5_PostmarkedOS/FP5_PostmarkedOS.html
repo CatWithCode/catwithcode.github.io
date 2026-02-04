@@ -3,7 +3,7 @@
   <head>
     <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
     <script type="text/javascript">WriteHead();</script>
-    <title>CatWithCode - Fairphone 5 - PostmarkedOS daily driver experiments (Soon (TM))</title>
+    <title>CatWithCode - Fairphone 5 - PostmarkedOS daily driver experiments (WIP)</title>
   </head>
   <body align="left">
     <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
@@ -11,37 +11,56 @@
     <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
     <script type="text/javascript">CreateSpeechBubble("Not Linux on a phone again... .");</script>
 
-    <h1>PostmarkedOS daily driver experiments (Soon (TM))</h1>
+    <h1>PostmarkedOS daily driver experiments (WIP)</h1>
     <hr>
     <h2>About me an using Linux on phones:</h2>
     <p>This is my third try with Linux on a phone, but I know this time will be better, buggier and more fun then last time. In the past I daily-drove Ubuntu Touch and came to dislike it somewhat. Don't get me wrong, I like, no love, the project BUT it's use of Halium as a stop-gap solution to get Linux running without all drivers ported makes it hard to use for me. Why? It makes it so, that, to some extend, you can not use normal Desktops and to some extend Apps. This can probably be overcome overtime, they did somewhat with (soon (TM) Wayland) Libertine and Snap. But to it is also NOT the project goal, the goal is a "User Friendly" OS like Android and not jank. This makes it so the keyboard is not usable without engaging the pipeline that only Libertine and Store apps can use/trigger by design.</p>
     <p>At the end it is a me-issue. I want everything usable and I am ready for a lot of Jank and to code/script stuff myself, but this is not its goal of Ubuntu Touch and this is fine! BUT NOT SO WITH POSTMARKED OS! It is pure Linux, thanks to a porting of everything into the Kernel and/or system, this makes it far less usable because hardware functions are missing for long time for many device or will never work, code can not use access some thing in the hardware because of missing documentation and more. But some devices, soon the FP5 as well, are very well supported and are near fully functional when it comes to daily usability.</p>
     <p>In this entry I will once again documentation everything I did to make it usable for myself. As last time I ALWAYS had a second fully functional, ready and online device on hand for emergency or PostmarkedOS has issues. THIS IS IMPORTANT! THE LAST THING YOU WANT IS FOR SOMETHING TO HAPPEN AND YOU CAN NOT CALL SOMEONE!</p>
     <hr>
-    <p class="centredItems">--- PLACEHOLDER ---
-      <br>
-      <br>
-      As the title says, "(Soon TM)", this experiment will start at some point, but not now.
-      <br>
-      <br>
-      The Audio/Microphone suport is still in the works and while that is still broken they can not test LTE calling and switching.
-      <br>
-      <br>
-      Meaning, this entry will change later when these three things are fixed and I can actually try it!
-      <br>
-      I just needed a place to collect links and helpful stuff already for later!
-      <br>
-      <br>
-      <br>
-      Come back later!
-      <br>
-      <br>
-      <br>
-      --- PLACEHOLDER ---
-    </p>
     <hr>
-    <h2>Soon (TM):</h2>
     <hr>
+    <h3>I will write this entry chronological. This, as usual is NOT meant to be a guide! More a documentation of what I did when and how to help others and document it for myself! Meaning: If you want to follow, read from the beginning and follow my """Adventure""" through the chaos that is true Linux on a Phone. They will build on top of each other, repeat things or mention if something changed. This also means this is NOT representing of the current state! If you want just resources this can help too, or you can just check out the "Sources" section for MANY links to useful things I found on the way.</h3>
+    <hr>
+    <hr>
+    <hr>
+    <h2>First Test-Run - Written: 2026.02.03</h2>
+    <p>I did a first test-run(s) with the pre-build builds using the "UBports installer". I first flashed Stock Android 13 and then installed PostmarkedOS. The installation went through no issue.</p>
+    <p>I tried Plasma Mobile and Gnome Mobile. Plasma was buggy but nearly everything I threw at it just was forced to work no matter how janky. GNOME Mobile just sucked. It looked neat but worked only half the time and were Plasma was buggy but forced things to work, GNOME Mobile did either barley work or was just outright broken. PHOSH is a modified version of GNOME Mobile and works a little better but has the same issues as GNOME Mobile. Funny enough PHOSH was the only Desktop where Rotation just worked automatically. There is also Sxmo (Sway) but who thinks a custom config of Sway is a good idea on a phone should not be reading this because they KNOW what they are doing xD.</p>
+    <p>The Stock Password was "147147". The first thing I needed to do was "sudo apk update &amp;&amp; sudo apk upgrade -U". Then after a reboot the System was ready. Then I did "sudo apk add waydroid mrhlpr mrtest". This allows Android App's to run and the use of a really cool tool that can pull "artifacts" from GitLab and lets you run merge-request change build(s) live on the System before they are merged, build and in the repository! SO COOL! THIS IS WHAT LINUX ON THE CUTTING EDGE IS ABOUT! FORCE IT TO WORK NO MATTER WHAT!</p>
+    <p>The first issue I encountered was I wanted to run the merge-request 7880 aka. the "Microphone on FP5"-FIX. Issue: It is build with "openRC" and NOT systemD. Meaning, if you are not building your own image with "pmbootstrap" and change the init system you will not be able to test some/many merge-request.</p>
+    <p>That would not have helped much at this point anyway because "audio-modem" integration is still broken and you would not be able to hear nor be heard in a call anyway, but stuff like a Signal-Call or SIP should work. Using the phone network also required disabling mobile data to switch of 4G/5G and into 2G/3G. VoLTE is not supported on the FP5 but is worked on while I'm writing this LOL. Since they got Audio working the progress is extremely fast..</p>
+    <p>I still had other issues besides that. Mainly USB! I use a USB-C Clicks Keyboard from an “iPhone 16 Pro Max” on my FP5 and it uses an internal USB-Hub to connect and disconnect. Meaning as soon as I charge the phone with the case on it stops working beyond the ROOT-HUB. That is not isolated to the case any hub causes this issue EVEN MY USB MOUSE! It is a mouse with programmable button's that CAN be mapped to keyboard keys so it is also shown as a keyboard to some extend.</p>
+    <p>That brings up an other small thing: Plasma Mobile worked well with external peripherals, interacting with the Touch brings up the OSK but else I can use my external peripherals and the OSK can also easily be disabled. On GNOME it freaks out as soon as the input method is changed and same with PHOSH..</p>
+    <p>The USB-Issue is a deal-breaker for me currently. I can not charge the phone without losing Keyboard functionality/USB-Data until I rebooting. Even the charger is recognized as a USB-Hub and it is ONLY a charger! Potential for a plugin and unplug and overseeing the Bug and then having a empty phone is to high.</p>
+    <p>I document my dmesg output here:</p>
+    <ul>
+      <li>[  183.274338] xhci-hcd xhci-hcd.5.auto: xHCI host not responding to stop endpoint command</li>
+      <li>[  183.294526] xhci-hcd xhci-hcd.5.auto: xHCI host controller not responding, assume dead</li>
+      <li>[  183.294566] xhci-hcd xhci-hcd.5.auto: HC died; cleaning up</li>
+      <li>[  183.295014] usb usb1-port1: couldn't allocate usb_device</li>
+    </ul>
+    <p>After this log, it dose still show a USB2.0 and USB3.0 ROOT-HUB if ANYTHING is connected with USB-C but NOTHING else! And I'm also relatively sure charging in that state broke to!</p>
+    <p>Waydroid is also beyond broken! It works, but PLASMA-Integration and the Launcher itself are not willing to cooperate and ALL tricks to fix "No Network in Waydroid" fail! The issue is broader: Waydroid has no access to any hardware! Mic, Camera, Sensors, GPS (Did not test "geobridge" because I never got this far but I assume it's broken). I need Waydroid, not even for apps or anything, I would use mostly native Linux apps and websites, but I need a few App's to log-in into stuff and that is not possible if Waydroid can not even access the Network or Camera.</p>
+    <p>Getting a good Firefox Setup going (Similar to Ubuntu Touch): Open "about:config" and set "perpx" to a custom value of "1.9". This fixes Firefox's vertical scaling. In settings set vertical tabs and make them as small and as empty as possible, enable bookmarks and set the default zoom to 80. Remove everything from the toolbar that is not absolutely needed, add zoom to the bookmark bar and don't forget to install an ad-blocker like uBlock Origin. Removing the "Extensions" icon is also a good idea but this is a little annoying to get working with "customChrome" (Did not get far enough to force it to work).</p>
+    <p>For now PostmarkedOS is in great place, no joke, only a few Issues remain (Microphone, Call-Audio, USB issues and Waydroid hardware access (Ubuntu Touch got it working and I KNOW it is possible but needs work and testing currently)) but after that, it is a very usable, if buggy and janky, experience. I would daily it instantly! It has everything I want from my phone and Linux on top of that, a few small bugs here and there don't bother me. And having an old KaiOS Nokia phone (Anything with 4G) on hand in emergency is default by something like this for me anyways. I will keep a close eye on the Port and will most likely, very very soon, look into it again! (If only switching would not always be so bothersome with downgrading, flashing, using, restoring, re-flashing, and then reinstalling everything. I know there is dual-booting but it is <u>!EXTREMELY!</u> risky AND UNSTABLE and maintenance intensive on Android phones!).</p>
+    <p>Here also some random facts I noticed while using, just so they are documented:</p>
+    <ul>
+      <li>Android 13 needed</li>
+      <li>147147</li>
+      <li>sudo apk add XZY</li>
+      <li>mrtest zap &amp;&amp; sudo apk upgrade -a &amp;&amp; sudo apk upgrade -U</li>
+      <li>GNOME and PHOSH use "elementary-camera". On Plasma it works too and most oftern better.</li>
+      <li>The camera quality is... sh*t... just REALLY SH*T.</li>
+      <li>Plasma likes to randomly turn on the Screen and it stays on for a long time. Good night and good burn-in :3</li>
+      <li>APN's need to be set manually BUT just work after that no issue.</li>
+      <li><u>BE EXTREMELY CAREFUL WITH THE CAMERA FLASH! FOR SOME REASON IT IS EXTREMELY BRIGHT AND GETS EXTREMELY HOT! I am VERY SURE left on for to long it WILL burn out the LED or worse!</u></li>
+      <li>After booting, wait for 10 Seconds then login, else SIM-UNLOCK will have issues no matter the Desktop (Ubuntu Touch moment LOL)</li>
+    </ul>
+    <hr>
+    <!-- <h2>NEXT ENTRY TITLE - Written: XXXX.XX.XX</h2>
+    <p>PLACEHOLDER</p>
+    <hr> -->
     <h2>Sources:</h2>
     <ul>
       <li><a href="https://docs.halium.org/en/latest/porting/first-steps.html">https://docs.halium.org/en/latest/porting/first-steps.html</a></li>
@@ -68,8 +87,20 @@
       <li><a href="https://devices.ubuntu-touch.io/installer/">https://devices.ubuntu-touch.io/installer/</a></li>
       <li><a href="https://flash.postmarketos.org/">https://flash.postmarketos.org/</a></li>
       <li><a href="/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html">/Clicks_Keyboard_for_Fairphone5.html</a></li>
+      <li><a href="https://gitlab.postmarketos.org/postmarketOS/pmaports/-/merge_requests/7880">https://gitlab.postmarketos.org/postmarketOS/pmaports/-/merge_requests/7880</a></li>
+      <li><a href="https://github.com/sc7280-mainline/linux/pull/19">https://github.com/sc7280-mainline/linux/pull/19</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Installation/Using_a_pre-built_image">https://wiki.postmarketos.org/wiki/Installation/Using_a_pre-built_image</a></li>
+      <li><a href="https://gitlab.postmarketos.org/postmarketOS/mrhlpr/-/blob/main/docs/usage.rst">https://gitlab.postmarketos.org/postmarketOS/mrhlpr/-/blob/main/docs/usage.rst</a></li>
+      <li><a href="https://www.reddit.com/r/linux4noobs/comments/1f9f2fc">https://www.reddit.com/r/linux4noobs/comments/1f9f2fc</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/SSH">https://wiki.postmarketos.org/wiki/SSH</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Waydroid">https://wiki.postmarketos.org/wiki/Waydroid</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Installation">https://wiki.postmarketos.org/wiki/Installation</a></li>
+      <li><a href="https://youtu.be/ePBSXi_nvdM">https://youtu.be/ePBSXi_nvdM</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Phosh">https://en.wikipedia.org/wiki/Phosh</a></li>
+      <li><a href="/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html">/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html</a></li>
+      <li><a href="https://support.fairphone.com/hc/en-us/articles/18896094650513-How-to-manually-install-Android-on-your-Fairphone">https://support.fairphone.com/hc/en-us/articles/18896094650513-How-to-manually-install-Android-on-your-Fairphone</a></li>
       <!-- <li><a href="">Link</a></li> -->
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.01.16 - 21:38');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.02.04 - 18:38');</script></div>
   </body>
 </html>
