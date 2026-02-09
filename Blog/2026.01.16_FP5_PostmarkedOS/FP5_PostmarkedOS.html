@@ -24,6 +24,12 @@
     <hr>
     <hr>
     <hr>
+     <!-- 
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################ 
+    -->
     <h2>First Test-Run - Written: 2026.02.03</h2>
     <p>I did a first test-run(s) with the pre-build builds using the "UBports installer". I first flashed Stock Android 13 and then installed PostmarkedOS. The installation went through no issue.</p>
     <p>I tried Plasma Mobile and Gnome Mobile. Plasma was buggy but nearly everything I threw at it just was forced to work no matter how janky. GNOME Mobile just sucked. It looked neat but worked only half the time and were Plasma was buggy but forced things to work, GNOME Mobile did either barley work or was just outright broken. PHOSH is a modified version of GNOME Mobile and works a little better but has the same issues as GNOME Mobile. Funny enough PHOSH was the only Desktop where Rotation just worked automatically. There is also Sxmo (Sway) but who thinks a custom config of Sway is a good idea on a phone should not be reading this because they KNOW what they are doing xD.</p>
@@ -58,9 +64,188 @@
       <li>After booting, wait for 10 Seconds then login, else SIM-UNLOCK will have issues no matter the Desktop (Ubuntu Touch moment LOL)</li>
     </ul>
     <hr>
-    <!-- <h2>NEXT ENTRY TITLE - Written: XXXX.XX.XX</h2>
+    <!-- 
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################ 
+    -->
+    <h2>Second round - Written: From 2026.02.06 to 2026.02.09</h2>
+    <p>After the first round I was very exited and as soon as I saw (about one week later) that the Microphone patch was merged I decided I give it an other try (even thought I will have to wait a little longer until it is in the repository), this time with a few days of daily driving. Let me tell you, once Linux, and I mean full Linux, on a phone, that is so cool and open you actually don't want to go back to Android, because no matter the issue or feature you want, it is Linux, just do it. You could even install STEAM if you want with FEX. I quickly tried and yes it works LOL.</p>
+    <p>First of all: What setup did I do this time? I went adventuring even more! I tried pmbootstrap and build my own image! I tried KDE-Mobile and GNOME-Mobile, both keep having heavy flaws and Issues making them unusable, Sxmo is cool but VERY buggy and not really fun to use. Then I came up with an Idea, Gnome always wants to be the all-rounder motherf*cker, so f*ck it I try raw GNOME. And holy f*it is the best of them all (With one BIG, FOR SOME DEAL-BREAKING, issue discussed later in this entry)!</p>
+    <p>I used pmbootstrap (git version). I installed it on my system with the pkg manager to make sure all dependency's are installed, then removed it again and got the py git version and used it instead. I used always the "new" tech, except for pulseaudio (pipewire has stall issues), and for the desktop I used GNOME. TLDR. I made a very custom build with nearly only new stuff and until now it is the most stable (if I ignore the journal a little LOL). It has only one very big issue... the OSK (GNOME-Keyboard) causes GDM crashes, not just GNOME-SHELL, the hole GDM crashes on random inputs from the OSK. I can get around it with my case but others need a new keyboard if possible. I hate GNOME like any other reasonable person but here it is sadly the best option.</p>
+    <p>My pmbootstrap setup:</p>
+    <ul>
+      <li>edge</li>
+      <li>fairphone</li>
+      <li>fp5</li>
+      <li>user</li>
+      <li>pulseaudio</li>
+      <li>iwd</li>
+      <li>charging</li>
+      <li>gnome</li>
+      <li>n</li>
+      <li>none</li>
+      <li>y</li>
+      <li>fp5</li>
+      <li>n</li>
+      <li>y</li>
+    </ul>
+    <p>After that I installed the build, flashed it and its kernel, booted it and enabled/started sshd and updated.</p>
+    <p>I installed "gnome-calls" for calling, "chatty" for SMS and Firefox (and removed firefox-esr) for browsing. Besides that I applied all the fixes listed below and changes I made last time too (like the Firefox mods). It is always safe to amuse, if I use the same software like in the logs before, I apply the same changes.</p>
+    <p>A list of Issues and fixes I found:</p>
+    <ul>
+      <li>
+        <u>VLC-Player to small</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            VLC-UI dose not scale.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            The environment variable "QT_SCALE_FACTOR=3" set in "Flatseal" for VLC fixed it.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+        <u>Jellyfin Player crashes/is slow</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            The Jellyfin Player's hardware acceleration not working.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            Install the native version, not the flatpak.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+        <u>APN-Setup crashes System-Setup</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            Setting APN settings on first start-setup crashes the setup wizard no matter the desktop.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            Don't set it. Just do it later in the setting. No seriously its that easy LOL.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+        <u>Waydroid - Slow Download</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            Sourceforge is so slow again it times out.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            Check the link waydroid tries to download from, open it in a browser and press "Problems Downloading?" and change the Mirror to a faster one. Then get the same "MAINLINE" vendor image and do the same. After having both download links that are fast use wget in SSH to download the images faster, rename/repair there filename and unzip them and then create the folders manually "sudo mkdir -p /etc/waydroid-extra/images" and the then copy the images there. Then just "sudo waydroid init" and it should run. I recommend just downloading it to your PC and sending the files through SSH to the phone. You will tinker and reinstall a few times, trust me.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+       <u>Waydroid Network not working</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            No network/internet in Waydroid.
+          </li>
+          <br>
+          <li>
+            <u>TEMPORARY FIX:</u>
+            <br>
+            Execute on host "sudo systemctl disable nftables" and "sudo systemctl stop nftables". This disables the firewall (bad idea) and reboot. Can probably be fixed by adding a rule or routing or forwarding to it. Still searching.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+      <u>Waydroid breaks camera on HOST</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            Start waydroid and camera stops working.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            Start waydroid, execute "waydroid prop set persist.waydroid.uevent false" on the host and reboot. On the next waydroid launch the camera stays with the host. This can also be done with other hardware if issues happen with them, check the waydroid source to find what these prop's are called.
+            <br>
+            <br>
+            It will for now not work in waydroid until they make a translation-layer for it. So no need to do so and locking hardware away for the host. ALSO: If you have a app installed in waydroid that wants to scan a QR-Code (Signal for example) you can just scan the code with any other phone or the host OS and open the link in waydroid. This is true for 99% of QR-Codes. And even if an app insists on wanting to scan the code itself you can just pipe the link into it with an opening call (DEV-Settings apps (If I remember correctly) can do this. I don't use trash software anymore that behaves like this so IDK.).
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+      <u>GNOME-Keyboard crashes GDM</u>:
+        <br>
+        <ul>
+          <li>
+            <u>ISSUE:</u>
+            <br>
+            GNOME-Keyboard crashes the GNOME-Shell randomly on input. The OSK is needed if no physical keyboard is available.
+          </li>
+          <br>
+          <li>
+            <u>FIX:</u>
+            <br>
+            That is the BIG issue mentioned with GNOME raw. Solution: Non, like no joke, there is not a way around it.
+            <br>
+            <br>
+            Typical Gnome bullsh*t again. It CAN NOT BE DISABLED! The only thing you can do is force blocking it with an addon: <a href="https://github.com/ublue-os/bazzite-cariboublocker#">https://github.com/ublue-os/bazzite-cariboublocker#</a> and getting an alternative like "maliit" two work.
+            <br>
+            <br>
+            In the GDM, before you enter GNOME, there is no way around it because the only keyboard that can work on GDM level is the build in one (typical GNOME...) but it COULD be disabled (maybe) with dconf, just try to be DIK. gentle with the inputs on the login screen I guess and use your physical keyboard or software replacement after this.
+          </li>
+        </ul>
+      </li>
+      <br>
+    </ul>
+    <p>This was it so far for this test run. I don't have much time to toy around much with stuff like this but I got GNOME stable and usable enough that I will stay with this setup for a little while. How long IDK. The Microphone merge will arrive soon and the modem audio integration from what I read is also not far from being create/routed and merged, but until that is here and I figured out the last few quirks of f*cking GNOME, it depends on my patience. Else I would just daily this no questions asked, this is how well it works (Also thanks to my modded Clicks keyboard, a physical keyboard is a must on Linux if you ask me, and well the crash Bug with OSK force you to it anyway LOL) :D!</p>
+    <p>Also: A way around the modem-audio, for now, could be a VPN home and using SIP over the landline phone (or directly over your provider or an online platform) or SIGNAL. But this dose not fix the emergency numbers and that is why the KaiOS helper phone must stay for now!</p>
+    <hr>
+     <!-- 
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################
+    ############################################################################################ 
+    -->
+    
+    <!--
+    <h2>NEXT ENTRY TITLE - Written: XXXX.XX.XX</h2>
     <p>PLACEHOLDER</p>
-    <hr> -->
+    <hr>
+    -->
     <h2>Sources:</h2>
     <ul>
       <li><a href="https://docs.halium.org/en/latest/porting/first-steps.html">https://docs.halium.org/en/latest/porting/first-steps.html</a></li>
@@ -101,8 +286,33 @@
       <li><a href="https://support.fairphone.com/hc/en-us/articles/18896094650513-How-to-manually-install-Android-on-your-Fairphone">https://support.fairphone.com/hc/en-us/articles/18896094650513-How-to-manually-install-Android-on-your-Fairphone</a></li>
       <li><a href="https://github.com/waydroid/waydroid/discussions/1360#discussioncomment-9916778">https://github.com/waydroid/waydroid/discussions/1360#discussioncomment-9916778</a></li>
       <li><a href="https://github.com/waydroid/waydroid/issues/170#issuecomment-948316696">https://github.com/waydroid/waydroid/issues/170#issuecomment-948316696</a></li>
+      <li><a href="https://github.com/signalflatpak/signal">https://github.com/signalflatpak/signal</a></li>
+      <li><a href="https://www.reddit.com/r/tuxedocomputers/comments/1djls41">https://www.reddit.com/r/tuxedocomputers/comments/1djls41</a></li>
+      <li><a href="https://postmarketos.org/">https://postmarketos.org/</a></li>
+      <li><a href="https://pkgs.postmarketos.org/packages">https://pkgs.postmarketos.org/packages</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/GNOME">https://wiki.postmarketos.org/wiki/GNOME</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Lomiri">https://wiki.postmarketos.org/wiki/Lomiri</a></li>
+      <li><a href="https://youtu.be/QZYgnlAkYvY">https://youtu.be/QZYgnlAkYvY</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Sxmo">https://wiki.postmarketos.org/wiki/Sxmo</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Firewall">https://wiki.postmarketos.org/wiki/Firewall</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Installation/Using_pmbootstrap">https://wiki.postmarketos.org/wiki/Installation/Using_pmbootstrap</a></li>
+      <li><a href="https://docs.waydro.id/faq/using-custom-waydroid-images">https://docs.waydro.id/faq/using-custom-waydroid-images</a></li>
+      <li><a href="https://github.com/ublue-os/bazzite-cariboublocker#">https://github.com/ublue-os/bazzite-cariboublocker#</a></li>
+      <li><a href="https://extensions.gnome.org/extension/3222/block-caribou-36/">https://extensions.gnome.org/extension/3222/block-caribou-36/</a></li>
+      <li><a href="https://github.com/lxylxy123456/cariboublocker">https://github.com/lxylxy123456/cariboublocker</a></li>
+      <li><a href="https://github.com/keringar/cariboublocker">https://github.com/keringar/cariboublocker</a></li>
+      <li><a href="https://wiki.postmarketos.org/wiki/Input_methods">https://wiki.postmarketos.org/wiki/Input_methods</a></li>
+      <li><a href="https://maliit.github.io/">https://maliit.github.io/</a></li>
+      <li><a href="https://extensions.gnome.org/extension/615/appindicator-support/">https://extensions.gnome.org/extension/615/appindicator-support/</a></li>
+      <li><a href="https://gitlab.gnome.org/GNOME/gnome-shell-extensions">https://gitlab.gnome.org/GNOME/gnome-shell-extensions</a></li>
+      <li><a href="https://www.gnome-look.org/p/1553851">https://www.gnome-look.org/p/1553851</a></li>
+      <li><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1099416">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1099416</a></li>
+      <li><a href="https://gitlab.gnome.org/GNOME/mutter/-/issues/3950">https://gitlab.gnome.org/GNOME/mutter/-/issues/3950</a></li>
+      <li><a href="/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html">/Blog/2025.08.22_SIP_Phone_Client_Linux/SIP_Phone_Client_Linux.html</a></li>
+      <li><a href="https://youtu.be/YrrqF2y-dlM">https://youtu.be/YrrqF2y-dlM</a></li>
+      <li><a href="https://github.com/FEX-Emu/FEX">https://github.com/FEX-Emu/FEX</a></li>
       <!-- <li><a href="">Link</a></li> -->
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.02.05 - 18:30');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.02.09 - 19:30');</script></div>
   </body>
 </html>
