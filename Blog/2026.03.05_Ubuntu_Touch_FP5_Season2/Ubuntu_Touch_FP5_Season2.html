@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - Ubuntu Touch - Daily driver - Season 2</title>
+  </head>
+  <body align="left">
+    <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div>
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("She was so proud about the amount of stupidity in the title.");</script>
+
+    <h1>Ubuntu Touch - Daily driver - Season 2</h1>
+    <p>This is """Season 2""" of me trying Ubuntu Touch. They made huge progress the last year and now have a fully stable release for the Fairphone 5 and I can confirm it is rock solid! So... I tried it again LOL. This is like an Update on what I had to change for my setup and how it is now compared to last time. The older entry about this are actually relatively outdated since they switched to 24.04 and snap and stuff are now forced on the user in libertine by Canonical (Not Ubuntu Touch Team).</p>
+    <p>If I don't mention stuff like Jellyfin e.g. again in this entry, the fix/workaround/how to use is still the same as last time (I try to make sure to mention everything that changed and mark outdated stuff outdated compared to this entry at the time of writing/last updating).</p>
+    <p>So, to get if you want to get the full picture, I linked all my last experiments with Linux on phones in the Source section and the last time Ubuntu Touch below too:</p>
+    <a href="/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html">Fairphone 5 - Ubuntu Touch "Season 1"</a>
+    
+    <hr>
+    <h2>Changes regarding what works and what dose not:</h2>
+    <p>Last time on Ubuntu Touch I made a list what works and what not. This time I did not find anything that did not work. Everything works as excepted for Ubuntu Touch. Stable and VOLTE and 5G worked too! No more problems here. Even the MEGA JANK Clicks keyboard dose not cause any USB 3.0/2.0 connection issues, unlike PostmarkedOS and even sometimes Android.</p>
+    <hr>
+    <h2>Firefox in Libertine:</h2>
+    <p>The way how you install Firefox changed. Snap and Ubuntu... it would also run but more overhead is the last thing you want with Libertine.</p>
+    <ul>
+      <li>libertine-container-manager exec -i CONTAINER-IDENTIFIER -c "/bin/bash" to bash into container, fakeroot is used for sudo replacment!</li>
+      <li>
+        Update the container then use the Firefox website manual to add the official repository:
+        <br>
+        <ul>
+          <li><a href="https://support.mozilla.org/en-US/kb/install-firefox-linux">https://support.mozilla.org/en-US/kb/install-firefox-linux</a></li>
+          <li><u>BEFORE</u> you install you need to add a priority property to prevent the Snap from being installed (The Pin-Priority: 1001 and Pin-Priority: -1 part of the following article).</li>
+          <li><a href="https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/">https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/</a></li>
+        </ul>
+      </li>
+      <li>Install pavucontrol too. It, as always, pulls everything so audio is fully functional.</li>
+      <li>You WILL have to edit the .desktop file for Firefox to force X11 and if you use a "NON-STANDARD-LAYOUT" Keyboard like the Clicks Keyboard I use you need to disable "sticky key" else inputs get repeated infinitely because X11 thinks you never released the key used on a normal layout.</li>
+      <li>nano /home/phablet/.cache/libertine-container/noble/rootfs/usr/share/applications/firefox.desktop</li>
+      <li>Find every "Exec" and add "env MOZ_ENABLE_WAYLAND=0 before it. If Firefox updates and this dose not work anymore use "GDK_BACKEND=x11"</li>
+      <li>If you use a Keyboard like the one explained above wrap the Exec command into a shell script like this everywhere:</li>
+      <li>If touch scolling then add this everywhere:</li>
+      <li>sh -c "xset r off; env MOZ_ENABLE_WAYLAND=0 firefox %u"</li>
+      <li>Start Firefox, conect a mouse and set everthing up. Then as last time AFTER you changed the layout add "MOZ_USE_XINPUT2=1" to the "Exec" to enamble touchscreen controlls.</li>
+      <li><u>UI and Scaling</u>: Using "Libertine Tweak Tool" setting DPI to 149. Then in Firefox open "<i>about:config</i>" and set "perpx" to "1.4". The default Zoom in Firefox must be set to 80% to have website display mostly cleanly.</li>
+      <li>Wayland is still not usable and so no hardware acceleration still. Meaning watching videos will be very battery intensive. I recommend using a YouTube alternative/alternative Frontend and watching in the QT6 version of the "Morph Browser" Browser</li>
+    </ul>
+    <hr>
+    <h2>Signal:</h2>
+    <p>
+      Here A LOT changed. Snaps are broken, as usual, libertine """works""" now (without creating a container-zombie made out of 2 repository) but barely and native there is still no options.
+      <br>
+      <br>
+      THE BIG CHANGE: Since I last checked in, people found ways to "force" apps with there dependency's into clicks and make them actually work! From what I saw, they are building applications with their dependency's statically in the finished build (folder), then with some supporting scripts and QML hacks integrate a "translation" of wayland, x11 and XDG stuff to the Ubuntu Touch implementation and then package it. The result? CRAZY. Still not hardware accelerated BUT as soon as Mir 2.x is implemented all wayland features needed for modern apps are available and they (probably) run better then ever. From what I saw the main forces were "ChromiumOS-Guy" with "uWolf (Alpha Build)", "Shapa Noob" with "Chromium for UT", the team "tuxecure" behind "crackle" and "pparent76" with "SignalUT".
+    </p>
+    <p>It is still far from just "build program and package it with generic scripts" but as soon as most stuff is known and documented this COULD be build to just force more stuff onto Ubuntu Touch and make it near as good as PostmarkedOS without being just a PC-OS on a phone!</p>
+    <p>Getting a functional browser was possible some time now with Firefox (And became a little more complicated again, thanks to snap in 24.XX in libertine and the need to forcefully overwrite that APT overwrite with the official Mozilla repository's), some tweaks and libertine, but a ACTUALLY fully functional Signal with (near) full integration into the Limori interface of Ubuntu Touch makes the switch IMO. so much more viable!</p>
+    <p>I grabbed myself the source code, checked out how it works and build it to see how well it works and I can say, it works VERY well. Many quirks someone needs to know, like closing chats with "CONTROL+SHIFT+C" to safe battery life, lowering the volume because it will use both speakers and so on, are still neded but it is FAR better! Stuff like no "ear-speaker only"-mode is still annoying but FAR F-A-R from a deal breaker.</p>
+    <p>To finish this section, if you need and want signal, spin-up waydroid, install Signal, grab a other camera device and log yourself into SignalUT by making picture of the QR-Code and then scanning it as fast as you can in waydroid Signal app directly after. Build it yourself, fix stuff and help improve it!</p>
+    <hr>
+    <h2>Clicks-Keyboard Layout - Sticky-Key Issue:</h2>
+    <p>
+      A truly only me issue. Clicks keyboard has a different layout then actual keyboard layouts. Meaning if you press (123)+B you get a "!". Lomiri/Wayland/Mir can interpret that correctly. xWayland (Firefox/Signal/...) thinks you never stooped pressing the "1" key, that is the key that has the symbol "!" on normal keyboards in English.
+      <br>
+      <br>
+      This can be workaround by adding copying the desktop file of the issue having app (SignalUT in the .local home folder or in the libretina container local folder under .cache on the host) and wrapping it in a sh command and truing repeat key of:
+      <br>
+      <br>
+      sh -c "xset r off; ORIGINAL COMMAND HERE"</p>
+    <hr>
+    <h2>24h/C° with English language:</h2>
+      <p>Well... no joke, there is not an option to change this... The only workaround is setting the language to "English (Australia)". Somehow this is just how it is... .</p>
+    <hr>
+    <h2>Cloud Music/Navidrome:</h2>
+    <p>
+      If you use Navidrome or Cloud provider you have not many options. I do not use any non-self-hosted cloud provider because I want to buy and supoort art, and so should you, but self-hosting I do and so do many. Navidrome is the most popular option. THEORETICALLY Jellyfin and even Nextcloud have a Subsonic-API too. I will use Navidrome.
+      <br>
+      <br>
+      And for anyone using the non-self-hosted stuff, use Morph Browser (Qt6 Beta) and the website you use. All of them offer a web-version.
+      <br>
+      Normal Morph Browser is too outdated, Firefox will drain your battery and Store-Web-Apps... forget them LOL. All of them use the Morph Browser internally because this is how Ubuntu Touch dose Web-Apps and it will not work with most provider.
+    </p>
+    <p>
+      Navidrome, like many actively maintained self-hosted platforms, has a simple and fast Web-GUI and that makes it possible to make a simple Web-App of it with Webber and use the normal Morph Browser for it. Morph Browser is (mostly) modern enough to do that. Just open Navidrome in Morph Browser and log-in. Then on the "Start-Page" you want to have share the Web-Page with Webber. Important is here to set the Browser Identifier to "Mobile" and in the Permissions enable "Export file to other apps".
+      <br>
+      <br>
+      Now you need to open "UT Tweaker Tool", open the menu and select "Apps + Scopes" and find Navidrome. Then enable "Prevent app suspension".
+    </p>
+    <p>
+      This gives you decent Online player but offline or caching is not available this way. BUT you can use the download option in Navidrome and download a song or album. Then when it is finished view it with the Popup the browser shows and select it and export it to your Music folder. For anything more then a single song you must open the Music folder and extract it by selecting the zip. That"s it. Now you can listing to your music from the Ubuntu Touch Music App.
+      <br>
+      <br>
+      This is jank, inconvenient and annoying BUT better then nothing. I tried packaging a few Web-App's for Navidrome that has caching build in BUT it either did not like Morph Browser or had issues accessing the Network. There is also UBSonic in the store. It looks cool but is a little buggy and makes this setup only more complicated. Also: For some reason UBSonic sound REALLY BAD on my device for no reason. Probably a bug on my end.
+    </p>
+
+    <hr>
+    <h2>New useful stuff I learned:</h2>
+    <ul>
+      <li>"libertine-container-manager exec -i CONTAINER-IDENTIFIER -c "/bin/bash" to bash into container, fakeroot as sudo replacment" is the CORRECT way to use bash with root in a libertine container.</li>
+      <li>Waydroid helper's "Waydroid stop" is needed to really free all hardware passed into a Waydroid container after closing it, like camera or GPS without needing to reboot.</li>
+      <li>
+        "ATL" or "Android Translation Layer" is a cool tool that can run Android apps without needing a hole VM like Waydroid BUT dose not run on Ubuntu Touch (currently until Mir 2.x). The reason seems to be GTK4. I got it to compile after A LOT of fighting with it's dependencies. But it can not execute anything. It complains about the following below and some stuff about SLES and just trows incomprehensible Stack trace's.
+        <br>
+        <br>
+        Also: Ubuntu 24.04 is too old for some library's and you need to pull "libgtk4-layer-shell0" and "libunwind8" (1.8 or newer) from a newer release manually from their repository's.
+        <br>
+        <br>
+        <ul>
+          <li>E/[bionic_linker](650128): ../bionic_translation/linker/linker.c:1340| ERROR: </li>
+          <li>E/[bionic_linker](650128): shim bionic linker: library 'libjavacore.so' not found</li>
+          <li>E/[bionic_linker](650128): ../bionic_translation/linker/linker.c:1340| ERROR:</li>
+          <li>E/[bionic_linker](650128): shim bionic linker: library 'libopenjdk.so' not found</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h2>WIP</h2>
+      <p>I'm still testing it and more will come soon. :)</p>
+    <hr>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></li>
+      <li><a href="/Blog/2023.07.15_Unihertz_Titan_Slim_UbuntuTouch_Fail/Unihertz_Titan_Slim_UbuntuTouch_Fail.html">/Blog/2023.07.15_Unihertz_Titan_Slim_UbuntuTouch_Fail/Unihertz_Titan_Slim_UbuntuTouch_Fail.html</a></li>
+      <li><a href="/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html">/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html</a></li>
+      <li><a href="/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html">/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html</a></li>
+      <li><a href="/Blog/2026.01.16_FP5_PostmarkedOS/FP5_PostmarkedOS.html">/Blog/2026.01.16_FP5_PostmarkedOS/FP5_PostmarkedOS.html</a></li>
+      <li><a href="https://forums.ubports.com/topic/11532">https://forums.ubports.com/topic/11532</a></li>
+      <li><a href="https://docs.ubports.com/en/latest/userguide/dailyuse/libertine.html">https://docs.ubports.com/en/latest/userguide/dailyuse/libertine.html</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/install-firefox-linux">https://support.mozilla.org/en-US/kb/install-firefox-linux</a></li>
+      <li><a href="https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/">https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/</a></li>
+      <li><a href="https://forums.ubports.com/topic/11528">https://forums.ubports.com/topic/11528</a></li>
+      <li><a href="https://github.com/tuxecure/crackle">https://github.com/tuxecure/crackle</a></li>
+      <li><a href="https://signalflatpak.github.io/signal/">https://signalflatpak.github.io/signal/</a></li>
+      <li><a href="https://gitlab.com/undef1/signal-desktop-builder">https://gitlab.com/undef1/signal-desktop-builder</a></li>
+      <li><a href="https://github.com/flatpaks/signal">https://github.com/flatpaks/signal</a></li>
+      <li><a href="https://open-store.io/app/signalut.pparent">https://open-store.io/app/signalut.pparent</a></li>
+      <li><a href="https://github.com/pparent76/SignalUT">https://github.com/pparent76/SignalUT</a></li>
+      <li><a href="https://open-store.io/app/chromiumut.shapa">https://open-store.io/app/chromiumut.shapa</a></li>
+      <li><a href="https://github.com/ChromiumOS-Guy/uWolf">https://github.com/ChromiumOS-Guy/uWolf</a></li>
+      <li><a href="https://forums.ubports.com/topic/8494">https://forums.ubports.com/topic/8494</a></li>
+      <li><a href="/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html">/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html</a></li>
+      <li><a href="https://gitlab.com/android_translation_layer/android_translation_layer">https://gitlab.com/android_translation_layer/android_translation_layer</a></li>
+      <li><a href="https://forums.ubports.com/topic/11668/">https://forums.ubports.com/topic/11668/</a></li>
+      <li><a href="https://open-store.io/app/morph-browser-qt6.ubports">https://open-store.io/app/morph-browser-qt6.ubports</a></li>
+      <li><a href="https://open-store.io/app/webber.timsueberkrueb">https://open-store.io/app/webber.timsueberkrueb</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.03.14 - 19:50');</script></div>
+  </body>
+</html>

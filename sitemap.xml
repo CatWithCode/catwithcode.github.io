@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-05</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.06.14_Brother_Network-Scanner_Linux_with_Firewall/Brother_Network-Scanner_Linux_with_Firewall.html</loc>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2024.10.07_Ubuntu_Touch_on_Fairphone_5/Ubuntu_Touch_on_Fairphone_5.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-12</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2025.05.13_3DS_No_Battery_Mod/DATA/02.jpg</loc>
@@ -338,7 +338,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2025.06.30_Linux_Phone_My_Experience/Linux_Phone_My_Experience.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.10.07-02_New_Website_Location/New_Website_Location.html</loc>
@@ -414,7 +414,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2026.01.16_FP5_PostmarkedOS/FP5_PostmarkedOS.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-05</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2022.05.15_Microphone_to_Speaker/Microphone_to_Speaker.html</loc>
@@ -455,6 +455,10 @@
   <url>
     <loc>https://catwithcode.moe/Blog/2023.10.16_No_Desktop_Is_Ready_For_Ultrawide/No_Desktop_Is_Ready_For_Ultrawide.html</loc>
     <lastmod>2025-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/Blog/2026.03.05_Ubuntu_Touch_FP5_Season2/Ubuntu_Touch_FP5_Season2.html</loc>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html</loc>
@@ -734,7 +738,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/archive.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>index.html</loc>
@@ -746,7 +750,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/index.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/DATA/2025_01_14/01.gif</loc>
@@ -1058,7 +1062,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Dev_Log/Dev_Log.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Videos/GamePlayTeaser1/GamePlayTeaser1.mp4</loc>
@@ -1213,6 +1217,10 @@
     <lastmod>2025-11-21</lastmod>
   </url>
   <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/C2.png</loc>
+    <lastmod>2026-03-14</lastmod>
+  </url>
+  <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Assets/Images/Transparent/C_Holding.png</loc>
     <lastmod>2024-12-23</lastmod>
   </url>
@@ -1226,15 +1234,15 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/OutgoingLinks.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/License_and_Privacy.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/11_library_header.png</loc>
@@ -1261,6 +1269,10 @@
     <lastmod>2025-11-21</lastmod>
   </url>
   <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/12_C2.png</loc>
+    <lastmod>2026-03-14</lastmod>
+  </url>
+  <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/06_store_capsule_header.png</loc>
     <lastmod>2025-11-25</lastmod>
   </url>
@@ -1271,6 +1283,10 @@
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/03_HighRes.png</loc>
     <lastmod>2025-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/13_C2P.png</loc>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/SUB_DOMAINS/REPOSSESSED/Presskit/Presskit-Assets/Branding/10_icon_alt.png</loc>
@@ -1806,7 +1822,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/Assets/BaseFiles/Page/Footer.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
   <url>
     <loc>https://catwithcode.moe/Assets/BaseFiles/Page/Header.html</loc>
@@ -1838,7 +1854,7 @@
   </url>
   <url>
     <loc>https://catwithcode.moe/blog.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-03-14</lastmod>
   </url>
 </urlset>
 

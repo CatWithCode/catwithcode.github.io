@@ -13,10 +13,11 @@
     
     <h1>Everything about Ubuntu Touch on the Fairphone 5</h1>
     <hr>
-    <h2>This is outdated for 24.05. I used mainly 20.04. Proceed with caution.</h2>
+    <h3>I updated many things in a new Entry! I thought about updating this entry too but much of it is a good indicator on what changed and this is not a documentation of things (except if I say so), it is a Blog-Entry. So if you want to know even more, what changed and want to see what happened after: <a href="/Blog/2026.03.05_Ubuntu_Touch_FP5_Season2/Ubuntu_Touch_FP5_Season2.html">Ubuntu_Touch_FP5_Season2.html</a></h3>
+    <h4>Update about Linux on Mobile: <a href="/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html">/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html</a></h4>
+    <h2>This is outdated for 24.** and newer! I used mainly 20.04. Proceed with caution!</h2>
     <hr>
     <p>In this entry I will document everything about using Ubuntu Touch on the Fairphone 5. I independently volunteer as a beta tester.</p>
-    <h4>Update about Linux on Mobile: <a href="/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html">/Blog/2025.06.30_Linux_Phone_Opinion/Linux_Phone_Opinion.html</a></h4>
     <h4>Many parts can be done on any Ubuntu Touch device!</h4>
     <p>This entry uses the "Everything about Fairphone 5 Modding" entry as a base and is written in the same structure:</p>
     <p><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></p>
@@ -28,7 +29,7 @@
     <p>Note: I test drove the Fairphone 5 with UbuntuTouch for around 17 days two times. Don't worry I hand a second, fully configured phone on hand just in case (And a Android Phone was ready to swap in). I relyed on some Android apps to work but the main once are covered and waydroid helps with the rest.</p>
     <hr>
     <br>
-    <h2>>> What works, what dose not</h2>
+    <h2>>> What works, what dose not (COMPLETELY OUTDATED)</h2>
     <br>
     <hr>
     <p>A list of stuff I tested with last tested Status and the Tickets if any:</p>
@@ -63,7 +64,7 @@
       <li>✅ USB-OTG (I had many issues with USB3.X and newer. BUT it was with the phone not matter what. So it is a FP5 or PC chipset issue, not Ubuntu Touch.)</li>
       <li>✅ Keyboard</li>
       <li>✅ Mouse</li>
-      <li>✅* Emergency Broadcast (If your country uses the reference implementation correctly it should work if you ask the forum. For me impossible to test. If at some point I get one and I see it for myself working in Germany I will update this: <a href="https://forums.ubports.com/post/83531">https://forums.ubports.com/post/83531</a>)</li>
+      <li>✅ Emergency Broadcast (If your country uses the reference implementation correctly it should work if you ask the forum. I tested it and it works for me in Germany). Audio settings overwrite it so silent stays silent. It continuously vibrates and shows it as a special SMS.</li>
       <li>✅ USB-HUB</li>
       <li>✅ Sleep (Same time everywehere even on LockScreen (Unlike Android))(Same time everywhere even on Lock-screen (Unlike Android) aka. long Screen On times not recommended.)</li>
       <li>✅ AUDIO (Is combined on Ubuntu Touch. So don't forget to make your phone quieter in the evening or you alarm will be at full volume or whatever was used last... .)</li>
@@ -117,21 +118,21 @@
       <li>Installing with Libertine must stay in the foreground. Set your screen to never turn off and never leave the screen until its done. Libertine can be sensitive to being closed / backgrounded.</li>
       <li>If you rotate your phones X11 will not allow you to touch outside the original Startup Resolution. You must restart Firefox in the orientation you need for the full season. Annoying but not to bad.</li>
       <li>Libertine dose not run in the Background! Meaning you must keep open the Task-Tap. Also meaning: You should create a Libertine-Container for your Main App's and one for your background App's. For example Jellyfin, SuperSonic and Firefox in the MainContainer, E-Mail-Client or IRC e.g. in your Background container. Keep the windows in the Task-overview for your Background-apps always open..</li>
-      <li>When deleting Libertine-Container files in home like configs stay behind and will not be deleted. Meaning if you broke something inside of the Apps you should delete the files inside the container and not the Container itself.</li>
+      <li>(OUTDATED - ONLY IF YOU USE SUDO AND NOT FAKEROOT) When deleting Libertine-Container files in home like configs stay behind and will not be deleted. Meaning if you broke something inside of the Apps you should delete the files inside the container and not the Container itself.</li>
       <li>Container take up a lot of space (each around one Linux install). Meaning you should not have more then 3. Main, Background and testing (Testing is to check if the App works. That way you don't bloat or break your main container).</li>
       <li>For a some of apps you can use Snap. But from my testing some Programs don't work (Firefox e.g.). Snap can not use SOME hardware (One-Screen keyboard, canmera, earpiece) which makes sub-optimal.</li>
-      <li>When modding SSH is useful because keyboard. But SSH did not work out of the box. I followed the manual from UBports and it refused connections. Fix was to execute <i>sudo /etc/init.d/ssh start</i>. Found by "delight_aug"</li>
+      <li>(OUTDATED) When modding SSH is useful because keyboard. But SSH did not work out of the box. I followed the manual from UBports and it refused connections. Fix was to execute <i>sudo /etc/init.d/ssh start</i>. Found by "delight_aug"</li>
       <li>adb shell works perfectly and should be used instead of SSH.</li>
-      <li>Special keys (like Backspace) have issues with some Terminals when using SSH or adb shell. Works when executing <i>export TERM=vt100</i> inside the shell after connecting (Found by paul). Adding it to the end of the .bashrc file and exit and reconnect fixes it permanently (Still has some minor issues).</li>
-      <li>It is possible to install .deb in Libertine-Container with the commands over at the UBports wiki. It is important to not escalate root by accidentally to the real os.</li>
-      <li>To get root in Libertine you can follow the official way if it works for you or you execute "<i>sudo -E bash</i>" and then <i>lish CONTAINER_ID</i> into it. BE VERY CAREFUL! Found by nom.</li>
+      <li>(OUTDATED) Special keys (like Backspace) have issues with some Terminals when using SSH or adb shell. Works when executing <i>export TERM=vt100</i> inside the shell after connecting (Found by paul). Adding it to the end of the .bashrc file and exit and reconnect fixes it permanently (Still has some minor issues).</li>
+      <li>(OUTDATED - USE FAKEROOT INSIDE THE CONTAINER) It is possible to install .deb in Libertine-Container with the commands over at the UBports wiki. It is important to not escalate root by accidentally to the real os.</li>
+      <li>(OUTDATED - USE FAKEROOT INSIDE THE CONTAINER) To get root in Libertine you can follow the official way if it works for you or you execute "<i>sudo -E bash</i>" and then <i>lish CONTAINER_ID</i> into it. BE VERY CAREFUL! Found by nom.</li>
       <br>
       <li>"Pulsar33" has summarized a lot of useful information for debugging and tweaking over at the UBports forum: <a href="https://forums.ubports.com/topic/6912">https://forums.ubports.com/topic/6912</a></li>
       <br>
-      <li>If you have done anything inside a Libertine-Container with root, you can only delete it if you change to root in the terminal and "<i><u>chmod -R 777 .cache/libertine-container/focal-2/</u></i> your container. After that the Settings UI can delete it just fine.</li>
-      <li>Libertine-Container (especially broken once, like Signal) can actually cause boot to take longer (several black screens before the password screen appears).</li>
+      <li>(OUTDATED) If you have done anything inside a Libertine-Container with root, you can only delete it if you change to root in the terminal and "<i><u>chmod -R 777 .cache/libertine-container/focal-2/</u></i> your container. After that the Settings UI can delete it just fine.</li>
+      <li>(OUTDATED - NO LONGER NEEDED) Libertine-Container (especially broken once, like Signal) can actually cause boot to take longer (several black screens before the password screen appears).</li>
       <br>
-      <li>Waydroid works. It dose use a good amount of power <del>, needs workarounds for stuff like GPS</del> and is a little (A LOT LESS NOW) prone to crashing and access issues. Notifications are not shown in Ubuntu Touch which is annoying and even vibration dose not work which makes me check Waydroid more often then I want to. Maybe this stuff can still be fixed. It is a stopgap solution but the most powerful, hardware accelerated and useful you can have. It makes it nearly 100% viable to not use Android or IOS these days if you know what your doing. This makes Ubuntu Touch extremely powerful, even more then Android in my opinion. PostmarketOS could even be better but usability as a mobile phone and a “something you sometimes need FAST device” goes down the hole at that point if you ask me. My testing is years back but as soon as there compatibility is fully Green I will 100% test it. On Ubuntu Touch, the only “fully” working Linux on Fairphone right now, if I need to do something in a short amount of time I am sure I can do it if I have it installed even if it is a little buggy on the way.</li>
+      <li>(OUTDATED - JUST WORKS! NEEDS MORE BATTERY BUT NOT AS MUCH AS IN THE PAST, BUT STILL A GOOD AMOUNT) Waydroid works. It dose use a good amount of power <del>, needs workarounds for stuff like GPS</del> and is a little (A LOT LESS NOW) prone to crashing and access issues. Notifications are not shown in Ubuntu Touch which is annoying and even vibration dose not work which makes me check Waydroid more often then I want to. Maybe this stuff can still be fixed. It is a stopgap solution but the most powerful, hardware accelerated and useful you can have. It makes it nearly 100% viable to not use Android or IOS these days if you know what your doing. This makes Ubuntu Touch extremely powerful, even more then Android in my opinion. PostmarketOS could even be better but usability as a mobile phone and a “something you sometimes need FAST device” goes down the hole at that point if you ask me. My testing is years back but as soon as there compatibility is fully Green I will 100% test it. On Ubuntu Touch, the only “fully” working Linux on Fairphone right now, if I need to do something in a short amount of time I am sure I can do it if I have it installed even if it is a little buggy on the way.</li>
       <li>To make using file between Waydroid and Ubuntu Touch seamless use these SystemLinks: <a href="https://docs.waydro.id/faq/setting-up-a-shared-folder">https://docs.waydro.id/faq/setting-up-a-shared-folder</a>. This might not work because of permissions.  There is also the offical UBPorts way: <a href="https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.htmlThere">https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.htmlThere</a>. And there is a script if that dose also no work, to fix that but it needs chron aka. / needs to be modefied <a href="https://forums.ubports.com/post/86421">https://forums.ubports.com/post/86421</a>.</li>
     </ul>
     <br>
@@ -140,7 +141,7 @@
     <h2>>> Fixing Libertine create:</h2>
     <br>
     <hr>
-    <p>Libertine is not as often used as you might expect what causes fucked create processes sometimes. That has way to often to do with core and the uname version. That can be forced and fixed by following this tutorial by "NewBit"</p>
+    <p>Libertine is not as often used as you might expect. Sometimes it can still break until fixed with an update in the Repository's. Often  it is the uname version and would "work" otherwise. That can be forced and fixed by following this tutorial by "NewBit"</p>
     <p><a href="https://forums.ubports.com/post/73301">https://forums.ubports.com/post/73301</a></p>
     <p>You just need to create the script in your Downloads folder and then create a script inside you home folder. Make both executable and execute the replacement script and in a separate remote terminal launch the creation process. Sadly if it still fails you have to retry again, cancel the install to the end and then check the log what went wrong. And sadly every retry requires a re-download of every package because reasons.</p>
     <p>They wrote in the guide to replace the uname in the / system as well. That can be done with a remount of / BUT it is very important to after the container is running and working to FIRST replace the fake uname with the real one again in /.</p>
@@ -238,11 +239,11 @@
       </li>
       <hr>
       <li>
-        Browser (Firefox):<br>
+        (OUTDATED - NEEDS SNAP WORKAROUND) Browser (Firefox):<br>
         <br>
         <u>How:</u><br>
         >> "Libertine" using my Firefox-Guide on this page.<br>
-        >> And "Fennec " in "Waydroid" for Web sruff needed by Android-App's.<br>
+        >> And "Fennec" in "Waydroid" for Web stuff needed by Android-App's.<br>
         <br>
         <u>Why:</u><br>
         >> Libertine is the "lightest" way to get a fully functional, "acceleratted" and modern browser with Ad-Blocking.<br>
@@ -286,11 +287,11 @@
       </li>
       <hr>
       <li>
-        Signal (Or any other Chat App's):<br>
+        (OUTDATED) Signal (Or any other Chat App's):<br>
         <br>
         <u>How:</u><br>
         >> Install App in "Waydroid".<br>
-        >> A Desktop-Version for arm64 in .deb format exist for nearly all chat app's and can be in a really f*cked Libertine container. You can find a guide on how to do this on this page. It will no be able to update except you know how to get out of dependency hell (It will need less power BUT has the same Issues).<br>
+        >> A Desktop-Version for arm64 in .deb format exist for nearly all chat app's and can be used in a really f*cked Libertine container. You can find a guide on how to do this on this page. It will no be able to update except you know how to get out of dependency hell (It will need less power BUT has the same Issues).<br>
         <br>
         <u>Why:</u><br>
         >> I use Waydroid. Getting the clients to work inside a Libertine container is hard, broken and buggy. A Libertine container works and uses less power but will be more buggy and has the same notification issues as Waydroid. From my testing Waydroid can play sounds with the screen of running in the Tasksview. You must set a custom ringtone inside Signal, WhatsApp, [INSERT GENERIC CHAT APP], ... and so on, else NONE is the default by the OS. EarSpeak sound dose not work, meaning loudspeaker on very low is the way to go. Same with Libertine container versions. The sound can only be muted INSIDE Waydroid. Libertine container don't have that. No ScreenWake and no Icon in the System tray of Ubuntu Touch in both. Both must run in the Background open in the TasksView of Ubuntu Touch. Make sure to close all apps in waydroid if it's in the background. Even a open app doing nothing needs more power!<br>
@@ -303,7 +304,7 @@
     <br>
     <hr>
     <br>
-    <h2>>> Installing Signal (Desktop):</h2>
+    <h2>>> Installing Signal (Desktop) (OUTDATED):</h2>
     <br>
     <hr>
     <p>(((Warning: The way to get root inside a container might have chnaged. I tested this once and it still works but I am not sure what way to get root is the right way to dos it. But I don't use any of these Signal steps because they are near unmaintainable.)))</p>
@@ -476,7 +477,7 @@
     <br>
     <hr>
     <br>
-    <h2>>> Installing a usable Browser (FULL FIREFOX):</h2>
+    <h2>>> Installing a usable Browser (FULL FIREFOX) (OUTDATED):</h2>
     <br>
     <hr>
     <p>Installing as usable browser is possible with Libertine.</p>
@@ -502,9 +503,9 @@
     <p>I had LinageOS installed, so I flashed the Stock Android 13 Rom (Android 14 was already out but the installer wants Android 13. It is very important to use the right Android Version).</p>
     <p>It is also important to install Android 13 once before switching and then enable Developer mode AND OEM unlock. Then install should work. Else it will not be able to change the slot or flash firmware or format partitions.</p>
     <p>I use Arch (BTW.) and used the official UBports Installer. It did all the udev stuff for me and flashed the phone without any issues.</p>
-    <p>I use a very good USB 3.2 cable that came with a SanDisk SSD (I think something like "SanDisk Extreme Portable" or along those lines.). It's short, it's annoying, but it's the only USB-C cable I trust with stuff like this. I hate the inconsistency with USB-C cables.</p>
+    <p>I use a USB-A to USB-C cable and I'm sure it is 2.0 It's short, it's annoying, but it's the only USB-C cable I trust with stuff like this. I hate the inconsistency with USB-C cables.</p>
     <p>I had so many issues in the past with OEM cables or even good ones that were out of spec. If you ever have problems with low level flashing, it could be the cable. Try different ones until you find a reliable one.</p>
-    <p>I want to use this part to make it oven more clear once more: THE USB CABLE CAN F*CK YOU OVER WITH THIS! IF IT JUST REFUSES TO WORK IT COULD JUST BE THE CABLE, OR "C to C" OR "A TO C" OR EVEN 3.0 VS 2.0! WHAT EVER COMBINATION!</p>
+    <p>I want to use this part to make it even more clear once more: THE USB CABLE CAN F*CK YOU OVER WITH THIS! IF IT JUST REFUSES TO WORK IT COULD JUST BE THE CABLE, OR "C to C" OR "A TO C" OR EVEN 3.0 VS 2.0! WHAT EVER COMBINATION!</p>
     <a href="https://devices.ubuntu-touch.io/installer/">https://devices.ubuntu-touch.io/installer/</a>
     <hr>
     <h2>Sources:</h2>
@@ -589,8 +590,8 @@
       <li><a href="https://open-store.io/app/osmscout-server.jonnius">https://open-store.io/app/osmscout-server.jonnius</a></li>
       <li><a href="https://f-droid.org/packages/net.osmand.plus/">https://f-droid.org/packages/net.osmand.plus/</a></li>
       <li><a href="https://forums.ubports.com/topic/7550">https://forums.ubports.com/topic/7550</a></li>
-      <!-- <li><a href="FFF">FFF</a></li> -->
+      <li><a href="/Blog/2026.03.05_Ubuntu_Touch_FP5_Season2/Ubuntu_Touch_FP5_Season2.html">/Blog/2026.03.05_Ubuntu_Touch_FP5_Season2/Ubuntu_Touch_FP5_Season2.html</a></li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.01.19 - 18:13');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.03.05 - 18:13');</script></div>
   </body>
 </html>
