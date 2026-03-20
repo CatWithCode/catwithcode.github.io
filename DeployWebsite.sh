@@ -11,7 +11,7 @@
 clear
 
 # Update Commit Stage:
-#git submodule update --remote SUB_DOMAINS/REPOSSESSED/
+git submodule update --remote SUB_DOMAINS/REPOSSESSED/
 
 # - Configuration: ####################################################################################################
 # - - Variables:
@@ -22,13 +22,12 @@ WEBSITE_NAME="CatWithCode"
 
 # SubDomains (Must be adressed over Webhoster):
 declare -A prefixes
-	#prefixes["REPOSSESSED"]="https://repossessed.catwithcode.moe/"
+	prefixes["REPOSSESSED"]="https://repossessed.catwithcode.moe/"
 	#prefixes["repossessed2"]="https://repossessed2.catwithcode.moe/"
 	#...
 
 # Where the SubDomains are saved:
-#subdomains_dir="SUB_DOMAINS"
-subdomains_dir=""
+subdomains_dir="SUB_DOMAINS"
 
 # Allowed FileTypes:
 okFileTypes=(.html
