@@ -4,20 +4,6 @@ This is a source code mirror of my website, where I post my daily discoveries an
 # How to Update:
 The "DeployWebsite.sh"-Script should do everything that is needed to update any part of the Website. Just write a new Entry and after executing the Script everything should be linked relatively and statically correctly.
 
-# Subdomain:
-
-The Subdomain for RE//POSSESSED was moved into a SubModule because I had issues with hosting:
-
-[https://github.com/CatWithCode/repossessed](https://github.com/CatWithCode/repossessed)
-
-It is hosted under two Domains:
-
-[https://repossessed.catwithcode.moe/](https://repossessed.catwithcode.moe/)
-
-and
-
-[https://repossessed.moe/](https://repossessed.moe/)
-
 # REDIRECT - WHY AM I HOSTING THE PAGE TWO TIMES:
 Search Engines don't want to index my new Website. The Problem seems to be that I am not conforming to their web standards. When I hosted my site on github pages it worked fine. Well... now I will force bots to index my page one way or the other by indexing my github pages mirror or the jacky redirect which should not be executable by bots. This way my page will be found one way or the other. It works by loading a script that inserts HTML that executes the redirect. Looks weird, which it is, but it works. That type of code cannot be executed by most, if not all, bots. But the data is still there before the redirect, which is what makes indexing possible in the first place. It also only executes if it is not localhosted because archiving is important.
 
