@@ -29,7 +29,7 @@ const head_STATIC_HTML_INSERT = '<meta name="viewport" content="width=device-wid
 // ### HARD_CODE_TRIGGER ###
 // header
 // Assets/BaseFiles/Page/Header.html
-const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a href="/"> <img src="/Assets/favicon.gif" alt="Cute Pixelart" style="width:55px;height:55px";></a>  <a href="/">CatWithCode</a>  <br>  <br>  <b>&nbsp;</b>  <a href="/blog.html">BLOG</a>  <b>&nbsp;</b>  <a href="/projects.html">PROJECTS</a>  <b>&nbsp;</b>  <a href="/MediaLibraries/MediaLibraries.html">LIBRARYS</a>  <b>&nbsp;</b>  <a href="/contact.html">CONTACT</a>   <b>&nbsp;</b>  <a href="/rss.html">📡&nbsp;RSS</a>  <b>&nbsp;</b></h2><div class="centredItems pixelFree">  <a href="https://repossessed.catwithcode.moe/"> <img src="/Assets/Image_Repository/Promotions/REPOSSESSED_AD.png" alt="REPOSSESSED GAME LINK"></a></div>';
+const header_STATIC_HTML_INSERT = '<h2 id="Header_Border" align="center">  <a href="/"> <img src="/Assets/favicon.gif" alt="Cute Pixelart" style="width:55px;height:55px";></a>  <a href="/">CatWithCode</a>  <br>  <br>  <b>&nbsp;</b>  <a href="/blog.html">BLOG</a>  <b>&nbsp;</b>  <a href="/projects.html">PROJECTS</a>  <b>&nbsp;</b>  <a href="/MediaLibraries/MediaLibraries.html">LIBRARYS</a>  <b>&nbsp;</b>  <a href="/contact.html">CONTACT</a>   <b>&nbsp;</b>  <a href="/rss.html">📡&nbsp;RSS</a>  <b>&nbsp;</b></h2><div class="centredItems pixelFree">  <a href="https://repossessed.moe/"> <img src="/Assets/Image_Repository/Promotions/REPOSSESSED_AD.png" alt="REPOSSESSED GAME LINK"></a></div>';
 
 // ### HARD_CODE_TRIGGER ###
 // footer
