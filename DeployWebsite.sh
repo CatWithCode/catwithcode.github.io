@@ -10,9 +10,6 @@
 # - Clean Output:
 clear
 
-# Update Commit Stage:
-git submodule update --remote SUB_DOMAINS/REPOSSESSED/
-
 # - Configuration: ####################################################################################################
 # - - Variables:
 # Default location of Website:
