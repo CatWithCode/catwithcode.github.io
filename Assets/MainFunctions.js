@@ -334,7 +334,7 @@ function checkViewerType() {
     //     !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     if (document.location.origin.includes(websiteURLdnsFix)) {
         
-        // Variables (toString because else it would work on the internel Refernece):
+        // Variables (toString because else it would work on the internal Refernece):
         let currentHost = document.location.origin.toString()
         let currentHostPage = document.location.toString()
         
