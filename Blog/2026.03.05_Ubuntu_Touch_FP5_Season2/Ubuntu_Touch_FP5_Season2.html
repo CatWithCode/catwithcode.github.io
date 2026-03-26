@@ -94,6 +94,11 @@
     <h2>Jellyfin Remote:</h2>
       <p>If you use Jellyfin (with high end TVs like OLED-HDR-4K and so on) you 100% know about MPV-Shim. I wrote multiple times about it by now and it is great to brute force full res video from your server to your high-end/big Screens and Speakers. I don't want to start Waydroid all the time to use my phone as a remote or use Jellyfin and Jellyfin-MPV-Shim on the same device with a keyboard, that is just clunky. Well, Jellyfin also offers a Web-View and it allows conecting and controlling MPV-Shim from there too. Just use Webber, similar apps or make it by hand yourself (it's really easy, just change a different WebApp to fit your needs) and create a WebApp to your Jellyfin WebView and use it as a remote. If you want to use Jellyfin on device on Ubuntu Touch, stay with Waydroid with the Jellyfin app and Findroid with MPV enabled to get full codec supoort. Until Mir 2.X is here and the browser gets updated, or PostmarkedOS becomes stable (enough), this is the ONLY way.</p>
     <hr>
+    <h2>Backup Home using SCP/SSH:</h2>
+    <p>If you want to switch to PostmarkedOS or temporarily back to Android without losing everything you can just use a SSH tool called SCP. You MUST and SHOULD have SSH with a public key setup to do this fast and easy. This works also to restore it by just reversing target and Source. It will take a hot minute to pull the data. When you restore, it is VERY important to start the phone, SCP all you data to the phone in one go and then FORCE RESTART it Meaning holding the power-button until it HARD RESETS, NOT reboot. Else the OS WILL overwrite a lot of configs stuff you just restored. Just Linux things. ADB is not a replacement and so is MTP! Both WILL cause Issues!</p>
+    <p>Just change the target and source as needed. This copy's everything recursive, with hidden files and folders, preserving Permissions and Timestamps and compresses the data temporarily it on the way. Permissions and Timestamps are important else you will end up in Permission-Hell when restoring!</p>
+    <p><i><u>scp -r -p -C phablet@192.168.178.XXX:/home/phablet/ .</u></i></p>
+    <hr>
     <h2>New useful stuff I learned:</h2>
     <ul>
       <li>"libertine-container-manager exec -i CONTAINER-IDENTIFIER -c "/bin/bash" to bash into container, fakeroot as sudo replacment" is the CORRECT way to use bash with root in a libertine container.</li>
@@ -162,6 +167,6 @@
       <li><a href="https://open-store.io/app/morph-browser-qt6.ubports">https://open-store.io/app/morph-browser-qt6.ubports</a></li>
       <li><a href="https://open-store.io/app/webber.timsueberkrueb">https://open-store.io/app/webber.timsueberkrueb</a></li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.03.24 - 18:25');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.03.26 - 18:01');</script></div>
   </body>
 </html>
