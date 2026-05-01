@@ -202,6 +202,19 @@
       This will break ROOT apps on boot and can be fixed by moving all apps using ROOT to the internal storage from the App settings. This is also needed if you want Android Auto. Android treats high privilege Apps different when they are on a SD-Card. And Magisk sees them as "New Apps" on every boot and dose NOT autostart Root Apps if they are on an SD-Card.
     </p>
     <hr>
+    <h2>Brick through usual System modification command:</h2>
+    <p>I was panicking, thinking I bricked the device. I re-flashed, modified and partitioned like crazy and did like 5 hail mary's back to back to back, Ryland Grace would be brain dead by now. But somehow, don't ask how, I DO NOT KNOW, I fixed it. I tried to change the "build.prop" file and used my usual remount command and that somehow created a root level overlay that survived re-flashes, factory resets and switching from Stock to GSI and back. I even got it to not have enough space for super. The file-system overlay broke all wireless communication. I somehow managed with re-partitioning, and failing the OTA recovery flash like 5 times to restore the right file-system setup (I could even lock it again, aka. it is back to fully clean...). LEARN FROM MY MISTAKES! DON'T REMOUNT SYSTEM PARTITION'S ON THIS PHONE!</p>
+    <h1>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</h1>
+    <h1><u>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</u></h1>
+    <h1>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</h1>
+    <ul>
+      <li>adb remount</li>
+      <li>adb shell mount -o remount,rw /</li>
+    </ul>
+    <h1>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</h1>
+    <h1><u>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</u></h1>
+    <h1>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</h1>
+    <hr>
     <br>
     <h2>Sources:</h2>
     <ul>
@@ -271,6 +284,12 @@
           <li><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></li>
           <li><a href="/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html">/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html</a></li>
           <li><a href="/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html">/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html</a></li>
+        </ul>
+      </li>
+      <li>
+        Brick recovery:
+        <ul>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89746128">https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89746128</a></li>
         </ul>
       </li>
     </ul>
