@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - CAT S22 Modding and IPv6-WiFi Connection Loop issues (With PiHole)</title>
+  </head>
+  <body align="left">
+    <!-- <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div> -->
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH! STOP! STOP WITH KEYBOARD PHONE SH*T! WHAT IS WRONG WITH YOU! I CAN NOT DO THIS ANYMORE! SOMEONE MAKE HER STOP!");</script>
+
+    <h1>CAT S22 Modding and IPv6-WiFi Connection Loop issues (With PiHole)</h1>
+    <p>Yes... I know, Keyboard Phone sh*t... again... ANYWAY. Let's start! :D</p>
+    <p>I will write this with multiple separate section to keep it more readable and also to document everything easily for myself.</p>
+    <hr>
+    <h2>Worth it?:</h2>
+    <p>STRONGLY depends.
+      <br>
+      <br>
+      The phone modding process is relatively easy and the phones lower level software seems relatively easy to work with. The phone itself is a very mixed bag. The Stock-OS sucks extremely bad.
+      <br>
+      First: Google stuff is preinstalled (Yes I count that as bad, fight me).
+      <br>
+      Second: Neither the OS nor the makers really adjusted much. Many UIs can not be controlled with the arrow keys and the worst, there is NO T9 keyboard preinstalled. They expect you to use the default AOSP keyboard and install an app yourself out of your own volition. No popup or anything, really great guys, the target audience will diffidently will not think, f*ck this, I buy a normal Phone.
+      <br>
+      <br>
+      No custom ROM's, only GSI's, with many of the same issues. At least no Google bloatware.
+      <br>
+      <br>
+      And after all this you have a T9 phone barely strong enough to work decently. But it works.
+    </p>
+    <hr>
+    <h2>FRP-Lock and the phone's origin:</h2>
+    <p>My first contact with the FRP lock system. As usual with that stuff it is just a e-waste make, not much more. Not really secure either, just one check on setup that can be glitched around and then never comes up again. Good job guys... . So yeah, I was able to unlock it in less then 10 minutes.</p>
+    <p>But why did it have one: I bought it second hand. It was literately new. As far as I could tell it was turned on, logged into and then instantly abandoned. The battery is like new (and thankfully was fully charged so it did not degrade over the years much, battery's hate being stored at around 70-80% and recharged a bit at 30-40% the least). I'm very sure the phone was bought by a business from the marking and stickers on it, a worker logged in, did not want it like instantly, it was not turned on for AT LEAST 2 years from the log's/adb/fastboot details and then it moved on to a E-Waste handler/second hand store where someone must have tried to recovery reset it and then encountered the lock. Then it was sold. That is also how I got it for (comparably) really cheap. The phone is neither good nor special, but it is a little rare and phone addicts think it will help them. AKA. the marked has priced them accordingly. with the warning it is locked. A surprising amount of Cat phones can be found with FRP/screen-lock/company lock on them sold by E-Waste management. Is it really so hard to just log out?</p>
+    <hr>
+    <h2>Downgrade to v29:</h2>
+    <p>After I got to the home screen I unlcoked the carier lock in the system settings (Carrier locks should be illegal if you ask me, same with non unlockable bootloader) I used "OEM-Unlock" in the developer settings, unlocked the bootloader in fastboot mode with "fastboot flashing unlock".</p>
+    <p>I also had to download the V29 OTA archive and extract all partitions. Rooting and using V30 is bad/inconsistent for GSI's. Meaning I need to downgrade the OS to V29. "jcul" over at XDA documented how to get the official OTA packages, because off course the OEM working for CAT neither releases the Firmware for download nor the Kernel Source (as far as I could tell) because f*ck licenses and what made there businesses possible in the first place (there is a device tree out there for the Cat s22 Flip used to build TWRP but it's origin is unknown at least to me. Did not look too deep into it (never needed TWRP)). I needed to FULLY downgrade to make sure everything works, so I re-flashed the hole firmware.</p>
+    <p>
+      fastboot -w
+      <br>
+      fastboot erase cache
+      <br>
+      fastboot flash boot boot.img
+      <br>
+      fastboot flash --disable-verity --disable-verification vbmeta vbmeta.img
+      <br>
+      fastboot flash vbmeta_system vbmeta_system.img
+      <br>
+      fastboot flash modem modem.img
+      <br>
+      fastboot flash dsp adspso.img
+      <br>
+      fastboot flash dtbo dtbo.img
+      <br>
+      <br>
+      fastboot reboot fastboot
+      <br>
+      <br>
+      <u>GSI &gt;&gt; STOCK ONLY (If flashing stock coming from a GSI, recreating the product partition is needed. Flashing of the system components after that fixes the sizing too):</u>
+      <br>
+      fastboot create-logical-partition product 100000
+      <br>
+      <br>
+      fastboot flash system system.img
+      <br>
+      fastboot flash vendor vendor.img
+      <br>
+      fastboot flash product product.img
+      <br>
+      <br>
+      fastboot reboot
+    </p>
+    <hr>
+    <h2>GSI:</h2>
+    <p>
+      The GSI knowen to work the best is:
+      <br>
+      "lineage-20.0-20251021-UNOFFICIAL-a64_bvN.img".
+      <br>
+      <br>
+      <br>
+      Also Tested:
+      <br>
+      The "a64_bvN" version of the "lineage-21-pre-qpr2-td" builds, also works but is very slow and even more broken then the other GSI's.
+    </p>
+    <p>
+      Flashing is very easy. I booted into fasboot and executed everything below:
+      <br>
+      <br>
+      fastboot reboot fastboot
+      <br>
+      <br>
+      fastboot delete-logical-partition product
+      <br>
+      fastboot flash system lineage-20.0-20251021-UNOFFICIAL-a64_bvN.img
+      <br>
+      fastboot reboot
+    </p>
+    <hr>
+    <h2>Root:</h2>
+    <p>You will NEED root to make the OS as well working as possible:</p>
+    <ul>
+      <li>Install Magisk.</li>
+      <li>"adb push" the v29 boot.img onto the phone and root it with Magisk.</li>
+      <li>
+        Reboot into fastboot and flash the rooted boot.img and the stock v29 vbmeta partition:
+        <br>
+        <ul>
+          <li>fastboot flash boot magisk_***_boot.img</li>
+          <li>fastboot flash --disable-verity --disable-verification vbmeta vbmeta.img</li>
+          <li>fastboot reboot</li>
+        </ul>
+      </li>
+      <li>Install Magisk additions and reboot.</li>
+      <li>And finally to make sure everything is setup correctly, install Magisk into the boot partition once again but this time use the "Direct install (Recommended)"-option.</li>
+      <li>aaa</li>
+    </ul>
+    <hr>
+    <h2>Fixing GSI-Stuff:</h2>
+    <p>As always with GSI's you have to fix stuff after installing. And once again, thanks to "phh" every issue has a workaround option.</p>
+    <ul>
+      <li>adb shell settings put global restricted_networking_mode 0</li>
+      <li>adb shell settings put global persist.restricted_networking_mode 0</li>
+      <br>
+      <li>Settings &gt;&gt; Phh Treble Settings &gt;&gt; IMS features &gt;&gt; Install IMS APK from Qualcomm</li>
+      <li>Settings &gt;&gt; Nettwork and Internet &gt;&gt; Intenre &gt;&gt; Your Mobile connection &gt;&gt; Preferred network type &gt;&gt; 4G/LTE</li>
+      <li>Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Use alternate way to detect headsets</li>
+      <br>
+      <li>Settings &gt;&gt; System &gt;&gt; Developer Settings &gt;&gt; Set all 3 animation settings to 0.5.</li>
+      <li>Settings &gt;&gt; System &gt;&gt; Developer Settings &gt;&gt; Set "USB-default connection" to "File transfer".</li>
+    </ul>
+    <hr>
+    <h2>Store's/App's:</h2>
+    <p>Don't use G-Apps or MicroG. Install F-Droid and Aurora Store (or alternatives) to get your apps and leave it at that. Android Auto can work if you keep the SD-Card fix (covered later in this entry) in mind and set it up like, similar to how I did in my Android Auto entry in the past. Do I use it and tested it? No. Dose Android Auto even work then? Reports online say yes, others managed to get it working them-self.</p>
+    <hr>
+    <h2>Mod's:</h2>
+    <p>Here a few App's and Mod's I and many others use:</p>
+    <ul>
+      <li>ACCA: Used to manage battery charging limits.</li>
+      <li>BusyBox: Needed by many scripts/modules/can help with random script issues.</li>
+      <li>
+        SmartPack-Kernel Manager: For more performance and to run scripts:
+        <ul>
+          <li>In "I/O Scheduler", set "Scheduler" "noob".</li>
+          <li>In "Virtual Memory" set "Algorithm" to "LZ4".</li>
+          <li>In "Script Manager" adding the "keyboard" script for Keyboard backlight management (covered later in this entry).</li>
+          <li>In all three menu's to "Apply on Boot" to on.</li>
+        </ul>
+      </li>
+      <li>AdAway (Or similar): Modern internet, modern solutions.</li>
+      <li>magisk-disable-logd: Dose a very small improvement to the performance and should cause less eMMC usage.</li>
+    </ul>
+    <hr>
+    <h2>Keyboard backlight fix:</h2>
+    <p>The keyboard backlight is unmanged on a GSI. You can turn it on and off with root but not much more. "nuttydoc" made a command that automates that somewhat like the Stock-OS dose it. I slighty adjusted it and linked it below. Just extract the file, review and copy it's text and paste it into a "Script" in the "Script Manager" in "SmartPack-Kernel Manager" and enable "On boot". This CAN be buggy/unreliable sometimes (Either Android kills it or thinks "SmartPack-Kernel" is frozen). The same issue can happen with other executing methods. I tried making a Magisk module, and it works but the screen brightness detection seems to not work. Rebooting helps, but also just punting the script in "Key mapper" too (or just an ON/OFF toggle) bound to a key to start it can be used as a workaround.</p>
+    <a href="FILES/KEYBOARD.7z" download="KEYBOARD.7z">Download KEYBOARD.7z</a>
+    <hr>
+    <h2>Remapping Key's:</h2>
+    <p>The default mapping is bad. Just use the F-Droid version of Key Mapper, use ROOT and all needed permissions and enable expert mode. Then you can rebind as needed. I rebound the key opposite the volume keys to power for example.</p>
+    <hr>
+    <h2>T9 Keyboard:</h2>
+    <p>The GSI dose not have any build in Keyboard that can work with T9. The keys are all numbers in the back-end! Meaning 1234... like on a normal keyboard. Thanks to this Traditional T9 can use that and map it. It works surprisingly well. Download your languages and setup the UI and it work. The "#" key will switch modes. I recommend to rebind the speaker/mic key in "Key Mapper" to switching keyboard with short and long press. Sometimes you need a normal AOSP Android Keyboard.</p>
+    <hr>
+    <h2>General Issues and Fixes</h2>
+    <uL>
+      <li>
+        Display Size:
+        <ul>
+          <li>Adjust the Display size in the Settings else many menus are broken beyond sanity. Some popups are still to small but the okay button in popups still work if you press on the bottom right edge of the popup.</li>
+          <li>Set the home layout to 4x4. Disable labels for the home screen. Other launchers are an option but with the new Android-Task-Manager they (nearly) all will just cause issues switching between apps.</li>
+        </ul>
+      </li>
+      <li>
+        Navigation:
+        <ul>
+          <li>You already have near no screen, so just use gestures and hide the dot at the bottom to maximize screen availability.</li>
+        </ul>
+      </li>
+      <li>
+        Seting stuff up sucks:
+        <ul>
+          <li>Use "scrcpy" for your own sanity outside of normal usage when doing stuff !for! the phone.</li>
+        </ul>
+      </li>
+    </uL>
+    <hr>
+    <h2>WiFi/WLAN issues, disconnects, Connecting and disconnecting every few seconds (IPv6 and PiHole):</h2>
+    <p>I will add all descriptions to this header I can think of. This issue made me think I was going crazy or my Cat s22 has a hardware issue but NO! For some F*CKING reason this phones (I think kernel/vender code) NEEDS working IPv6 DNS routing!? In my router I had the setting for the IPv6 PiHole server wrong and it vent to a non existing IPv6, BUT this was NEVER an issue with ANY other device, ONLY THIS ONE! It happens on Stock v29, v30, LinageOS 20, 21, PHH-VANILLA, ... EVERYWHERE! Sometimes it works for 1 minute or so and then disconnects or it works until something no matter the size access the internet it disconnects like 0.5 seconds after fetching. It works with a Hotspot (I think a Hotspot spoofed a DNS server or something else I could not explain why it did work).</p>
+    <p>TLDR: If your device (no matter if it is the phone in question or any other) it most likely has a DNS issue. Check if your PiHole, DNS server, IPv6 configuration or router pathing is broken.</p>
+    <p>Fun-fact: The hardware of the phone can actually do 5GHz and is theoretically 64bit but the Software for some reason (Probably the 2GB RAM and about 2GB Swap) is 32bit with 64bit binder (allows 32bit Software to run in a 64bit environment) and has not 5GHz driver/hardware integration, only 2.4GHz.</p>
+    <p>Also: If you 2.4GHz connection is still unstable (but works) check the Routers Channel coverage and choose a less busy channel. 2.4GHz is very congested these days.</p>
+    <hr>
+    <h2>Root App's and the SD-Card Issue:</h2>
+    <p>
+      It is HIGHLY recommended to use an SD-Card! The storage is eMMC, I know it as the most unreliable trash tear internal storage to ever exist. It will help prolong the internal Storage life.
+      <br>
+      <br>
+      This will break ROOT apps on boot and can be fixed by moving all apps using ROOT to the internal storage from the App settings. This is also needed if you want Android Auto. Android treats high privilege Apps different when they are on a SD-Card. And Magisk sees them as "New Apps" on every boot and dose NOT autostart Root Apps if they are on an SD-Card.
+    </p>
+    <hr>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li>
+        Removing the Lock:
+        <ul>
+          <li><a href="https://youtu.be/2dRN7xyH9GE">https://youtu.be/2dRN7xyH9GE</a></li>
+        </ul>
+      </li>
+      <li>
+        Used for v29 downgrade:
+        <ul>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603">https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603</a></li>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89064609">https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89064609</a></li>
+          <li><a href="https://github.com/erfanoabdi/imgpatchtools">https://github.com/erfanoabdi/imgpatchtools</a></li>
+        </ul>
+      </li>
+      <li>
+        Used for testing when going back from GSI to Stock:
+        <ul>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89479139">https://xdaforums.com/t/cat-s22-flip-revert-to-stock.4626603/post-89479139</a></li>
+        </ul>
+      </li>
+      <li>
+        Installing the GSI, fixing things and setup:
+        <ul>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-installing-gsi-rom.4660690/">https://xdaforums.com/t/cat-s22-flip-installing-gsi-rom.4660690/</a></li>
+          <li><a href="https://sourceforge.net/projects/andyyan-gsi/files/lineage-20-td/">https://sourceforge.net/projects/andyyan-gsi/files/lineage-20-td/</a></li>
+          <li><a href="https://xdaforums.com/t/my-ultimate-cat-s22-flip-guide-android-auto-microg-volte-improved-performance-battery.4764104/">https://xdaforums.com/t/my-ultimate-cat-s22-flip-guide-android-auto-microg-volte-improved-performance-battery.4764104/</a></li>
+          <li><a href="https://youtu.be/NBA1CSpcER4">https://youtu.be/NBA1CSpcER4</a></li>
+        </ul>
+      </li>
+      <li>
+        Root:
+        <ul>
+          <li><a href="https://xdaforums.com/t/tut-root-how-to-root-cat-s22-flip-on-version-30.4626971/">https://xdaforums.com/t/tut-root-how-to-root-cat-s22-flip-on-version-30.4626971/</a></li>
+          <li><a href="https://xdaforums.com/t/root-for-the-cat-s22-review.4388131/#post-88959025">https://xdaforums.com/t/root-for-the-cat-s22-review.4388131/#post-88959025</a></li>
+          <li><a href="https://xdaforums.com/t/cat-s22-flip-no-wifi-after-rooting.4630637/">https://xdaforums.com/t/cat-s22-flip-no-wifi-after-rooting.4630637/</a></li>
+        </ul>
+      </li>
+      <li>
+        Mods:
+        <ul>
+          <li><a href="https://f-droid.org/en/packages/io.github.sds100.keymapper/">https://f-droid.org/en/packages/io.github.sds100.keymapper/</a></li>
+          <li><a href="https://f-droid.org/en/packages/com.smartpack.kernelmanager/">https://f-droid.org/en/packages/com.smartpack.kernelmanager/</a></li>
+          <li><a href="https://f-droid.org/en/packages/mattecarra.accapp/">https://f-droid.org/en/packages/mattecarra.accapp/</a></li>
+          <li><a href="https://f-droid.org/en/packages/com.smartpack.busyboxinstaller/">https://f-droid.org/en/packages/com.smartpack.busyboxinstaller/</a></li>
+          <li><a href="https://f-droid.org/en/packages/org.adaway/">https://f-droid.org/en/packages/org.adaway/</a></li>
+          <li><a href="https://f-droid.org/en/packages/io.github.sspanak.tt9/">https://f-droid.org/en/packages/io.github.sspanak.tt9/</a></li>
+          <li><a href="https://github.com/Xenoxis/magisk-disable-logd">https://github.com/Xenoxis/magisk-disable-logd</a></li>
+        </ul>
+      </li>
+      <li>
+        WiFi:
+        <ul>
+          <li><a href="https://www.reddit.com/r/dumbphones/comments/11yz2hm">https://www.reddit.com/r/dumbphones/comments/11yz2hm</a></li>
+          <li><a href="https://www.reddit.com/r/pihole/comments/jbs8se">https://www.reddit.com/r/pihole/comments/jbs8se</a></li>
+          <li><a href="https://www.hovatek.com/forum/thread-47986.html">https://www.hovatek.com/forum/thread-47986.html</a></li>
+        </ul>
+      </li>
+      <li>
+        Older entry's I also used as reference:
+        <ul>
+          <li><a href="/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html">/Blog/2024.02.06_AndroidAuto_without_Google/AndroidAuto_without_Google.html</a></li>
+          <li><a href="/Blog/2022.08.07_Unihertz_Titan_GSI_UFS/Unihertz_Titan_GSI_UFS.html">/Blog/2022.08.07_Unihertz_Titan_GSI_UFS/Unihertz_Titan_GSI_UFS.html</a></li>
+          <li><a href="/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html">/Blog/2023.05.24_Unihertz_Titan-Slim_GSI_Modding/Unihertz_Titan-Slim_GSI_Modding.html</a></li>
+          <li><a href="/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html">/Blog/2023.11.13_Fairphone-5_Stuff/Fairphone-5_Stuff.html</a></li>
+          <li><a href="/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html">/Blog/2026.01.28_Clicks_Keyboard_for_Fairphone5/Clicks_Keyboard_for_Fairphone5.html</a></li>
+          <li><a href="/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html">/Blog/2022.05.08_Unpack_Repack_Resign_APK/Unpack_Repack_Resign_APK.html</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.05.01 - 21:01');</script></div>
+  </body>
+</html>
