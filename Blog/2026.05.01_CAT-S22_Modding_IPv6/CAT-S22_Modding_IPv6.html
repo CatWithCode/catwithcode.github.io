@@ -129,7 +129,6 @@
       <li>Settings &gt;&gt; Phh Treble Settings &gt;&gt; IMS features &gt;&gt; Install IMS APK from Qualcomm</li>
       <li>Settings &gt;&gt; Nettwork and Internet &gt;&gt; Intenre &gt;&gt; Your Mobile connection &gt;&gt; Preferred network type &gt;&gt; 4G/LTE</li>
       <li>Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Use alternate way to detect headsets</li>
-      <li>Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Allow binder threads on incoming calls</li>
       <br>
       <li>Settings &gt;&gt; System &gt;&gt; Developer Settings &gt;&gt; Set all 3 animation settings to 0.5.</li>
       <li>Settings &gt;&gt; System &gt;&gt; Developer Settings &gt;&gt; Set "USB-default connection" to "File transfer".</li>
@@ -204,6 +203,8 @@
       This will break ROOT apps on boot and can be fixed by moving all apps using ROOT to the internal storage from the App settings. This is also needed if you want Android Auto. Android treats high privilege Apps different when they are on a SD-Card. And Magisk sees them as "New Apps" on every boot and dose NOT autostart Root Apps if they are on an SD-Card.
     </p>
     <p>Also: If you want to keep the eMMC as free and clean as possible got to the developer settings and enable "Force allow apps on external". Then in the Storage settings select the internal Storage and select "Apps". It should show you apps that are movable and then you can move them over to the SD-Card. Android installs to Internal Storage by default if you e.g. just mass install with ADB or a ROOT backup tool. And if you have set Battery Settings for apps to e.g. "unrestricted" for Calendar or E-Mail stuff and then move it it will reset that option and you have to re-set it.</p>
+    <p>Also Also: "Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Allow binder threads on incoming calls" breaks SD-Card support for Internal Storage use. IDK. why but it dose. I also don't need it, 4G calling works for me without this.</p>
+    <p>Also Also Also: All apps that you want to run in the Background MUST be installed on internal Storage, else Android will not start them AND remove the unrestricted setting in the Battery options for the App.</p>
     <hr>
     <h2>Brick through usual System modification command:</h2>
     <p>I was panicking, thinking I bricked the device. I re-flashed, modified and partitioned like crazy and did like 5 hail mary's back to back to back, Ryland Grace would be brain dead by now. But somehow, don't ask how, I DO NOT KNOW, I fixed it. I tried to change the "build.prop" file and used my usual remount command and that somehow created a root level overlay that survived re-flashes, factory resets and switching from Stock to GSI and back. I even got it to not have enough space for super. The file-system overlay broke all wireless communication. I somehow managed with re-partitioning, and failing the OTA recovery flash like 5 times to restore the right file-system setup (I could even lock it again, aka. it is back to fully clean...). LEARN FROM MY MISTAKES! DON'T REMOUNT SYSTEM PARTITION'S ON THIS PHONE!</p>
