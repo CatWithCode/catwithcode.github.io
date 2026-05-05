@@ -14,6 +14,7 @@
     <h1>CAT S22 Modding and IPv6-WiFi Connection Loop issues (With PiHole)</h1>
     <p>Yes... I know, Keyboard Phone sh*t... again... ANYWAY. Let's start! :D</p>
     <p>I will write this with multiple separate section to keep it more readable and also to document everything easily for myself.</p>
+    <p>I will also daily drive this phone for some time and try to make a very comprehensive documentation on what needs to be done to make the phone as good as possible here. All source are always linked at the bottom, without community and other dev's all this would not be possible.</p>
     <hr>
     <h2>Worth it?:</h2>
     <p>STRONGLY depends.
@@ -179,7 +180,7 @@
       <li>
         Navigation:
         <ul>
-          <li>You already have near no screen, so just use gestures and hide the dot at the bottom to maximize screen availability.</li>
+          <li>You already have near to no screen, so just use gestures and hide the dot at the bottom to maximize screen availability OR, what I recommend, Set: "Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Force navigation bar disable" and then enable "3 button navigation" in the Android Gesture settings. THEN reboot! This forces you and Android to use the Hardware navigation button's.</li>
         </ul>
       </li>
       <li>
@@ -204,10 +205,41 @@
       This will break ROOT apps on boot and can be fixed by moving all apps using ROOT to the internal storage from the App settings. This is also needed if you want Android Auto. Android treats high privilege Apps different when they are on a SD-Card. And Magisk sees them as "New Apps" on every boot and dose NOT autostart Root Apps if they are on an SD-Card.
     </p>
     <p>Also: If you want to keep the eMMC as free and clean as possible got to the developer settings and enable "Force allow apps on external". Then in the Storage settings select the internal Storage and select "Apps". It should show you apps that are movable and then you can move them over to the SD-Card. Android installs to Internal Storage by default if you e.g. just mass install with ADB or a ROOT backup tool. And if you have set Battery Settings for apps to e.g. "unrestricted" for Calendar or E-Mail stuff and then move it it will reset that option and you have to re-set it.</p>
-    <p>Also Also: "Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Allow binder threads on incoming calls" breaks SD-Card support for Internal Storage use. IDK. why but it dose. I also don't need it, 4G calling works for me without this.</p>
-    <p>Also Also Also: All apps that you want to run in the Background MUST be installed on internal Storage, else Android will not start them AND remove the unrestricted setting in the Battery options for the App.</p>
+    <p>Also Also: All apps that you want to run in the Background MUST be installed on internal Storage, else Android will not start them AND remove the unrestricted setting in the Battery options for the App.</p>
     <hr>
-    <h2>Brick through usual System modification command:</h2>
+    <h2>Known issues and Workarounds:</h2>
+    <ul>
+      <li>
+        1:
+        <ul>
+          <li><u>Issue:</u> After reboot SD-Card is not read/recognized and Services do not start:</li>
+          <li><u>Fix:</u> (At least for me) Well known issue on MANY phones when using GSI's. This only happens when REBOOTING not when doing a full shutdown and then a fresh normal power-on. Instead of rebooting, ALWAYS shutdown and then when the phone is off just boot it fresh.</li>
+        </ul>
+      </li>
+      <li>
+        2:
+        <ul>
+          <li><u>Issue:</u> LTE dose not work on some carrier.</li>
+          <li><u>Fix:</u> "Settings &gt;&gt; Phh Treble Settings &gt;&gt; Misc features &gt;&gt; Allow binder threads on incoming calls". Some need it, I e.g. don't.</li>
+        </ul>
+      </li>
+      <li>
+        3:
+        <ul>
+          <li><u>Issue:</u> Some notification take there sweet time to come in or mapped keys like flashlight while screen off or media control only works once/sometimes.</li>
+          <li><u>Fix:</u> I'm pretty sure it is a Kernel thing. It is still the stock Android kernel with all the GO stuff applied to it in the backend. This is just how GSI's work, they only replace the OS, not the Kernel. Meaning some behavior will be slightly different and/or more aggressive, like app killing, then on normal android kernel. No real workaround here.</li>
+        </ul>
+      </li>
+      <!-- <li>
+        3:
+        <ul>
+          <li><u>Issue:</u></li>
+          <li><u>Fix:</u></li>
+        </ul>
+      </li> -->
+    </ul>
+    <hr>
+    <h2>Brick through just normal System modification commands:</h2>
     <p>I was panicking, thinking I bricked the device. I re-flashed, modified and partitioned like crazy and did like 5 hail mary's back to back to back, Ryland Grace would be brain dead by now. But somehow, don't ask how, I DO NOT KNOW, I fixed it. I tried to change the "build.prop" file and used my usual remount command and that somehow created a root level overlay that survived re-flashes, factory resets and switching from Stock to GSI and back. I even got it to not have enough space for super. The file-system overlay broke all wireless communication. I somehow managed with re-partitioning, and failing the OTA recovery flash like 5 times to restore the right file-system setup (I could even lock it again, aka. it is back to fully clean...). LEARN FROM MY MISTAKES! DON'T REMOUNT SYSTEM PARTITION'S ON THIS PHONE!</p>
     <h1>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</h1>
     <h1><u>Do never NEVER N-E-V-E-R EVER E-V-E-R EXECUTE THE FOLLOWING COMMANDS ON THIS PHONE! NEVER!!!</u></h1>
@@ -299,6 +331,6 @@
         </ul>
       </li>
     </ul>
-    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.05.02 - 18:31');</script></div>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.05.05 - 22:31');</script></div>
   </body>
 </html>
