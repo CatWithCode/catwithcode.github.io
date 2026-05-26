@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - Simple HTTP-Server for easy network file transfer</title>
+			<link>https://catwithcode.moe/Blog/2026.05.26_Simple_HTTP_webServer/Simple_HTTP_webServer.html</link>
+			<description>I made my website to document stuff I want always at my finger tips and publicly available. This one is so basic it is f*cking painful xD. How to host a local HTTP-WebServer. AS SIMPLE AS POSSIBLE!
+			
+			https://catwithcode.moe/Blog/2026.05.26_Simple_HTTP_webServer/Simple_HTTP_webServer.html
+			</description>
+			<pubDate>Tue, 26 May 2026 16:52:09 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - CAT S22 Modding and IPv6-WiFi Connection Loop issues (With PiHole)</title>
 			<link>https://catwithcode.moe/Blog/2026.05.01_CAT-S22_Modding_IPv6/CAT-S22_Modding_IPv6.html</link>
 			<description>Yes... I know, Keyboard Phone sh*t... again... ANYWAY. Let's start! :D

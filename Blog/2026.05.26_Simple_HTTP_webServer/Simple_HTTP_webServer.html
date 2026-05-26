@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <script type="text/javascript" src="/Assets/MainFunctions.js"></script>
+    <script type="text/javascript">WriteHead();</script>
+    <title>CatWithCode - TITEL</title>
+  </head>
+  <body align="left">
+    <!-- <div id="viewerChecker"> <p><a href="https://catwithcode.moe/Blog/2024.10.02_F_Search_Engines/F_Search_Engines.html">THIS IS A MIRROR OR ARCHIVE. CLICK HERE TO GET TO THE OFFICIAL CATWITHCODE.MOE PAGE! IF YOU ARE ALREADY ON CATWITHCODE.MOE, IGNORE THIS. BLOCKING JAVASCRIPT IS COOL.</a></p> <script type="text/javascript">creatCheckViewer();</script></div> -->
+
+    <div id="Header"> <a href="/archive.html">NoJS-Header</a> <script type="text/javascript">WriteHeader();</script></div>
+    <script type="text/javascript">CreateSpeechBubble("Of course she has a modded robot vacuum. NEEEEEEEEEEEEERD!");</script>
+
+    <h1>Simple HTTP-Server for easy network file transfer</h1>
+    <p>I made my website to document stuff I want always at my finger tips and publicly available. This one is so basic it is f*cking painful xD. How to host a local HTTP-WebServer. AS SIMPLE AS POSSIBLE!</p>
+    <p>Why?? I mod and tinker with sh*t sometimes that has literately only wget or cat available in the shell, NOT EVEN FTP. This makes getting files onto it a pain. This time it was with Valetudo and a Firmware Bug. There is a old tool by someone out there that could make a WebServer but should Linux not just be able to just do it. Well... it can. RangeHTTPServer is what I found in my distribution (OpenSuse). Thanks to it I found out python has a simple HTTP-Server build in now. LOL</p>
+    <hr>
+    <h3>WebServer internally:</h3>
+    <p><u><i>python3.14 -m http.server 8000</i></u></p>
+    <h3>And a WebServer Network accessible/wide:</h3>
+    <p><u><i>python3.14 -m http.server 8000 --bind 0.0.0.0</i></u></p>
+    <hr>
+    <p>
+      And that is, no joke, all I want to document xD.
+      <br>
+      <br>
+      And about Valetudo, it works well. Nice to have! The version/firmware for my Vacuum had/has a leak bug/memory issue over time. Causes the Map to randomly disappear and the vacuum to go nuts. A reboot and waiting often fixes it. <u>Never</u> change the map in any way until it shows up again else it is gone! Re-import as far as I could tell is not possible directly and can only be done with copying files from the some random firmware folder somewhere. IDK. don't care to much about it. A firmware update to 549 and a nightly build fixed it for good.
+      <br>
+      <br>
+      (Also: Firmware 490 vs. 549 actually makes a good amount of difference in some situation's on how the vacuum dose or reacts to stuff. Better? No. Different? DEFINITELY! LOL)
+    </p>
+    <hr>
+    <br>
+    <h2>Sources:</h2>
+    <ul>
+      <li><a href="https://github.com/danvk/RangeHTTPServer">https://github.com/danvk/RangeHTTPServer</a></li>
+      <li><a href="https://github.com/Hypfer/Valetudo/discussions/2501">https://github.com/Hypfer/Valetudo/discussions/2501</a></li>
+    </ul>
+    <div id="Footer"> <p><b><u>NoJS-Footer (COULD NOT LOAD LICENSE JS-CODE FOR FOOTER! THE LICENSE IS IN THE HTML CODE!)</u></b></p><script type="text/javascript">WriteFooter('2026.05.26 - 18:50');</script></div>
+  </body>
+</html>
