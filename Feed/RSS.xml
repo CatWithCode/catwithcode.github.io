@@ -6,6 +6,15 @@
         <description>Blog for random computer stuff from my daily life. Girl from Germany. Work as a Software Developer. Programming, Linux, Hacking, Modding and tinkering.</description>
         <!-- RSS ENTRYS - START -->
         <item>
+			<title>CatWithCode - My GTX 1060 caught fire while benchmarking my own game</title>
+			<link>https://catwithcode.moe/Blog/2026.06.07_GTX1060_Fire/GTX1060_Fire.html</link>
+			<description>I have a test PC build of old PC part. Stuff that I either no longer trusted or were just old low power stuff no one wants or needs. In it is, or better was, a MSI GTX 1060 OC 6GB or something like that.
+			
+			https://catwithcode.moe/Blog/2026.06.07_GTX1060_Fire/GTX1060_Fire.html
+			</description>
+			<pubDate>Mon, 08 Jun 2026 19:58:12 GMT</pubDate>
+		</item>
+        <item>
 			<title>CatWithCode - Simple HTTP-Server for easy network file transfer and Valetudo</title>
 			<link>https://catwithcode.moe/Blog/2026.05.26_Simple_HTTP_webServer/Simple_HTTP_webServer.html</link>
 			<description>I made my website to document stuff I want always at my finger tips and publicly available. This one is so basic it is f*cking painful xD. How to host a local HTTP-WebServer. AS SIMPLE AS POSSIBLE!
